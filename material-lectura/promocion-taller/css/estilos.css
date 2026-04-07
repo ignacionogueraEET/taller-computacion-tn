@@ -1,3 +1,102 @@
+/* ══════════════════════════════════════════════════════════════════ */
+/* SISTEMA DE TEMAS: CLARO Y OSCURO                                    */
+/* ══════════════════════════════════════════════════════════════════ */
+
+:root[data-theme='light'],
+:root {
+  /* Gradientes y colores base */
+  --bg-body-gradient-1: #667eea;
+  --bg-body-gradient-2: #764ba2;
+  --header-gradient-1: #1e3c72;
+  --header-gradient-2: #2a5298;
+  --contact-gradient-1: #f5f7fa;
+  --contact-gradient-2: #e4e8ec;
+
+  /* Fondos */
+  --bg-body: linear-gradient(135deg, var(--bg-body-gradient-1), var(--bg-body-gradient-2));
+  --bg-container: white;
+  --bg-intro: #f8f9fa;
+  --bg-info-box: #e3f2fd;
+  --bg-info-box-border: #bbdefb;
+  --bg-info-box-highlight: #fff3e0;
+  --bg-info-box-highlight-border: #ffcc80;
+  --bg-info-box-important: #fce4ec;
+  --bg-info-box-important-border: #f48fb1;
+  --bg-contact: linear-gradient(135deg, var(--contact-gradient-1), var(--contact-gradient-2));
+  --bg-email: white;
+  --bg-step: #2a5298;
+
+  /* Textos */
+  --text-primary: #495057;
+  --text-secondary: #424242;
+  --text-tertiary: #616161;
+  --text-quaternary: #757575;
+  --text-header: #1e3c72;
+  --text-info-box-h3: #1565c0;
+  --text-info-box-highlight-h3: #e65100;
+  --text-info-box-important-h3: #c2185b;
+  --text-email: #2a5298;
+  --text-signature: #616161;
+  --text-signature-name: #1e3c72;
+  --text-signature-role: #757575;
+  --text-header-light: #7fb3e8;
+
+  /* Bordes */
+  --border-intro: #2a5298;
+  --border-main: #e0e0e0;
+
+  /* Sombras */
+  --shadow-container: rgba(0, 0, 0, 0.3);
+  --shadow-email-hover: rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme='dark'] {
+  /* Gradientes oscuros */
+  --bg-body-gradient-1: #2a2a4a;
+  --bg-body-gradient-2: #3a2a4a;
+  --header-gradient-1: #0a1a3a;
+  --header-gradient-2: #1a3a5a;
+  --contact-gradient-1: #1a1a2a;
+  --contact-gradient-2: #0a0a1a;
+
+  /* Fondos oscuros - MEJORADO para mejor legibilidad */
+  --bg-body: linear-gradient(135deg, var(--bg-body-gradient-1), var(--bg-body-gradient-2));
+  --bg-container: #2a2a2a;
+  --bg-intro: #3a3a3a;
+  --bg-info-box: #2a3a5a;
+  --bg-info-box-border: #3a4a7a;
+  --bg-info-box-highlight: #4a3a2a;
+  --bg-info-box-highlight-border: #6a5a3a;
+  --bg-info-box-important: #4a3a4a;
+  --bg-info-box-important-border: #6a4a6a;
+  --bg-contact: linear-gradient(135deg, #2a2a3a, #3a3a4a);
+  --bg-email: #3a3a3a;
+  --bg-step: #4a7aaa;
+
+  /* Textos oscuros - MEJORADO para mayor contraste */
+  --text-primary: #f0f0f0;
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #d0d0d0;
+  --text-quaternary: #c0c0c0;
+  --text-header: #7fc0ff;
+  --text-info-box-h3: #7fa3ff;
+  --text-info-box-highlight-h3: #ffa040;
+  --text-info-box-important-h3: #ff7aa0;
+  --text-email: #7fa3ff;
+  --text-signature: #d0d0d0;
+  --text-signature-name: #7fc0ff;
+  --text-signature-role: #b0b0b0;
+  --text-header-light: #a8c5e8;
+
+  /* Bordes oscuros */
+  --border-intro: #3a6aaa;
+  --border-main: #3a3a3a;
+
+  /* Sombras oscuras */
+  --shadow-container: rgba(0, 0, 0, 0.5);
+  --shadow-email-hover: rgba(0, 0, 0, 0.3);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,29 +105,32 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--bg-body);
   min-height: 100vh;
   padding: 40px 20px;
   line-height: 1.6;
+  transition: background 0.3s;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
-  background: white;
+  background: var(--bg-container);
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px var(--shadow-container);
   overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .header {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, var(--header-gradient-1), var(--header-gradient-2));
   color: white;
   padding: 40px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: background 0.3s;
 }
 
 .header h1 {
@@ -48,7 +150,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #7fb3e8;
+  color: var(--text-header-light);
   margin-bottom: 6px;
 }
 
@@ -57,15 +159,16 @@ body {
 }
 
 .intro {
-  background: #f8f9fa;
-  border-left: 4px solid #2a5298;
+  background: var(--bg-intro);
+  border-left: 4px solid var(--border-intro);
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 0 8px 8px 0;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .intro p {
-  color: #495057;
+  color: var(--text-primary);
   font-size: 1.05rem;
 }
 
@@ -74,58 +177,73 @@ body {
 }
 
 .section-title {
-  color: #1e3c72;
+  color: var(--text-header);
   font-size: 1.3rem;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
 .section-title::before {
   content: '';
   width: 4px;
   height: 24px;
-  background: #2a5298;
+  background: var(--bg-step);
   border-radius: 2px;
+  transition: background-color 0.3s;
 }
 
 .info-box {
-  background: #e3f2fd;
-  border: 1px solid #bbdefb;
+  background: var(--bg-info-box);
+  border: 1px solid var(--bg-info-box-border);
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 20px;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .info-box.highlight {
-  background: #fff3e0;
-  border-color: #ffcc80;
+  background: var(--bg-info-box-highlight);
+  border-color: var(--bg-info-box-highlight-border);
 }
 
 .info-box.important {
-  background: #fce4ec;
-  border-color: #f48fb1;
+  background: var(--bg-info-box-important);
+  border-color: var(--bg-info-box-important-border);
 }
 
 .info-box h3 {
-  color: #1565c0;
+  color: var(--text-info-box-h3);
   margin-bottom: 12px;
   font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.info-box p {
+  color: var(--text-primary);
+  transition: color 0.3s;
+}
+
+.info-box strong {
+  color: var(--text-primary);
+  transition: color 0.3s;
 }
 
 .info-box.highlight h3 {
-  color: #e65100;
+  color: var(--text-info-box-highlight-h3);
 }
 
 .info-box.important h3 {
-  color: #c2185b;
+  color: var(--text-info-box-important-h3);
 }
 
 .info-box ul {
   margin-left: 20px;
-  color: #424242;
+  color: var(--text-secondary);
+  transition: color 0.3s;
 }
 
 .info-box li {
@@ -152,7 +270,7 @@ body {
   top: 0;
   width: 35px;
   height: 35px;
-  background: #2a5298;
+  background: var(--bg-step);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -160,66 +278,98 @@ body {
   justify-content: center;
   font-weight: bold;
   font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.steps li {
+  color: var(--text-primary);
+  transition: color 0.3s;
+}
+
+.steps li strong {
+  color: var(--text-primary);
+  transition: color 0.3s;
 }
 
 .contact-section {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  background: var(--bg-contact);
   border-radius: 12px;
   padding: 30px;
   text-align: center;
   margin-top: 30px;
+  transition: background 0.3s;
 }
 
 .contact-section h3 {
-  color: #1e3c72;
+  color: var(--text-header);
   margin-bottom: 15px;
+  transition: color 0.3s;
 }
 
 .email {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: white;
+  background: var(--bg-email);
   padding: 12px 24px;
   border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: #2a5298;
+  color: var(--text-email);
   text-decoration: none;
   font-weight: 500;
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .email:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--shadow-email-hover);
 }
 
 .signature {
   text-align: right;
   margin-top: 40px;
   padding-top: 30px;
-  border-top: 2px solid #e0e0e0;
+  border-top: 2px solid var(--border-main);
+  transition: border-color 0.3s;
 }
 
 .signature p {
-  color: #616161;
+  color: var(--text-signature);
   font-style: italic;
+  transition: color 0.3s;
 }
 
 .signature .name {
   font-weight: 600;
-  color: #1e3c72;
+  color: var(--text-signature-name);
   font-style: normal;
   font-size: 1.1rem;
   margin-top: 5px;
+  transition: color 0.3s;
 }
 
 .signature .role {
-  color: #757575;
+  color: var(--text-signature-role);
   font-size: 0.9rem;
   margin-top: 3px;
+  transition: color 0.3s;
+}
+
+/* ── Clases para texto con estilos inline ── */
+.section p.inline-text {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  transition: color 0.3s;
+}
+
+.contact-section p.inline-text {
+  margin-bottom: 20px;
+  color: var(--text-tertiary);
+  transition: color 0.3s;
 }
 
 @media (max-width: 600px) {
@@ -238,13 +388,63 @@ body {
 
 .badge {
   display: inline-block;
-  background: #2a5298;
+  background: var(--bg-step);
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+/* ── Toggle Switch para Tema ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 6px 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.toggle-icon.dark {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.toggle-icon.light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+html[data-theme='dark'] .toggle-icon.dark {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+html[data-theme='dark'] .toggle-icon.light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .logo {

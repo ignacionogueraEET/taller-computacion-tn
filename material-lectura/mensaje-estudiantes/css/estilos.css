@@ -1,3 +1,82 @@
+/* ══════════════════════════════════════════════════════════════════ */
+/* SISTEMA DE TEMAS: CLARO Y OSCURO                                    */
+/* ══════════════════════════════════════════════════════════════════ */
+
+:root[data-theme='light'],
+:root {
+  /* Fondos */
+  --bg-body: #f5f6f8;
+  --bg-card: #ffffff;
+  --bg-intro: #f0f6ff;
+  --bg-tip: #fffbeb;
+  --bg-method-dot-blue: #dbeafe;
+  --bg-method-dot-teal: #ccfbf1;
+  --bg-method-dot-amber: #fef3c7;
+  --bg-method-dot-purple: #ede9fe;
+
+  /* Textos */
+  --text-primary: #1a1a1a;
+  --text-secondary: #505766;
+  --text-tertiary: #6b7280;
+  --text-muted: #7a8494;
+  --text-header-light: #7fb3e8;
+  --text-tag-blue: #1e40af;
+  --text-tag-teal: #0f5949;
+  --text-tag-purple: #4c1d95;
+  --text-tip-label: #92400e;
+
+  /* Headers y acentos */
+  --color-header: #0d3b6e;
+  --color-avatar: #0d3b6e;
+  --color-avatar-light: #c9ddf5;
+  --color-intro-border: #185fa5;
+
+  /* Bordes y líneas */
+  --border-light: #e4e7ec;
+  --border-secondary: #e8eaed;
+  --tip-border: #fde68a;
+
+  /* Sombras */
+  --shadow-card: rgba(0, 0, 0, 0.07);
+}
+
+:root[data-theme='dark'] {
+  /* Fondos oscuros */
+  --bg-body: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --bg-intro: #1e3a5f;
+  --bg-tip: #2a2410;
+  --bg-method-dot-blue: #1e3a7a;
+  --bg-method-dot-teal: #1a4a3a;
+  --bg-method-dot-amber: #4a3a0a;
+  --bg-method-dot-purple: #3a2a5a;
+
+  /* Textos oscuros */
+  --text-primary: #f0f0f0;
+  --text-secondary: #d0d0d0;
+  --text-tertiary: #b0b0b0;
+  --text-muted: #909090;
+  --text-header-light: #a8c5e8;
+  --text-tag-blue: #a3d5ff;
+  --text-tag-teal: #7fffce;
+  --text-tag-purple: #e8d5ff;
+  --text-tip-label: #ffd699;
+
+  /* Headers y acentos oscuros */
+  --color-header: #1a4a8e;
+  --color-avatar: #1a4a8e;
+  --color-avatar-light: #7fa5d5;
+  --color-intro-border: #3a8ac5;
+
+  /* Bordes oscuros */
+  --border-light: #2a2a2a;
+  --border-secondary: #333333;
+  --tip-border: #5a4a0a;
+
+  /* Sombras oscuras */
+  --shadow-card: rgba(0, 0, 0, 0.3);
+}
+
 *,
 *::before,
 *::after {
@@ -8,29 +87,30 @@
 
 body {
   font-family: 'Source Sans 3', sans-serif;
-  background: #f5f6f8;
-  color: #1a1a1a;
+  background: var(--bg-body);
+  color: var(--text-primary);
   min-height: 100vh;
   padding: 2.5rem 1rem 4rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .page-wrap {
   max-width: 820px;
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 24px var(--shadow-card);
   overflow: hidden;
 }
 
-/* ── Header ── */
 .page-header {
-  background: #0d3b6e;
+  background: var(--color-header);
   padding: 2rem 2.5rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  transition: background-color 0.3s;
 }
 
 .header-logos {
@@ -64,7 +144,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #7fb3e8;
+  color: var(--text-header-light);
   margin-bottom: 6px;
 }
 
@@ -89,17 +169,18 @@ body {
 
 /* ── Intro card ── */
 .intro-card {
-  background: #f0f6ff;
-  border-left: 4px solid #185fa5;
+  background: var(--bg-intro);
+  border-left: 4px solid var(--color-intro-border);
   border-radius: 0 10px 10px 0;
   padding: 1.2rem 1.4rem;
   margin-bottom: 2.25rem;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .intro-card p {
   font-size: 15px;
   line-height: 1.8;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 /* ── Section title ── */
@@ -108,10 +189,11 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #7a8494;
+  color: var(--text-muted);
   margin-bottom: 1rem;
   padding-bottom: 7px;
-  border-bottom: 1px solid #e8eaed;
+  border-bottom: 1px solid var(--border-secondary);
+  transition: color 0.3s, border-color 0.3s;
 }
 
 /* ── Theory cards ── */
@@ -123,10 +205,11 @@ body {
 }
 
 .theory-card {
-  background: #ffffff;
-  border: 1px solid #e4e7ec;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 1.1rem 1.2rem;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .theory-card .tag {
@@ -141,30 +224,33 @@ body {
 }
 
 .tag-blue {
-  background: #dbeafe;
-  color: #1e40af;
+  background: var(--bg-method-dot-blue);
+  color: var(--text-tag-blue);
+  transition: background-color 0.3s, color 0.3s;
 }
 .tag-teal {
-  background: #ccfbf1;
-  color: #0f5949;
+  background: var(--bg-method-dot-teal);
+  color: var(--text-tag-teal);
+  transition: background-color 0.3s, color 0.3s;
 }
 .tag-purple {
-  background: #ede9fe;
-  color: #4c1d95;
+  background: var(--bg-method-dot-purple);
+  color: var(--text-tag-purple);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .theory-card .thinker {
   font-family: 'Playfair Display', serif;
   font-size: 16.5px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 7px;
 }
 
 .theory-card p {
   font-size: 13.5px;
   line-height: 1.65;
-  color: #505766;
+  color: var(--text-secondary);
 }
 
 /* ── Method grid ── */
@@ -179,10 +265,11 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 11px;
-  background: #ffffff;
-  border: 1px solid #e4e7ec;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
   border-radius: 10px;
   padding: 0.9rem 1rem;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .method-dot {
@@ -197,53 +284,78 @@ body {
 }
 
 .dot-blue {
-  background: #dbeafe;
+  background: var(--bg-method-dot-blue);
+  transition: background-color 0.3s;
 }
+.dot-blue svg {
+  color: var(--text-tag-blue);
+}
+
 .dot-teal {
-  background: #ccfbf1;
+  background: var(--bg-method-dot-teal);
+  transition: background-color 0.3s;
 }
+.dot-teal svg {
+  color: var(--text-tag-teal);
+}
+
 .dot-amber {
-  background: #fef3c7;
+  background: var(--bg-method-dot-amber);
+  transition: background-color 0.3s;
 }
+.dot-amber svg {
+  color: var(--text-tip-label);
+}
+
 .dot-purple {
-  background: #ede9fe;
+  background: var(--bg-method-dot-purple);
+  transition: background-color 0.3s;
+}
+.dot-purple svg {
+  color: var(--text-tag-purple);
 }
 
 .method-item strong {
   display: block;
   font-size: 13.5px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 2px;
 }
 
 .method-item span {
   font-size: 12.5px;
-  color: #6b7280;
+  color: var(--text-tertiary);
   line-height: 1.5;
 }
 
 /* ── Tip box ── */
 .tip-box {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  background: var(--bg-tip);
+  border: 1px solid var(--tip-border);
   border-radius: 12px;
   padding: 1.1rem 1.3rem;
   margin-bottom: 2.25rem;
   display: flex;
   gap: 14px;
   align-items: flex-start;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .tip-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #fef3c7;
+  background: var(--bg-method-dot-amber);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: background-color 0.3s;
+}
+
+.tip-icon svg {
+  color: var(--text-tip-label);
 }
 
 .tip-box .tip-label {
@@ -251,14 +363,15 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #92400e;
+  color: var(--text-tip-label);
   margin-bottom: 5px;
+  transition: color 0.3s;
 }
 
 .tip-box p {
   font-size: 14px;
   line-height: 1.7;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 /* ── Firma ── */
@@ -267,34 +380,85 @@ body {
   align-items: center;
   gap: 14px;
   padding-top: 1.5rem;
-  border-top: 1px solid #e8eaed;
+  border-top: 1px solid var(--border-secondary);
+  transition: border-color 0.3s;
 }
 
 .avatar {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #0d3b6e;
+  background: var(--color-avatar);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   font-size: 14px;
-  color: #c9ddf5;
+  color: var(--color-avatar-light);
   flex-shrink: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .firma-row .name {
   font-family: 'Playfair Display', serif;
   font-size: 15.5px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 2px;
 }
 
 .firma-row .school {
   font-size: 12.5px;
-  color: #6b7280;
+  color: var(--text-tertiary);
+}
+
+/* ── Toggle Switch para Tema ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 6px 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.toggle-icon.dark {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.toggle-icon.light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+html[data-theme='dark'] .toggle-icon.dark {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+html[data-theme='dark'] .toggle-icon.light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ── Responsive ── */

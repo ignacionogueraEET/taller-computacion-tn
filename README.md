@@ -1,17 +1,18 @@
 # taller-computacion-tn
 
-Información sobre el taller de computación turno noche
+## Información sobre el taller de computación turno noche
 
-Estructura recomendada dentro del repositorio
-Nombre del repositorio: algo claro como matematicas-6to-2026, lengua-3ero, biologia-secundaria, etc.
-Dentro del repo la estructura ideal es esta:
+### Estructura dentro del repositorio
+
+- Nombre del repositorio: algo claro como taller-computacion-tn, taller4to, taller3ro-td, taller2do-td, etc.
+  Dentro del repo la estructura es esta:
 
 /
 ├── index.html ← Página de inicio de la materia (menú con todos los materiales)
 ├── README.md ← (importante) descripción del repo para ti o futuros colaboradores
 ├── assets/ ← Recursos comunes a toda la materia
 │ ├── css/
-│ │ └── styles.css ← Tus estilos personalizados (o usa Tailwind/Bootstrap)
+│ │ └── styles.css ← Estilos personalizados
 │ ├── js/
 │ │ └── scripts.js
 │ └── images/
@@ -42,8 +43,8 @@ Dentro del repo la estructura ideal es esta:
 
 Las URLs quedan así (ejemplo):
 
-- Materia completa: https://tuusuario.github.io/matematicas-6to-2026/
-- Una consigna: https://tuusuario.github.io/matematicas-6to-2026/consignas/consigna-1/
-- Un material de lectura: https://tuusuario.github.io/matematicas-6to-2026/materiales-lectura/texto-1/
+- Materia completa: https://tuusuario.github.io/taller-computacion-tn/
+- Una consigna: https://tuusuario.github.io/taller-computacion-tn/consignas/consigna-1/
+- Un material de lectura: https://tuusuario.github.io/taller-computacion-tn/materiales-lectura/texto-1/
 
   En Google Classroom simplemente pegas el enlace directo al _index.html_ de cada documento. Queda muchísimo más profesional que un PDF o un documento de Google.
