@@ -1,0 +1,799 @@
+/* ============================================
+   GOOGLE SHEETS ATAJOS - ESTILOS
+   Sistema de temas: Claro/Oscuro con Toggle
+   ============================================ */
+
+:root {
+    /* TEMA CLARO (default) */
+    --primary-green: #0f9d58;
+    --primary-green-dark: #0b8043;
+    --primary-green-light: #e6f4ea;
+    
+    --accent-blue: #4285f4;
+    --accent-yellow: #fbbc04;
+    --accent-red: #ea4335;
+    
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --text-light: #80868b;
+    
+    --bg-body: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    --bg-container: #ffffff;
+    --bg-section: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-highlight: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    --bg-resources: linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 100%);
+    
+    --border-light: #dadce0;
+    --border-card: #dadce0;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    --kbd-bg: linear-gradient(180deg, #ffffff 0%, #f1f3f4 100%);
+    --kbd-text: #202124;
+    --kbd-border: #dadce0;
+    
+    --header-text: #ffffff;
+    --footer-bg: #202124;
+    --footer-text: #ffffff;
+    
+    --toggle-bg: rgba(255, 255, 255, 0.2);
+    --toggle-hover: rgba(255, 255, 255, 0.3);
+    --toggle-icon: #ffffff;
+    
+    --transition-speed: 0.3s;
+}
+
+/* ============================================
+   TEMA OSCURO
+   ============================================ */
+[data-theme="dark"] {
+    --primary-green: #34a853;
+    --primary-green-dark: #0b8043;
+    --primary-green-light: #1e3a2f;
+    
+    --accent-blue: #8ab4f8;
+    --accent-yellow: #fdd663;
+    --accent-red: #f28b82;
+    
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-light: #80868b;
+    
+    --bg-body: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    --bg-container: #1f2937;
+    --bg-section: #111827;
+    --bg-card: #1f2937;
+    --bg-highlight: linear-gradient(135deg, #2d2a1e 0%, #3d3518 100%);
+    --bg-resources: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    
+    --border-light: #374151;
+    --border-card: #374151;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5), 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    
+    --kbd-bg: linear-gradient(180deg, #374151 0%, #1f2937 100%);
+    --kbd-text: #e8eaed;
+    --kbd-border: #4b5563;
+    
+    --header-text: #ffffff;
+    --footer-bg: #0d1117;
+    --footer-text: #e8eaed;
+    
+    --toggle-bg: rgba(255, 255, 255, 0.1);
+    --toggle-hover: rgba(255, 255, 255, 0.2);
+    --toggle-icon: #fdd663;
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-body);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 1.5rem;
+    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-container);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: background var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* ============================================
+   HEADER Y BOTÓN TOGGLE
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+    color: var(--header-text);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Botón Toggle de Tema */
+.theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--toggle-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--header-text);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    background: var(--toggle-hover);
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.toggle-icon {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+    transform: rotate(20deg);
+}
+
+.toggle-text {
+    display: inline;
+}
+
+/* Icono flotante del header */
+.header-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   SECCIONES GENERALES
+   ============================================ */
+section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-light);
+    transition: border-color var(--transition-speed) ease;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Introducción */
+.intro-section {
+    background: var(--bg-section);
+    transition: background var(--transition-speed) ease;
+}
+
+.highlight-box {
+    background: var(--bg-highlight);
+    border-left: 4px solid var(--accent-yellow);
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    transition: all var(--transition-speed) ease;
+}
+
+/* ============================================
+   CATEGORÍAS DE ATAJOS
+   ============================================ */
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-green-light);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.category-icon {
+    font-size: 1.75rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-green-light);
+    border-radius: 12px;
+    transition: background var(--transition-speed) ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.category-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color var(--transition-speed) ease;
+}
+
+/* Grid de atajos */
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjetas de atajos */
+.shortcut-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.shortcut-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-green);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-green);
+}
+
+.shortcut-card:hover::before {
+    transform: scaleY(1);
+}
+
+.shortcut-card.highlight {
+    background: linear-gradient(135deg, 
+        rgba(52, 168, 83, 0.1) 0%, 
+        rgba(52, 168, 83, 0.2) 100%);
+    border-color: var(--primary-green);
+    border-width: 2px;
+}
+
+.shortcut-card.important {
+    background: linear-gradient(135deg, 
+        rgba(138, 180, 248, 0.1) 0%, 
+        rgba(138, 180, 248, 0.2) 100%);
+    border-color: var(--accent-blue);
+    border-width: 2px;
+}
+
+.shortcut-card.important::before {
+    background: var(--accent-blue);
+}
+
+/* Teclas */
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+kbd {
+    display: inline-block;
+    padding: 0.35rem 0.6rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1;
+    color: var(--kbd-text);
+    background: var(--kbd-bg);
+    border: 1px solid var(--kbd-border);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 var(--kbd-border), 0 3px 4px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    transition: all 0.1s ease;
+}
+
+kbd:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 var(--kbd-border), inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: color var(--transition-speed) ease;
+}
+
+/* ============================================
+   NOTA PARA MAC
+   ============================================ */
+.note-section {
+    background: var(--bg-section);
+    transition: background var(--transition-speed) ease;
+}
+
+.note-box {
+    background: var(--bg-card);
+    border: 2px solid var(--border-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.note-box h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.note-box p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    transition: color var(--transition-speed) ease;
+}
+
+/* ============================================
+   RECURSOS
+   ============================================ */
+.resources-section {
+    background: var(--bg-resources);
+    transition: background var(--transition-speed) ease;
+}
+
+.resources-section h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    transition: color var(--transition-speed) ease;
+}
+
+.resources-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-card {
+    display: block;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border-card);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-blue);
+}
+
+.resource-card:hover::after {
+    transform: scaleX(1);
+}
+
+.resource-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover .resource-icon {
+    transform: scale(1.1);
+}
+
+.resource-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.resource-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    transition: color var(--transition-speed) ease;
+}
+
+.resource-link {
+    display: inline-block;
+    color: var(--accent-blue);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.resource-card:hover .resource-link {
+    color: var(--primary-green);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2rem;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.footer-date {
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
+
+.footer-badge {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-speed) ease;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.shortcut-category {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.shortcut-category:nth-child(2) { animation-delay: 0.1s; }
+.shortcut-category:nth-child(3) { animation-delay: 0.2s; }
+.shortcut-category:nth-child(4) { animation-delay: 0.3s; }
+.shortcut-category:nth-child(5) { animation-delay: 0.4s; }
+
+/* Transición suave para todo */
+* {
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        border-radius: 0;
+    }
+    
+    .header {
+        padding: 2rem 1.5rem;
+    }
+    
+    .header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .toggle-text {
+        display: none;
+    }
+    
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+}
+
+/* Preferencias del sistema (si no hay toggle manual) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        /* Hereda el tema oscuro por defecto si el usuario prefiere oscuro */
+    }
+}
+
+/* Accesibilidad: Reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .header-icon {
+        animation: none;
+    }
+}
+
+/* ============================================
+   FOOTER INSTITUCIONAL MEJORADO
+   ============================================ */
+
+.footer {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: #e5e7eb;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración sutil de fondo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--primary-green) 0%, 
+        var(--accent-blue) 50%, 
+        var(--accent-yellow) 100%);
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Información de la institución */
+.institution-info {
+    margin-bottom: 1.5rem;
+}
+
+.institution-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.02em;
+}
+
+.institution-location {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+/* Información del docente */
+.teacher-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teacher-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9ca3af;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.teacher-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Metadatos del material */
+.material-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.meta-divider {
+    color: #4b5563;
+}
+
+/* Badge del curso */
+.footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(15, 157, 88, 0.2);
+    border: 1px solid rgba(15, 157, 88, 0.3);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #34d399;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.badge-icon {
+    font-size: 1.1rem;
+}
+
+/* Nota de contacto */
+.contact-note {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.contact-link {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border-bottom: 1px dotted #60a5fa;
+}
+
+.contact-link:hover {
+    color: #93c5fd;
+    border-bottom-style: solid;
+}
+
+/* Responsive del footer */
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1.5rem;
+    }
+    
+    .material-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .meta-divider {
+        display: none;
+    }
+    
+    .teacher-info {
+        padding: 0.875rem 1rem;
+    }
+}
