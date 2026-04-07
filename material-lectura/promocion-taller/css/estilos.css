@@ -1,0 +1,246 @@
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .header .subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .intro {
+        background: #f8f9fa;
+        border-left: 4px solid #2a5298;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .intro p {
+        color: #495057;
+        font-size: 1.05rem;
+      }
+
+      .section {
+        margin-bottom: 30px;
+      }
+
+      .section-title {
+        color: #1e3c72;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+      }
+
+      .section-title::before {
+        content: '';
+        width: 4px;
+        height: 24px;
+        background: #2a5298;
+        border-radius: 2px;
+      }
+
+      .info-box {
+        background: #e3f2fd;
+        border: 1px solid #bbdefb;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+
+      .info-box.highlight {
+        background: #fff3e0;
+        border-color: #ffcc80;
+      }
+
+      .info-box.important {
+        background: #fce4ec;
+        border-color: #f48fb1;
+      }
+
+      .info-box h3 {
+        color: #1565c0;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      .info-box.highlight h3 {
+        color: #e65100;
+      }
+
+      .info-box.important h3 {
+        color: #c2185b;
+      }
+
+      .info-box ul {
+        margin-left: 20px;
+        color: #424242;
+      }
+
+      .info-box li {
+        margin-bottom: 8px;
+      }
+
+      .steps {
+        counter-reset: step;
+        list-style: none;
+      }
+
+      .steps li {
+        position: relative;
+        padding-left: 50px;
+        margin-bottom: 20px;
+        min-height: 40px;
+      }
+
+      .steps li::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 35px;
+        height: 35px;
+        background: #2a5298;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .contact-section {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .contact-section h3 {
+        color: #1e3c72;
+        margin-bottom: 15px;
+      }
+
+      .email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        color: #2a5298;
+        text-decoration: none;
+        font-weight: 500;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .email:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .signature {
+        text-align: right;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 2px solid #e0e0e0;
+      }
+
+      .signature p {
+        color: #616161;
+        font-style: italic;
+      }
+
+      .signature .name {
+        font-weight: 600;
+        color: #1e3c72;
+        font-style: normal;
+        font-size: 1.1rem;
+        margin-top: 5px;
+      }
+
+      .signature .role {
+        color: #757575;
+        font-size: 0.9rem;
+        margin-top: 3px;
+      }
+
+      @media (max-width: 600px) {
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .content {
+          padding: 25px;
+        }
+
+        .steps li {
+          padding-left: 45px;
+        }
+      }
+
+      .badge {
+        display: inline-block;
+        background: #2a5298;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: contain;
+}
