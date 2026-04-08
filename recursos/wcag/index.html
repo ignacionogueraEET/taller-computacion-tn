@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contraste y Accesibilidad WCAG</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <article class="wcag-card">
+      <header class="wcag-header">
+        <h1>Contraste y Accesibilidad (WCAG)</h1>
+      </header>
+
+      <section class="wcag-content">
+        <h2 class="wcag-title">Definición</h2>
+        <p>
+          El contraste es la diferencia de brillo entre el color del texto y el
+          color de fondo. Una diferencia insuficiente dificulta o imposibilita
+          la lectura, especialmente para personas con
+          <strong>baja visión o daltonismo</strong>.
+        </p>
+
+        <div class="wcag-alert">
+          <p><strong>Pautas WCAG 2.1 - Nivel AA:</strong></p>
+          <ul>
+            <li>
+              <strong>Texto normal:</strong> Relación mínima de
+              <span class="highlight">4.5 : 1</span>
+            </li>
+            <li>
+              <strong>Texto grande:</strong> Relación mínima de
+              <span class="highlight">3 : 1</span>
+              <small>(Más de 18pt o 14pt en negrita)</small>
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="wcag-title">La práctica del 4.5 : 1</h2>
+        <p>
+          Si imaginamos el brillo en una escala del
+          <strong>0 (negro puro)</strong> al <strong>1 (blanco puro)</strong>,
+          la relación compara esos valores. A mayor número, mayor legibilidad.
+        </p>
+
+        <div class="table-container">
+          <table class="wcag-table">
+            <thead>
+              <tr>
+                <th>Ejemplo visual</th>
+                <th>Relación</th>
+                <th>Resultado WCAG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sample bg-black text-white">Blanco sobre Negro</td>
+                <td>21 : 1</td>
+                <td class="status-pass">✔ APRUEBA</td>
+              </tr>
+              <tr>
+                <td class="sample bg-blue text-white">Blanco sobre Azul</td>
+                <td>8.6 : 1</td>
+                <td class="status-pass">✔ APRUEBA</td>
+              </tr>
+              <tr>
+                <td class="sample bg-yellow text-white">
+                  Blanco sobre Amarillo
+                </td>
+                <td>1.07 : 1</td>
+                <td class="status-fail">✘ REPRUEBA</td>
+              </tr>
+              <tr>
+                <td class="sample bg-red text-green">Verde sobre Rojo</td>
+                <td>1.3 : 1</td>
+                <td class="status-fail">✘ REPRUEBA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+<div class="wcag-tool-box">
+    <div class="tool-content">
+        <h3>🚀 Ponlo en práctica</h3>
+        <p>¿Tienes dudas sobre una combinación de colores propia? Utiliza este verificador interactivo para obtener resultados precisos en segundos.</p>
+        <a href="https://htmlcolorcodes.com/contrast-checker/" target="_blank" class="tool-button">
+            Probar Contrast Checker
+        </a>
+    </div>
+</div>
+
+     <footer class="wcag-footer">
+            <p>Recurso informativo sobre Accesibilidad Digital</p>
+            <div class="footer-credits">
+                <strong>EET1 Paraná</strong> - Profesor Juan Ignacio Noguera
+            </div>
+        </footer>
+    </article>
+  </body>
+</html>
