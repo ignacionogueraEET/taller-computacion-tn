@@ -1,50 +1,70 @@
 # taller-computacion-tn
 
-## Información sobre el taller de computación turno noche
+## Estructura del repositorio
 
-### Estructura dentro del repositorio
+Este repositorio contiene el sitio de la materia y los materiales del taller de computación.
 
-- Nombre del repositorio: algo claro como taller-computacion-tn, taller4to, taller3ro-td, taller2do-td, etc.
-  Dentro del repo la estructura es esta:
-
+```text
 /
-├── index.html ← Página de inicio de la materia (menú con todos los materiales)
-├── README.md ← (importante) descripción del repo para ti o futuros colaboradores
-├── assets/ ← Recursos comunes a toda la materia
-│ ├── css/
-│ │ └── styles.css ← Estilos personalizados
-│ ├── js/
-│ │ └── scripts.js
-│ └── images/
-│ ├── logo-materia.png
-│ └── fondo.jpg
-├── consignas/ ← Una carpeta por tipo de material
-│ ├── consigna-1/
-│ │ ├── index.html
-│ │ └── (opcional) assets-especificos/
-│ ├── consigna-2/
-│ │ └── index.html
-│ └── ...
-├── materiales-lectura/
-│ ├── texto-1/
-│ │ └── index.html
-│ └── ...
+├── index.html
+├── README.md
+├── assets/
+│   ├── consignas/
+│   ├── css/
+│   │   └── estilos.css
+│   └── img/
+├── consignas/
+│   ├── Actividad-01/
+│   │   └── index.html
+│   └── Actividad-02/
+│       └── index.html
+├── evaluaciones/
+├── material-lectura/
+│   ├── mensaje-estudiantes/
+│   │   ├── index.html
+│   │   └── css/
+│   │       └── estilos.css
+│   ├── promocion-taller/
+│   │   ├── index.html
+│   │   └── css/
+│   │       └── estilos.css
+│   └── presentaciones/
 ├── presentaciones/
-│ └── ...
-└── evaluaciones/
-└── ...
+└── recursos/
+    ├── atajos-sheets/
+    │   ├── index.html
+    │   ├── readme.md
+    │   └── css/
+    │       └── estilos.css
+    └── wcag/
+        ├── index.html
+        └── css/
+            └── estilos.css
+```
 
-## Cómo funciona GitHub Pages con esta estructura
+## Descripción de carpetas
 
-1. Subes todo a la rama main.
-2. Vas a Settings → Pages del repositorio.
-3. En “Source” eliges Deploy from a branch → main (o la carpeta /docs si prefieres separar los archivos HTML del resto).
-4. Listo. Tu sitio se publica automáticamente.
+- `index.html`: página de inicio principal del sitio.
+- `assets/`: recursos compartidos del sitio, como hojas de estilo, consignas e imágenes.
+- `consignas/`: consignas y actividades prácticas.
+- `evaluaciones/`: espacio reservado para evaluaciones y trabajos.
+- `material-lectura/`: materiales de lectura y recursos didácticos.
+- `material-lectura/mensaje-estudiantes/`: mensaje e información para estudiantes.
+- `material-lectura/promocion-taller/`: página de promoción del taller.
+- `material-lectura/presentaciones/`: presentaciones y material de apoyo.
+- `recursos/`: recursos adicionales del taller.
+- `recursos/atajos-sheets/`: guía de atajos para Sheets.
+- `recursos/wcag/`: contenido relacionado con accesibilidad web.
 
-Las URLs quedan así (ejemplo):
+## Publicación del sitio
 
-- Materia completa: https://tuusuario.github.io/taller-computacion-tn/
-- Una consigna: https://tuusuario.github.io/taller-computacion-tn/consignas/consigna-1/
-- Un material de lectura: https://tuusuario.github.io/taller-computacion-tn/materiales-lectura/texto-1/
+Si usas GitHub Pages, el sitio se publica desde la rama `main` y la raíz del repositorio. Los enlaces quedan como:
 
-  En Google Classroom simplemente pegas el enlace directo al _index.html_ de cada documento. Queda muchísimo más profesional que un PDF o un documento de Google.
+- `https://<tu-usuario>.github.io/taller-computacion-tn/`
+- `https://<tu-usuario>.github.io/taller-computacion-tn/consignas/Actividad-01/`
+- `https://<tu-usuario>.github.io/taller-computacion-tn/material-lectura/mensaje-estudiantes/`
+- `https://<tu-usuario>.github.io/taller-computacion-tn/recursos/atajos-sheets/`
+
+## Notas
+
+Mantén la estructura de carpetas para que las rutas de los enlaces funcionen correctamente.
