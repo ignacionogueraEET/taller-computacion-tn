@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consigna: Modelo de Factura Automatizado - EET N° 1</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <p class="school-name">EET N° 1 Paraná</p>
+        <h1>Taller de Computación</h1>
+        <p class="prof-name">Profesor: Juan Ignacio Noguera</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card" aria-labelledby="obj-titulo">
+        <h2 id="obj-titulo">Objetivo de la Actividad</h2>
+        <p>
+          Desarrollar una
+          <strong>factura automatizada y profesional</strong> utilizando hojas
+          de cálculo, integrando funciones lógicas, cálculos impositivos y
+          diseño basado en estándares de accesibilidad visual.
+        </p>
+      </section>
+      <section class="card">
+        <figure>
+          <img
+            src="Actividad-14.svg"
+            alt="Imagen de la actividad: ejemplo de factura automatizada con cálculos de valor, IVA, descuento y neto a pagar"
+            class="activity-image"
+          />
+        </figure>
+      </section>
+
+      <section class="card secondary" aria-labelledby="tips-titulo">
+        <h3 id="tips-titulo">Consejos Técnicos</h3>
+        <ul class="tips-list">
+          <li>
+            <strong>Referencias:</strong> Usá referencias absolutas (ej.
+            <code>$B$1</code>) para el porcentaje de IVA o Descuento si están en
+            celdas fijas.
+          </li>
+          <li>
+            <strong>Eficiencia:</strong> Asegurate de que las fórmulas se puedan
+            arrastrar/copiar hacia abajo sin perder la lógica.
+          </li>
+          <li>
+            <strong>Formato:</strong> Aplicá formato de <em>Moneda</em> a todas
+            las celdas con valores monetarios (no uses solo texto).
+          </li>
+        </ul>
+      </section>
+
+      <section class="card alert" aria-labelledby="entrega-titulo">
+        <h2 id="entrega-titulo">Normas de Entrega y Accesibilidad</h2>
+        <p>
+          Al momento de configurar el formato de celdas, utilicen colores
+          profesionales pero
+          <strong>verifiquen el contraste según WCAG 2.1</strong> (eviten
+          combinaciones como texto verde sobre fondo blanco).
+        </p>
+        <blockquote class="delivery-note">
+          <strong>Convención de archivo:</strong> Entregá como
+          <code>Actividad_XX-Apellido</code> en la carpeta compartida de Google
+          Drive: <strong>Taller Computación [Año]</strong>.
+        </blockquote>
+      </section>
+    </main>
+  </body>
+</html>
