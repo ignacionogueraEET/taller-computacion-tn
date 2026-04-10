@@ -1,0 +1,28 @@
+:root {
+  /* Light Theme */
+  --color-background-light: #ffffff;
+  --color-text-light: #000000;
+  --font-family-light: 'Arial', sans-serif;
+  --spacing-unit-light: 8px;
+
+  /* Dark Theme */
+  --color-background-dark: #000000;
+  --color-text-dark: #ffffff;
+  --font-family-dark: 'Arial', sans-serif;
+  --spacing-unit-dark: 8px;
+}
+
+/* Example usage */
+body.light {
+  background-color: var(--color-background-light);
+  color: var(--color-text-light);
+  font-family: var(--font-family-light);
+  padding: var(--spacing-unit-light);
+}
+
+body.dark {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-dark);
+  padding: var(--spacing-unit-dark);
+}
