@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consigna – Planilla de Notas Docente | EET N° 1 Paraná</title>
+    <meta
+      name="description"
+      content="Actividad de aprendizaje sobre Función SI, Formato Condicional y Validación de Datos en hoja de cálculo. EET N° 1 Paraná."
+    />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido-principal"
+      >Saltar al contenido principal</a
+    >
+
+    <!-- ===== ENCABEZADO ===== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <div class="header-meta">
+          <span class="escuela-badge" aria-label="Institución"
+            >EET N° 1 – Paraná</span
+          >
+          <span class="docente-badge" aria-label="Docente"
+            >Prof. Juan Ignacio Noguera</span
+          >
+        </div>
+        <div class="header-label">Taller de Computación</div>
+      </div>
+    </header>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main id="contenido-principal" class="main-wrapper">
+      <!-- TÍTULO E IDENTIFICACIÓN -->
+      <section class="activity-hero" aria-labelledby="titulo-actividad">
+        <div class="activity-tag" aria-label="Número de actividad">
+          Actividad 15
+        </div>
+        <h1 id="titulo-actividad">Planilla Inteligente de Notas</h1>
+        <p class="activity-subtitle">
+          Automatizá la gestión de calificaciones usando
+          <strong>Función SI</strong>, <strong>Formato Condicional</strong> y
+          <strong>Validación de Datos</strong>
+        </p>
+        <div
+          class="pill-row"
+          role="list"
+          aria-label="Contenidos de la actividad"
+        >
+          <span class="pill pill--blue" role="listitem">Función SI</span>
+          <span class="pill pill--green" role="listitem"
+            >Formato Condicional</span
+          >
+          <span class="pill pill--amber" role="listitem"
+            >Validación de Datos</span
+          >
+        </div>
+      </section>
+
+      <!-- OBJETIVO -->
+      <section class="card card--objetivo" aria-labelledby="objetivo-titulo">
+        <div class="card-icon" aria-hidden="true">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+            <line
+              x1="12"
+              y1="3"
+              x2="12"
+              y2="6"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 id="objetivo-titulo">Objetivo de aprendizaje</h2>
+          <p>
+            Desarrollar una
+            <strong>planilla de cálculo automatizada</strong> para que un
+            docente pueda gestionar las notas de sus estudiantes. Al finalizar,
+            la planilla calculará promedios, mostrará mensajes de promoción y
+            aplicará colores automáticamente, <em>sin intervención manual</em>.
+          </p>
+        </div>
+      </section>
+
+      <!-- QUÉ DEBE CONTENER -->
+      <section class="card" aria-labelledby="producto-titulo">
+        <h2 id="producto-titulo">¿Qué debe tener tu planilla?</h2>
+        <p>
+          La planilla final tiene que cumplir con las siguientes
+          funcionalidades. <strong>Vos decidís cómo resolverlas.</strong>
+        </p>
+        <div
+          class="feature-grid"
+          role="list"
+          aria-label="Funcionalidades requeridas"
+        >
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon feature-icon--blue" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+                <line
+                  x1="3"
+                  y1="9"
+                  x2="21"
+                  y2="9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <line
+                  x1="9"
+                  y1="9"
+                  x2="9"
+                  y2="21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <h3>Estructura de la planilla</h3>
+            <p>
+              Listado de estudiantes, notas de los tres trimestres y promedio
+              anual.
+            </p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon feature-icon--green" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 11l3 3L22 4"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Promedio calculado</h3>
+            <p>
+              Se obtiene automáticamente a partir de las notas ingresadas, sin
+              que el docente lo escriba.
+            </p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon feature-icon--amber" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 17l10 5 10-5M2 12l10 5 10-5"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Mensaje de promoción</h3>
+            <p>
+              Junto al promedio debe aparecer <em>"Pasa de año"</em> o
+              <em>"No pasa de año"</em> según corresponda.
+            </p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon feature-icon--red" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M12 8v4M12 16h.01"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Colores automáticos</h3>
+            <p>
+              Las celdas deben colorearse solas en verde (aprobado) o rojo (no
+              aprobado) sin ninguna acción del docente.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TAREAS -->
+      <section class="card" aria-labelledby="tareas-titulo">
+        <h2 id="tareas-titulo">Tareas a realizar</h2>
+        <p>
+          Resolvé cada tarea de forma independiente. Investigá, probá y
+          justificá tus decisiones.
+        </p>
+
+        <!-- TAREA 1 -->
+        <article class="step-card" aria-labelledby="tarea1-titulo">
+          <div class="step-number" aria-hidden="true">1</div>
+          <div class="step-content">
+            <h3 id="tarea1-titulo">Mensaje de promoción con Función SI</h3>
+            <p>
+              Agregá una columna que muestre automáticamente si el estudiante
+              <strong>pasa de año</strong> o <strong>no pasa de año</strong>,
+              comparando el promedio con la nota mínima de aprobación.
+            </p>
+            <p>
+              La nota mínima de aprobación debe poder modificarse fácilmente
+              desde un solo lugar de la planilla, sin necesidad de editar cada
+              fórmula individualmente.
+            </p>
+            <div
+              class="info-box"
+              role="note"
+              aria-label="Preguntas orientadoras"
+            >
+              <div class="info-box-label">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 16v-4M12 8h.01"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                Preguntas para reflexionar
+              </div>
+              <p>
+                ¿Cómo funciona una función lógica que evalúa una condición y
+                devuelve un resultado diferente según sea verdadera o falsa?
+                ¿Qué pasa cuando copiás una fórmula hacia abajo y necesitás que
+                una referencia no cambie?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- TAREA 2 -->
+        <article class="step-card" aria-labelledby="tarea2-titulo">
+          <div class="step-number" aria-hidden="true">2</div>
+          <div class="step-content">
+            <h3 id="tarea2-titulo">
+              Colores automáticos con Formato Condicional
+            </h3>
+            <p>
+              Configurá la planilla para que las celdas de promedio y mensaje
+              cambien de color automáticamente: <strong>verde</strong> si el
+              estudiante aprueba, <strong>rojo</strong> si no aprueba.
+            </p>
+            <p>
+              Los colores deben actualizarse solos cada vez que se modifica
+              alguna nota, sin ninguna acción adicional del docente.
+            </p>
+            <div
+              class="info-box"
+              role="note"
+              aria-label="Preguntas orientadoras"
+            >
+              <div class="info-box-label">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 16v-4M12 8h.01"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                Preguntas para reflexionar
+              </div>
+              <p>
+                ¿Dónde se encuentra la opción de Formato Condicional? ¿Qué tipos
+                de reglas permite crear? ¿Es posible basar el color de una celda
+                en el valor de otra celda diferente?
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- TAREA 3 -->
+        <article class="step-card" aria-labelledby="tarea3-titulo">
+          <div class="step-number" aria-hidden="true">3</div>
+          <div class="step-content">
+            <h3 id="tarea3-titulo">
+              Control de errores con Validación de Datos
+            </h3>
+            <p>
+              Protegé las celdas de notas para que no se pueda ingresar un valor
+              fuera del rango permitido. Si alguien intenta cargar un dato
+              incorrecto, la planilla debe avisarle o rechazar el ingreso.
+            </p>
+            <div
+              class="info-box"
+              role="note"
+              aria-label="Preguntas orientadoras"
+            >
+              <div class="info-box-label">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 16v-4M12 8h.01"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                Preguntas para reflexionar
+              </div>
+              <p>
+                ¿En qué menú se encuentra la Validación de Datos? ¿Qué criterios
+                se pueden configurar? ¿Cuál es la diferencia entre mostrar una
+                advertencia y rechazar la entrada directamente?
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CRITERIOS DE EVALUACIÓN -->
+      <section
+        class="card card--evaluacion"
+        aria-labelledby="evaluacion-titulo"
+      >
+        <h2 id="evaluacion-titulo">Criterios de evaluación</h2>
+        <p>
+          Tu trabajo será evaluado teniendo en cuenta los siguientes aspectos:
+        </p>
+        <div
+          class="criteria-list"
+          role="list"
+          aria-label="Criterios de evaluación"
+        >
+          <div class="criteria-item" role="listitem">
+            <div class="criteria-check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <polyline
+                  points="20 6 9 17 4 12"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <strong>Funcionamiento correcto</strong>
+              <p>
+                La planilla calcula y muestra los resultados esperados al
+                ingresar cualquier combinación de notas.
+              </p>
+            </div>
+          </div>
+          <div class="criteria-item" role="listitem">
+            <div class="criteria-check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <polyline
+                  points="20 6 9 17 4 12"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <strong>Automatización completa</strong>
+              <p>
+                El docente solo carga las tres notas. El promedio, el mensaje y
+                los colores se generan solos.
+              </p>
+            </div>
+          </div>
+          <div class="criteria-item" role="listitem">
+            <div class="criteria-check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <polyline
+                  points="20 6 9 17 4 12"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <strong>Validación activa</strong>
+              <p>
+                Las celdas de notas rechazan o advierten ante el ingreso de
+                valores incorrectos.
+              </p>
+            </div>
+          </div>
+          <div class="criteria-item" role="listitem">
+            <div class="criteria-check" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <polyline
+                  points="20 6 9 17 4 12"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <strong>Presentación prolija</strong>
+              <p>
+                La planilla es clara, ordenada y tiene los encabezados bien
+                identificados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECORDATORIO WCAG + ENTREGA -->
+      <section class="card card--entrega" aria-labelledby="entrega-titulo">
+        <div class="entrega-icon" aria-hidden="true">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <h2 id="entrega-titulo">Accesibilidad y entrega</h2>
+        <div class="entrega-content">
+          <p>
+            Al momento de configurar el formato de celdas, utilizá colores
+            profesionales pero verificá el contraste según
+            <strong>WCAG 2.1</strong>. Un verde oscuro sobre fondo blanco o un
+            rojo sobre blanco son opciones válidas; un amarillo claro sobre
+            blanco, no.
+          </p>
+          <div
+            class="entrega-box"
+            role="note"
+            aria-label="Instrucción de nombre y entrega del archivo"
+          >
+            <div class="entrega-box-label">
+              Nombre del archivo y ubicación de entrega
+            </div>
+            <div class="entrega-box-value">
+              <code>Actividad_15-Apellido</code>
+            </div>
+            <div class="entrega-box-desc">
+              Entregá el archivo en la carpeta
+              <strong>Taller Computación [Año]</strong> de Google Drive
+              compartido por el docente.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <p>
+        EET N° 1 – Paraná &nbsp;·&nbsp; Taller de Computación &nbsp;·&nbsp;
+        Prof. Juan Ignacio Noguera
+      </p>
+      <p class="footer-small">
+        Actividad diseñada siguiendo pautas de accesibilidad WCAG 2.1 AA
+      </p>
+    </footer>
+  </body>
+</html>
