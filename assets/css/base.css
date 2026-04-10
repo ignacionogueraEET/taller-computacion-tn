@@ -1,0 +1,35 @@
+/* Base styles using CSS variables and semantic HTML elements */
+:root {
+    --main-bg-color: #f8f9fa;
+    --main-text-color: #212529;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, footer, main, article, section {
+    padding: 15px;
+    margin: 10px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
