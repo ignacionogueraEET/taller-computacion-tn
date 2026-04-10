@@ -29,4 +29,9 @@ Generá una consigna en HTML + CSS externo siguiendo ESTRICTAMENTE estas reglas:
 - Indicá qué bloque CSS agregar/actualizar en estilos.css si es necesario.
 - No incluyas explicaciones fuera del código a menos que se pidan.
 
+
+📍Datos de ubicación y propiedad
+- EET N° 1 Paraná
+- Profesor: Juan gnacio Noguera 
+
 [PEGÁ AQUÍ LA CONSIGNA EN BRUTO O PDF EXTRACTO]
