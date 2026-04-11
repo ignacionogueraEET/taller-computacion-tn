@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad 20 – Funciones de Conteo | EET N° 1 Paraná</title>
+  <meta name="description" content="Consigna de investigación y aplicación de funciones de conteo en hoja de cálculo: CONTAR, CONTARA, CONTAR.BLANCO, CONTAR.SI y CONTAR.SI.CONJUNTO. Taller de Computación – EET N° 1 Paraná." />
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <!-- <span class="brand-sigla" aria-hidden="true">EET</span> -->
+        <div class="brand-text">
+          <span class="brand-name">EET N° 1 – Paraná</span>
+          <span class="brand-sub">Taller de Computación</span>
+        </div>
+      </div>
+      <div class="header-docente">
+        <span class="docente-label" aria-label="Docente">Prof. Juan Ignacio Noguera</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro" title="Alternar modo oscuro/claro">
+          <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="label-dark">Modo oscuro</span>
+          <span class="label-light">Modo claro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main id="contenido-principal" class="main-wrapper">
+
+    <!-- HERO -->
+    <section class="activity-hero" aria-labelledby="titulo-actividad">
+      <div class="hero-meta">
+        <span class="activity-tag">Actividad 20</span>
+        <span class="activity-area" aria-label="Tipo de actividad">Investigación y aplicación</span>
+      </div>
+      <h1 id="titulo-actividad">Funciones de<br /><em>Conteo</em></h1>
+      <p class="hero-subtitle">Investigá, entendé y demostrá el uso de las funciones que permiten contar datos en una hoja de cálculo, cada una con su propio criterio y lógica.</p>
+      <div class="pill-row" role="list" aria-label="Funciones a investigar">
+        <span class="pill pill--orange" role="listitem">CONTAR()</span>
+        <span class="pill pill--orange" role="listitem">CONTARA()</span>
+        <span class="pill pill--orange" role="listitem">CONTAR.BLANCO()</span>
+        <span class="pill pill--orange" role="listitem">CONTAR.SI()</span>
+        <span class="pill pill--orange" role="listitem">CONTAR.SI.CONJUNTO()</span>
+        <span class="pill pill--slate"  role="listitem">Investigación</span>
+        <span class="pill pill--teal"   role="listitem">Ejemplo propio</span>
+      </div>
+    </section>
+
+    <!-- OBJETIVO -->
+    <section class="card card--objetivo" aria-labelledby="objetivo-titulo">
+      <div class="card-accent-bar" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="obj-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h2 id="objetivo-titulo">Objetivo de aprendizaje</h2>
+          <p>Comprender qué tipo de datos considera cada función de conteo, cuándo conviene usar una u otra, y ser capaz de diseñar ejemplos propios que demuestren su funcionamiento correcto en situaciones concretas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÍTULO DE LA PLANILLA -->
+    <section class="card card--titulo-planilla" aria-labelledby="titulo-planilla-h">
+      <h2 id="titulo-planilla-h">Título de la planilla</h2>
+      <p>La primera celda del archivo debe llevar el siguiente título exacto, con formato de encabezado destacado:</p>
+      <div class="titulo-display" role="note" aria-label="Título requerido para la planilla">
+        <span class="titulo-comillas" aria-hidden="true">"</span>
+        Investigación sobre funciones para contar
+        <span class="titulo-comillas" aria-hidden="true">"</span>
+      </div>
+    </section>
+
+    <!-- FUNCIONES A INVESTIGAR -->
+    <section class="card" aria-labelledby="funciones-titulo">
+      <h2 id="funciones-titulo">Funciones a investigar</h2>
+      <p>Para <strong>cada una</strong> de las cinco funciones tenés que desarrollar los mismos cinco puntos. El orden y la estructura deben repetirse para facilitar la lectura.</p>
+
+      <div class="fn-chips" role="list" aria-label="Lista de funciones">
+        <div class="fn-chip fn-chip--1" role="listitem">
+          <code>CONTAR()</code>
+          <span>Cuenta celdas con números</span>
+        </div>
+        <div class="fn-chip fn-chip--2" role="listitem">
+          <code>CONTARA()</code>
+          <span>Cuenta celdas no vacías</span>
+        </div>
+        <div class="fn-chip fn-chip--3" role="listitem">
+          <code>CONTAR.BLANCO()</code>
+          <span>Cuenta celdas vacías</span>
+        </div>
+        <div class="fn-chip fn-chip--4" role="listitem">
+          <code>CONTAR.SI()</code>
+          <span>Cuenta con una condición</span>
+        </div>
+        <div class="fn-chip fn-chip--5" role="listitem">
+          <code>CONTAR.SI.CONJUNTO()</code>
+          <span>Cuenta con múltiples condiciones</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOS 5 PUNTOS -->
+    <section class="card" aria-labelledby="puntos-titulo">
+      <h2 id="puntos-titulo">Los cinco puntos por función</h2>
+      <p>Este esquema se repite para las cinco funciones. Usá una hoja separada o una sección bien diferenciada para cada una.</p>
+
+      <!-- PUNTO 1 -->
+      <article class="step-card" aria-labelledby="p1">
+        <div class="step-number" aria-hidden="true">1</div>
+        <div class="step-content">
+          <h3 id="p1">Nombre de la función</h3>
+          <p>Escribí el nombre exacto de la función tal como se escribe en la hoja de cálculo, incluyendo los paréntesis.</p>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para tener en cuenta
+            </span>
+            <p>El nombre puede variar levemente según el software (Google Sheets, LibreOffice, Excel). Si el que usás tiene un nombre diferente, aclaralo.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- PUNTO 2 -->
+      <article class="step-card" aria-labelledby="p2">
+        <div class="step-number" aria-hidden="true">2</div>
+        <div class="step-content">
+          <h3 id="p2">Descripción</h3>
+          <p>Explicá con tus propias palabras respondiendo las tres preguntas:</p>
+          <ul class="task-list">
+            <li>¿Para qué sirve esta función?</li>
+            <li>¿Qué tipo de datos tiene en cuenta y cuáles ignora?</li>
+            <li>¿En qué situaciones reales la usarías?</li>
+          </ul>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>No copies la definición tal cual la encontrás en internet. Reformulala: si no podés explicarla con tus palabras, probablemente todavía no la entendiste del todo.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- PUNTO 3 -->
+      <article class="step-card" aria-labelledby="p3">
+        <div class="step-number" aria-hidden="true">3</div>
+        <div class="step-content">
+          <h3 id="p3">Sintaxis y parámetros</h3>
+          <p>Escribí la estructura completa de la función y explicá cada parte:</p>
+          <ul class="task-list">
+            <li>¿Cuántos parámetros tiene? ¿Cuáles son obligatorios y cuáles opcionales?</li>
+            <li>¿Qué tipo de dato espera cada parámetro: un rango, un número, un texto, una condición?</li>
+            <li>¿Qué devuelve si el rango está vacío o no hay coincidencias?</li>
+          </ul>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>Para <code>CONTAR.SI()</code> y <code>CONTAR.SI.CONJUNTO()</code>: ¿cómo se escribe un criterio que compare un número? ¿Y uno que busque un texto exacto? ¿Y uno con comodines?</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- PUNTO 4 -->
+      <article class="step-card" aria-labelledby="p4">
+        <div class="step-number" aria-hidden="true">4</div>
+        <div class="step-content">
+          <h3 id="p4">Ejemplo práctico <span class="badge-req">Obligatorio</span></h3>
+          <p>Diseñá una tabla de datos propia (no copies ejemplos de internet) y aplicá la función para resolver una situación concreta. El tema de la tabla es libre.</p>
+          <ul class="task-list">
+            <li>La tabla debe tener al menos <strong>6 filas de datos</strong> (sin encabezado).</li>
+            <li>La fórmula debe estar activa en la planilla, no solo escrita como texto.</li>
+            <li>Indicá claramente qué celda contiene la función y cuál es el resultado obtenido.</li>
+          </ul>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>Pensá en una tabla que tenga celdas vacías intencionalmente, valores numéricos y valores de texto mezclados. Eso va a permitirte mostrar mejor las diferencias entre las funciones.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- PUNTO 5 -->
+      <article class="step-card" aria-labelledby="p5">
+        <div class="step-number" aria-hidden="true">5</div>
+        <div class="step-content">
+          <h3 id="p5">Análisis del resultado</h3>
+          <p>Explicá brevemente por qué el número que devuelve la función es correcto. Contá cuántos ítems cumplen la condición y dónde están en tu tabla.</p>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>Este punto es para demostrar que entendés lo que pasó. No alcanza con decir "el resultado es 3". Explicá cuáles son esas 3 celdas y por qué las demás no se contaron.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ESTRUCTURA DEL ARCHIVO -->
+    <section class="card card--formato" aria-labelledby="estructura-titulo">
+      <h2 id="estructura-titulo">Estructura sugerida del archivo</h2>
+      <p>Organizá la planilla en hojas separadas para que sea fácil de leer y corregir:</p>
+      <div class="format-grid" role="list" aria-label="Hojas del archivo de entrega">
+        <div class="format-item" role="listitem">
+          <div class="format-tag">Hoja 1</div>
+          <strong>CONTAR()</strong>
+          <p>Los cinco puntos aplicados a esta función.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag">Hoja 2</div>
+          <strong>CONTARA()</strong>
+          <p>Los cinco puntos aplicados a esta función.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag">Hoja 3</div>
+          <strong>CONTAR.BLANCO()</strong>
+          <p>Los cinco puntos aplicados a esta función.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag">Hoja 4</div>
+          <strong>CONTAR.SI()</strong>
+          <p>Los cinco puntos aplicados a esta función.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag">Hoja 5</div>
+          <strong>CONTAR.SI.CONJUNTO()</strong>
+          <p>Los cinco puntos aplicados a esta función.</p>
+        </div>
+      </div>
+      <div class="reflect-box" role="note" aria-label="Nota sobre la presentación">
+        <span class="reflect-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+          Para tener en cuenta
+        </span>
+        <p>Nombrá cada hoja con el nombre exacto de la función. No ocultes ni bloquees las celdas donde están las fórmulas activas: deben estar visibles para la corrección.</p>
+      </div>
+    </section>
+
+    <!-- REQUISITOS GENERALES -->
+    <section class="card card--evaluacion" aria-labelledby="req-titulo">
+      <h2 id="req-titulo">Requisitos generales</h2>
+      <div class="criteria-grid" role="list" aria-label="Requisitos del trabajo">
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">01</div>
+          <div>
+            <strong>Redacción propia</strong>
+            <p>No copiar definiciones textuales. Las descripciones deben estar escritas con las propias palabras del estudiante.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">02</div>
+          <div>
+            <strong>Fórmulas activas</strong>
+            <p>Todos los ejemplos deben estar funcionando en la planilla, no solo escritos como texto.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">03</div>
+          <div>
+            <strong>Claridad y orden</strong>
+            <p>La información debe estar organizada de forma que cualquier persona pueda seguirla sin explicaciones adicionales.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">04</div>
+          <div>
+            <strong>Análisis incluido</strong>
+            <p>Cada ejemplo lleva su análisis del resultado, explicando por qué ese número es correcto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPCIONALES -->
+    <section class="card card--opcional" aria-labelledby="op-titulo">
+      <h2 id="op-titulo">Para profundizar <em class="badge-op">Opcional</em></h2>
+      <p>Si terminaste el trabajo principal y querés ir más lejos:</p>
+      <div class="module-grid" role="list" aria-label="Desafíos opcionales">
+
+        <article class="module-card module--calc" role="listitem" aria-labelledby="op-1">
+          <div class="module-header">
+            <div class="module-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="op-1">Comparar CONTAR y CONTARA</h3>
+          </div>
+          <p class="module-note" style="border:none; padding:0;">Usá la misma tabla de datos con ambas funciones y explicá por qué dan resultados diferentes. ¿En qué celdas difieren?</p>
+        </article>
+
+        <article class="module-card module--config" role="listitem" aria-labelledby="op-2">
+          <div class="module-header">
+            <div class="module-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="op-2">CONTAR.SI.CONJUNTO con dos condiciones</h3>
+          </div>
+          <p class="module-note" style="border:none; padding:0;">Diseñá un ejemplo donde la función cuente solo las filas que cumplan al menos dos condiciones simultáneas. Mostrá qué filas cumplen ambas y cuáles no.</p>
+        </article>
+
+        <article class="module-card module--extra" role="listitem" aria-labelledby="op-3">
+          <div class="module-header">
+            <div class="module-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="op-3">Situación real</h3>
+          </div>
+          <p class="module-note" style="border:none; padding:0;">Planteá un contexto real (asistencia, notas, stock, ventas) donde se usen al menos tres de estas funciones de forma significativa.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- RECORDATORIO WCAG + ENTREGA -->
+    <section class="card card--entrega" aria-labelledby="entrega-titulo">
+      <div class="entrega-deco" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="entrega-body">
+        <h2 id="entrega-titulo">Accesibilidad y entrega</h2>
+        <p>Al momento de configurar el formato de celdas, utilizá colores profesionales pero verificá el contraste según <strong>WCAG 2.1</strong>. Un verde oscuro sobre fondo blanco o un azul oscuro sobre fondo claro son opciones válidas; texto en gris claro sobre blanco no cumple los requisitos mínimos.</p>
+        <div class="entrega-box" role="note" aria-label="Nombre y ubicación de entrega del archivo">
+          <div class="entrega-label">Nombre del archivo</div>
+          <code class="entrega-filename">Actividad_20-Apellido</code>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span>EET N° 1 – Paraná</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>Taller de Computación</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>Prof. Juan Ignacio Noguera</span>
+    </div>
+    <p class="footer-wcag">Consigna diseñada siguiendo pautas de accesibilidad WCAG 2.1 AA</p>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn  = document.getElementById('theme-toggle');
+      var saved   = localStorage.getItem('tema');
+      var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark  = saved ? saved === 'dark' : sysDark;
+      function applyTheme(dark) {
+        if (dark) {
+          html.setAttribute('data-theme', 'dark');
+          btn.setAttribute('aria-label', 'Cambiar a modo claro');
+        } else {
+          html.setAttribute('data-theme', 'light');
+          btn.setAttribute('aria-label', 'Cambiar a modo oscuro');
+        }
+      }
+      applyTheme(isDark);
+      btn.addEventListener('click', function () {
+        var nowDark = html.getAttribute('data-theme') === 'dark';
+        applyTheme(!nowDark);
+        localStorage.setItem('tema', !nowDark ? 'dark' : 'light');
+      });
+    })();
+  </script>
+
+</body>
+</html>

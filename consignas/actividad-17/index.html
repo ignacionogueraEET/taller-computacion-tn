@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad 17 – Funciones de Búsqueda | EET N° 1 Paraná</title>
+  <meta name="description" content="Consigna de investigación sobre las funciones BUSCAR, BUSCARH y BUSCARV en hoja de cálculo. Taller de Computación – EET N° 1 Paraná." />
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a> -->
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <!-- <span class="brand-sigla" aria-hidden="true">EET</span> -->
+        <div class="brand-text">
+          <span class="brand-name">EET N° 1 – Paraná</span>
+          <span class="brand-sub">Taller de Computación</span>
+        </div>
+      </div>
+      <div class="header-docente">
+        <span class="docente-label" aria-label="Docente">Prof. Juan Ignacio Noguera</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo claro" title="Alternar modo oscuro/claro">
+          <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="label-dark">Modo oscuro</span>
+          <span class="label-light">Modo claro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main id="contenido-principal" class="main-wrapper">
+
+    <!-- HERO -->
+    <section class="activity-hero" aria-labelledby="titulo-actividad">
+      <div class="hero-meta">
+        <span class="activity-tag">Actividad 17</span>
+        <span class="activity-area" aria-label="Tipo de actividad">Investigación</span>
+      </div>
+      <h1 id="titulo-actividad">Funciones de<br /><em>Búsqueda</em></h1>
+      <p class="hero-subtitle">Investigá cómo funcionan las herramientas que permiten encontrar y recuperar datos dentro de una planilla, y demostrá su uso en un ejemplo propio.</p>
+      <div class="pill-row" role="list" aria-label="Funciones a investigar">
+        <span class="pill pill--orange" role="listitem">BUSCAR()</span>
+        <span class="pill pill--orange" role="listitem">BUSCARH()</span>
+        <span class="pill pill--orange" role="listitem">BUSCARV()</span>
+        <span class="pill pill--slate" role="listitem">Investigación</span>
+        <span class="pill pill--slate" role="listitem">Ejemplo propio</span>
+      </div>
+    </section>
+
+    <!-- OBJETIVO -->
+    <section class="card card--objetivo" aria-labelledby="objetivo-titulo">
+      <div class="card-accent-bar" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="obj-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h2 id="objetivo-titulo">Objetivo de aprendizaje</h2>
+          <p>Comprender el propósito y el funcionamiento de las funciones de búsqueda en hoja de cálculo, identificar en qué contextos se aplica cada una, y ser capaz de diseñar y resolver situaciones concretas utilizándolas correctamente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUENTES SUGERIDAS -->
+    <section class="card card--fuentes" aria-labelledby="fuentes-titulo">
+      <h2 id="fuentes-titulo">¿Dónde investigar?</h2>
+      <p>Podés recurrir a cualquiera de estas fuentes. No te limitás a una sola: combinalas y comparalas.</p>
+      <div class="fuentes-grid" role="list" aria-label="Fuentes de investigación sugeridas">
+        <div class="fuente-card" role="listitem">
+          <div class="fuente-icon fuente--apunte" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Apunte del taller</strong>
+          <p>El material entregado por el docente como primera referencia.</p>
+        </div>
+        <div class="fuente-card" role="listitem">
+          <div class="fuente-icon fuente--doc" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Documentación oficial</strong>
+          <p>Ayuda integrada del software (Google Sheets, LibreOffice Calc, Excel).</p>
+        </div>
+        <div class="fuente-card" role="listitem">
+          <div class="fuente-icon fuente--web" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Fuentes en Internet</strong>
+          <p>Sitios especializados, tutoriales o videos explicativos de fuentes confiables.</p>
+        </div>
+      </div>
+      <div class="reflect-box" role="note" aria-label="Consejo sobre fuentes">
+        <span class="reflect-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+          Para tener en cuenta
+        </span>
+        <p>No todas las fuentes explican lo mismo ni con el mismo nivel de detalle. Si encontrás información que se contradice entre sí, analizá cuál es más precisa y por qué. Eso también es parte del trabajo.</p>
+      </div>
+    </section>
+
+    <!-- TAREAS -->
+    <section class="card" aria-labelledby="tareas-titulo">
+      <h2 id="tareas-titulo">¿Qué tenés que hacer?</h2>
+      <p>Para <strong>cada una</strong> de las tres funciones (<code>BUSCAR</code>, <code>BUSCARH</code> y <code>BUSCARV</code>) desarrollá los siguientes puntos:</p>
+
+      <!-- TAREA 1 -->
+      <article class="step-card" aria-labelledby="t1">
+        <div class="step-number" aria-hidden="true">1</div>
+        <div class="step-content">
+          <h3 id="t1">Descripción de la función</h3>
+          <p>Explicá con tus propias palabras para qué sirve la función. Respondé:</p>
+          <ul class="task-list">
+            <li>¿Qué problema resuelve?</li>
+            <li>¿En qué tipo de situaciones o planillas se usaría?</li>
+
+            
+          </ul>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>No copies y pegues la definición tal cual la encontrás. Reformulala en palabras que vos entiendas y que un compañero que no sabe del tema pueda comprender.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- TAREA 2 -->
+      <article class="step-card" aria-labelledby="t2">
+        <div class="step-number" aria-hidden="true">2</div>
+        <div class="step-content">
+          <h3 id="t2">Sintaxis y parámetros</h3>
+          <p>Indicá la estructura completa de la función y explicá qué representa cada parte:</p>
+          <ul class="task-list">
+            <li>¿Cuántos argumentos tiene? ¿Cuáles son obligatorios y cuáles opcionales?</li>
+            <li>¿Qué tipo de dato espera cada argumento (número, texto, rango, etc.)?</li>
+            <li>¿Qué devuelve la función si encuentra el valor buscado? ¿Y si no lo encuentra?</li>
+          </ul>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>Intentá encontrar la diferencia entre una búsqueda exacta y una aproximada. ¿En qué parámetro se define eso? ¿Qué pasa si los datos no están ordenados?</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- TAREA 3 -->
+      <article class="step-card" aria-labelledby="t3">
+        <div class="step-number" aria-hidden="true">3</div>
+        <div class="step-content">
+          <h3 id="t3">Ejemplo práctico propio</h3>
+          <p>Diseñá una tabla de datos propia (no copies ejemplos de internet) y aplicá la función para resolver una situación concreta. El tema de la tabla es libre: podés usar productos, notas de estudiantes, películas, precios, equipos deportivos, o cualquier otro que elijas.</p>
+          <ul class="task-list">
+            <li>La tabla debe tener al menos <strong>5 filas de datos</strong> (sin contar el encabezado).</li>
+            <li>La búsqueda debe resolver un problema real: consultar el precio de un artículo, encontrar la nota de un alumno, etc.</li>
+            <li>Indicá qué celda contiene el valor buscado y qué resultado devuelve la función.</li>
+          </ul>
+          <div class="reflect-box reflect-box--teal" role="note" aria-label="Desafío adicional">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Desafío adicional (opcional)
+            </span>
+            <p>¿Podés usar las tres funciones sobre la misma tabla de datos? ¿Qué diferencias notás al aplicar cada una? ¿Cuál resulta más conveniente según la estructura de esa tabla?</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FORMATO DE PRESENTACIÓN -->
+    <section class="card card--formato" aria-labelledby="formato-titulo">
+      <h2 id="formato-titulo">Formato de presentación</h2>
+      <p>El trabajo se entrega como <strong>archivo de hoja de cálculo</strong>. Organizá el contenido de la siguiente manera:</p>
+      <div class="format-grid" role="list" aria-label="Organización del archivo de entrega">
+        <div class="format-item" role="listitem">
+          <div class="format-tag" aria-label="Hoja 1">Hoja 1</div>
+          <strong>Investigación</strong>
+          <p>Descripción y sintaxis de las tres funciones, redactadas con tus palabras.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag" aria-label="Hoja 2">Hoja 2</div>
+          <strong>BUSCAR — Ejemplo</strong>
+          <p>Tabla de datos y aplicación de la función <code>BUSCAR()</code>.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag" aria-label="Hoja 3">Hoja 3</div>
+          <strong>BUSCARH — Ejemplo</strong>
+          <p>Tabla de datos y aplicación de la función <code>BUSCARH()</code>.</p>
+        </div>
+        <div class="format-item" role="listitem">
+          <div class="format-tag" aria-label="Hoja 4">Hoja 4</div>
+          <strong>BUSCARV — Ejemplo</strong>
+          <p>Tabla de datos y aplicación de la función <code>BUSCARV()</code>.</p>
+        </div>
+      </div>
+      <div class="reflect-box" role="note" aria-label="Nota sobre la presentación">
+        <span class="reflect-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+          Para tener en cuenta
+        </span>
+        <p>Nombrá cada hoja de forma clara. Las celdas que contienen las fórmulas deben ser visibles: no ocultes columnas ni filas donde estén las funciones aplicadas.</p>
+        <p>También puedes utilizar la misma tabla para los tres ejemplos.</p>
+      </div>
+    </section>
+
+    <!-- CRITERIOS DE EVALUACIÓN -->
+    <section class="card card--evaluacion" aria-labelledby="eval-titulo">
+      <h2 id="eval-titulo">Criterios de evaluación</h2>
+      <div class="criteria-grid" role="list" aria-label="Criterios de evaluación">
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">01</div>
+          <div>
+            <strong>Comprensión de las funciones</strong>
+            <p>Las descripciones demuestran que entendés qué hace cada función y cuándo usarla.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">02</div>
+          <div>
+            <strong>Sintaxis correcta</strong>
+            <p>Los parámetros están bien identificados y explicados, incluyendo los opcionales.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">03</div>
+          <div>
+            <strong>Ejemplo funcional y propio</strong>
+            <p>La tabla fue diseñada por vos, la función resuelve una situación concreta y los resultados son correctos.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">04</div>
+          <div>
+            <strong>Organización y presentación</strong>
+            <p>El archivo está bien estructurado, con hojas identificadas y redacción clara.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECORDATORIO WCAG + ENTREGA -->
+    <section class="card card--entrega" aria-labelledby="entrega-titulo">
+      <div class="entrega-deco" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="entrega-body">
+        <h2 id="entrega-titulo">Accesibilidad y entrega</h2>
+        <p>Al momento de configurar el formato de celdas, utilizá colores profesionales pero verificá el contraste según <strong>WCAG 2.1</strong>. Un verde oscuro sobre fondo blanco o un rojo oscuro sobre fondo claro son opciones válidas; un amarillo claro sobre blanco no cumple los requisitos mínimos.</p>
+        <div class="entrega-box" role="note" aria-label="Nombre y ubicación de entrega del archivo">
+          <div class="entrega-label">Nombre del archivo y carpeta de entrega</div>
+          <code class="entrega-filename">Actividad_17-Apellido</code>         
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span>EET N° 1 – Paraná</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>Taller de Computación</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>Prof. Juan Ignacio Noguera</span>
+    </div>
+    <p class="footer-wcag">Consigna diseñada siguiendo pautas de accesibilidad WCAG 2.1 AA</p>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn  = document.getElementById('theme-toggle');
+
+      var saved = localStorage.getItem('tema');
+      var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = saved ? saved === 'dark' : sysDark;
+
+      function applyTheme(dark) {
+        if (dark) {
+          html.setAttribute('data-theme', 'dark');
+          btn.setAttribute('aria-label', 'Cambiar a modo claro');
+        } else {
+          html.setAttribute('data-theme', 'light');
+          btn.setAttribute('aria-label', 'Cambiar a modo oscuro');
+        }
+      }
+
+      applyTheme(isDark);
+
+      btn.addEventListener('click', function () {
+        var nowDark = html.getAttribute('data-theme') === 'dark';
+        applyTheme(!nowDark);
+        localStorage.setItem('tema', !nowDark ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</body>
+</html>

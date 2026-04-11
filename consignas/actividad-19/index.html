@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad 19 – Cálculo de Litros de Pintura | EET N° 1 Paraná</title>
+  <meta name="description" content="Consigna para diseñar una planilla de cálculo que estime la cantidad de pintura necesaria para cubrir una superficie. Taller de Computación – EET N° 1 Paraná." />
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <!-- <span class="brand-sigla" aria-hidden="true">EET</span> -->
+        <div class="brand-text">
+          <span class="brand-name">EET N° 1 – Paraná</span>
+          <span class="brand-sub">Taller de Computación</span>
+        </div>
+      </div>
+      <div class="header-docente">
+        <span class="docente-label" aria-label="Docente">Prof. Juan Ignacio Noguera</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro" title="Alternar modo oscuro/claro">
+          <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="label-dark">Modo oscuro</span>
+          <span class="label-light">Modo claro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main id="contenido-principal" class="main-wrapper">
+
+    <!-- HERO -->
+    <section class="activity-hero" aria-labelledby="titulo-actividad">
+      <div class="hero-meta">
+        <span class="activity-tag">Actividad 19</span>
+        <span class="activity-area" aria-label="Área temática">Planilla de Cálculo</span>
+      </div>
+      <h1 id="titulo-actividad">Cálculo de Litros<br /><em>de Pintura</em></h1>
+      <p class="hero-subtitle">Diseñá una planilla que estime automáticamente la cantidad de pintura necesaria para cubrir una superficie, a partir de unos pocos datos ingresados por el usuario.</p>
+      <div class="pill-row" role="list" aria-label="Conceptos involucrados">
+        <span class="pill pill--orange" role="listitem">Fórmulas</span>
+        <span class="pill pill--slate"  role="listitem">Valores por defecto</span>
+        <span class="pill pill--slate"  role="listitem">Formato y presentación</span>
+        <span class="pill pill--teal"   role="listitem">Validación de datos</span>
+      </div>
+    </section>
+
+    <!-- OBJETIVO -->
+    <section class="card card--objetivo" aria-labelledby="objetivo-titulo">
+      <div class="card-accent-bar" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="obj-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 13l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h2 id="objetivo-titulo">Objetivo de aprendizaje</h2>
+          <p>Construir una planilla de cálculo funcional y bien presentada que resuelva un problema concreto de la vida cotidiana: estimar cuánta pintura se necesita para una obra. La planilla debe usar fórmulas, organizar los datos con claridad y actualizar todos los resultados automáticamente ante cualquier cambio en los valores ingresados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATOS DE ENTRADA -->
+    <section class="card" aria-labelledby="datos-titulo">
+      <h2 id="datos-titulo">Datos que se ingresan</h2>
+      <p>La planilla debe tener celdas donde el usuario pueda escribir los siguientes valores:</p>
+
+      <div class="data-table-wrapper" role="region" aria-label="Tabla de datos de entrada">
+        <table class="data-table">
+          <caption class="sr-only">Datos de entrada de la planilla</caption>
+          <thead>
+            <tr>
+              <th scope="col">Dato</th>
+              <th scope="col">Unidad</th>
+              <th scope="col">Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Superficie a pintar</td>
+              <td><span class="unit-badge">m²</span></td>
+              <td>La superficie total de la pared o techo.</td>
+            </tr>
+            <tr>
+              <td>Cantidad de manos de pintura</td>
+              <td><span class="unit-badge">—</span></td>
+              <td>Número entero (por ejemplo: 1, 2 o 3).</td>
+            </tr>
+            <tr>
+              <td>Rendimiento de la pintura</td>
+              <td><span class="unit-badge">m²/litro</span></td>
+              <td>Valor por defecto: <strong>8 m² por litro</strong>. Debe poder modificarse.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="reflect-box" role="note" aria-label="Orientación sobre el rendimiento">
+        <span class="reflect-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+          Para reflexionar
+        </span>
+        <p>¿Cómo harías para que el rendimiento tenga un valor inicial de 8 pero el usuario pueda cambiarlo sin afectar las fórmulas? ¿En qué parte de la planilla lo ubicarías?</p>
+      </div>
+    </section>
+
+    <!-- CÁLCULOS REQUERIDOS -->
+    <section class="card" aria-labelledby="calculos-titulo">
+      <h2 id="calculos-titulo">Cálculos que debe hacer la planilla</h2>
+      <p>A partir de los datos ingresados, la planilla tiene que calcular automáticamente los siguientes resultados:</p>
+
+      <div class="calc-grid" role="list" aria-label="Cálculos requeridos">
+
+        <article class="calc-card" role="listitem" aria-labelledby="calc-1">
+          <div class="calc-number" aria-hidden="true">1</div>
+          <div class="calc-body">
+            <h3 id="calc-1">Superficie total a cubrir</h3>
+            <p>Tener en cuenta que si se dan varias manos, la misma superficie se pinta más de una vez.</p>
+            <div class="formula-hint" role="note" aria-label="Pista de razonamiento">
+              <span class="formula-hint-label" aria-hidden="true">Pensá en…</span>
+              Superficie × cantidad de manos
+            </div>
+          </div>
+        </article>
+
+        <article class="calc-card" role="listitem" aria-labelledby="calc-2">
+          <div class="calc-number" aria-hidden="true">2</div>
+          <div class="calc-body">
+            <h3 id="calc-2">Litros de pintura necesarios</h3>
+            <p>¿Cuántos litros hacen falta para cubrir toda la superficie total, dado el rendimiento del producto?</p>
+            <div class="formula-hint" role="note" aria-label="Pista de razonamiento">
+              <span class="formula-hint-label" aria-hidden="true">Pensá en…</span>
+              Superficie total ÷ rendimiento
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- EJEMPLO -->
+      <div class="example-block" role="note" aria-label="Ejemplo de cálculo esperado">
+        <div class="example-header">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ejemplo esperado
+        </div>
+        <div class="example-body">
+          <div class="example-inputs">
+            <div class="ex-item">
+              <span class="ex-label">Superficie</span>
+              <span class="ex-val">20 m²</span>
+            </div>
+            <div class="ex-sep" aria-hidden="true">+</div>
+            <div class="ex-item">
+              <span class="ex-label">Manos</span>
+              <span class="ex-val">2</span>
+            </div>
+            <div class="ex-sep" aria-hidden="true">+</div>
+            <div class="ex-item">
+              <span class="ex-label">Rendimiento</span>
+              <span class="ex-val">8 m²/L</span>
+            </div>
+          </div>
+          <div class="example-arrow" aria-hidden="true">→</div>
+          <div class="example-results">
+            <div class="ex-result">
+              <span class="ex-label">Superficie total</span>
+              <span class="ex-val ex-val--result">40 m²</span>
+            </div>
+            <div class="ex-result">
+              <span class="ex-label">Litros necesarios</span>
+              <span class="ex-val ex-val--result">5 litros</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- REQUISITOS -->
+    <section class="card" aria-labelledby="req-titulo">
+      <h2 id="req-titulo">Requisitos de la planilla</h2>
+      <p>Además de que los cálculos sean correctos, la planilla debe cumplir los siguientes criterios:</p>
+
+      <article class="step-card" aria-labelledby="req-1">
+        <div class="step-number" aria-hidden="true">1</div>
+        <div class="step-content">
+          <h3 id="req-1">Usá fórmulas, no cálculos manuales</h3>
+          <p>Los resultados deben obtenerse a partir de referencias a otras celdas. Si el usuario cambia un dato de entrada, todos los resultados deben actualizarse solos.</p>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>¿Qué tipo de referencia conviene usar para el rendimiento, que vive en una celda aparte? ¿Qué pasa si la arrastrás hacia abajo sin fijarla?</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step-card" aria-labelledby="req-2">
+        <div class="step-number" aria-hidden="true">2</div>
+        <div class="step-content">
+          <h3 id="req-2">Organizá la información con claridad</h3>
+          <p>Cada celda debe tener una etiqueta que indique qué dato contiene, con sus unidades cuando corresponda. Los títulos de sección deben distinguirse visualmente de los datos.</p>
+          <div class="reflect-box" role="note" aria-label="Orientación">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>¿Cómo separás visualmente la sección de "datos que el usuario ingresa" de la sección de "resultados calculados"? ¿Dónde ubicarías el parámetro de rendimiento?</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="step-card" aria-labelledby="req-3">
+        <div class="step-number" aria-hidden="true">3</div>
+        <div class="step-content">
+          <h3 id="req-3">Aplicá formato para mejorar la legibilidad</h3>
+          <p>La planilla debe verse profesional y ser fácil de leer. Usá al menos alguno de estos recursos: bordes, colores de fondo, alineación, negrita en encabezados, formato de número con unidades.</p>
+          <div class="reflect-box" role="note" aria-label="Recordatorio WCAG">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              WCAG 2.1
+            </span>
+            <p>Al elegir colores, verificá que el contraste entre texto y fondo sea suficiente. Un azul oscuro sobre blanco o un gris oscuro sobre amarillo claro son válidos; texto gris claro sobre blanco, no.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- OPCIONALES -->
+    <section class="card card--opcional" aria-labelledby="op-titulo">
+      <h2 id="op-titulo">Para profundizar <em class="badge-op">Opcional</em></h2>
+      <p>Si terminaste los requisitos y querés ir más lejos, podés incorporar alguna de estas funcionalidades:</p>
+
+      <div class="module-grid" role="list" aria-label="Funcionalidades opcionales">
+
+        <article class="module-card module--calc" role="listitem" aria-labelledby="op-1">
+          <div class="module-header">
+            <div class="module-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h8M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 id="op-1">Redondear los litros</h3>
+          </div>
+          <p class="module-note" style="border:none; padding:0;">La pintura se vende en envases enteros. ¿Cómo mostrás la cantidad de litros redondeada hacia arriba para no quedarse corto?</p>
+        </article>
+
+        <article class="module-card module--config" role="listitem" aria-labelledby="op-2">
+          <div class="module-header">
+            <div class="module-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="op-2">Costo total</h3>
+          </div>
+          <p class="module-note" style="border:none; padding:0;">Agregá una celda donde se ingrese el precio por litro y calculá automáticamente el costo total de la pintura.</p>
+        </article>
+
+        <article class="module-card module--extra" role="listitem" aria-labelledby="op-3">
+          <div class="module-header">
+            <div class="module-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="op-3">Validación de datos</h3>
+          </div>
+          <p class="module-note" style="border:none; padding:0;">Impedí que se ingresen valores negativos o cero en los datos de entrada. ¿Qué le mostrás al usuario si lo intenta?</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CRITERIOS DE EVALUACIÓN -->
+    <section class="card card--evaluacion" aria-labelledby="eval-titulo">
+      <h2 id="eval-titulo">Criterios de evaluación</h2>
+      <div class="criteria-grid" role="list" aria-label="Criterios de evaluación">
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">01</div>
+          <div>
+            <strong>Cálculos correctos</strong>
+            <p>La planilla devuelve los resultados esperados para cualquier combinación de datos ingresados.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">02</div>
+          <div>
+            <strong>Uso de fórmulas</strong>
+            <p>Los resultados se obtienen por referencia a celdas, sin valores escritos a mano.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">03</div>
+          <div>
+            <strong>Claridad y organización</strong>
+            <p>Las etiquetas, unidades y secciones permiten entender la planilla sin explicaciones adicionales.</p>
+          </div>
+        </div>
+        <div class="crit-item" role="listitem">
+          <div class="crit-num" aria-hidden="true">04</div>
+          <div>
+            <strong>Formato aplicado</strong>
+            <p>La planilla es visualmente legible, con colores de contraste adecuado y estructura clara.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECORDATORIO WCAG + ENTREGA -->
+    <section class="card card--entrega" aria-labelledby="entrega-titulo">
+      <div class="entrega-deco" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="entrega-body">
+        <h2 id="entrega-titulo">Accesibilidad y entrega</h2>
+        <p>Al momento de configurar el formato de celdas, utilizá colores profesionales pero verificá el contraste según <strong>WCAG 2.1</strong>. Un verde oscuro sobre fondo blanco o un azul oscuro sobre fondo claro son opciones válidas; texto en gris claro sobre blanco no cumple los requisitos mínimos.</p>
+        <div class="entrega-box" role="note" aria-label="Nombre y ubicación de entrega del archivo">
+          <div class="entrega-label">Nombre del archivo y carpeta de entrega</div>
+          <code class="entrega-filename">Actividad_19-Apellido</code>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span>EET N° 1 – Paraná</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>Taller de Computación</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>Prof. Juan Ignacio Noguera</span>
+    </div>
+    <p class="footer-wcag">Consigna diseñada siguiendo pautas de accesibilidad WCAG 2.1 AA</p>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn  = document.getElementById('theme-toggle');
+
+      var saved   = localStorage.getItem('tema');
+      var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark  = saved ? saved === 'dark' : sysDark;
+
+      function applyTheme(dark) {
+        if (dark) {
+          html.setAttribute('data-theme', 'dark');
+          btn.setAttribute('aria-label', 'Cambiar a modo claro');
+        } else {
+          html.setAttribute('data-theme', 'light');
+          btn.setAttribute('aria-label', 'Cambiar a modo oscuro');
+        }
+      }
+
+      applyTheme(isDark);
+
+      btn.addEventListener('click', function () {
+        var nowDark = html.getAttribute('data-theme') === 'dark';
+        applyTheme(!nowDark);
+        localStorage.setItem('tema', !nowDark ? 'dark' : 'light');
+      });
+    })();
+  </script>
+
+</body>
+</html>
