@@ -1,0 +1,710 @@
+/* =============================================================
+   estilos.css – Taller de Computación | EET N° 1 Paraná
+   Profesor: Juan Ignacio Noguera
+   Estética: editorial técnica | WCAG 2.1 AA | dark mode
+   ============================================================= */
+
+/* ── 1. TOKENS DE DISEÑO ──────────────────────────────────── */
+:root {
+  /* Tipografía */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  /* Escala tipográfica */
+  --text-xs:   0.72rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.9rem;
+  --text-3xl:  2.6rem;
+
+  /* Espaciado */
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;  --sp-3: 0.75rem;
+  --sp-4: 1rem;     --sp-5: 1.25rem; --sp-6: 1.5rem;
+  --sp-8: 2rem;     --sp-10: 2.5rem; --sp-12: 3rem;
+  --sp-16: 4rem;
+
+  /* Radios */
+  --r-sm:   5px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-xl:   22px;
+  --r-pill: 999px;
+
+  /* Paleta modo claro */
+  --c-bg:            #f4f2ed;
+  --c-surface:       #ffffff;
+  --c-surface-2:     #f0ede6;
+  --c-surface-3:     #e8e4db;
+  --c-border:        #ddd9d0;
+  --c-border-strong: #b8b3a8;
+
+  --c-text-1: #1c1a17;
+  --c-text-2: #504d46;
+  --c-text-3: #8a8680;
+
+  /* Naranja/ámbar – acento institucional */
+  --c-orange:        #c45c14;
+  --c-orange-light:  #fdf0e6;
+  --c-orange-border: #f0a86e;
+  --c-orange-text:   #7a3508;
+
+  /* Teal – acciones / confirmaciones */
+  --c-teal:          #0e7c6e;
+  --c-teal-light:    #e2f4f1;
+  --c-teal-border:   #6bcaba;
+  --c-teal-text:     #074f47;
+
+  /* Slate – neutro destacado */
+  --c-slate:         #3d5a73;
+  --c-slate-light:   #e8eef4;
+  --c-slate-border:  #93b2cc;
+  --c-slate-text:    #1e3347;
+
+  /* Éxito / advertencia */
+  --c-green-bg:     #eaf3de;
+  --c-green-border: #7db83a;
+  --c-green-text:   #27500a;
+
+  /* Transición base */
+  --tr: 200ms ease;
+}
+
+/* Modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg:            #161410;
+    --c-surface:       #201e1a;
+    --c-surface-2:     #272420;
+    --c-surface-3:     #302d28;
+    --c-border:        #3a3630;
+    --c-border-strong: #56514a;
+
+    --c-text-1: #f0ece4;
+    --c-text-2: #b0aa9f;
+    --c-text-3: #706a62;
+
+    --c-orange:        #e87a3a;
+    --c-orange-light:  #2e1e0e;
+    --c-orange-border: #8a4010;
+    --c-orange-text:   #f5b888;
+
+    --c-teal:          #34c4b0;
+    --c-teal-light:    #07201d;
+    --c-teal-border:   #0a5e54;
+    --c-teal-text:     #80e0d4;
+
+    --c-slate:         #7aaac8;
+    --c-slate-light:   #0e1e2a;
+    --c-slate-border:  #1e3f58;
+    --c-slate-text:    #aecfe6;
+
+    --c-green-bg:      #0f2004;
+    --c-green-border:  #2d6010;
+    --c-green-text:    #98d060;
+  }
+}
+
+/* ── 2. RESET ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--c-text-1);
+  background: var(--c-bg);
+  min-height: 100vh;
+}
+
+/* ── 3. ACCESIBILIDAD GLOBAL ──────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--sp-4);
+  padding: var(--sp-2) var(--sp-5);
+  background: var(--c-orange);
+  color: #fff;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  z-index: 9999;
+  transition: top var(--tr);
+}
+.skip-link:focus { top: var(--sp-4); }
+
+:focus-visible {
+  outline: 2.5px solid var(--c-orange);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ── 4. TIPOGRAFÍA ────────────────────────────────────────── */
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--c-text-1);
+}
+h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--c-text-2);
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--c-text-1);
+  margin-bottom: var(--sp-4);
+}
+h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--c-text-1);
+  margin-bottom: var(--sp-2);
+}
+p { margin-bottom: var(--sp-4); }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--c-orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--tr);
+}
+a:hover { color: var(--c-orange-text); }
+
+strong { font-weight: 500; }
+
+/* ── 5. LAYOUT ────────────────────────────────────────────── */
+.main-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--sp-8) var(--sp-6) var(--sp-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ── 6. ENCABEZADO ────────────────────────────────────────── */
+.site-header {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  padding: var(--sp-4) var(--sp-6);
+}
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.brand-sigla {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  background: var(--c-orange);
+  color: #fff;
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--r-sm);
+  line-height: 1;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--c-text-1);
+  line-height: 1.2;
+}
+.brand-sub {
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+  font-family: var(--font-mono);
+}
+.docente-label {
+  font-size: var(--text-sm);
+  color: var(--c-text-2);
+  font-family: var(--font-mono);
+}
+
+/* ── 7. BREADCRUMB ────────────────────────────────────────── */
+.breadcrumb-nav {
+  background: var(--c-surface-2);
+  border-bottom: 1px solid var(--c-border);
+  padding: var(--sp-2) var(--sp-6);
+}
+.breadcrumb-inner { max-width: 900px; margin: 0 auto; }
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+.breadcrumb li {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--c-text-3);
+}
+.breadcrumb li a {
+  color: var(--c-orange);
+  text-decoration: none;
+  transition: color var(--tr);
+}
+.breadcrumb li a:hover { color: var(--c-orange-text); text-decoration: underline; }
+.breadcrumb li[aria-current="page"] { color: var(--c-text-2); }
+.breadcrumb-sep { user-select: none; color: var(--c-border-strong); }
+
+/* ── 8. HERO ──────────────────────────────────────────────── */
+.activity-hero {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-10) var(--sp-10);
+  position: relative;
+  overflow: hidden;
+}
+.activity-hero::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 40px solid var(--c-orange-light);
+  pointer-events: none;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  flex-wrap: wrap;
+}
+.activity-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  background: var(--c-orange);
+  color: #fff;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-pill);
+}
+.activity-area {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+  border: 1px solid var(--c-border);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-pill);
+  background: var(--c-surface-2);
+}
+.activity-hero h1 { margin-bottom: var(--sp-4); }
+.hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--c-text-2);
+  max-width: 620px;
+  margin-bottom: var(--sp-6);
+}
+.pill-row {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+.pill {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  line-height: 1.6;
+}
+.pill--orange { background: var(--c-orange-light); color: var(--c-orange-text); border-color: var(--c-orange-border); }
+.pill--slate  { background: var(--c-slate-light);  color: var(--c-slate-text);  border-color: var(--c-slate-border); }
+.pill--teal   { background: var(--c-teal-light);   color: var(--c-teal-text);   border-color: var(--c-teal-border); }
+
+/* ── 9. TARJETA BASE ──────────────────────────────────────── */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  transition: border-color var(--tr), box-shadow var(--tr);
+}
+.card:hover {
+  border-color: var(--c-border-strong);
+  box-shadow: 0 3px 18px rgba(0,0,0,0.05);
+}
+
+/* Tarjeta objetivo */
+.card--objetivo {
+  border-left: 4px solid var(--c-orange);
+  padding-left: calc(var(--sp-8) - 3px);
+}
+.card-accent-bar { display: none; }
+.card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-5);
+}
+.obj-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  background: var(--c-orange-light);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-orange);
+  margin-top: 3px;
+}
+.card--objetivo h2 { margin-bottom: var(--sp-2); }
+
+/* Tarjeta evaluación */
+.card--evaluacion { border-top: 3px solid var(--c-teal); }
+
+/* Tarjeta entrega */
+.card--entrega {
+  background: var(--c-teal-light);
+  border-color: var(--c-teal-border);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-5);
+}
+.card--entrega:hover { border-color: var(--c-teal); }
+.entrega-deco {
+  flex-shrink: 0;
+  color: var(--c-teal);
+  margin-top: 4px;
+}
+.entrega-body { flex: 1; }
+.card--entrega h2 { color: var(--c-teal-text); margin-bottom: var(--sp-2); }
+.entrega-body p { color: var(--c-teal-text); }
+
+.entrega-box {
+  margin-top: var(--sp-5);
+  background: var(--c-surface);
+  border: 1px solid var(--c-teal-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+}
+.entrega-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-2);
+}
+.entrega-filename {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--c-teal-text);
+  margin-bottom: var(--sp-2);
+  background: transparent;
+}
+.entrega-desc {
+  font-size: var(--text-sm);
+  color: var(--c-text-2);
+  margin-bottom: 0;
+}
+
+/* ── 10. GRILLA DE MÓDULOS ────────────────────────────────── */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-5);
+}
+.module-card {
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface-2);
+  transition: transform var(--tr), border-color var(--tr);
+}
+.module-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-border-strong);
+}
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.module-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.module--data   .module-icon { background: var(--c-slate-light);  color: var(--c-slate);  }
+.module--calc   .module-icon { background: var(--c-orange-light); color: var(--c-orange); }
+.module--config .module-icon { background: var(--c-surface-3);    color: var(--c-text-2); }
+.module--extra  .module-icon { background: var(--c-teal-light);   color: var(--c-teal);   }
+
+.module--extra { border-style: dashed; }
+
+.module-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.module-list li {
+  font-size: var(--text-sm);
+  color: var(--c-text-2);
+  padding-left: var(--sp-4);
+  position: relative;
+  line-height: 1.5;
+}
+.module-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--c-border-strong);
+  font-size: var(--text-xs);
+  top: 3px;
+}
+.module-list li strong { color: var(--c-text-1); }
+.module-note {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--c-text-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--c-border);
+  line-height: 1.5;
+}
+
+/* ── 11. PASOS / TAREAS ───────────────────────────────────── */
+.step-card {
+  display: flex;
+  gap: var(--sp-5);
+  padding: var(--sp-6) 0;
+  border-bottom: 1px solid var(--c-border);
+  align-items: flex-start;
+}
+.step-card:first-of-type { padding-top: 0; }
+.step-card:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+.step-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--c-surface-3);
+  border: 1.5px solid var(--c-border-strong);
+  color: var(--c-text-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-top: 2px;
+  transition: background var(--tr), color var(--tr), border-color var(--tr);
+}
+.step-card:hover .step-number {
+  background: var(--c-orange-light);
+  border-color: var(--c-orange-border);
+  color: var(--c-orange);
+}
+.step-content { flex: 1; }
+.step-content h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.badge-op {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-style: normal;
+  font-weight: 500;
+  background: var(--c-teal-light);
+  color: var(--c-teal-text);
+  border: 1px solid var(--c-teal-border);
+  padding: 1px var(--sp-2);
+  border-radius: var(--r-pill);
+}
+
+/* ── 12. CAJAS DE REFLEXIÓN ───────────────────────────────── */
+.reflect-box {
+  margin-top: var(--sp-4);
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+  font-size: var(--text-sm);
+  color: var(--c-text-2);
+  line-height: 1.6;
+}
+.reflect-box p { margin-bottom: 0; color: var(--c-text-2); }
+
+.reflect-box--teal {
+  background: var(--c-teal-light);
+  border-color: var(--c-teal-border);
+}
+.reflect-box--teal p { color: var(--c-teal-text); }
+.reflect-box--teal .reflect-label { color: var(--c-teal); }
+
+.reflect-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-2);
+}
+
+/* ── 13. CRITERIOS ────────────────────────────────────────── */
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+.crit-item {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+  transition: border-color var(--tr);
+}
+.crit-item:hover { border-color: var(--c-teal-border); }
+
+.crit-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--c-border-strong);
+  line-height: 1;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.crit-item strong {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: var(--sp-1);
+  color: var(--c-text-1);
+}
+.crit-item p {
+  font-size: var(--text-sm);
+  color: var(--c-text-2);
+  margin-bottom: 0;
+}
+
+/* ── 14. PIE DE PÁGINA ────────────────────────────────────── */
+.site-footer {
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  padding: var(--sp-6) var(--sp-8);
+  text-align: center;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  color: var(--c-text-2);
+  margin-bottom: var(--sp-2);
+}
+.footer-sep { color: var(--c-border-strong); }
+.footer-wcag {
+  font-size: var(--text-xs);
+  color: var(--c-text-3);
+  font-family: var(--font-mono);
+  margin-bottom: 0;
+}
+
+/* ── 15. RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 680px) {
+  .main-wrapper  { padding: var(--sp-5) var(--sp-4) var(--sp-12); }
+  .activity-hero { padding: var(--sp-8) var(--sp-5); }
+  .activity-hero::after { display: none; }
+  .card          { padding: var(--sp-6) var(--sp-5); }
+  .card-inner    { flex-direction: column; gap: var(--sp-3); }
+  .card--entrega { flex-direction: column; gap: var(--sp-3); }
+  .step-card     { flex-direction: column; gap: var(--sp-3); }
+  .step-number   { width: 34px; height: 34px; }
+  h1             { font-size: var(--text-2xl); }
+  .module-grid   { grid-template-columns: 1fr; }
+  .criteria-grid { grid-template-columns: 1fr; }
+  .header-inner  { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 400px) {
+  .module-grid   { grid-template-columns: 1fr; }
+}
+
+/* ── 16. IMPRESIÓN ────────────────────────────────────────── */
+@media print {
+  body { background: #fff; color: #000; }
+  .skip-link, .breadcrumb-nav { display: none; }
+  .card { border-color: #ccc !important; box-shadow: none !important; }
+  .card:hover { box-shadow: none; }
+  .activity-hero::after { display: none; }
+  .site-header { border-color: #ccc; }
+  a::after { content: " (" attr(href) ")"; font-size: 0.78em; color: #555; }
+  .entrega-filename { font-size: var(--text-lg); }
+}
