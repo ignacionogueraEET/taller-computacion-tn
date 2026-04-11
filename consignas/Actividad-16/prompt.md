@@ -51,3 +51,6 @@ Además, el sistema deberá incluir un panel de configuración que permita:
 - Definir el valor del dólar oficial, para calcular y mostrar también el precio en pesos argentinos de cada producto.
 Como funcionalidad adicional, se solicita que el valor del dólar se actualice automáticamente al iniciar la herramienta.
 De manera opcional, los estudiantes podrán incorporar funcionalidades adicionales que mejoren la herramienta.
+
+
+https://github.com/ignacionogueraEET/taller-computacion-tn/blob/main/consignas/Actividad-16/index.html

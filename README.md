@@ -57,9 +57,6 @@ Este repositorio contiene el sitio de la materia y los materiales del taller de 
 - `recursos/wcag/`: contenido relacionado con accesibilidad web.
 
 ## Publicación del sitio
-
-Si usas GitHub Pages, el sitio se publica desde la rama `main` y la raíz del repositorio. Los enlaces quedan como:
-
 - `https://<tu-usuario>.github.io/taller-computacion-tn/`
 - `https://<tu-usuario>.github.io/taller-computacion-tn/consignas/Actividad-01/`
 - `https://<tu-usuario>.github.io/taller-computacion-tn/material-lectura/mensaje-estudiantes/`
