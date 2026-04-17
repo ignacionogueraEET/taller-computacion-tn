@@ -1,0 +1,260 @@
+<!-- 📄 index.html -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Ignacio Noguera" />
+    <meta
+      name="description"
+      content="Plantilla de guía accesible - EET N.° 1 Paraná"
+    />
+    <title>
+      Actividad 6 · Referencias en Planilla de Cálculo — EET N.° 1 Paraná
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 🔗 Skip link — visible solo al recibir foco (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- 🌙 Toggle modo oscuro -->
+    <div
+      class="theme-toggle-wrapper"
+      role="complementary"
+      aria-label="Opciones de tema"
+    >
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Activar modo oscuro"
+        aria-pressed="false"
+        type="button"
+      >
+        <span class="toggle-icon" aria-hidden="true">🌙</span>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+       ENCABEZADO INSTITUCIONAL
+  ════════════════════════════════════════════════ -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <div class="institution-block">
+          <p class="institution-name">EET N.° 1 Paraná</p>
+          <p class="institution-sub">Escuela de Educación Técnica</p>
+        </div>
+        <div class="course-block">
+          <p class="course-name">Taller de Computación</p>
+          <p class="course-detail">3.° Año · Turno Noche</p>
+          <p class="teacher-name">Prof. Juan Ignacio Noguera</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════
+       CONTENIDO PRINCIPAL
+  ════════════════════════════════════════════════ -->
+    <main id="main-content" class="main-content" tabindex="-1">
+      <!-- ── CABECERA DE ACTIVIDAD ── -->
+      <header class="activity-header" aria-labelledby="activity-title">
+        <div class="activity-badge" aria-hidden="true">Actividad 6</div>
+        <h1 id="activity-title" class="activity-title">
+          Referencias en la Planilla de Cálculo
+        </h1>
+        <p class="activity-subtitle">
+          Comprensión y aplicación de referencias relativas y absolutas en
+          fórmulas y funciones
+        </p>
+
+        <!-- ℹ️ NOTA: Espacio para fechas límite, rúbrica o recordatorios -->
+        <div
+          class="activity-meta"
+          role="note"
+          aria-label="Información de la actividad"
+        >
+          <dl class="meta-list">
+            <div class="meta-item">
+              <dt>Unidad</dt>
+              <dd>Planilla de Cálculo</dd>
+            </div>
+            <div class="meta-item">
+              <dt>Modalidad</dt>
+              <dd>Documento individual</dd>
+            </div>
+            <div class="meta-item">
+              <dt>Entrega</dt>
+              <!-- ℹ️ NOTA: Reemplazar con fecha límite real -->
+              <dd><time datetime="2025-01-01">Ver Aula Virtual</time></dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <!-- ── SECCIÓN: CONSIGNA ── -->
+      <section class="section" aria-labelledby="heading-consigna">
+        <h2 id="heading-consigna" class="section-heading">
+          <span class="heading-decorator" aria-hidden="true">01</span>
+          Consigna
+        </h2>
+
+        <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
+        <div class="consigna-body">
+          <p class="lead">
+            Elaborá un documento escrito en el que expliques la diferencia entre
+            <strong>referencias relativas</strong> y
+            <strong>referencias absolutas</strong>
+            en una planilla de cálculo.
+          </p>
+
+          <p>
+            Las referencias son la forma en que las planillas de cálculo
+            identifican celdas o rangos de celdas para usarlos en fórmulas y
+            funciones. Comprender la diferencia entre los dos tipos es
+            fundamental para construir modelos de datos correctos y evitar
+            errores al copiar o desplazar fórmulas.
+          </p>
+
+          <h3 id="heading-pasos" class="subsection-heading">
+            ¿Qué debe incluir el documento?
+          </h3>
+          <ol class="task-list" aria-labelledby="heading-pasos">
+            <li>
+              <strong>Definición de referencia relativa.</strong>
+              Explicá con tus propias palabras cómo se comporta una referencia
+              relativa cuando se copia a otra celda. Incluí un ejemplo concreto
+              con capturas de pantalla que muestren la fórmula original y el
+              resultado al copiarla.
+            </li>
+            <li>
+              <strong>Definición de referencia absoluta.</strong>
+              Explicá cómo se indica una referencia absoluta (uso del símbolo
+              <code>$</code>) y por qué la celda referenciada no cambia al
+              copiar la fórmula. Incluí un ejemplo concreto con capturas de
+              pantalla.
+            </li>
+            <li>
+              <strong>Cuadro comparativo.</strong>
+              Elaborá una tabla o cuadro que sintetice las diferencias clave
+              entre ambos tipos de referencia: notación, comportamiento al
+              copiar y casos de uso típicos.
+            </li>
+            <li>
+              <strong>Ejemplo integrador.</strong>
+              Presentá una situación práctica (por ejemplo, calcular el precio
+              con IVA de varios productos usando una tasa fija) donde sea
+              necesario combinar referencias relativas y absolutas en la misma
+              fórmula. Explicá por qué cada referencia se eligió de esa manera.
+            </li>
+          </ol>
+
+          <div
+            class="callout callout--tip"
+            role="note"
+            aria-label="Sugerencia didáctica"
+          >
+            <p class="callout__icon" aria-hidden="true">💡</p>
+            <div class="callout__body">
+              <p class="callout__title">Sugerencia</p>
+              <p>
+                Antes de redactar, practicá en LibreOffice Calc o Google Sheets:
+                creá una tabla con datos de prueba, escribí fórmulas con cada
+                tipo de referencia y copiálas hacia abajo o hacia los lados.
+                Observá cómo cambian (o no cambian) las referencias. Eso hará
+                que tu explicación sea más precisa y basada en la experiencia
+                directa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECCIÓN: ENTREGA ── -->
+      <section
+        class="section section--delivery"
+        aria-labelledby="heading-entrega"
+      >
+        <h2 id="heading-entrega" class="section-heading">
+          <span class="heading-decorator" aria-hidden="true">04</span>
+          Condiciones de entrega
+        </h2>
+
+        <!-- 📎 ENTREGA -->
+        <div class="delivery-body">
+          <div
+            class="delivery-rule"
+            role="note"
+            aria-label="Regla de nombrado del archivo"
+          >
+            <p class="delivery-rule__label">Nombre del archivo</p>
+            <p class="delivery-rule__format">
+              <code>Actividad 06 - Apellido.ext</code>
+            </p>
+            <p class="delivery-rule__example">
+              Ejemplo: <code>Actividad 06 - González.docx</code>
+            </p>
+          </div>
+
+          <div class="delivery-channel">
+            <p>
+              <strong
+                >La entrega se realiza exclusivamente en el Aula Virtual</strong
+              >, en la actividad correspondiente a esta guía. No se aceptarán
+              trabajos enviados por correo electrónico, mensajería ni otros
+              medios.
+            </p>
+          </div>
+
+          <h3 id="heading-wcag-doc" class="subsection-heading">
+            Accesibilidad del documento entregado
+          </h3>
+          <p>
+            El archivo debe cumplir los principios WCAG 2.1 aplicables a
+            procesadores de texto:
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ════════════════════════════════════════════════
+       PIE DE PÁGINA
+  ════════════════════════════════════════════════ -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <p>
+          <strong>EET N.° 1 Paraná</strong> · Taller de Computación — 3.° Turno
+          Noche · Prof. Juan Ignacio Noguera
+        </p>
+        <p class="footer-wcag">
+          Página diseñada siguiendo las
+          <a
+            href="https://www.w3.org/WAI/WCAG21/quickref/"
+            class="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Pautas WCAG 2.1 (se abre en nueva pestaña)"
+            >Pautas WCAG 2.1</a
+          >
+          y las prácticas de
+          <a
+            href="https://webaim.org/intro/"
+            class="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Buenas prácticas de WebAIM (se abre en nueva pestaña)"
+            >WebAIM</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

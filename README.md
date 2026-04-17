@@ -57,7 +57,7 @@ Este repositorio contiene el sitio de la materia y los materiales del taller de 
 - `recursos/wcag/`: contenido relacionado con accesibilidad web.
 
 ## Publicación del sitio
-- `https://<tu-usuario>.github.io/taller-computacion-tn/`
+  - `https://<tu-usuario>.github.io/taller-computacion-tn/`
 - `https://<tu-usuario>.github.io/taller-computacion-tn/consignas/Actividad-01/`
 - `https://<tu-usuario>.github.io/taller-computacion-tn/material-lectura/mensaje-estudiantes/`
 - `https://<tu-usuario>.github.io/taller-computacion-tn/recursos/atajos-sheets/`

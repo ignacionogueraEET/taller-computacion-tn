@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Ignacio Noguera">
+    <meta name="description" content="Guía de Actividades Accesible - EET N.° 1 Paraná">
+    <title>Actividad 01 - Taller de Computación | EET N.° 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="main-header" role="banner">
+        <div class="container">
+            <p class="institution">EET N.° 1 Paraná</p>
+            <h1 class="course-title">Taller de Computación 3° Turno Noche</h1>
+            <p class="instructor">Docente: Juan Ignacio Noguera</p>
+            <button id="theme-toggle" class="no-print" aria-live="polite">
+                <span class="icon" aria-hidden="true">🌙</span>
+                <span class="text">Modo Oscuro</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content" class="container" role="main">
+        
+        <section aria-labelledby="sec-consigna">
+            <h2 id="sec-consigna">Actividad N.° 1: Fundamentos y Formato</h2>
+            <p>Esta actividad integra el dominio de herramientas de procesamiento de texto con la investigación técnica profesional.</p>
+            
+            <div class="grid-specs">
+                <article class="spec-card">
+                    <h3>Parámetros de Estilo</h3>
+                    <ul>
+                        <li><strong>Fuente:</strong> Roboto / Inter (12 pts)</li>
+                        <li><strong>Alineación:</strong> Justificada</li>
+                        <li><strong>Interlineado:</strong> 1.5 líneas</li>
+                    </ul>
+                </article>
+                <article class="spec-card">
+                    <h3>Configuración de Página</h3>
+                    <ul>
+                        <li><strong>Márgenes:</strong> Sup/Izq 2.5cm - Inf/Der 1.5cm</li>
+                        <li><strong>Papel:</strong> A4 - Orientación Vertical</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="sec-investigacion">
+            <h2 id="sec-investigacion">Conceptos a Investigar</h2>
+            <p>Se fomenta la consulta de diversas fuentes bibliográficas y digitales. Si reproduces fragmentos de texto de otro autor, <strong>debes realizar la cita correspondiente</strong>. Cada concepto debe incluir obligatoriamente una <strong>ilustración representativa</strong>.</p>
+            
+            <ul class="concept-list">
+                <li class="concept-item">
+                    <span class="badge">Requerido</span>
+                    <div class="concept-text">
+                        <strong>Computadora:</strong> Definición funcional y arquitectura básica. <em>(Requiere ilustración)</em>
+                    </div>
+                </li>
+                <li class="concept-item">
+                    <span class="badge">Requerido</span>
+                    <div class="concept-text">
+                        <strong>Informática:</strong> Ciencia del tratamiento automático de la información. <em>(Requiere ilustración)</em>
+                    </div>
+                </li>
+                <li class="concept-item">
+                    <span class="badge">Requerido</span>
+                    <div class="concept-text">
+                        <strong>Sistema Informático:</strong> Interacción entre hardware, software y personas. <em>(Requiere ilustración)</em>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="eval-box" aria-labelledby="sec-eval">
+            <h2 id="sec-eval" class="small-title">Criterios de Evaluación y Accesibilidad</h2>
+            <ul>
+                <li><strong>Fuentes y Citas:</strong> Atribución correcta de autores y procedencia de imágenes.</li>
+                <li><strong>Contenido Visual:</strong> Presencia de una ilustración por cada término investigado.</li>
+                <li><strong>Accesibilidad WCAG 2.1:</strong> El documento debe ser legible por tecnologías de asistencia (textos alternativos en imágenes, jerarquía de títulos).</li>
+                <li><strong>Originalidad:</strong> Capacidad de síntesis a partir de múltiples consultas.</li>
+            </ul>
+        </section>
+
+        <footer class="submission-panel">
+            <h3>Envío de la Actividad</h3>
+            <div class="classroom-notice">
+                <span class="icon" aria-hidden="true">💻</span>
+                <p>La entrega se realizará exclusivamente a través del <strong>Aula Virtual</strong> institucional en la tarea correspondiente.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
