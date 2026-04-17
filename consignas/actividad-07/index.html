@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Juan Ignacio Noguera">
+    <meta name="description" content="Actividad 7: Referencia absoluta y relativa - Panel de control de tabla de multiplicar accesible. EET N.° 1 Paraná">
+    <title>Actividad 7 - Referencia Absoluta y Relativa | EET N.° 1 Paraná</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente accesible Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Skip link para accesibilidad por teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Toggle de modo claro/oscuro (accesible) -->
+    <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro/oscuro">
+            <span class="theme-icon-light">☀️</span>
+            <span class="theme-icon-dark">🌙</span>
+            <span class="theme-text">Modo claro</span>
+        </button>
+    </div>
+
+    <div class="container" id="main-content" tabindex="-1">
+        <!-- Encabezado institucional -->
+        <header class="institutional-header" aria-labelledby="inst-title">
+            <div class="header-content">
+                <h1 id="inst-title">EET N.° 1 Paraná</h1>
+                <p class="docente">Docente: Juan Ignacio Noguera</p>
+                <p class="espacio">Taller de Computación 3° Turno Noche</p>
+                <p class="actividad-badge">Actividad 7: Referencia absoluta y relativa – Copia de fórmula</p>
+            </div>
+        </header>
+
+        <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
+        <section class="consigna" aria-labelledby="consigna-title">
+            <h2 id="consigna-title">📘 Consigna</h2>
+            <div class="consigna-content">
+                <p>Crear un panel de control donde se coloque el número correspondiente a la tabla que se desea generar. Debajo se debe mostrar la tabla del número configurado. Las columnas serán: <strong>Multiplicando</strong>, <strong>Multiplicador</strong>, <strong>Producto</strong>.</p>
+                <p>Se deberá crear las fórmulas correspondientes y copiarlas para cubrir toda la tabla del 0 al 10. Esta tabla debe actualizarse automáticamente al cambiar el número en el panel de control. Las fórmulas deben poder ser copiadas para acelerar el trabajo (usando referencia absoluta y relativa).</p>
+                <p>Aplicar formato a las celdas: color de fondo, color de letra, bordes.</p>
+                
+            </div>
+        </section>
+
+       
+
+        <!-- PANEL DE CONTROL Y TABLA DINÁMICA (ACTIVIDAD PRINCIPAL) -->
+        <section class="actividad-panel" aria-labelledby="panel-title">
+            <h2 id="panel-title">🎛️ Panel de control</h2>
+            
+            <div class="control-group">
+                <label for="multiplicadorInput" class="control-label">
+                    Número multiplicador (0 al 10):
+                </label>
+                <input type="number" id="multiplicadorInput" min="0" max="10" step="1" value="5" aria-describedby="multiplicador-help">
+                <span id="multiplicador-help" class="help-text">Ingresá un número del 0 al 10. La tabla se actualizará automáticamente.</span>
+            </div>
+
+            <div class="tabla-container" aria-live="polite">
+                <table class="tabla-multiplicar" aria-label="Tabla de multiplicar generada dinámicamente">
+                    <thead>
+                        <tr>
+                            <th scope="col">Multiplicando</th>
+                            <th scope="col">Multiplicador</th>
+                            <th scope="col">Producto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                        <!-- Los datos se generan dinámicamente con JS -->
+                    </tbody>
+                </table>
+            </div>
+
+         
+        </section>
+
+        <!-- 📎 ENTREGA: Incluir regla de nombrado "Actividad ## - Apellido.ext" + indicar: "La entrega se realiza exclusivamente en el Aula Virtual, en la actividad correspondiente. El documento entregado debe cumplir principios WCAG 2.1 aplicables a procesadores de texto: uso correcto de estilos de título, texto alternativo en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor." -->
+        <section class="entrega" aria-labelledby="entrega-title">
+            <h2 id="entrega-title">📎 Condiciones de entrega</h2>
+            <p>La entrega se realiza exclusivamente en el <strong>Aula Virtual</strong>, en la actividad correspondiente. El documento entregado debe cumplir principios WCAG 2.1 aplicables a procesadores de texto: uso correcto de estilos de título, texto alternativo en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor.</p>
+            <p><strong>Regla de nombrado:</strong> <code>Actividad 7 - Apellido.ext</code> (ej: .html, .ods, .xlsx o carpeta comprimida con archivos).</p>
+        </section>
+
+       
+
+        <!-- Footer institucional -->
+        <footer class="footer">
+            <p>EET N.° 1 Paraná - Taller de Computación 3° Turno Noche</p>
+            <p>Diseño accesible WCAG 2.1 AA | Plantilla para guías de actividades</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

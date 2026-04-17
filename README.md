@@ -62,6 +62,10 @@ Este repositorio contiene el sitio de la materia y los materiales del taller de 
 - `https://<tu-usuario>.github.io/taller-computacion-tn/material-lectura/mensaje-estudiantes/`
 - `https://<tu-usuario>.github.io/taller-computacion-tn/recursos/atajos-sheets/`
 
+### Ejemplo
+https://ignacionogueraeet.github.io/taller-computacion-tn/consignas/actividad-06
+
+
 ## Notas
 
 Mantén la estructura de carpetas para que las rutas de los enlaces funcionen correctamente.

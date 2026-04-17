@@ -1,0 +1,505 @@
+/* -------------------------------------------
+   RESET Y VARIABLES ACCESIBLES
+   Modo claro (por defecto) y modo oscuro
+   Prohibido #ffffff o #000000 como fondos
+   Modo oscuro usa SOLO: #121212, #1a1a1a, #0d1117, #161b22
+------------------------------------------- */
+
+/* Modo claro (default) */
+:root {
+    --bg-body: #f4f5f7;
+    --bg-container: #fafbfc;
+    --bg-card: #f8f9fa;
+    --text-primary: #1a1e24;
+    --text-secondary: #2c313a;
+    --border-light: #d1d5db;
+    --accent: #0066cc;
+    --accent-hover: #004c99;
+    --accent-bg: #e8f0fe;
+    --focus-ring: #ff8800;
+    --table-header-bg: #e9ecef;
+    --table-row-alt: #f1f3f5;
+    --table-multiplicando-bg: #fefce8;
+    --table-producto-bg: #e6f7ec;
+    --code-bg: #e2e4e8;
+    --placeholder-bg: #e9ecef;
+    --placeholder-border: #cbd5e1;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* Modo oscuro - CORREGIDO con SOLO los colores permitidos por skill.md */
+[data-theme="dark"] {
+    --bg-body: #121212;           /* ✅ Permitido */
+    --bg-container: #0d1117;      /* ✅ Permitido */
+    --bg-card: #161b22;           /* ✅ Permitido */
+    --text-primary: #e8edf2;
+    --text-secondary: #cbd5e1;
+    --border-light: #30363d;
+    --accent: #4d9eff;
+    --accent-hover: #7ab4ff;
+    --accent-bg: #1a2a3a;
+    --focus-ring: #ffaa33;
+    --table-header-bg: #1a1a1a;   /* ✅ Permitido */
+    --table-row-alt: #161b22;     /* ✅ Permitido */
+    --table-multiplicando-bg: #1a1a1a;
+    --table-producto-bg: #0d1117;
+    --code-bg: #1a1a1a;
+    --placeholder-bg: #161b22;
+    --placeholder-border: #30363d;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-container);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ========== TOGGLE MODO CLARO/OSCURO ========== */
+.theme-toggle-wrapper {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.theme-toggle-btn {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 40px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px var(--shadow);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.02);
+    background-color: var(--table-header-bg);
+    border-color: var(--accent);
+}
+
+.theme-toggle-btn:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.theme-icon-dark {
+    display: none;
+}
+
+[data-theme="dark"] .theme-icon-light {
+    display: none;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+    display: inline;
+}
+
+.theme-text {
+    font-size: 0.8rem;
+}
+
+/* ========== SKIP LINK ========== */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 100;
+    font-weight: 500;
+}
+
+.skip-link:focus-visible {
+    top: 0;
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* ========== TIPOGRAFÍA ========== */
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p, li, figcaption {
+    max-width: 65ch;
+}
+
+p, ul, ol {
+    margin-bottom: 1rem;
+}
+
+/* Prohibido text-align: justify */
+p, li, .consigna-content, .explicacion-fórmulas {
+    text-align: left;
+}
+
+/* ========== ENCABEZADO ========== */
+.institutional-header {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.institutional-header:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.header-content p {
+    margin-bottom: 0.25rem;
+}
+
+.docente, .espacio {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.actividad-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+/* ========== SECCIONES ========== */
+section {
+    margin-bottom: 2.5rem;
+    scroll-margin-top: 1rem;
+}
+
+.consigna, .temas-recursos, .actividad-panel, .entrega, .evidencias, .nota {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.consigna:hover, .temas-recursos:hover, .actividad-panel:hover, 
+.entrega:hover, .evidencias:hover, .nota:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* ========== PANEL DE CONTROL ========== */
+.control-group {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.control-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+#multiplicadorInput {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    font-family: 'Inter', monospace;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    background-color: var(--bg-container);
+    color: var(--text-primary);
+    width: 120px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#multiplicadorInput:hover {
+    border-color: var(--accent);
+    background-color: var(--bg-card);
+}
+
+#multiplicadorInput:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-color: var(--accent);
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    flex-basis: 100%;
+}
+
+/* ========== TABLA ACCESIBLE ========== */
+.tabla-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.tabla-multiplicar {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background-color: var(--bg-container);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px var(--shadow);
+}
+
+.tabla-multiplicar th,
+.tabla-multiplicar td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.2s ease;
+}
+
+.tabla-multiplicar tbody tr:hover td {
+    background-color: var(--accent-bg);
+}
+
+.tabla-multiplicar th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.tabla-multiplicar tbody tr:nth-child(even) td {
+    background-color: var(--table-row-alt);
+}
+
+.tabla-multiplicar tbody tr:nth-child(even):hover td {
+    background-color: var(--accent-bg);
+}
+
+.tabla-multiplicar td:first-child {
+    background-color: var(--table-multiplicando-bg);
+}
+
+.tabla-multiplicar td:last-child {
+    background-color: var(--table-producto-bg);
+    font-weight: 600;
+}
+
+.tabla-multiplicar tbody tr:hover td:first-child,
+.tabla-multiplicar tbody tr:hover td:last-child {
+    filter: brightness(0.98);
+}
+
+/* ========== EXPLICACIÓN ========== */
+.explicacion-fórmulas {
+    background-color: var(--accent-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--accent);
+    transition: all 0.2s ease;
+}
+
+.explicacion-fórmulas:hover {
+    transform: translateX(4px);
+}
+
+code {
+    background-color: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* ========== EVIDENCIAS ========== */
+.demo-placeholder {
+    background-color: var(--placeholder-bg);
+    border: 2px dashed var(--placeholder-border);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.demo-placeholder:hover {
+    border-color: var(--accent);
+    background-color: var(--bg-card);
+}
+
+.nota-evidencia {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-light);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: border-color 0.2s ease;
+}
+
+.footer:hover {
+    border-top-color: var(--accent);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .tabla-multiplicar th,
+    .tabla-multiplicar td {
+        padding: 8px 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .theme-toggle-wrapper {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ========== @MEDIA PRINT ========== */
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .container {
+        background-color: white;
+        box-shadow: none;
+        padding: 0.5cm;
+        max-width: 100%;
+    }
+    
+    * {
+        background-color: white !important;
+        color: black !important;
+        border-color: #ccc !important;
+        box-shadow: none !important;
+    }
+    
+    .skip-link,
+    .actividad-badge,
+    .demo-placeholder,
+    .footer,
+    .theme-toggle-wrapper {
+        display: none;
+    }
+    
+    .tabla-multiplicar td:first-child,
+    .tabla-multiplicar td:last-child {
+        background-color: white !important;
+    }
+    
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+    
+    section {
+        break-inside: avoid;
+    }
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .theme-toggle-btn:hover {
+        transform: none;
+    }
+    
+    .explicacion-fórmulas:hover {
+        transform: none;
+    }
+}
+
+/* ========== FOCUS VISIBLE ========== */
+:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+button:focus-visible, 
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--focus-ring);
+}
