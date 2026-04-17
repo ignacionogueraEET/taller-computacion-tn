@@ -65,6 +65,7 @@ Este repositorio contiene el sitio de la materia y los materiales del taller de 
 ### Ejemplo
 https://ignacionogueraeet.github.io/taller-computacion-tn/consignas/actividad-06
 
+https://ignacionogueraeet.github.io/taller-computacion-tn/consignas/actividad-07
 
 ## Notas
 

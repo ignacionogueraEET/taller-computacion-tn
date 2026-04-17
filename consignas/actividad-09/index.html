@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Juan Ignacio Noguera" />
+    <meta
+      name="description"
+      content="Actividad 9 - Funciones de fecha en planilla de cálculo - EET N.° 1 Paraná"
+    />
+    <title>Actividad 9 - Fechas | EET N.° 1 Paraná</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Enlace para saltar al contenido principal -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Toggle de modo oscuro - Posición superior derecha -->
+    <div class="theme-toggle-container">
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Cambiar entre modo claro y oscuro"
+        aria-pressed="false"
+      >
+        <span class="toggle-icon" aria-hidden="true">🌓</span>
+        <span class="toggle-text">Cambiar tema</span>
+      </button>
+    </div>
+
+    <!-- Encabezado institucional -->
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="institution-info">
+          <span class="institution-name">EET N.° 1 Paraná</span>
+          <span class="course-info">Taller de Computación 3° Turno Noche</span>
+        </div>
+        <h1 class="page-title">Actividad 9 - Fechas</h1>
+        <p class="page-subtitle">
+          Investigación sobre funciones de fecha en planilla de cálculo
+        </p>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main id="main-content" class="main-content" role="main">
+      <div class="container">
+        <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
+        <section class="activity-section" aria-labelledby="consigna-heading">
+          <h2 id="consigna-heading" class="section-title">📘 Consigna</h2>
+
+          <div class="content-block">
+            <p>
+              En un documento de planilla de cálculo explicar el significado y
+              cómo utilizar las funciones sobre fechas mencionadas debajo.
+            </p>
+          </div>
+
+          <article class="instruction-block">
+            <h3 class="instruction-title">Instrucciones guía</h3>
+            <ol class="instruction-list">
+              <li>
+                En una hoja, colocar como título
+                <strong>"Investigación sobre funciones de fecha"</strong>.
+              </li>
+              <li>
+                Por cada función colocar:
+                <ul>
+                  <li><strong>Subtítulo:</strong> Ej. "Función HOY()"</li>
+                  <li>
+                    <strong>Párrafo explicativo:</strong> Para qué sirve y cómo
+                    utilizarla
+                  </li>
+                  <li>
+                    <strong>Ejemplo funcional:</strong> Puedes crear una tabla con
+                    datos de prueba propios y aplicarlos para la prueba de todas las funciones.
+                  </li>
+                  <li><strong>Fuente de la información</strong></li>
+                </ul>
+              </li>
+            </ol>
+          </article>
+
+          
+
+        <!-- 📋 TEMAS/RECURSOS: Inyectar lista de conceptos o materiales aquí -->
+        <section class="activity-section" aria-labelledby="funciones-heading">
+          <h2 id="funciones-heading" class="section-title">
+            📋 Funciones a investigar
+          </h2>
+
+          <div class="functions-grid">
+            <article class="function-card">
+              <h3 class="function-name">HOY()</h3>
+              <p class="function-description">
+                Devuelve la fecha actual del sistema. Se actualiza
+                automáticamente cada vez que se abre o recalcula la hoja.
+              </p>
+            </article>
+
+            <article class="function-card">
+              <h3 class="function-name">DIA()</h3>
+              <p class="function-description">
+                Extrae el día de una fecha determinada, representado como número
+                entero entre 1 y 31.
+              </p>
+            </article>
+
+            <article class="function-card">
+              <h3 class="function-name">MES()</h3>
+              <p class="function-description">
+                Extrae el mes de una fecha determinada, representado como número
+                entero entre 1 (enero) y 12 (diciembre).
+              </p>
+            </article>
+
+            <article class="function-card">
+              <h3 class="function-name">FECHA()</h3>
+              <p class="function-description">
+                Crea una fecha válida a partir de valores numéricos de año, mes
+                y día. Útil para construir fechas dinámicamente.
+              </p>
+            </article>
+
+            <article class="function-card">
+              <h3 class="function-name">SIFECHA()</h3>
+              <p class="function-description">
+                Calcula la diferencia entre dos fechas en unidades específicas
+                (años, meses, días). Ideal para calcular edades o períodos.
+                Investigar los parámetros: "Y", "M", "D", "YM", "YD".
+              </p>
+            </article>
+
+            <article class="function-card">
+              <h3 class="function-name">AHORA()</h3>
+              <p class="function-description">
+                Devuelve la fecha y hora actual del sistema. Incluye la parte
+                decimal que representa la hora del día.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 📎 ENTREGA: Incluir regla de nombrado y modalidad -->
+        <section
+          class="activity-section delivery-section"
+          aria-labelledby="entrega-heading"
+        >
+          <h2 id="entrega-heading" class="section-title">📎 Entrega</h2>
+
+          <div class="delivery-info">
+            <div class="naming-rule">
+              <h3>Regla de nombrado del archivo:</h3>
+              <code class="file-name">Actividad 09 - Apellido.xlsx</code>
+              <p class="file-hint">
+                (o extensión correspondiente a la planilla de cálculo utilizada:
+                .xlsx, .ods, etc.)
+              </p>
+            </div>
+
+            <div class="delivery-method">
+              <p>
+                <strong>Modalidad de entrega:</strong> La entrega se realiza
+                exclusivamente en el <strong>Aula Virtual</strong>, en la
+                actividad correspondiente.
+              </p>
+            </div>
+
+            <div class="accessibility-requirements">
+              <h3>Requisitos de accesibilidad:</h3>
+              <p>
+                El documento entregado debe cumplir principios WCAG 2.1
+                aplicables a procesadores de texto y planillas de cálculo:
+              </p>
+              <ul>
+                <li>Uso correcto de estilos de título y formato en celdas</li>
+                <li>Texto alternativo en imágenes (si las incluye)</li>
+                <li>
+                  Contraste adecuado entre texto y fondo en todas las hojas
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      
+
+        <!-- ℹ️ NOTA: Espacio para fechas límite, rúbrica o recordatorios -->
+        <section
+          class="activity-section note-section"
+          aria-labelledby="notas-heading"
+        >
+          <h2 id="notas-heading" class="section-title">ℹ️ Notas importantes</h2>
+
+          <div class="note-content">
+            <ul class="note-list">
+              <li>Verificar la fecha límite de entrega en el Aula Virtual.</li>
+              <li>
+                Consultar la rúbrica de evaluación disponible en la plataforma.
+              </li>
+              <li>
+                Ante dudas, contactar al docente a través de los canales
+                institucionales.
+              </li>             
+              <li>
+                Los ejemplos funcionales deben incluir
+                <strong>tablas creadas por ustedes</strong>, no copiadas de esta
+                consigna.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p class="teacher-info">Docente: Juan Ignacio Noguera</p>
+        <p class="institution-footer">
+          EET N.° 1 Paraná - Taller de Computación 3° Turno Noche
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
