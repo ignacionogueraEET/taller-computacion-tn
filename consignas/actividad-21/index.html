@@ -1,0 +1,295 @@
+<!-- 📄 index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Juan Ignacio Noguera" />
+  <meta name="description" content="Actividad 21 – Sistema de registro y análisis de asistencias · Taller de Computación 3° Turno Noche · EET N.° 1 &quot;General Francisco Ramírez&quot; - Paraná" />
+  <title>Actividad 21 – Registro de Asistencias · EET N.° 1 "Gral. Francisco Ramírez"</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ♿ Skip link: visible solo al recibir foco (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <div class="page-wrapper">
+
+    <!-- ═══════════════════════════════════════ ENCABEZADO INSTITUCIONAL -->
+    <header class="site-header" role="banner">
+      <div class="header-meta">
+        <span class="institution">EET N.° 1 "General Francisco Ramírez" – Paraná</span>
+        <span class="divider" aria-hidden="true">·</span>
+        <span class="subject">Taller de Computación</span>
+        <span class="divider" aria-hidden="true">·</span>
+        <span class="shift">3° Turno Noche</span>
+      </div>
+      <div class="header-right">
+        <div class="header-teacher">
+          <span>Docente:</span>
+          <strong>Juan Ignacio Noguera</strong>
+        </div>
+        <!-- 🌓 Toggle de tema – integrado en el header -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Cambiar a modo oscuro"
+          aria-pressed="false"
+          type="button"
+        >
+          <span class="toggle-icon" aria-hidden="true">☀</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════ CONTENIDO PRINCIPAL -->
+    <main id="main-content" tabindex="-1">
+
+      <article class="activity-card" aria-labelledby="activity-title">
+
+        <!-- ── Encabezado de la actividad ── -->
+        <header class="activity-header">
+          <div class="activity-badge" aria-label="Número de actividad">
+            <span aria-hidden="true">#</span>21
+          </div>
+          <div class="activity-title-block">
+            <h1 id="activity-title" class="activity-title">
+              Sistema de registro y análisis de asistencias
+            </h1>
+            <p class="activity-subtitle">Planilla de cálculo · Validación · Fórmulas · Visualización</p>
+          </div>
+        </header>
+
+        <!-- ── Contexto ── -->
+        <section class="section section--reveal" aria-labelledby="section-context">
+          <h2 id="section-context" class="section-title">
+            <span class="section-icon" aria-hidden="true">🏫</span> Contexto
+          </h2>
+          <div class="prose">
+            <p>
+              El equipo directivo de la escuela necesita una herramienta digital que permita
+              registrar y analizar la asistencia de los estudiantes de un curso. Esta información
+              será utilizada para el seguimiento académico y la toma de decisiones.
+            </p>
+          </div>
+        </section>
+
+        <!-- ── Consigna ── -->
+        <section class="section section--reveal" aria-labelledby="section-task">
+          <h2 id="section-task" class="section-title">
+            <span class="section-icon" aria-hidden="true">📋</span> Consigna
+          </h2>
+          <div class="prose">
+            <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
+            <p>
+              Diseñar y desarrollar una <strong>planilla de cálculo</strong> que permita
+              registrar, procesar y visualizar la asistencia de los estudiantes de un curso.
+            </p>
+          </div>
+        </section>
+
+        <!-- ── Requisitos obligatorios ── -->
+        <section class="section section--reveal" aria-labelledby="section-requirements">
+          <h2 id="section-requirements" class="section-title">
+            <span class="section-icon" aria-hidden="true">⚙️</span> Requisitos obligatorios
+          </h2>
+
+          <!-- Req 1: Estructura -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requisito 1">1</span>
+              Estructura de datos
+            </h3>
+            <div class="prose">
+              <!-- 📋 TEMAS/RECURSOS: Inyectar lista de conceptos o materiales aquí -->
+              <p>La planilla deberá incluir una tabla con:</p>
+              <ul>
+                <li>Nombre y apellido del estudiante.</li>
+                <li>Columnas correspondientes a cada clase (Clase 1, Clase 2, etc.).</li>
+              </ul>
+              <p>En cada clase se registrará:</p>
+              <ul>
+                <li><strong><code>P</code></strong> → Presente</li>
+                <li><strong><code>A</code></strong> → Ausente</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 2: Validación -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requisito 2">2</span>
+              Validación de datos
+            </h3>
+            <div class="prose">
+              <ul>
+                <li>Configurar las celdas de asistencia para que <strong>solo permitan ingresar "P" o "A"</strong>.</li>
+                <li>En caso de ingreso incorrecto, debe mostrar un mensaje de error claro.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 3: Procesamiento -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requisito 3">3</span>
+              Procesamiento de la información
+            </h3>
+            <div class="prose">
+              <p>Calcular automáticamente:</p>
+              <ul>
+                <li><strong>Cantidad total de inasistencias</strong> por estudiante.</li>
+                <li><strong>Porcentaje de inasistencias</strong> respecto al total de clases.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 4: Formato condicional -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requisito 4">4</span>
+              Formato condicional
+            </h3>
+            <div class="prose">
+              <p>Aplicar una regla que:</p>
+              <ul>
+                <li>Cambie el color de la celda del porcentaje cuando supere el <strong>20% de inasistencias</strong>.</li>
+                <li>Elegir un formato visual claro (por ejemplo: rojo para riesgo).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 5: Visualización -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requisito 5">5</span>
+              Visualización de datos
+            </h3>
+            <div class="prose">
+              <ul>
+                <li>Crear un <strong>gráfico</strong> que represente las inasistencias por estudiante.</li>
+                <li>El gráfico debe ser claro, legible y correctamente titulado.</li>
+              </ul>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ── Requisitos de diseño ── -->
+        <section class="section section--reveal" aria-labelledby="section-design">
+          <h2 id="section-design" class="section-title">
+            <span class="section-icon" aria-hidden="true">🎨</span> Requisitos de diseño
+          </h2>
+          <div class="prose">
+            <p>La planilla debe ser clara, ordenada y fácil de usar por otra persona (pensar en el usuario). Incluir:</p>
+            <ul>
+              <li>Título de la planilla.</li>
+              <li>Encabezados destacados.</li>
+              <li>Uso adecuado de colores (sin sobrecargar).</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ── Desafío opcional ── -->
+        <section class="section section--challenge section--reveal" aria-labelledby="section-challenge">
+          <h2 id="section-challenge" class="section-title">
+            <span class="section-icon" aria-hidden="true">🚀</span> Desafío opcional
+          </h2>
+          <p class="challenge-lead">
+            <em>Esto es lo que marca la diferencia entre copiar y pensar.</em>
+            Elegí <strong>al menos una mejora</strong>:
+          </p>
+          <ul class="challenge-list" role="list">
+            <li>Agregar conteo de <strong>presentes</strong>.</li>
+            <li>Mostrar un mensaje automático: <strong>"Regular" / "En riesgo"</strong>.</li>
+            <li>Calcular el <strong>promedio de asistencia del curso</strong>.</li>
+            <li>Incorporar una hoja resumen.</li>
+            <li>Permitir registrar más de un curso.</li>
+          </ul>
+        </section>
+
+        <!-- ── Entrega ── -->
+        <section class="section section--delivery section--reveal" aria-labelledby="section-delivery">
+          <h2 id="section-delivery" class="section-title">
+            <span class="section-icon" aria-hidden="true">📎</span> Entrega
+          </h2>
+          <!-- 📎 ENTREGA: Actividad 21 - Apellido.xlsx -->
+          <div class="delivery-box">
+            <div class="delivery-filename">
+              <span class="label-inline">Nombre del archivo:</span>
+              <code class="filename">Actividad 21 - Apellido.xlsx</code>
+            </div>
+            <div class="prose">
+              <p>
+                La entrega se realiza <strong>exclusivamente en el Aula Virtual</strong>,
+                en la actividad correspondiente.
+              </p>
+              <p>
+                El documento entregado debe cumplir principios WCAG 2.1 aplicables a
+                procesadores de texto: uso correcto de estilos de título, texto alternativo
+                en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor.
+              </p>
+              <p>
+                Además del archivo, incluir una <strong>breve explicación</strong>
+                (oral o escrita) justificando decisiones de diseño, funciones utilizadas
+                y dificultades encontradas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Criterios de evaluación ── -->
+        <section class="section section--reveal" aria-labelledby="section-rubric">
+          <h2 id="section-rubric" class="section-title">
+            <span class="section-icon" aria-hidden="true">📊</span> Criterios de evaluación
+          </h2>
+          <ul class="rubric-list" role="list">
+            <li><span class="rubric-item">Correcto funcionamiento de fórmulas</span></li>
+            <li><span class="rubric-item">Uso adecuado de validaciones</span></li>
+            <li><span class="rubric-item">Aplicación de formato condicional</span></li>
+            <li><span class="rubric-item">Claridad en la organización de la información</span></li>
+            <li><span class="rubric-item">Calidad del gráfico</span></li>
+            <li><span class="rubric-item">Nivel de mejora o personalización</span></li>
+          </ul>
+        </section>
+
+        <!-- ── Nota / Recordatorio ── -->
+        <!-- ℹ️ NOTA: Espacio para fechas límite, rúbrica o recordatorios -->
+        <aside class="section section--note section--reveal" aria-labelledby="section-note">
+          <h2 id="section-note" class="section-title">
+            <span class="section-icon" aria-hidden="true">ℹ️</span> Nota
+          </h2>
+          <div class="prose">
+            <!-- Completar con fecha límite, modalidad de presentación, etc. -->
+          </div>
+        </aside>
+
+      </article>
+    </main>
+
+    <!-- ═══════════════════════════════════════ PIE DE PÁGINA -->
+    <footer class="site-footer" role="contentinfo">
+      <p>
+        <strong>EET N.° 1 "General Francisco Ramírez" – Paraná</strong> ·
+        Taller de Computación 3° Turno Noche ·
+        <span class="footer-author">Juan Ignacio Noguera</span>
+      </p>
+      <p class="footer-wcag">
+        Página diseñada conforme a
+        <a
+          href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >WCAG 2.1 Nivel AA</a>
+      </p>
+    </footer>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
