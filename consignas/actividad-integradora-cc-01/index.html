@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Ignacio Noguera">
+    <meta name="description" content="Plantilla de guía accesible - EET N.° 1 Paraná. Actividad Integradora: Presupuesto y control de obra.">
+    <title>Actividad: Presupuesto y control de obra | EET N.° 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container">
+        <header class="header-main">
+            <div class="header-top">
+                <div class="institutional-info">
+                    <p class="institution"><strong>EET N.° 1 "General Francisco Ramírez" - Paraná</strong></p>
+                    <p>Docente: Juan Ignacio Noguera</p>
+                    <p>Espacio Curricular: Taller de Computación 3° Turno Noche</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+                    <span aria-hidden="true" class="toggle-icon">🌓</span> Modo Oscuro
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <h1>Actividad integradora: Presupuesto y control de obra</h1>
+
+            <section class="section-card content-block" aria-labelledby="contexto">
+                <h2 id="contexto">Contexto (rol profesional)</h2>
+                <p>Un cliente quiere construir una vivienda unifamiliar y solicita un presupuesto detallado para tomar decisiones antes de comenzar la obra.</p>
+                <p>Además, le interesa contar con una herramienta que le permita:</p>
+                <ul>
+                    <li>Estimar costos totales</li>
+                    <li>Organizar materiales y rubros</li>
+                    <li>Controlar gastos a medida que avanza la obra</li>
+                    <li>Detectar desvíos entre lo planificado y lo ejecutado</li>
+                </ul>
+                <p>Tu tarea es desarrollar una <strong>herramienta en planilla de cálculo</strong> que responda a estas necesidades.</p>
+            </section>
+
+            <section class="section-card content-block warning-block" aria-labelledby="consigna">
+                <h2 id="consigna">Consigna</h2>
+                <p>Deberás diseñar una solución que permita <strong>presupuestar y realizar el seguimiento económico de una obra</strong>.</p>
+                <div class="alert" role="note">
+                    <p><strong>⚠️ Importante:</strong> No se indicarán herramientas específicas. Se evaluará tu capacidad de <strong>definir criterios, organizar la información y elegir cómo resolver el problema</strong>.</p>
+                </div>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="requerimientos">
+                <h2 id="requerimientos">Requerimientos del cliente</h2>
+                
+                <h3>1. Organización de la información</h3>
+                <ul>
+                    <li>Registrar distintos <strong>rubros de obra</strong> (cimientos, mampostería, instalaciones, etc.)</li>
+                    <li>Detallar materiales o tareas</li>
+                    <li>Incluir cantidades, unidades y costos</li>
+                </ul>
+
+                <h3>2. Presupuesto</h3>
+                <ul>
+                    <li>Calcular costo total</li>
+                    <li>Obtener subtotales por rubro</li>
+                    <li>Identificar rubros de mayor impacto</li>
+                </ul>
+
+                <h3>3. Control de ejecución</h3>
+                <ul>
+                    <li>Registrar gastos reales</li>
+                    <li>Comparar lo presupuestado con lo ejecutado</li>
+                    <li>Detectar desvíos</li>
+                </ul>
+
+                <h3>4. Análisis</h3>
+                <ul>
+                    <li>Interpretar el estado general del presupuesto</li>
+                    <li>Detectar posibles sobrecostos</li>
+                    <li>Facilitar la toma de decisiones</li>
+                </ul>
+
+                <h3>5. Validación y claridad</h3>
+                <ul>
+                    <li>Evitar errores en la carga de datos</li>
+                    <li>Presentar la información de forma clara</li>
+                    <li>Usar formatos adecuados</li>
+                </ul>
+
+                <h3>6. Visualización</h3>
+                <ul>
+                    <li>Incluir al menos un gráfico significativo</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="decisiones">
+                <h2 id="decisiones">Decisiones técnicas (parte central)</h2>
+                <p>Deberás definir:</p>
+                <ul>
+                    <li>Estructura de la planilla</li>
+                    <li>Herramientas utilizadas</li>
+                    <li>Nivel de automatización</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block accent-block" aria-labelledby="desafio">
+                <h2 id="desafio">🔼 Desafío opcional (nivel avanzado)</h2>
+                <p>El cliente informa que dispone de un <strong>presupuesto máximo limitado</strong> para la obra.</p>
+                <p>Tu herramienta deberá permitir:</p>
+                <ul>
+                    <li>Determinar si el proyecto es <strong>viable o no</strong> en función de ese límite</li>
+                    <li>Mostrar de forma clara cuándo se supera el presupuesto</li>
+                    <li>Brindar información útil para la toma de decisiones (por ejemplo: identificar en qué rubros se concentra el exceso de gasto)</li>
+                </ul>
+                <p>💡 <em>Este punto no se resuelve solo con un cálculo: implica <strong>diseñar una solución que ayude a decidir</strong>.</em></p>
+            </section>
+
+            <section class="section-card content-block delivery-block" aria-labelledby="entrega">
+                <h2 id="entrega">Formato de Entrega</h2>
+                <p><strong>Regla de nombrado:</strong> <code>Actividad ## - Apellido.ext</code></p>
+                <p>La entrega se realiza exclusivamente en el Aula Virtual, en la actividad correspondiente. El documento entregado debe cumplir principios WCAG 2.1 aplicables a procesadores de texto: uso correcto de estilos de título, texto alternativo en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor.</p>
+                
+                <h3>Elementos a entregar:</h3>
+                <ol>
+                    <li>Planilla completa y funcional</li>
+                    <li>Informe breve (5–8 líneas):
+                        <ul>
+                            <li>Cómo resolviste el problema</li>
+                            <li>Qué decisiones técnicas tomaste</li>
+                            <li>(Opcional) Cómo abordaste la restricción de presupuesto</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="criterios">
+                <h2 id="criterios">Criterios de evaluación</h2>
+                <ul>
+                    <li>Interpretación del problema</li>
+                    <li>Organización de la información</li>
+                    <li>Decisiones técnicas</li>
+                    <li>Nivel de automatización</li>
+                    <li>Claridad y utilidad de la solución</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!-- 📄 index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Juan Ignacio Noguera" />
+  <meta name="description" content="Actividad Integradora – Planilla de control de gastos · Taller de Computación 3° Turno Noche · EET N.° 1 &quot;General Francisco Ramírez&quot; - Paraná" />
+  <title>Actividad Integradora – Control de Gastos · EET N.° 1 "Gral. Francisco Ramírez"</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ♿ Skip link: visible solo al recibir foco (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <div class="page-wrapper">
+
+    <!-- ═══════════════════════════════════════ ENCABEZADO INSTITUCIONAL -->
+    <header class="site-header" role="banner">
+      <div class="header-meta">
+        <span class="institution">EET N.° 1 "General Francisco Ramírez" – Paraná</span>
+        <span class="divider" aria-hidden="true">·</span>
+        <span class="subject">Taller de Computación</span>
+        <span class="divider" aria-hidden="true">·</span>
+        <span class="shift">3° Turno Noche</span>
+      </div>
+      <div class="header-right">
+        <div class="header-teacher">
+          <span>Docente:</span>
+          <strong>Juan Ignacio Noguera</strong>
+        </div>
+        <!-- 🌓 Toggle de tema – integrado en el header -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Cambiar a modo oscuro"
+          aria-pressed="false"
+          type="button"
+        >
+          <span class="toggle-icon" aria-hidden="true">☀</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════ CONTENIDO PRINCIPAL -->
+    <main id="main-content" tabindex="-1">
+
+      <article class="activity-card" aria-labelledby="activity-title">
+
+        <!-- ── Encabezado de la actividad ── -->
+        <header class="activity-header">
+          <div class="activity-badge activity-badge--integrative" aria-label="Actividad integradora">
+            <span aria-hidden="true">★</span>
+          </div>
+          <div class="activity-title-block">
+            <h1 id="activity-title" class="activity-title">
+              Desarrollo de una planilla para control de gastos
+            </h1>
+            <p class="activity-subtitle">Actividad integradora · Planilla de cálculo · Decisiones técnicas propias</p>
+          </div>
+        </header>
+
+        <!-- ── Contexto / Rol profesional ── -->
+        <section class="section section--context section--reveal" aria-labelledby="section-context">
+          <h2 id="section-context" class="section-title">
+            <span class="section-icon" aria-hidden="true">💼</span> Contexto — Rol profesional
+          </h2>
+          <div class="prose">
+            <p>
+              Un cliente particular necesita una herramienta para organizar sus finanzas personales.
+              No tiene conocimientos técnicos, pero sí tiene claro qué necesita:
+            </p>
+            <ul>
+              <li>Registrar ingresos y gastos mensuales.</li>
+              <li>Saber en qué categorías gasta más dinero.</li>
+              <li>Visualizar información de manera clara.</li>
+              <li>Recibir algún tipo de aviso cuando sus gastos sean elevados en relación a sus ingresos.</li>
+            </ul>
+            <p>
+              Tu tarea es <strong>analizar el problema y diseñar una solución</strong>
+              utilizando una planilla de cálculo.
+            </p>
+          </div>
+        </section>
+
+        <!-- ── Consigna ── -->
+        <section class="section section--reveal" aria-labelledby="section-task">
+          <h2 id="section-task" class="section-title">
+            <span class="section-icon" aria-hidden="true">📋</span> Consigna
+          </h2>
+          <div class="prose">
+            <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
+            <p>
+              Deberás desarrollar una solución que cumpla con los requerimientos del cliente.
+            </p>
+          </div>
+          <div class="callout callout--warning" role="note">
+            <span class="callout-icon" aria-hidden="true">⚠️</span>
+            <div>
+              <strong>Importante:</strong> No se indicarán funciones específicas a utilizar.
+              Se evaluará tu capacidad de <strong>seleccionar y aplicar las herramientas adecuadas</strong>.
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Requerimientos del cliente ── -->
+        <section class="section section--reveal" aria-labelledby="section-requirements">
+          <h2 id="section-requirements" class="section-title">
+            <span class="section-icon" aria-hidden="true">⚙️</span> Requerimientos del cliente
+          </h2>
+
+          <!-- Req 1: Registro -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requerimiento 1">1</span>
+              Registro de información
+            </h3>
+            <div class="prose">
+              <!-- 📋 TEMAS/RECURSOS: Inyectar lista de conceptos o materiales aquí -->
+              <ul>
+                <li>Cargar ingresos y gastos mensuales.</li>
+                <li>Clasificar los gastos en distintas categorías.</li>
+                <li>Registrar la fecha de cada movimiento.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 2: Procesamiento -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requerimiento 2">2</span>
+              Procesamiento de la información
+            </h3>
+            <div class="prose">
+              <ul>
+                <li>Obtener totales de ingresos y gastos.</li>
+                <li>Analizar el comportamiento de los gastos (por ejemplo: identificar categorías relevantes o tendencias).</li>
+                <li>Detectar automáticamente situaciones donde el nivel de gasto sea alto en relación a los ingresos.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 3: Validación -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requerimiento 3">3</span>
+              Validación y control
+            </h3>
+            <div class="prose">
+              <ul>
+                <li>Evitar errores en la carga de datos.</li>
+                <li>Facilitar la selección de categorías.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 4: Visualización -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requerimiento 4">4</span>
+              Visualización
+            </h3>
+            <div class="prose">
+              <ul>
+                <li>Representar la información de forma gráfica.</li>
+                <li>Permitir una lectura rápida del estado financiero del usuario.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Req 5: Diseño -->
+          <div class="requirement-block">
+            <h3 class="req-title">
+              <span class="req-number" aria-label="Requerimiento 5">5</span>
+              Diseño de la solución
+            </h3>
+            <div class="prose">
+              <ul>
+                <li>Organizar la información de manera clara y lógica.</li>
+                <li>Automatizar cálculos siempre que sea posible.</li>
+                <li>Aplicar formatos que mejoren la interpretación de los datos.</li>
+              </ul>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ── Decisiones técnicas ── -->
+        <section class="section section--decisions section--reveal" aria-labelledby="section-decisions">
+          <h2 id="section-decisions" class="section-title">
+            <span class="section-icon" aria-hidden="true">🧠</span> Decisiones técnicas
+            <span class="title-tag">Clave de la actividad</span>
+          </h2>
+          <p class="decisions-lead">Deberás definir y justificar:</p>
+          <ul class="decisions-list" role="list">
+            <li>Cómo estructurar la planilla.</li>
+            <li>Qué herramientas utilizar (funciones, formatos, validaciones, etc.).</li>
+            <li>Cómo resolver cada requerimiento planteado.</li>
+          </ul>
+        </section>
+
+        <!-- ── Entrega ── -->
+        <section class="section section--delivery section--reveal" aria-labelledby="section-delivery">
+          <h2 id="section-delivery" class="section-title">
+            <span class="section-icon" aria-hidden="true">📎</span> Entrega
+          </h2>
+          <!-- 📎 ENTREGA: Actividad Integradora - Apellido.xlsx -->
+          <div class="delivery-box">
+            <div class="delivery-filename">
+              <span class="label-inline">Nombre del archivo:</span>
+              <code class="filename">Actividad Integradora - Apellido.xlsx</code>
+            </div>
+            <div class="prose">
+              <p>
+                La entrega se realiza <strong>exclusivamente en el Aula Virtual</strong>,
+                en la actividad correspondiente. Deberá incluir:
+              </p>
+              <ol>
+                <li><strong>Archivo de la planilla funcional</strong> (.xlsx).</li>
+                <li>
+                  <strong>Breve informe (5–8 líneas)</strong> donde expliques:
+                  <ul>
+                    <li>Cómo resolviste el problema.</li>
+                    <li>Qué decisiones técnicas tomaste.</li>
+                    <li>Qué mejorarías en una versión futura.</li>
+                  </ul>
+                </li>
+              </ol>
+              <p class="wcag-note">
+                <strong>Criterio de accesibilidad aplicable:</strong>
+                uso correcto de estilos de encabezado, texto alternativo en imágenes insertadas,
+                contraste adecuado entre texto y fondo, y orden lógico de lectura.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Criterios de evaluación ── -->
+        <section class="section section--reveal" aria-labelledby="section-rubric">
+          <h2 id="section-rubric" class="section-title">
+            <span class="section-icon" aria-hidden="true">📊</span> Criterios de evaluación
+          </h2>
+          <ul class="rubric-list" role="list">
+            <li><span class="rubric-item">Capacidad de interpretar el problema</span></li>
+            <li><span class="rubric-item">Pertinencia de las decisiones técnicas</span></li>
+            <li><span class="rubric-item">Nivel de automatización logrado</span></li>
+            <li><span class="rubric-item">Organización y claridad de la solución</span></li>
+            <li><span class="rubric-item">Funcionalidad general de la planilla</span></li>
+          </ul>
+        </section>
+
+        <!-- ── Nota / Recordatorio ── -->
+        <!-- ℹ️ NOTA: Espacio para fechas límite, rúbrica o recordatorios -->
+        <aside class="section section--note section--reveal" aria-labelledby="section-note">
+          <h2 id="section-note" class="section-title">
+            <span class="section-icon" aria-hidden="true">ℹ️</span> Nota
+          </h2>
+          <div class="prose">
+            <!-- Completar con fecha límite, modalidad de presentación, etc. -->
+          </div>
+        </aside>
+
+      </article>
+    </main>
+
+    <!-- ═══════════════════════════════════════ PIE DE PÁGINA -->
+    <footer class="site-footer" role="contentinfo">
+      <p>
+        <strong>EET N.° 1 "General Francisco Ramírez" – Paraná</strong> ·
+        Taller de Computación 3° Turno Noche ·
+        <span class="footer-author">Juan Ignacio Noguera</span>
+      </p>
+      <p class="footer-wcag">
+        Página diseñada conforme a
+        <a
+          href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >WCAG 2.1 Nivel AA</a>
+      </p>
+    </footer>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>

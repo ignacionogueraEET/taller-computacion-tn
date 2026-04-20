@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Ignacio Noguera">
+    <meta name="description" content="Plantilla de guía accesible - EET N.° 1 Paraná. Actividad Integradora: Registro y análisis de componentes y mediciones electrónicas.">
+    <title>Actividad: Registro y análisis de componentes | EET N.° 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container">
+        <header class="header-main">
+            <div class="header-top">
+                <div class="institutional-info">
+                    <p class="institution"><strong>EET N.° 1 "General Francisco Ramírez" - Paraná</strong></p>
+                    <p>Docente: Juan Ignacio Noguera</p>
+                    <p>Espacio Curricular: Taller de Computación 3° Turno Noche</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+                    <span aria-hidden="true" class="toggle-icon">🌓</span> Modo Oscuro
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <h1>Actividad integradora: Registro y análisis de componentes y mediciones electrónicas</h1>
+
+            <section class="section-card content-block" aria-labelledby="contexto">
+                <h2 id="contexto">Contexto (rol profesional)</h2>
+                <p>Un laboratorio de electrónica trabaja con distintos circuitos y prototipos. Con frecuencia se utilizan componentes como resistencias, capacitores, diodos y circuitos integrados, además de realizar mediciones con instrumentos.</p>
+                <p>El problema actual es que:</p>
+                <ul>
+                    <li>No hay registro ordenado de componentes disponibles</li>
+                    <li>Las mediciones realizadas en prácticas no se sistematizan</li>
+                    <li>Es difícil detectar fallas repetidas en circuitos o componentes</li>
+                </ul>
+                <p>El laboratorio solicita una herramienta que permita <strong>organizar información técnica y facilitar el análisis de componentes y mediciones</strong>.</p>
+            </section>
+
+            <section class="section-card content-block warning-block" aria-labelledby="consigna">
+                <h2 id="consigna">Consigna</h2>
+                <p>Deberás desarrollar una solución utilizando una <strong>planilla de cálculo</strong> que permita gestionar información del laboratorio de electrónica.</p>
+                <div class="alert" role="note">
+                    <p><strong>⚠️ Importante:</strong> No se indicarán herramientas específicas. Se evaluará tu capacidad de <strong>organizar datos técnicos y construir una solución funcional</strong>.</p>
+                </div>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="requerimientos">
+                <h2 id="requerimientos">Requerimientos del laboratorio</h2>
+                
+                <h3>1. Registro de componentes</h3>
+                <p>La herramienta debe permitir:</p>
+                <ul>
+                    <li>Identificar cada componente (tipo y código o referencia)</li>
+                    <li>Clasificar por tipo (resistencia, capacitor, diodo, transistor, etc.)</li>
+                    <li>Registrar características relevantes (valor, tolerancia, estado, cantidad disponible)</li>
+                </ul>
+
+                <h3>2. Registro de prácticas o mediciones</h3>
+                <p>Debe permitir:</p>
+                <ul>
+                    <li>Registrar prácticas realizadas en el laboratorio</li>
+                    <li>Incluir fecha, circuito o práctica, y componentes utilizados</li>
+                    <li>Registrar mediciones relevantes (por ejemplo: voltajes, corrientes, resistencias medidas)</li>
+                </ul>
+
+                <h3>3. Control y análisis</h3>
+                <p>La herramienta debe facilitar:</p>
+                <ul>
+                    <li>Identificar componentes más utilizados o más críticos</li>
+                    <li>Detectar componentes defectuosos o con fallas recurrentes</li>
+                    <li>Analizar tendencias en mediciones o resultados de prácticas</li>
+                </ul>
+
+                <h3>4. Organización de la información</h3>
+                <ul>
+                    <li>Mantener una estructura clara para consultas rápidas</li>
+                    <li>Evitar duplicación o pérdida de datos</li>
+                    <li>Facilitar la actualización del inventario</li>
+                </ul>
+
+                <h3>5. Visualización</h3>
+                <ul>
+                    <li>Incluir al menos una representación gráfica útil (por ejemplo: uso de componentes, fallas registradas, o distribución por tipo)</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="decisiones">
+                <h2 id="decisiones">Decisiones técnicas (parte central)</h2>
+                <p>Deberás definir:</p>
+                <ul>
+                    <li>Cómo organizarás el inventario y los registros</li>
+                    <li>Qué criterios usarás para clasificar la información</li>
+                    <li>Cómo automatizarás el análisis de datos</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block accent-block" aria-labelledby="desafio">
+                <h2 id="desafio">🔼 Desafío opcional (nivel avanzado)</h2>
+                <p>El laboratorio quiere mejorar la detección de problemas antes de que afecten las prácticas.</p>
+                <p>Tu herramienta deberá permitir:</p>
+                <ul>
+                    <li>Identificar componentes con mayor probabilidad de falla (según historial o uso)</li>
+                    <li>Detectar patrones en mediciones que indiquen posibles errores de montaje o fallas de componentes</li>
+                    <li>Proponer algún criterio de "alerta" para componentes críticos</li>
+                </ul>
+                <p>💡 <em>Este punto implica pasar de registrar datos a <strong>interpretarlos para anticipar problemas técnicos</strong>.</em></p>
+            </section>
+
+            <section class="section-card content-block delivery-block" aria-labelledby="entrega">
+                <h2 id="entrega">Formato de Entrega</h2>
+                <p><strong>Regla de nombrado:</strong> <code>Actividad ## - Apellido.ext</code></p>
+                <p>La entrega se realiza exclusivamente en el Aula Virtual, en la actividad correspondiente. El documento entregado debe cumplir principios WCAG 2.1 aplicables a procesadores de texto: uso correcto de estilos de título, texto alternativo en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor.</p>
+                
+                <h3>Elementos a entregar:</h3>
+                <ol>
+                    <li>Planilla funcional</li>
+                    <li>Informe breve (5–8 líneas):
+                        <ul>
+                            <li>Cómo organizaste la información</li>
+                            <li>Qué decisiones técnicas tomaste</li>
+                            <li>Cómo la herramienta ayuda al laboratorio</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="criterios">
+                <h2 id="criterios">Criterios de evaluación</h2>
+                <ul>
+                    <li>Interpretación del problema técnico</li>
+                    <li>Organización de datos electrónicos</li>
+                    <li>Decisiones de diseño en la planilla</li>
+                    <li>Nivel de automatización</li>
+                    <li>Utilidad para un contexto real de laboratorio</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

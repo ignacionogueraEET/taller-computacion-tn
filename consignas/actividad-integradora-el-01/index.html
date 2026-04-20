@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Ignacio Noguera">
+    <meta name="description" content="Plantilla de guía accesible - EET N.° 1 Paraná. Actividad Integradora: Gestión y control de mantenimiento de equipos.">
+    <title>Actividad: Gestión y control de mantenimiento | EET N.° 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container">
+        <header class="header-main">
+            <div class="header-top">
+                <div class="institutional-info">
+                    <p class="institution"><strong>EET N.° 1 "General Francisco Ramírez" - Paraná</strong></p>
+                    <p>Docente: Juan Ignacio Noguera</p>
+                    <p>Espacio Curricular: Taller de Computación 3° Turno Noche</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+                    <span aria-hidden="true" class="toggle-icon">🌓</span> Modo Oscuro
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <h1>Actividad integradora: Gestión y control de mantenimiento de equipos</h1>
+
+            <section class="section-card content-block" aria-labelledby="contexto">
+                <h2 id="contexto">Contexto (rol profesional)</h2>
+                <p>Una pequeña empresa cuenta con varias máquinas (motores, bombas, compresores, etc.) y necesita organizar el mantenimiento para evitar fallas y controlar los costos.</p>
+                <p>Actualmente, el mantenimiento se realiza sin registro claro, lo que genera:</p>
+                <ul>
+                    <li>Paradas inesperadas</li>
+                    <li>Gastos imprevistos</li>
+                    <li>Dificultad para planificar intervenciones</li>
+                </ul>
+                <p>El cliente solicita una herramienta que le permita <strong>registrar, controlar y analizar el mantenimiento de sus equipos</strong>.</p>
+            </section>
+
+            <section class="section-card content-block warning-block" aria-labelledby="consigna">
+                <h2 id="consigna">Consigna</h2>
+                <p>Deberás desarrollar una solución utilizando una <strong>planilla de cálculo</strong> que permita gestionar el mantenimiento de los equipos.</p>
+                <div class="alert" role="note">
+                    <p><strong>⚠️ Importante:</strong> No se indicarán herramientas específicas. Se evaluará tu capacidad de <strong>interpretar el problema y decidir cómo resolverlo</strong>.</p>
+                </div>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="requerimientos">
+                <h2 id="requerimientos">Requerimientos del cliente</h2>
+                
+                <h3>1. Registro de equipos</h3>
+                <p>La herramienta debe permitir:</p>
+                <ul>
+                    <li>Identificar cada equipo (nombre o código)</li>
+                    <li>Registrar tipo de equipo (motor, bomba, etc.)</li>
+                    <li>Incluir datos relevantes (por ejemplo: potencia, ubicación, u otros que consideres importantes)</li>
+                </ul>
+
+                <h3>2. Registro de mantenimiento</h3>
+                <p>Debe permitir:</p>
+                <ul>
+                    <li>Registrar intervenciones realizadas</li>
+                    <li>Incluir fecha, tipo de mantenimiento (preventivo / correctivo)</li>
+                    <li>Describir la tarea realizada</li>
+                    <li>Registrar costo asociado</li>
+                </ul>
+
+                <h3>3. Control y seguimiento</h3>
+                <p>La herramienta debe facilitar:</p>
+                <ul>
+                    <li>Visualizar el historial de mantenimiento de cada equipo</li>
+                    <li>Identificar equipos con mayor frecuencia de fallas</li>
+                    <li>Detectar gastos acumulados</li>
+                </ul>
+
+                <h3>4. Análisis</h3>
+                <p>El cliente necesita:</p>
+                <ul>
+                    <li>Interpretar el estado general del sistema de mantenimiento</li>
+                    <li>Detectar posibles problemas (equipos costosos o con fallas recurrentes)</li>
+                    <li>Contar con información para tomar decisiones</li>
+                </ul>
+
+                <h3>5. Validación y organización</h3>
+                <ul>
+                    <li>Evitar errores en la carga de datos</li>
+                    <li>Organizar la información de forma clara y lógica</li>
+                    <li>Facilitar la consulta de datos</li>
+                </ul>
+
+                <h3>6. Visualización</h3>
+                <ul>
+                    <li>Incluir al menos una representación gráfica relevante (por ejemplo: costos por equipo, cantidad de intervenciones, etc.)</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="decisiones">
+                <h2 id="decisiones">Decisiones técnicas (parte central)</h2>
+                <p>Deberás definir:</p>
+                <ul>
+                    <li>Cómo estructurar la planilla</li>
+                    <li>Qué herramientas utilizar</li>
+                    <li>Cómo automatizar cálculos y controles</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block accent-block" aria-labelledby="desafio">
+                <h2 id="desafio">🔼 Desafío opcional (nivel avanzado)</h2>
+                <p>El cliente quiere mejorar la planificación y evitar fallas.</p>
+                <p>Tu herramienta deberá permitir:</p>
+                <ul>
+                    <li>Anticipar necesidades de mantenimiento</li>
+                    <li>Detectar equipos "críticos"</li>
+                    <li>Proponer algún criterio para priorizar intervenciones</li>
+                </ul>
+                <p>💡 <em>Este punto implica pasar de registrar información a <strong>gestionar el mantenimiento</strong>.</em></p>
+            </section>
+
+            <section class="section-card content-block delivery-block" aria-labelledby="entrega">
+                <h2 id="entrega">Formato de Entrega</h2>
+                <p><strong>Regla de nombrado:</strong> <code>Actividad ## - Apellido.ext</code></p>
+                <p>La entrega se realiza exclusivamente en el Aula Virtual, en la actividad correspondiente. El documento entregado debe cumplir principios WCAG 2.1 aplicables a procesadores de texto: uso correcto de estilos de título, texto alternativo en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor.</p>
+                
+                <h3>Elementos a entregar:</h3>
+                <ol>
+                    <li>Planilla funcional</li>
+                    <li>Informe breve (5–8 líneas):
+                        <ul>
+                            <li>Cómo resolviste el problema</li>
+                            <li>Qué decisiones técnicas tomaste</li>
+                            <li>(Opcional) Cómo abordaste la planificación del mantenimiento</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="criterios">
+                <h2 id="criterios">Criterios de evaluación</h2>
+                <ul>
+                    <li>Interpretación del problema</li>
+                    <li>Organización de la información</li>
+                    <li>Decisiones técnicas</li>
+                    <li>Nivel de automatización</li>
+                    <li>Utilidad real de la herramienta</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

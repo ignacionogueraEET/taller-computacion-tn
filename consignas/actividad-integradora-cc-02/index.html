@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Ignacio Noguera">
+    <meta name="description" content="Plantilla de guía accesible - EET N.° 1 Paraná. Actividad Integradora: Planificación y control de avance de obra.">
+    <title>Actividad: Planificación y control de avance | EET N.° 1</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container">
+        <header class="header-main">
+            <div class="header-top">
+                <div class="institutional-info">
+                    <p class="institution"><strong>EET N.° 1 "General Francisco Ramírez" - Paraná</strong></p>
+                    <p>Docente: Juan Ignacio Noguera</p>
+                    <p>Espacio Curricular: Taller de Computación 3° Turno Noche</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+                    <span aria-hidden="true" class="toggle-icon">🌓</span> Modo Oscuro
+                </button>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <h1>Actividad integradora: Planificación y control de avance de obra</h1>
+
+            <section class="section-card content-block" aria-labelledby="contexto">
+                <h2 id="contexto">Contexto (rol profesional)</h2>
+                <p>Una empresa constructora está ejecutando una vivienda de dos plantas. El cliente exige poder seguir el avance de la obra y tener control sobre los tiempos, los materiales utilizados y el estado general del proyecto.</p>
+                <p>Actualmente, la obra presenta problemas de organización:</p>
+                <ul>
+                    <li>No se controla correctamente el avance por etapas</li>
+                    <li>No hay registro claro de materiales utilizados</li>
+                    <li>Es difícil estimar retrasos o desviaciones en la planificación</li>
+                </ul>
+                <p>Se solicita el desarrollo de una herramienta en planilla de cálculo que permita <strong>planificar, registrar y controlar el avance de una obra de construcción</strong>.</p>
+            </section>
+
+            <section class="section-card content-block warning-block" aria-labelledby="consigna">
+                <h2 id="consigna">Consigna</h2>
+                <p>Deberás diseñar una solución utilizando una <strong>planilla de cálculo</strong> que permita gestionar el avance de una obra desde su planificación hasta su ejecución.</p>
+                <div class="alert" role="note">
+                    <p><strong>⚠️ Importante:</strong> No se indicarán herramientas específicas. Se evaluará tu capacidad de <strong>organizar información técnica y construir una solución funcional y lógica</strong>.</p>
+                </div>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="requerimientos">
+                <h2 id="requerimientos">Requerimientos del cliente</h2>
+                
+                <h3>1. Planificación de obra</h3>
+                <p>La herramienta debe permitir:</p>
+                <ul>
+                    <li>Dividir la obra en etapas o rubros (ej.: fundaciones, estructura, instalaciones, terminaciones)</li>
+                    <li>Definir tareas dentro de cada etapa</li>
+                    <li>Estimar tiempos de ejecución por tarea</li>
+                    <li>Registrar materiales principales asociados a cada etapa</li>
+                </ul>
+
+                <h3>2. Seguimiento de avance</h3>
+                <p>Debe permitir:</p>
+                <ul>
+                    <li>Registrar el estado de cada tarea (no iniciada / en proceso / finalizada)</li>
+                    <li>Actualizar el avance general de la obra</li>
+                    <li>Detectar tareas atrasadas o fuera de planificación</li>
+                </ul>
+
+                <h3>3. Control de materiales y recursos</h3>
+                <p>La herramienta debe facilitar:</p>
+                <ul>
+                    <li>Registrar materiales utilizados por etapa</li>
+                    <li>Identificar consumos elevados o desvíos respecto a lo previsto</li>
+                    <li>Tener una visión general del uso de recursos</li>
+                </ul>
+
+                <h3>4. Análisis de la obra</h3>
+                <p>El sistema debe permitir:</p>
+                <ul>
+                    <li>Visualizar el estado general del proyecto</li>
+                    <li>Detectar retrasos o cuellos de botella</li>
+                    <li>Identificar etapas críticas de la obra</li>
+                </ul>
+
+                <h3>5. Organización y claridad</h3>
+                <ul>
+                    <li>Estructurar la información de forma clara y ordenada</li>
+                    <li>Facilitar la actualización periódica de datos</li>
+                    <li>Evitar duplicaciones o pérdida de información</li>
+                </ul>
+
+                <h3>6. Visualización</h3>
+                <ul>
+                    <li>Incluir al menos un gráfico o representación visual que permita interpretar el avance de la obra o la distribución de tiempos/costos</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="decisiones">
+                <h2 id="decisiones">Decisiones técnicas (parte central)</h2>
+                <p>Deberás definir:</p>
+                <ul>
+                    <li>Cómo estructurarás la planificación y el seguimiento</li>
+                    <li>Qué criterios usarás para medir el avance de la obra</li>
+                    <li>Cómo organizarás materiales, tareas y etapas</li>
+                    <li>Qué herramientas utilizarás para automatizar el control</li>
+                </ul>
+            </section>
+
+            <section class="section-card content-block accent-block" aria-labelledby="desafio">
+                <h2 id="desafio">🔼 Desafío opcional (nivel avanzado)</h2>
+                <p>El cliente quiere mejorar la toma de decisiones durante la obra.</p>
+                <p>Tu herramienta deberá permitir:</p>
+                <ul>
+                    <li>Detectar automáticamente si la obra está atrasada respecto a la planificación</li>
+                    <li>Identificar qué etapas generan mayor retraso o consumo de recursos</li>
+                    <li>Proponer información útil para reorganizar la planificación</li>
+                </ul>
+                <p>💡 <em>Este punto implica pasar de “registrar obra” a <strong>gestionar activamente el proyecto constructivo</strong>.</em></p>
+            </section>
+
+            <section class="section-card content-block delivery-block" aria-labelledby="entrega">
+                <h2 id="entrega">Formato de Entrega</h2>
+                <p><strong>Regla de nombrado:</strong> <code>Actividad ## - Apellido.ext</code></p>
+                <p>La entrega se realiza exclusivamente en el Aula Virtual, en la actividad correspondiente. El documento entregado debe cumplir principios WCAG 2.1 aplicables a procesadores de texto: uso correcto de estilos de título, texto alternativo en imágenes, contraste adecuado, orden lógico de lectura y metadatos de autor.</p>
+                
+                <h3>Elementos a entregar:</h3>
+                <ol>
+                    <li>Planilla funcional completa</li>
+                    <li>Informe breve (5–8 líneas):
+                        <ul>
+                            <li>Cómo organizaste la obra en la planilla</li>
+                            <li>Qué decisiones técnicas tomaste</li>
+                            <li>Cómo ayuda la herramienta a controlar el proyecto</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section-card content-block" aria-labelledby="criterios">
+                <h2 id="criterios">Criterios de evaluación</h2>
+                <ul>
+                    <li>Interpretación del proceso constructivo</li>
+                    <li>Organización lógica de etapas y tareas</li>
+                    <li>Nivel de control y automatización</li>
+                    <li>Utilidad real en contexto de obra</li>
+                    <li>Claridad de la presentación de datos</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

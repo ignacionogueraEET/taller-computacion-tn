@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De la Idea a la Solución: Planillas de Cálculo Técnicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="header">
+        <div class="container">
+            <h1>Resolución de Problemas Técnicos</h1>
+            <p class="subtitle">Guía avanzada de Pensamiento Computacional y Planillas de Cálculo</p>
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <span class="icon" aria-hidden="true">🌓</span>
+                <span class="text">Modo Oscuro</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content" class="container" tabindex="-1">
+        
+        <section class="card" aria-labelledby="sec-1">
+            <h2 id="sec-1">1. Comprender la Demanda: El Arte de Escuchar</h2>
+            <p>En el mundo profesional, el cliente rara vez te da una fórmula matemática. Te presenta una necesidad o un problema, a menudo mezclado con emociones o detalles irrelevantes. Tu primer trabajo es ser un traductor.</p>
+            
+            <div class="details-group">
+                <details>
+                    <summary>A. Identificar Salidas (Outputs) y Entradas (Inputs)</summary>
+                    <div class="details-content">
+                        <p><strong>Salida (Output):</strong> Es el objetivo final. Preguntate: <em>¿Qué número define si este trabajo está terminado?</em> Puede ser el presupuesto final en pesos, el calibre de una protección o la cantidad de bolsas de cemento.</p>
+                        <p><strong>Entrada (Input):</strong> Son los datos crudos que necesitás para arrancar. Medidas del terreno, tensión de la red, potencia de los motores o precios de lista.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>B. El Filtro de "Ruido"</summary>
+                    <div class="details-content">
+                        <p>El cliente puede decir: <em>"Quiero poner aires acondicionados porque mi señora se queja, y que no se vean los cables porque pinté de blanco"</em>.</p>
+                        <p><strong>Lo que escuchás como técnico:</strong> "Se incorporan cargas inductivas. Se requiere calcular sección del conductor para embutir en pared (afecta disipación)". El resto es ruido.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="sec-2">
+            <h2 id="sec-2">2. Planificación: El Plano de tu Planilla</h2>
+            <p>Empezar a escribir sin pensar es como levantar una pared sin planos. Necesitamos diseñar la arquitectura de la información dividiéndola en zonas:</p>
+            
+            <div class="grid">
+                <div class="zone zone-input">
+                    <h3>Zona de Datos (Entrada)</h3>
+                    <p>Valores que pueden cambiar (precios, medidas). Usá un fondo suave para indicar "acá se escribe".</p>
+                </div>
+                <div class="zone zone-process">
+                    <h3>Zona de Procesamiento</h3>
+                    <p>El "motor" de tu planilla. Aquí van las fórmulas matemáticas. Suele ocultarse para no confundir al cliente.</p>
+                </div>
+                <div class="zone zone-output">
+                    <h3>Zona de Resultados</h3>
+                    <p>El resumen ejecutivo. Letra grande y en negrita. Es la respuesta final que el cliente espera.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="sec-3">
+            <h2 id="sec-3">3. Pensamiento Computacional Aplicado</h2>
+            <p>Se apoya en cuatro pilares fundamentales para resolver problemas:</p>
+            
+            <div class="details-group">
+                <details>
+                    <summary>1. Descomposición</summary>
+                    <div class="details-content">
+                        <p>Dividir el problema en partes. Ej: Al presupuestar una obra, calcular por separado fundaciones, mampostería y electricidad.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>2. Reconocimiento de Patrones</summary>
+                    <div class="details-content">
+                        <p>Buscamos qué se repite. Si calculás la caída de tensión de 10 circuitos, la fórmula es la misma para todos, solo cambiás los datos.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>3. Abstracción</summary>
+                    <div class="details-content">
+                        <p>Ir a lo esencial. Al calcular la resistencia de una viga, no importa el color de la pintura, importan la luz, carga y el material.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>4. Algoritmos</summary>
+                    <div class="details-content">
+                        <p>Reglas estructuradas. Ej: <code>SI(Corriente > 25; "Cambiar Cable"; "Cable Apto")</code>. Le enseñamos a la planilla a tomar decisiones.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="sec-4">
+            <h2 id="sec-4">4. Buenas Prácticas del Técnico</h2>
+            <ul class="feature-list">
+                <li><strong>Cero números mágicos:</strong> Nunca escribas un número fijo dentro de una fórmula (Ej: <code>=B2 * 21</code> para el IVA). Escribí el 21 en una celda separada llamada "IVA" y referenciala.</li>
+                <li><strong>Unidades claras:</strong> ¿Son 50 Watts o 50 Amperes? Todo resultado debe tener su unidad técnica.</li>
+                <li><strong>Alertas Visuales:</strong> Usá Formato Condicional. Si un valor es peligroso, que la celda se pinte de rojo.</li>
+            </ul>
+        </section>
+
+        <section class="card exercise" aria-labelledby="sec-5">
+            <h2 id="sec-5">🚀 Desafío Práctico: El Presupuesto del Taller</h2>
+            <div class="task-box">
+                <p><strong>Relato del Cliente:</strong></p>
+                <p><em>"Hola, necesito instalar 3 tornos que consumen 2000W cada uno y 5 amoladoras de 800W. El cable principal que llega al tablero aguanta hasta 25 Amperes en 220V. También necesito saber cuánto me sale hacer el piso de cemento para el galpón, que mide 10x15 metros (el m² de cemento alisado cuesta $15.000). Los tornos los quiero pintar de color azul marino."</em></p>
+            </div>
+            
+            <h3>Tu misión:</h3>
+            <ol>
+                <li>Identificá Inputs, Outputs y Ruido.</li>
+                <li>Dibujá la arquitectura de la planilla (separando obra civil de electricidad).</li>
+                <li>Planteá la lógica algorítmica para saber si la instalación es apta o hay peligro (Amperaje = Potencia / Voltaje).</li>
+            </ol>
+
+            <details class="resolution-details">
+                <summary>✅ Ver Resolución Paso a Paso</summary>
+                <div class="details-content resolution-content">
+                    <h4>Paso 1: Filtro de Información</h4>
+                    <ul>
+                        <li><strong>Inputs (Entradas):</strong> 3 Tornos (2000W), 5 Amoladoras (800W), Límite (25A), Tensión (220V), Galpón (10x15m), Cemento ($15.000/m²).</li>
+                        <li><strong>Outputs (Salidas):</strong> Costo total del piso, Amperaje total, Estado de la instalación.</li>
+                        <li><strong>Ruido (Descartar):</strong> El color azul marino de los tornos.</li>
+                    </ul>
+                    
+                    <h4>Pasos 2 y 3: Descomposición y Algoritmos</h4>
+                    <p><strong>Sección A: Cálculo Eléctrico</strong></p>
+                    <ul>
+                        <li>Potencia Total = (3 × 2000W) + (5 × 800W) = <strong>10.000W</strong></li>
+                        <li>Amperaje Total = 10.000W / 220V = <strong>45.45A</strong></li>
+                        <li>Condición Lógica: <code>=SI(45.45 <= 25; "INSTALACIÓN APTA"; "PELIGRO - REDISEÑAR")</code> ➔ <strong>Resultado: PELIGRO</strong></li>
+                    </ul>
+
+                    <p><strong>Sección B: Obra Civil (Piso)</strong></p>
+                    <ul>
+                        <li>Superficie = 10m × 15m = <strong>150m²</strong></li>
+                        <li>Costo Total = 150m² × $15.000 = <strong>$2.250.000</strong></li>
+                    </ul>
+
+                    <h4>Paso 4: Arquitectura Sugerida en la Planilla</h4>
+                    <p>Debés crear una <strong>Zona Verde</strong> para escribir los datos (2000, 800, 25, 220, 10, 15, 15000), una <strong>Zona Gris</strong> para las multiplicaciones y divisiones, y una gran <strong>Zona de Resultados</strong> que muestre: "Costo Total: $2.250.000" y la celda de Estado pintada de rojo brillante indicando "PELIGRO - REDISEÑAR".</p>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Taller de Computación - EET N.° 1 "General Francisco Ramírez" | Docente: Juan Ignacio Noguera</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
