@@ -1,0 +1,880 @@
+<!-- === ARCHIVO: index.html === -->
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <!-- Charset y viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO básico -->
+    <meta
+      name="description"
+      content="Actividad Integradora: Planilla de cálculo para sueldos semanales con fórmulas, formato condicional, validación de datos y gráficos comparativos."
+    />
+    <meta name="author" content="Juan Ignacio Noguera" />
+    <meta
+      name="keywords"
+      content="EET N1, Taller de Computación, planilla de cálculo, Excel, LibreOffice Calc, sueldos, horas extra, formato condicional, validación de datos, gráficos"
+    />
+
+    <!-- Open Graph (previsualización en GitHub / redes) -->
+    <meta
+      property="og:title"
+      content="Actividad Integradora – Sueldos Semanales | Taller de Computación"
+    />
+    <meta
+      property="og:description"
+      content="Desarrollar una planilla de cálculo para calcular sueldos semanales con horas extra, formato condicional, validación de datos y gráficos comparativos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- JSON-LD Schema.org Course (mínimo requerido) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Actividad Integradora – Sueldos Semanales",
+        "description": "Planilla de cálculo para calcular sueldos semanales con fórmulas, formato condicional, validación de datos y gráficos comparativos.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "EET N.° 1 General Francisco Ramírez",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paraná",
+            "addressCountry": "AR"
+          }
+        },
+        "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+        "educationalLevel": "Secundaria Técnica",
+        "inLanguage": "es-AR",
+        "courseCode": "TC-3TN-AI-01"
+      }
+    </script>
+
+    <title>
+      Actividad Integradora – Sueldos Semanales | Taller de Computación
+    </title>
+    <link rel="stylesheet" href="./style.css" />
+    <base target="_blank" />
+  </head>
+  <body>
+    <!-- Skip link (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <div class="layout-wrapper">
+      <!-- ========================= HEADER ========================= -->
+      <header role="banner">
+        <div class="header-branding">
+          <h1>
+            Taller de Computación
+            <span class="header-meta">3° Turno Noche</span>
+          </h1>
+          <p class="header-inst">
+            EET N.° 1 "General Francisco Ramírez" — Paraná
+          </p>
+          <p class="header-docente">Docente: Juan Ignacio Noguera</p>
+        </div>
+
+        <button
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Activar modo oscuro"
+        >
+          <svg
+            id="icon-theme"
+            aria-hidden="true"
+            focusable="false"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <!-- Ícono sol (modo claro activo) -->
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <span class="toggle-label">Modo oscuro</span>
+        </button>
+      </header>
+
+      <!-- ========================= NAV (ToC) ========================= -->
+      <nav id="toc" aria-label="Tabla de contenidos">
+        <!-- INYECTAR: lista generada dinámicamente por JS -->
+      </nav>
+
+      <!-- ========================= MAIN ========================= -->
+      <main id="main-content">
+        <!-- ---------- SECCIÓN: CONSIGNA ---------- -->
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">📋 Consigna de la Actividad</h2>
+
+          <!-- Ilustración SVG obligatoria — planilla de cálculo -->
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+            <svg
+              role="img"
+              aria-labelledby="svg-titulo svg-desc"
+              viewBox="0 0 400 200"
+              xmlns="http://www.w3.org/2000/svg"
+              focusable="false"
+              width="100%"
+              height="auto"
+            >
+              <title id="svg-titulo">
+                Planilla de cálculo con columnas, filas de empleados, gráfico de
+                barras y celda de valor por hora
+              </title>
+              <desc id="svg-desc">
+                Ilustración de una planilla de cálculo mostrando una tabla con
+                encabezados de columna (Empleado, Lunes a Viernes, Total,
+                Sueldo), filas de datos con celdas sombreadas, una celda
+                destacada con el valor por hora, y un gráfico de barras
+                comparativo al costado derecho. Todo en estilo plano con colores
+                del tema activo.
+              </desc>
+
+              <!-- Fondo de la ventana de planilla -->
+              <rect
+                x="10"
+                y="10"
+                width="250"
+                height="180"
+                rx="6"
+                fill="var(--color-surface)"
+                stroke="var(--color-border)"
+                stroke-width="1.5"
+              />
+              <!-- Barra de título de ventana -->
+              <rect
+                x="10"
+                y="10"
+                width="250"
+                height="18"
+                rx="6"
+                fill="var(--color-accent)"
+                opacity="0.25"
+              />
+              <circle
+                cx="22"
+                cy="19"
+                r="3"
+                fill="var(--color-accent)"
+                opacity="0.6"
+              />
+              <circle
+                cx="34"
+                cy="19"
+                r="3"
+                fill="var(--color-accent)"
+                opacity="0.6"
+              />
+              <circle
+                cx="46"
+                cy="19"
+                r="3"
+                fill="var(--color-accent)"
+                opacity="0.6"
+              />
+
+              <!-- Encabezados de columna -->
+              <rect
+                x="18"
+                y="36"
+                width="60"
+                height="14"
+                rx="2"
+                fill="var(--color-accent)"
+                opacity="0.2"
+              />
+              <rect
+                x="82"
+                y="36"
+                width="32"
+                height="14"
+                rx="2"
+                fill="var(--color-accent)"
+                opacity="0.2"
+              />
+              <rect
+                x="118"
+                y="36"
+                width="32"
+                height="14"
+                rx="2"
+                fill="var(--color-accent)"
+                opacity="0.2"
+              />
+              <rect
+                x="154"
+                y="36"
+                width="32"
+                height="14"
+                rx="2"
+                fill="var(--color-accent)"
+                opacity="0.2"
+              />
+              <rect
+                x="190"
+                y="36"
+                width="32"
+                height="14"
+                rx="2"
+                fill="var(--color-accent)"
+                opacity="0.2"
+              />
+              <rect
+                x="226"
+                y="36"
+                width="28"
+                height="14"
+                rx="2"
+                fill="var(--color-accent)"
+                opacity="0.2"
+              />
+
+              <!-- Filas de datos (5 empleados) -->
+              <rect
+                x="18"
+                y="54"
+                width="60"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="82"
+                y="54"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="118"
+                y="54"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="154"
+                y="54"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="190"
+                y="54"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="226"
+                y="54"
+                width="28"
+                height="12"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.15"
+              />
+
+              <rect
+                x="18"
+                y="70"
+                width="60"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="82"
+                y="70"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="118"
+                y="70"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="154"
+                y="70"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="190"
+                y="70"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="226"
+                y="70"
+                width="28"
+                height="12"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.15"
+              />
+
+              <rect
+                x="18"
+                y="86"
+                width="60"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="82"
+                y="86"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="118"
+                y="86"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="154"
+                y="86"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="190"
+                y="86"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="226"
+                y="86"
+                width="28"
+                height="12"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.15"
+              />
+
+              <rect
+                x="18"
+                y="102"
+                width="60"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="82"
+                y="102"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="118"
+                y="102"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="154"
+                y="102"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="190"
+                y="102"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.05"
+              />
+              <rect
+                x="226"
+                y="102"
+                width="28"
+                height="12"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.15"
+              />
+
+              <rect
+                x="18"
+                y="118"
+                width="60"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="82"
+                y="118"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="118"
+                y="118"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="154"
+                y="118"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="190"
+                y="118"
+                width="32"
+                height="12"
+                rx="1"
+                fill="currentColor"
+                opacity="0.08"
+              />
+              <rect
+                x="226"
+                y="118"
+                width="28"
+                height="12"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.15"
+              />
+
+              <!-- Celda destacada: valor por hora -->
+              <rect
+                x="18"
+                y="140"
+                width="90"
+                height="18"
+                rx="3"
+                fill="var(--color-accent)"
+                opacity="0.25"
+                stroke="var(--color-accent)"
+                stroke-width="1.5"
+                stroke-dasharray="4 2"
+              />
+              <text
+                x="24"
+                y="152"
+                font-size="8"
+                fill="currentColor"
+                font-family="sans-serif"
+                opacity="0.7"
+              >
+                Valor/hora: $500
+              </text>
+
+              <!-- Gráfico de barras al costado -->
+              <rect
+                x="280"
+                y="30"
+                width="100"
+                height="150"
+                rx="6"
+                fill="var(--color-surface)"
+                stroke="var(--color-border)"
+                stroke-width="1"
+              />
+              <text
+                x="290"
+                y="46"
+                font-size="7"
+                fill="currentColor"
+                font-family="sans-serif"
+                opacity="0.6"
+              >
+                Horas por empleado
+              </text>
+              <!-- Barras -->
+              <rect
+                x="290"
+                y="140"
+                width="12"
+                height="30"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.7"
+              />
+              <rect
+                x="308"
+                y="125"
+                width="12"
+                height="45"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.7"
+              />
+              <rect
+                x="326"
+                y="148"
+                width="12"
+                height="22"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.7"
+              />
+              <rect
+                x="344"
+                y="110"
+                width="12"
+                height="60"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.7"
+              />
+              <rect
+                x="362"
+                y="135"
+                width="12"
+                height="35"
+                rx="1"
+                fill="var(--color-accent)"
+                opacity="0.7"
+              />
+              <!-- Línea base -->
+              <line
+                x1="285"
+                y1="172"
+                x2="380"
+                y2="172"
+                stroke="currentColor"
+                stroke-width="0.8"
+                opacity="0.3"
+              />
+            </svg>
+            <figcaption>
+              Representación esquemática de la planilla de cálculo con tabla de
+              empleados, celda de valor por hora y gráfico comparativo.
+            </figcaption>
+          </figure>
+
+          <p>
+            La empresa <strong>“Cuchara Ligera”</strong> necesita calcular el
+            sueldo semanal de sus empleados a partir de las horas trabajadas.
+            Cada empleado registra los días trabajados en la semana y la
+            cantidad de horas trabajadas por día. La empresa establece que se
+            paga un valor fijo por hora, y las horas que superen las 40 horas
+            semanales se abonan con un <strong>20% adicional</strong>.
+          </p>
+
+          <h3>Situación problemática</h3>
+          <p>
+            Se debe desarrollar una planilla de cálculo (Excel, LibreOffice Calc
+            o similar) que permita registrar los datos de <em>N</em> empleados,
+            calcular automáticamente el total de horas trabajadas por semana, el
+            sueldo semanal de cada empleado (considerando horas extra), el total
+            abonado por la empresa, y representar la información mediante un
+            gráfico comparativo de horas trabajadas por empleado.
+          </p>
+
+          <h3 id="titulo-checklist">Requisitos técnicos obligatorios</h3>
+          <div role="group" aria-labelledby="titulo-checklist">
+            <ul class="checklist">
+              <li>
+                <input type="checkbox" id="chk-valor-hora" name="requisito" />
+                <label for="chk-valor-hora"
+                  >El valor de la hora debe estar en una celda independiente (no
+                  dentro de fórmulas).</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="chk-formulas" name="requisito" />
+                <label for="chk-formulas"
+                  >Las fórmulas deben estar correctamente construidas para
+                  permitir su copiado automático.</label
+                >
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="chk-formato-condicional"
+                  name="requisito"
+                />
+                <label for="chk-formato-condicional"
+                  >Aplicar formato condicional para resaltar empleados que
+                  superen las 40 hs semanales.</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="chk-validacion" name="requisito" />
+                <label for="chk-validacion"
+                  >Validar las celdas de ingreso de datos (horas) para evitar
+                  texto y valores negativos.</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="chk-grafico" name="requisito" />
+                <label for="chk-grafico"
+                  >Incluir un gráfico adecuado (columnas o barras) con título y
+                  referencias claras.</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="chk-logo-formato" name="requisito" />
+                <label for="chk-logo-formato"
+                  >Incorporar un logo y dar formato general que mejore la
+                  legibilidad.</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <output id="progreso-texto" aria-live="polite"
+            >0 de 6 ítems completados (0%)</output
+          >
+
+          <h3>Requisitos de presentación (importante para la evaluación)</h3>
+          <ul>
+            <li>Orden y claridad de la tabla.</li>
+            <li>Uso correcto de funciones.</li>
+            <li>Coherencia en los cálculos.</li>
+            <li>Presentación visual (alineación, colores, títulos).</li>
+            <li>Uso adecuado de nombres de columnas.</li>
+          </ul>
+
+          <h3>Actividad teórica complementaria</h3>
+          <p>
+            Responder en el mismo archivo (en una hoja aparte o documento
+            adjunto):
+          </p>
+          <ol>
+            <li>
+              ¿Qué es un periférico? ¿Cómo se clasifican? Dar 2 ejemplos de cada
+              tipo.
+            </li>
+            <li>
+              ¿Cuál es la diferencia entre bit y byte? Incluir un ejemplo
+              práctico.
+            </li>
+          </ol>
+
+          <h3>⏱️ Tiempo de trabajo</h3>
+          <p><strong>90 minutos</strong></p>
+        </section>
+
+        <!-- ---------- SECCIÓN: ENTREGA ---------- -->
+        <section id="entrega" aria-labelledby="titulo-entrega">
+          <h2 id="titulo-entrega">📤 Reglas de Entrega</h2>
+
+          <p>
+            La entrega se realiza a través del aula virtual institucional.
+            Asegúrate de incluir todos los archivos solicitados y de verificar
+            que las fórmulas funcionen correctamente antes de enviar.
+          </p>
+
+          <h3>Formato de archivo</h3>
+          <ul>
+            <li>
+              Planilla de cálculo en formato <code>.xlsx</code> (Excel),
+              <code>.ods</code> (LibreOffice Calc) o Hoja de Cálculo (Google
+              Sheets).
+            </li>
+            <li>
+              Si la actividad teórica está en una hoja aparte, indicar
+              claramente el nombre de la pestaña.
+            </li>
+            <li>
+              Si es documento adjunto, formato <code>.pdf</code> o
+              <code>.odt</code>.
+            </li>
+          </ul>
+
+          <h3>Recordatorios de accesibilidad</h3>
+          <ul>
+            <li>Usá nombres de columnas claros y descriptivos.</li>
+            <li>
+              Evitá fondos de color muy saturados que dificulten la lectura.
+            </li>
+            <li>
+              Asegúrate de que el gráfico tenga contraste suficiente entre las
+              barras y el fondo.
+            </li>
+            <li>
+              Si incluís un logo, verificá que no tape información importante.
+            </li>
+          </ul>
+
+          <h3>Recursos recomendados</h3>
+          <ul>
+            <li>
+              <a
+                href="https://support.microsoft.com/es-es/excel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ayuda de Microsoft Excel
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://help.libreoffice.org/Calc/es"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ayuda de LibreOffice Calc
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://docs.google.com/spreadsheets/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hojas de Cálculo de Google
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://webaim.org/resources/contrastchecker/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WebAIM Contrast Checker (verificación de contraste)
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <!-- ========================= ASIDE ========================= -->
+      <aside id="notas" aria-label="Contexto de la actividad">
+        <h2>Contexto</h2>
+
+        <!-- Tarjeta: objetivo de aprendizaje -->
+        <div class="nota-card">
+          <h3>Objetivo</h3>
+          <p>
+            Aplicar conocimientos de planillas de cálculo para resolver una
+            situación problemática real: cálculo de sueldos con horas extra, uso
+            de fórmulas con referencias absolutas y relativas, formato
+            condicional, validación de datos e inserción de gráficos
+            comparativos.
+          </p>
+        </div>
+
+        <!-- Tarjeta: materiales o herramientas necesarias -->
+        <div class="nota-card">
+          <h3>Herramientas</h3>
+          <ul>
+            <li>
+              Microsoft Excel (versión 2016 o superior), LibreOffice Calc o
+              Hojas de Cálculo de Google.
+            </li>
+            <li>Conocimientos previos de fórmulas básicas (SUMA, SI, etc.).</li>
+            <li>
+              Acceso a internet para consultar documentación si es necesario.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tarjeta: modalidad de trabajo -->
+        <div class="nota-card">
+          <h3>Modalidad</h3>
+          <p>
+            Individual. Duración estimada: <strong>90 minutos</strong>. Se
+            recomienda guardar el archivo periódicamente para evitar pérdida de
+            datos.
+          </p>
+        </div>
+      </aside>
+
+      <!-- ========================= FOOTER ========================= -->
+      <footer role="contentinfo">
+        <p>
+          © 2026 — EET N.° 1 "General Francisco Ramírez" — Paraná, Entre Ríos,
+          Argentina.
+        </p>
+        <p>
+          Taller de Computación · 3° Turno Noche · Docente: Juan Ignacio
+          Noguera.
+        </p>
+      </footer>
+    </div>
+    <!-- /.layout-wrapper -->
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

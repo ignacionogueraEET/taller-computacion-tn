@@ -102,9 +102,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>Superficie a pintar</td>
-              <td><span class="unit-badge">m²</span></td>
-              <td>La superficie total de la pared o techo.</td>
+              <td>Lados de la parerd a pintar</td>
+              <td><span class="unit-badge">m</span></td>
+              <td>La longitud de de cada lado de pared o techo.</td>
             </tr>
             <tr>
               <td>Cantidad de manos de pintura</td>
@@ -135,6 +135,18 @@
       <p>A partir de los datos ingresados, la planilla tiene que calcular automáticamente los siguientes resultados:</p>
 
       <div class="calc-grid" role="list" aria-label="Cálculos requeridos">
+
+        <article class="calc-card" role="listitem" aria-labelledby="calc-1">
+          <div class="calc-number" aria-hidden="true">1</div>
+          <div class="calc-body">
+            <h3 id="calc-1">Superficie de cada pared o techo</h3>
+            <p>Para obtenerla deberás tener en cuenta la longitudes de sus lados.</p>
+            <div class="formula-hint" role="note" aria-label="Pista de razonamiento">
+              <span class="formula-hint-label" aria-hidden="true">Pensá en…</span>
+              Lado × Lado
+            </div>
+          </div>
+        </article>
 
         <article class="calc-card" role="listitem" aria-labelledby="calc-1">
           <div class="calc-number" aria-hidden="true">1</div>
@@ -251,6 +263,20 @@
         </div>
       </article>
 
+      <article class="step-card" aria-labelledby="req-4">
+        <div class="step-number" aria-hidden="true">4</div>
+        <div class="step-content">
+          <h3 id="req-4">Agrega un informe de cómo se usa la herramienta que creaste</h3>
+          <p>Describe cómo se utiliza la planilla, qué datos se ingresan, y cómo se interpretan los resultados.</p>
+          <div class="reflect-box" role="note" aria-label="Recordatorio WCAG">
+            <span class="reflect-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+              Para reflexionar
+            </span>
+            <p>Una buena comunicación con el usuario es fundamental para el éxito de la herramienta.</p>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- OPCIONALES -->

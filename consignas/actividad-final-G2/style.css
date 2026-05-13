@@ -1,0 +1,731 @@
+/* === ARCHIVO: style.css === */
+
+/* ============================================================
+   VARIABLES GLOBALES Y RESET
+   ============================================================ */
+
+:root {
+  /* --- Paleta de colores (modo claro) --- */
+  --color-bg:         #f5f5f0;
+  --color-surface:    #eaeae4;
+  --color-text:       #1a1a1a;
+  --color-text-muted: #555555;
+  --color-accent:     #005a9e;
+  --color-accent-hover: #003d6e;
+  --color-border:     #c8c8c0;
+  --color-focus-ring: #ff8c00;
+
+  /* --- Colores de enlaces (modo claro) --- */
+  --color-link:         #005a9e;  /* reposo   — ratio ~7.5:1 (AAA) */
+  --color-link-visited: #6b2d8b;  /* visitado — ratio ~7.1:1 (AAA) */
+  --color-link-hover:   #003d6e;  /* hover    — ratio ~10:1  (AAA) */
+  --color-link-active:  #b91c1c;  /* activo   — ratio ~6.2:1 (AA)  */
+
+  /* --- Tipografia --- */
+  --font-base: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+  /* --- Espaciado --- */
+  --space-unit: 1rem;
+  --space-xs:   calc(var(--space-unit) * 0.25);
+  --space-sm:   calc(var(--space-unit) * 0.5);
+  --space-md:   var(--space-unit);
+  --space-lg:   calc(var(--space-unit) * 1.5);
+  --space-xl:   calc(var(--space-unit) * 2);
+  --space-xxl:  calc(var(--space-unit) * 3);
+
+  /* --- Layout --- */
+  --content-max-width: 75ch;
+  --aside-width: 280px;
+  --radius: 6px;
+}
+
+/* ============================================================
+   TEMA OSCURO
+   Paleta validada WCAG 2.1 (APCA complementario)
+   ============================================================ */
+
+[data-theme="dark"] {
+  /* Fondos — no usar negro puro para evitar fatiga visual */
+  --color-bg:      #1b1b2e;   /* fondo de pagina            */
+  --color-surface: #2a2a3d;   /* tarjetas, secciones, aside */
+
+  /* Textos — ratio sobre --color-bg: ~14:1 (AAA) */
+  --color-text:    #e4e4f0;   /* cuerpo principal           */
+  --color-text-muted: #a0a0b8; /* texto secundario, metadatos — ratio ~5.5:1 (AA) */
+
+  /* Acento — ratio sobre --color-bg: ~5.8:1 (AA) */
+  --color-accent:  #7eb8f7;   /* enlaces, botones, foco     */
+
+  /* Acento activo / hover — ratio sobre --color-bg: ~7.2:1 (AA) */
+  --color-accent-hover: #aad4ff;
+
+  /* Borde sutil */
+  --color-border:  #3d3d5c;
+
+  /* Foco visible — ratio sobre cualquier superficie oscura: >= 3:1 */
+  --color-focus-ring: #ffcc00; /* amarillo accesible universal */
+
+  /* --- Colores de enlaces (modo oscuro) --- */
+  --color-link:         #7eb8f7;  /* reposo   — ratio ~5.8:1 (AA)  */
+  --color-link-visited: #c9a6ff;  /* visitado — ratio ~6.5:1 (AA)  */
+  --color-link-hover:   #aad4ff;  /* hover    — ratio ~7.2:1 (AA)  */
+  --color-link-active:  #fca5a5;  /* activo   — ratio ~6.8:1 (AA)  */
+}
+
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  text-align: left;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   LAYOUT RESPONSIVE (Mobile-First)
+   ============================================================ */
+
+.layout-wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header  { grid-area: header; }
+nav#toc { grid-area: nav; }
+main    { grid-area: main; }
+aside   { grid-area: aside; }
+footer  { grid-area: footer; }
+
+/* --- Breakpoint: movil-h (480px) --- */
+@media (min-width: 480px) {
+  .layout-wrapper {
+    padding: var(--space-lg);
+  }
+}
+
+/* --- Breakpoint: tablet (768px) --- */
+@media (min-width: 768px) {
+  .layout-wrapper {
+    grid-template-areas:
+      "header header"
+      "nav    nav"
+      "main   aside"
+      "footer footer";
+    grid-template-columns: 1fr var(--aside-width);
+    gap: var(--space-xl);
+  }
+}
+
+/* --- Breakpoint: escritorio (1024px) --- */
+@media (min-width: 1024px) {
+  .layout-wrapper {
+    padding: var(--space-xl);
+  }
+}
+
+/* --- Breakpoint: pantalla-xl (1440px) --- */
+@media (min-width: 1440px) {
+  .layout-wrapper {
+    --aside-width: 360px;
+    padding-inline: 4rem;
+  }
+}
+
+/* ============================================================
+   SKIP LINK (WCAG 2.4.1)
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 1000;
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header[role="banner"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.header-branding h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.header-meta {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+.header-inst,
+.header-docente {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* ============================================================
+   BOTON TOGGLE CLARO/OSCURO
+   ============================================================ */
+
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+#theme-toggle:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+#theme-toggle svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.toggle-label {
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .toggle-label {
+    display: none;
+  }
+}
+
+/* ============================================================
+   NAVEGACION (ToC)
+   ============================================================ */
+
+nav#toc {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+}
+
+nav#toc h2 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+nav#toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#toc li {
+  margin-bottom: var(--space-xs);
+}
+
+nav#toc a {
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: calc(var(--radius) / 2);
+  text-decoration: none;
+  color: var(--color-link);
+  font-size: 0.95rem;
+  transition: background 0.15s ease;
+}
+
+nav#toc a:hover {
+  background: var(--color-bg);
+  color: var(--color-link-hover);
+}
+
+nav#toc a:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+
+/* --- ToC colapsable en movil con <details> --- */
+@media (max-width: 767px) {
+  nav#toc details {
+    border: none;
+    background: transparent;
+  }
+
+  nav#toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: var(--space-sm);
+    border-radius: var(--radius);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav#toc summary::after {
+    content: "▼";
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  nav#toc details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  nav#toc summary:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   MAIN Y SECCIONES
+   ============================================================ */
+
+main {
+  min-width: 0;
+}
+
+section {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+/* --- Ancho maximo de lectura (solo texto corrido) --- */
+section p,
+section li,
+section dd,
+section blockquote {
+  max-width: var(--content-max-width);
+}
+
+/* --- Exclusiones obligatorias --- */
+header, footer, aside,
+nav, .layout-wrapper, .header-branding,
+pre, code, .table-wrapper, figure, .ilustracion-actividad,
+.skip-link {
+  max-width: none;
+}
+
+/* ============================================================
+   ENLACES
+   ============================================================ */
+
+a:link    { color: var(--color-link);         }
+a:visited { color: var(--color-link-visited);  }
+a:hover   { color: var(--color-link-hover);    }
+a:active  { color: var(--color-link-active);   }
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+/* Quitar subrayado en contextos donde el enlace ya es reconocible */
+nav#toc a,
+#theme-toggle,
+.skip-link {
+  text-decoration: none;
+}
+
+/* ============================================================
+   ILUSTRACION SVG OBLIGATORIA
+   ============================================================ */
+
+.ilustracion-actividad {
+  max-width: 480px;
+  margin: var(--space-lg) auto;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+
+.ilustracion-actividad svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ilustracion-actividad figcaption {
+  font-style: italic;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+}
+
+/* ============================================================
+   CHECKLIST (checkboxes de progreso)
+   ============================================================ */
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  padding: var(--space-sm);
+  border-radius: calc(var(--radius) / 2);
+  transition: background 0.15s ease, opacity 0.2s ease;
+}
+
+.checklist li:hover {
+  background: var(--color-bg);
+}
+
+.checklist input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  min-width: 1.15rem;
+  margin-top: 0.15rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* --- Estado completado: tachado + opacidad reducida --- */
+.checklist input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.checklist label {
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   OUTPUT DE PROGRESO
+   ============================================================ */
+
+#progreso-texto {
+  display: block;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+/* ============================================================
+   ASIDE (panel lateral de contexto)
+   ============================================================ */
+
+aside#notas {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  align-self: start;
+}
+
+aside#notas h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.nota-card {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nota-card:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.nota-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-accent);
+}
+
+.nota-card p,
+.nota-card ul {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.nota-card ul {
+  padding-left: var(--space-md);
+  list-style: disc;
+}
+
+.nota-card li {
+  margin-bottom: var(--space-xs);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer[role="contentinfo"] {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+footer p {
+  margin-bottom: var(--space-xs);
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   UTILIDADES
+   ============================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   FOCO VISIBLE GLOBAL (:focus-visible)
+   ============================================================ */
+
+:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   TABLAS RESPONSIVAS
+   ============================================================ */
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: var(--space-sm);
+  color: var(--color-text);
+}
+
+th, td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background: var(--color-bg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+tr:hover {
+  background: var(--color-bg);
+}
+
+/* ============================================================
+   CODIGO Y PREFORMATEADO
+   ============================================================ */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-bg);
+  padding: 0.15em 0.4em;
+  border-radius: calc(var(--radius) / 2);
+  color: var(--color-accent);
+}
+
+pre {
+  background: var(--color-bg);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid var(--color-border);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* ============================================================
+   LISTAS GENERALES
+   ============================================================ */
+
+ul, ol {
+  padding-left: var(--space-lg);
+  margin: var(--space-sm) 0 var(--space-md) 0;
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* ============================================================
+   SOPORTE DE IMPRESION (@media print)
+   ============================================================ */
+
+@media print {
+  body {
+    filter: grayscale(100%);
+    background: #fff;
+    color: #000;
+  }
+
+  #theme-toggle,
+  nav#toc,
+  #progreso-texto {
+    display: none !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #333;
+  }
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    background: transparent;
+    border: 1px solid #ccc;
+  }
+
+  aside#notas {
+    background: transparent;
+    border: 1px solid #ccc;
+  }
+
+  .layout-wrapper {
+    display: block;
+    max-width: none;
+    padding: 0;
+  }
+}
