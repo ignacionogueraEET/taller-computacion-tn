@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 11: Presupuesto de Materiales - EET N° 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 min-h-screen flex flex-col justify-between transition-colors duration-300">
+
+    <a href="#main-content" class="sr-only focus:absolute focus:top-4 focus:left-4 bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 p-3 rounded-lg shadow-md z-50 font-medium border border-blue-200 dark:border-slate-700">
+        Saltar al contenido principal
+    </a>
+
+    <header class="bg-blue-600 dark:bg-blue-800 text-white shadow-md transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+            <div>
+                <p class="text-xs uppercase tracking-widest text-blue-200 font-semibold">EET N° 1 "General Francisco Ramírez" — Paraná</p>
+                <h1 class="text-2xl font-bold text-white">Actividad 11: Taller de Computación</h1>
+                <p class="text-xs text-blue-100 font-medium mt-0.5">Docente: Juan Ignacio Noguera</p>
+            </div>
+            <div class="flex items-center justify-between sm:justify-end gap-4">
+                <span class="bg-blue-700 dark:bg-blue-900 text-xs px-3 py-1.5 rounded-full font-medium border border-blue-500 dark:border-slate-600">3er Año</span>
+                <button id="themeToggle" class="p-2 bg-blue-700 dark:bg-slate-800 rounded-full hover:bg-blue-800 dark:hover:bg-slate-700 transition-colors border border-blue-500 dark:border-slate-600" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema de color">
+                    <svg id="icon-sun" class="w-5 h-5 hidden dark:block text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="icon-moon" class="w-5 h-5 block dark:hidden text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="md:col-span-2 space-y-6">
+            <section class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    Presupuesto de Materiales para Construcción
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                    Una empresa constructora está trabajando en tres proyectos simultáneos de viviendas. Para avanzar, la administración necesita calcular de forma automatizada el costo total de los materiales principales (cemento, arena y ladrillos) para cada casa, basándose en las cantidades planificadas y los precios de mercado.
+                </p>
+                <div class="bg-blue-50 dark:bg-blue-900/30 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded-r-lg">
+                    <h3 class="font-semibold text-blue-900 dark:text-blue-300 mb-1">El Desafío Técnico</h3>
+                    <p class="text-sm text-blue-800 dark:text-blue-200/80">
+                        Tu tarea es diseñar una planilla de cálculo que organice la información y realice todos los cálculos automáticamente. Deberás aplicar fórmulas eficientes utilizando correctamente los conceptos de referencias relativas y absolutas.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 transition-colors space-y-4">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Requerimientos del Diseño</h3>
+                <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-600 dark:text-blue-400 mt-0.5">•</span>
+                        <span><strong>Organización:</strong> La planilla debe constar de <strong>dos (2) tablas separadas</strong>. Una sección fija para los <em>Precios Unitarios</em> y otra sección principal para las <em>Cantidades y Costos por Casa</em>.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-600 dark:text-blue-400 mt-0.5">•</span>
+                        <span><strong>Cálculos requeridos:</strong> El costo total de cada material por separado para cada casa y el costo total general por proyecto (suma de los materiales).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-600 dark:text-blue-400 mt-0.5">•</span>
+                        <span><strong>Eficiencia:</strong> Todas las fórmulas deben realizarse para poder ser copiadas.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-amber-600 dark:text-amber-400 mt-0.5">•</span>
+                        <span><strong>Precios de referencia:</strong> Los precios de los materiales deberán actualizarse a los actuales del mercado antes de procesar las fórmulas finales.</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">Sección Fija: Precios Unitarios (Base)</h3>
+                <div class="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700 text-sm">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
+                            <tr><th class="p-2.5">Material</th><th class="p-2.5 text-right">Precio Base</th></tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-400">
+                            <tr><td class="p-2.5 font-medium">Cemento (bolsa)</td><td class="p-2.5 text-right">$120</td></tr>
+                            <tr><td class="p-2.5 font-medium">Arena (m³)</td><td class="p-2.5 text-right">$45</td></tr>
+                            <tr><td class="p-2.5 font-medium">Ladrillo (unidad)</td><td class="p-2.5 text-right">$12</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 transition-colors">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">Sección Principal: Cantidades</h3>
+                <div class="overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700 text-xs custom-scrollbar">
+                    <table class="w-full text-left whitespace-nowrap">
+                        <thead class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
+                            <tr>
+                                <th class="p-2">Casa</th><th class="p-2 text-center">Cemento</th><th class="p-2 text-center">Arena</th><th class="p-2 text-center">Ladrillos</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-400 text-center">
+                            <tr><td class="p-2 font-bold bg-slate-50 dark:bg-slate-800/50">1</td><td class="p-2">300 b.</td><td class="p-2">8 m³</td><td class="p-2">600 u.</td></tr>
+                            <tr><td class="p-2 font-bold bg-slate-50 dark:bg-slate-800/50">2</td><td class="p-2">350 b.</td><td class="p-2">9 m³</td><td class="p-2">700 u.</td></tr>
+                            <tr><td class="p-2 font-bold bg-slate-50 dark:bg-slate-800/50">3</td><td class="p-2">400 b.</td><td class="p-2">10 m³</td><td class="p-2">800 u.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 dark:bg-slate-900 text-white p-5 rounded-xl shadow-md space-y-4 border border-transparent dark:border-slate-700 transition-colors">
+                <div class="flex items-center gap-2">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-300">Simulador de Resultados (Precios Base)</h3>
+                </div>
+                <div>
+                    <label for="casaSelect" class="block text-xs font-medium text-slate-400 mb-1">Seleccionar Proyecto:</label>
+                    <select id="casaSelect" class="w-full bg-slate-800 dark:bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                        <option value="0">-- Selecciona una casa --</option>
+                        <option value="1">Casa 1</option>
+                        <option value="2">Casa 2</option>
+                        <option value="3">Casa 3</option>
+                    </select>
+                </div>
+                <div id="resultadosSimulador" class="hidden space-y-2 pt-2 border-t border-slate-800 dark:border-slate-700 text-xs">
+                    <div class="flex justify-between"><span>Costo Cemento:</span><span id="resCemento" class="font-mono text-emerald-400"></span></div>
+                    <div class="flex justify-between"><span>Costo Arena:</span><span id="resArena" class="font-mono text-emerald-400"></span></div>
+                    <div class="flex justify-between"><span>Costo Ladrillos:</span><span id="resLadrillo" class="font-mono text-emerald-400"></span></div>
+                    <div class="flex justify-between pt-2 border-t border-dashed border-slate-700 dark:border-slate-600 text-sm font-bold">
+                        <span>COSTO TOTAL:</span><span id="resTotal" class="font-mono text-yellow-400"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 dark:bg-slate-950 text-slate-400 text-xs py-4 border-t border-slate-700 dark:border-slate-800 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>&copy; <span id="current-year"></span> EET N° 1 "General Francisco Ramírez" — Paraná</p>
+            <p class="italic text-slate-500 dark:text-slate-600">Espacio Curricular: Taller de Computación</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
