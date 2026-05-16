@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Consigna para crear una planilla de cálculo profesional de presupuesto de materiales de corralón con fórmulas automáticas y criterios de accesibilidad visual.">
+  <meta name="author" content="Juan Ignacio Noguera">
+  <meta name="keywords" content="EET N1, Taller de Computación, planilla de cálculo, presupuesto, corralón, materiales de construcción">
+
+  <meta property="og:title" content="Presupuesto de materiales para un corralón | Taller de Computación">
+  <meta property="og:description" content="Crear una planilla de cálculo profesional para presupuestos de corralón con fórmulas automáticas, formatos numéricos y criterios de accesibilidad visual.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Presupuesto de materiales para un corralón",
+    "description": "Actividad integradora de planillas de cálculo: diseñar un presupuesto profesional de materiales de construcción con fórmulas automáticas, formatos numéricos y criterios de accesibilidad visual.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "EET N.° 1 General Francisco Ramírez",
+      "address": { "@type": "PostalAddress", "addressLocality": "Paraná", "addressCountry": "AR" }
+    },
+    "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+    "educationalLevel": "Secundaria Técnica",
+    "inLanguage": "es-AR",
+    "courseCode": "TC-2026-PL-03"
+  }
+  </script>
+
+  <title>Presupuesto de materiales para un corralón | Taller de Computación</title>
+  <link rel="stylesheet" href="./style.css">
+<base target="_blank">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <header role="banner" class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Taller de Computación</h1>
+        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+      </div>
+
+      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+        <svg id="icon-theme" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+    <details>
+      <summary>Tabla de contenidos</summary>
+    </details>
+  </nav>
+
+  <div class="layout">
+    <main id="main-content" class="main-wrapper">
+      <article class="article-container">
+
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">Presupuesto de materiales para un corralón</h2>
+
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+            <svg role="img" aria-labelledby="svg-titulo svg-desc"
+                viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
+                focusable="false" width="100%" height="auto">
+              <title id="svg-titulo">Ilustración de una planilla de cálculo con tabla de materiales de construcción</title>
+              <desc id="svg-desc">Una ventana de hoja de cálculo con encabezados de columna (código, producto, cantidad, precio, total), filas de materiales como cemento, ladrillos y hierro, y una celda de total general resaltada al final.</desc>
+              <!-- Ventana de planilla -->
+              <rect x="20" y="10" width="360" height="180" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="2"/>
+              <!-- Barra de título -->
+              <rect x="20" y="10" width="360" height="22" rx="6" fill="var(--color-accent)" opacity="0.2"/>
+              <!-- Botones de ventana -->
+              <circle cx="38" cy="21" r="4" fill="currentColor" opacity="0.4"/>
+              <circle cx="52" cy="21" r="4" fill="currentColor" opacity="0.4"/>
+              <circle cx="66" cy="21" r="4" fill="currentColor" opacity="0.4"/>
+              <!-- Encabezados de columna -->
+              <rect x="30" y="42" width="60" height="18" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+              <rect x="95" y="42" width="100" height="18" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+              <rect x="200" y="42" width="55" height="18" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+              <rect x="260" y="42" width="55" height="18" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+              <rect x="320" y="42" width="50" height="18" rx="2" fill="var(--color-accent)" opacity="0.15"/>
+              <!-- Filas de datos -->
+              <rect x="30" y="65" width="340" height="16" rx="2" fill="currentColor" opacity="0.05"/>
+              <rect x="30" y="86" width="340" height="16" rx="2" fill="currentColor" opacity="0.03"/>
+              <rect x="30" y="107" width="340" height="16" rx="2" fill="currentColor" opacity="0.05"/>
+              <rect x="30" y="128" width="340" height="16" rx="2" fill="currentColor" opacity="0.03"/>
+              <rect x="30" y="149" width="340" height="16" rx="2" fill="currentColor" opacity="0.05"/>
+              <!-- Celda de total resaltada -->
+              <rect x="260" y="172" width="110" height="16" rx="2" fill="var(--color-accent)" opacity="0.25"/>
+              <!-- Símbolo de suma -->
+              <text x="345" y="183" font-size="12" fill="currentColor" opacity="0.6" font-family="sans-serif">Σ</text>
+              <!-- Icono de herramienta (llave inglesa) -->
+              <path d="M355 55 L365 55 L365 60 L360 65 L360 75 L365 80 L365 85 L355 85 L355 80 L350 75 L350 65 L355 60 Z" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+            <figcaption>Representación de una planilla de cálculo con tabla de presupuesto de materiales</figcaption>
+          </figure>
+
+          <h3>Situación problemática</h3>
+          <p>Un corralón de materiales necesita realizar presupuestos claros y profesionales para sus clientes. Para ello, se requiere crear una planilla de cálculo que permita organizar productos, cantidades y precios, calculando automáticamente los importes correspondientes.</p>
+
+          <h3>Objetivo de la actividad</h3>
+          <p>Crear una planilla de cálculo con información sobre productos de un corralón de materiales, aplicando fórmulas automáticas, formatos numéricos adecuados y criterios de accesibilidad visual.</p>
+        </section>
+
+        <section id="pasos" aria-labelledby="titulo-pasos">
+          <h2 id="titulo-pasos">Pasos a seguir</h2>
+
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo-pasos">
+            <svg role="img" aria-labelledby="svg-titulo-pasos svg-desc-pasos"
+                viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
+                focusable="false" width="100%" height="auto">
+              <title id="svg-titulo-pasos">Proceso de creación de una planilla de cálculo paso a paso</title>
+              <desc id="svg-desc-pasos">Tres pasos visuales conectados en secuencia: un encabezado con datos del comercio, una tabla con filas de productos y fórmulas, y un resultado final con totales calculados automáticamente.</desc>
+              <!-- Paso 1: Encabezado -->
+              <rect x="20" y="60" width="100" height="80" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="30" y="70" width="80" height="8" rx="2" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="30" y="82" width="60" height="5" rx="1" fill="currentColor" opacity="0.2"/>
+              <rect x="30" y="90" width="70" height="5" rx="1" fill="currentColor" opacity="0.2"/>
+              <rect x="30" y="98" width="50" height="5" rx="1" fill="currentColor" opacity="0.2"/>
+              <rect x="30" y="110" width="40" height="18" rx="3" fill="var(--color-accent)" opacity="0.15"/>
+              <text x="40" y="123" font-size="10" fill="currentColor" opacity="0.5" font-family="sans-serif">1</text>
+
+              <!-- Flecha 1→2 -->
+              <path d="M125 100 L155 100" stroke="currentColor" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+              <polygon points="155,100 148,96 148,104" fill="currentColor" opacity="0.3"/>
+
+              <!-- Paso 2: Tabla -->
+              <rect x="160" y="40" width="100" height="120" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="170" y="50" width="80" height="8" rx="2" fill="var(--color-accent)" opacity="0.3"/>
+              <!-- Filas de tabla -->
+              <rect x="170" y="64" width="80" height="5" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="170" y="74" width="80" height="5" rx="1" fill="currentColor" opacity="0.1"/>
+              <rect x="170" y="84" width="80" height="5" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="170" y="94" width="80" height="5" rx="1" fill="currentColor" opacity="0.1"/>
+              <rect x="170" y="104" width="80" height="5" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="170" y="114" width="80" height="5" rx="1" fill="currentColor" opacity="0.1"/>
+              <rect x="170" y="124" width="80" height="5" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="170" y="138" width="40" height="14" rx="3" fill="var(--color-accent)" opacity="0.15"/>
+              <text x="180" y="148" font-size="10" fill="currentColor" opacity="0.5" font-family="sans-serif">2</text>
+
+              <!-- Flecha 2→3 -->
+              <path d="M265 100 L295 100" stroke="currentColor" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+              <polygon points="295,100 288,96 288,104" fill="currentColor" opacity="0.3"/>
+
+              <!-- Paso 3: Resultado -->
+              <rect x="300" y="50" width="80" height="100" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="310" y="60" width="60" height="8" rx="2" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="310" y="74" width="50" height="5" rx="1" fill="currentColor" opacity="0.2"/>
+              <rect x="310" y="84" width="55" height="5" rx="1" fill="currentColor" opacity="0.2"/>
+              <rect x="310" y="94" width="45" height="5" rx="1" fill="currentColor" opacity="0.2"/>
+              <!-- Total resaltado -->
+              <rect x="310" y="110" width="60" height="12" rx="2" fill="var(--color-accent)" opacity="0.25"/>
+              <rect x="310" y="128" width="40" height="14" rx="3" fill="var(--color-accent)" opacity="0.15"/>
+              <text x="320" y="138" font-size="10" fill="currentColor" opacity="0.5" font-family="sans-serif">3</text>
+
+              <!-- Etiquetas -->
+              <text x="70" y="185" font-size="11" fill="currentColor" opacity="0.6" font-family="sans-serif" text-anchor="middle">Encabezado</text>
+              <text x="210" y="185" font-size="11" fill="currentColor" opacity="0.6" font-family="sans-serif" text-anchor="middle">Tabla</text>
+              <text x="340" y="185" font-size="11" fill="currentColor" opacity="0.6" font-family="sans-serif" text-anchor="middle">Resultado</text>
+            </svg>
+            <figcaption>Secuencia de pasos: encabezado → tabla de datos → cálculos automáticos</figcaption>
+          </figure>
+
+          <ol class="steps-list">
+            <li>
+              <h3>Paso 1: Diseñar el encabezado del presupuesto</h3>
+              <p>Crear un sector superior en la planilla con información del comercio y del cliente. Incluir los siguientes datos del comercio: nombre del corralón, dirección, teléfono o medio de contacto, y fecha del presupuesto. Incluir los datos del cliente: nombre y apellido, dirección o referencia, y teléfono (opcional). Organizar esta información de manera clara y visualmente separada del resto de la planilla.</p>
+            </li>
+            <li>
+              <h3>Paso 2: Crear la tabla principal de productos</h3>
+              <p>Construir una tabla con las siguientes columnas obligatorias: Código, Producto, Cantidad, Precio Unitario y Total. Investigar productos reales de corralón (cemento, arena, cal, ladrillos, hierro, piedra, cerámicos, pegamento, pintura, caños PVC, entre otros) y utilizar precios aproximados actualizados. Completar al menos 8 filas de productos diferentes.</p>
+            </li>
+            <li>
+              <h3>Paso 3: Aplicar fórmulas de cálculo automático</h3>
+              <p>Crear las fórmulas necesarias para calcular automáticamente el total por producto (multiplicando cantidad por precio unitario) y el total general del presupuesto (sumando todos los totales parciales). Verificar que los cálculos se actualicen correctamente al modificar cantidades o precios.</p>
+            </li>
+            <li>
+              <h3>Paso 4: Aplicar formato visual y accesibilidad</h3>
+              <p>Colocar bordes y líneas de separación para mejorar la organización visual. Aplicar colores accesibles con contraste adecuado para facilitar la lectura. Configurar las celdas numéricas para mostrar dos decimales, separador de miles y formato moneda cuando sea necesario. Mantener una presentación ordenada, legible y profesional.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="recursos" aria-labelledby="titulo-recursos">
+          <h2 id="titulo-recursos">Recursos y referencias</h2>
+
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo-recursos">
+            <svg role="img" aria-labelledby="svg-titulo-recursos svg-desc-recursos"
+                viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
+                focusable="false" width="100%" height="auto">
+              <title id="svg-titulo-recursos">Recursos de consulta para la actividad de planillas de cálculo</title>
+              <desc id="svg-desc-recursos">Una ventana de navegador mostrando una página de recursos con enlaces a tutoriales de planillas de cálculo, junto a un ícono de libro de referencia.</desc>
+              <!-- Ventana de navegador -->
+              <rect x="30" y="20" width="200" height="160" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="30" y="20" width="200" height="22" rx="6" fill="var(--color-accent)" opacity="0.15"/>
+              <circle cx="44" cy="31" r="4" fill="currentColor" opacity="0.3"/>
+              <circle cx="56" cy="31" r="4" fill="currentColor" opacity="0.3"/>
+              <circle cx="68" cy="31" r="4" fill="currentColor" opacity="0.3"/>
+              <!-- Barra de dirección -->
+              <rect x="40" y="50" width="180" height="14" rx="3" fill="currentColor" opacity="0.08"/>
+              <!-- Contenido de página -->
+              <rect x="45" y="72" width="120" height="6" rx="1" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="45" y="84" width="160" height="4" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="45" y="92" width="150" height="4" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="45" y="100" width="140" height="4" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="45" y="112" width="120" height="6" rx="1" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="45" y="124" width="160" height="4" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="45" y="132" width="150" height="4" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="45" y="140" width="140" height="4" rx="1" fill="currentColor" opacity="0.15"/>
+              <!-- Enlaces subrayados -->
+              <rect x="45" y="156" width="80" height="4" rx="1" fill="var(--color-accent)" opacity="0.4"/>
+              <rect x="130" y="156" width="70" height="4" rx="1" fill="var(--color-accent)" opacity="0.4"/>
+
+              <!-- Libro de referencia -->
+              <rect x="260" y="50" width="60" height="80" rx="3" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="265" y="55" width="50" height="6" rx="1" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="265" y="66" width="45" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="72" width="40" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="78" width="48" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="84" width="42" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="90" width="38" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="96" width="44" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="102" width="35" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="108" width="40" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <rect x="265" y="114" width="36" height="3" rx="1" fill="currentColor" opacity="0.15"/>
+              <!-- Lomo del libro -->
+              <line x1="260" y1="50" x2="260" y2="130" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+            </svg>
+            <figcaption>Recursos de consulta: tutoriales en línea y material de referencia</figcaption>
+          </figure>
+
+          <p>A continuación se presentan recursos útiles para completar la actividad. Se recomienda consultarlos durante el desarrollo del trabajo.</p>
+          <ul class="recursos-list">
+            <li><a href="https://support.microsoft.com/es-es/excel" target="_blank" rel="noopener noreferrer">Centro de ayuda de Microsoft Excel <span class="sr-only">(abre en nueva pestaña)</span></a> — Guías oficiales sobre fórmulas y formato de celdas.</li>
+            <li><a href="https://support.google.com/docs/topic/9054603" target="_blank" rel="noopener noreferrer">Ayuda de Google Sheets <span class="sr-only">(abre en nueva pestaña)</span></a> — Documentación sobre funciones y formato en hojas de cálculo.</li>
+            <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">WebAIM Contrast Checker <span class="sr-only">(abre en nueva pestaña)</span></a> — Herramienta para verificar el contraste de colores aplicados en la planilla.</li>
+            <li><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener noreferrer">WCAG 2.1 Quick Reference <span class="sr-only">(abre en nueva pestaña)</span></a> — Referencia rápida de pautas de accesibilidad web aplicables al diseño de documentos.</li>
+            <li><a href="https://www.argentina.gob.ar/economia/comercio/precios-cuidados" target="_blank" rel="noopener noreferrer">Precios Cuidados Argentina <span class="sr-only">(abre en nueva pestaña)</span></a> — Referencia de precios aproximados de productos de construcción.</li>
+          </ul>
+        </section>
+
+        <section id="entrega" aria-labelledby="titulo-entrega" class="section-entrega">
+          <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
+          <p>La entrega se realizará a través del aula virtual institucional. Se debe subir el archivo de la planilla de cálculo en formato nativo (.xlsx o .ods) con el siguiente nombre de archivo: <code>Apellido_Nombre_TC_PresupuestoCorralon</code>.</p>
+          <p>Además, se debe incluir una captura de pantalla de la planilla completa en formato imagen (.png o .jpg) para facilitar la revisión sin necesidad de abrir el archivo original.</p>
+        </section>
+
+      </article>
+    </main>
+
+    <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
+      <h2>Contexto</h2>
+
+      <div class="nota-card">
+        <h3>Objetivo</h3>
+        <p>Diseñar una planilla de cálculo funcional para presupuestos de materiales de construcción, aplicando fórmulas automáticas, formatos numéricos y criterios de accesibilidad visual que faciliten la lectura e interpretación de la información.</p>
+      </div>
+
+      <div class="nota-card">
+        <h3>Herramientas necesarias</h3>
+        <ul>
+          <li>Microsoft Excel (versión 2016 o superior) o</li>
+          <li>Google Sheets (acceso web gratuito) o</li>
+          <li>LibreOffice Calc (software libre)</li>
+          <li>Navegador web para consultar precios de referencia</li>
+        </ul>
+      </div>
+
+      <div class="nota-card">
+        <h3>Modalidad</h3>
+        <p>Individual. Duración estimada: 2 horas de clase (80 minutos) + trabajo autónomo en casa si es necesario.</p>
+      </div>
+
+      <div class="nota-card">
+        <h3>Competencias involucradas</h3>
+        <ul>
+          <li>Uso de herramientas informáticas para organizar información</li>
+          <li>Aplicación de fórmulas y funciones en planillas de cálculo</li>
+          <li>Diseño de documentos con criterios de accesibilidad visual</li>
+          <li>Investigación y validación de datos reales</li>
+        </ul>
+      </div>
+
+      <div class="nota-card">
+        <h3>Aspectos a evaluar</h3>
+        <ul>
+          <li>Correcto uso de fórmulas</li>
+          <li>Presentación general de la planilla</li>
+          <li>Organización de la información</li>
+          <li>Uso adecuado de formatos numéricos</li>
+          <li>Aplicación de criterios de accesibilidad visual</li>
+          <li>Funcionamiento correcto de los cálculos automáticos</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer role="contentinfo" class="footer">
+    <p>
+      <strong>Consigna:</strong> Presupuesto de materiales para un corralón<br>
+      <strong>Docente:</strong> Juan Ignacio Noguera<br>
+      <strong>Materia:</strong> Taller de Computación<br>
+      <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná, Entre Ríos, Argentina
+    </p>
+    <p class="footer-year">© <span id="current-year">2024</span> EET N.° 1. Todos los derechos reservados. | Diseñado conforme a estándares WCAG 2.2 AA</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

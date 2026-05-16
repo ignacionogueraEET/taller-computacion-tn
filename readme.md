@@ -66,6 +66,7 @@ Este repositorio contiene el sitio de la materia y los materiales del taller de 
 - Actividad: https://ignacionogueraeet.github.io/taller-computacion-tn/consignas/actividad-21
 - Presentación: https://ignacionogueraeet.github.io/taller-computacion-tn/presentaciones/pensamiento-computacionel
 https://ignacionogueraeet.github.io/taller-computacion-tn/consignas/actividad-integradora-g-01
+- https://ignacionogueraeet.github.io/taller-computacion-tn/final-curso/felicitaciones
 
 ## Notas
 
