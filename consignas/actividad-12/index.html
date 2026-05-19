@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico -->
+  <meta name="description" content="Actividad 12 — Elaboración de un presupuesto en una planilla de cálculo. Taller de Computación, EET N.° 1 General Francisco Ramírez, Paraná.">
+  <meta name="author" content="Juan Ignacio Noguera">
+  <meta name="keywords" content="EET N1, Taller de Computación, presupuesto, planilla de cálculo, Actividad 12">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Actividad 12 — Presupuesto en planilla de cálculo | Taller de Computación">
+  <meta property="og:description" content="Elaboración de un presupuesto en una planilla de cálculo. Actividad 12 del espacio curricular Taller de Computación.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- JSON-LD Schema.org Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Actividad 12 — Elaboración de un presupuesto en una planilla de cálculo",
+    "description": "Crear una planilla de cálculo que represente un presupuesto digital con presentación clara, ordenada y profesional, aplicando fórmulas de cálculo automático y formato monetario.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "EET N.° 1 General Francisco Ramírez",
+      "address": { "@type": "PostalAddress", "addressLocality": "Paraná", "addressCountry": "AR" }
+    },
+    "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+    "educationalLevel": "Secundaria Técnica",
+    "inLanguage": "es-AR",
+    "courseCode": "Actividad12"
+  }
+  </script>
+
+  <title>Actividad 12 — Presupuesto en planilla de cálculo | Taller de Computación</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Skip link — WCAG 2.4.1 -->
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header role="banner" class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Taller de Computación</h1>
+        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+      </div>
+
+      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+        <svg id="icon-theme" aria-hidden="true" focusable="false"
+           width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round"
+           stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== TABLA DE CONTENIDOS ==================== -->
+  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+    <details>
+      <summary>Tabla de contenidos</summary>
+      <!-- El JS inyectará aquí la lista de enlaces generada dinámicamente -->
+    </details>
+  </nav>
+
+  <!-- ==================== LAYOUT: MAIN + ASIDE ==================== -->
+  <div class="layout">
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main id="main-content" class="main-wrapper">
+      <article class="article-container">
+
+        <!-- ===== SECCIÓN: CONSIGNA ===== -->
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">Actividad 12 — Elaboración de un presupuesto en una planilla de cálculo</h2>
+
+          <!-- Ilustración SVG semántica -->
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+            <svg role="img" aria-labelledby="svg-titulo svg-desc"
+               viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
+               focusable="false" width="100%" height="auto">
+              <title id="svg-titulo">Presupuesto digital con planilla de cálculo</title>
+              <desc id="svg-desc">Ilustración que muestra una planilla de cálculo con filas y columnas, un símbolo de calculadora y una factura, representando la elaboración de un presupuesto digital.</desc>
+              <!-- Planilla de cálculo -->
+              <rect x="20" y="30" width="160" height="140" rx="4" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+              <rect x="20" y="30" width="160" height="24" rx="4" fill="var(--color-accent)" opacity="0.2"/>
+              <line x1="60" y1="30" x2="60" y2="170" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="110" y1="30" x2="110" y2="170" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="150" y1="30" x2="150" y2="170" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="20" y1="54" x2="180" y2="54" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="20" y1="78" x2="180" y2="78" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="20" y1="102" x2="180" y2="102" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="20" y1="126" x2="180" y2="126" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <line x1="20" y1="150" x2="180" y2="150" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+              <text x="35" y="46" font-size="7" fill="currentColor" opacity="0.6">Código</text>
+              <text x="68" y="46" font-size="7" fill="currentColor" opacity="0.6">Producto</text>
+              <text x="118" y="46" font-size="7" fill="currentColor" opacity="0.6">Cant.</text>
+              <text x="155" y="46" font-size="7" fill="currentColor" opacity="0.6">Precio</text>
+              <text x="35" y="70" font-size="6" fill="currentColor" opacity="0.4">001</text>
+              <text x="68" y="70" font-size="6" fill="currentColor" opacity="0.4">Monitor</text>
+              <text x="122" y="70" font-size="6" fill="currentColor" opacity="0.4">2</text>
+              <text x="152" y="70" font-size="6" fill="currentColor" opacity="0.4">$185.000</text>
+              <text x="35" y="94" font-size="6" fill="currentColor" opacity="0.4">002</text>
+              <text x="68" y="94" font-size="6" fill="currentColor" opacity="0.4">Teclado</text>
+              <text x="122" y="94" font-size="6" fill="currentColor" opacity="0.4">3</text>
+              <text x="152" y="94" font-size="6" fill="currentColor" opacity="0.4">$45.000</text>
+              <text x="35" y="118" font-size="6" fill="currentColor" opacity="0.4">003</text>
+              <text x="68" y="118" font-size="6" fill="currentColor" opacity="0.4">Mouse</text>
+              <text x="122" y="118" font-size="6" fill="currentColor" opacity="0.4">3</text>
+              <text x="152" y="118" font-size="6" fill="currentColor" opacity="0.4">$22.000</text>
+              <!-- Calculadora -->
+              <rect x="220" y="40" width="70" height="90" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+              <rect x="228" y="48" width="54" height="20" rx="2" fill="var(--color-accent)" opacity="0.3"/>
+              <text x="252" y="62" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.7">$</text>
+              <rect x="228" y="74" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="243" y="74" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="258" y="74" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="273" y="74" width="9" height="10" rx="1.5" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="228" y="89" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="243" y="89" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="258" y="89" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="273" y="89" width="9" height="10" rx="1.5" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="228" y="104" width="26" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="258" y="104" width="11" height="10" rx="1.5" fill="currentColor" opacity="0.15"/>
+              <rect x="273" y="104" width="9" height="10" rx="1.5" fill="var(--color-accent)" opacity="0.3"/>
+              <!-- Factura -->
+              <rect x="310" y="50" width="60" height="80" rx="4" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+              <line x1="320" y1="65" x2="355" y2="65" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <line x1="320" y1="75" x2="350" y2="75" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <line x1="320" y1="85" x2="360" y2="85" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <line x1="320" y1="95" x2="345" y2="95" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <rect x="330" y="105" width="30" height="14" rx="2" fill="var(--color-accent)" opacity="0.25"/>
+              <text x="345" y="115" font-size="7" fill="currentColor" text-anchor="middle" opacity="0.6">TOTAL</text>
+              <!-- Líneas de conexión -->
+              <line x1="180" y1="85" x2="220" y2="85" stroke="var(--color-accent)" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+              <line x1="290" y1="85" x2="310" y2="85" stroke="var(--color-accent)" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+              <!-- Fórmula -->
+              <text x="200" y="185" font-size="8" fill="var(--color-accent)" text-anchor="middle" opacity="0.5">Subtotal = Cantidad × Precio Unitario</text>
+            </svg>
+            <figcaption>Interacción entre planilla de cálculo, fórmulas y documento de presupuesto</figcaption>
+          </figure>
+
+          <p>
+            En distintos trabajos y comercios es habitual realizar presupuestos para informar productos,
+            cantidades, precios y costos finales antes de concretar una compra o un servicio. En esta
+            actividad deberás crear una planilla de cálculo que represente un presupuesto digital con una
+            presentación clara, ordenada y profesional.
+          </p>
+
+          <h3 id="situacion-problematica">Situación problemática</h3>
+          <p>
+            Un comercio necesita generar presupuestos digitales para sus clientes de manera más rápida
+            y organizada. El presupuesto debe permitir registrar distintos productos, sus cantidades y
+            precios, logrando que los valores se actualicen automáticamente cuando se modifiquen datos.
+          </p>
+        </section>
+
+        <!-- ===== SECCIÓN: PASOS ===== -->
+        <section id="pasos" aria-labelledby="titulo-pasos">
+          <h2 id="titulo-pasos">Pasos a seguir</h2>
+
+          <figure class="ilustracion-actividad ilustracion-sm" aria-labelledby="svg-pasos-titulo">
+            <svg role="img" aria-labelledby="svg-pasos-titulo svg-pasos-desc"
+               viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg"
+               focusable="false" width="100%" height="auto">
+              <title id="svg-pasos-titulo">Pasos para armar un presupuesto</title>
+              <desc id="svg-pasos-desc">Tres columnas que representan los pasos: configurar encabezado, armar la tabla y aplicar formato.</desc>
+              <!-- Paso 1 -->
+              <rect x="10" y="15" width="115" height="90" rx="8" fill="var(--color-surface)" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.7"/>
+              <circle cx="68" cy="40" r="14" fill="var(--color-accent)" opacity="0.2"/>
+              <text x="68" y="45" font-size="14" fill="var(--color-accent)" text-anchor="middle" font-weight="bold">1</text>
+              <text x="68" y="68" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">Configurar</text>
+              <text x="68" y="80" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">encabezado</text>
+              <!-- Flecha -->
+              <line x1="130" y1="60" x2="145" y2="60" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.5"/>
+              <polygon points="145,56 152,60 145,64" fill="var(--color-accent)" opacity="0.5"/>
+              <!-- Paso 2 -->
+              <rect x="155" y="15" width="115" height="90" rx="8" fill="var(--color-surface)" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.7"/>
+              <circle cx="213" cy="40" r="14" fill="var(--color-accent)" opacity="0.2"/>
+              <text x="213" y="45" font-size="14" fill="var(--color-accent)" text-anchor="middle" font-weight="bold">2</text>
+              <text x="213" y="68" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">Armar tabla</text>
+              <text x="213" y="80" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">de productos</text>
+              <!-- Flecha -->
+              <line x1="275" y1="60" x2="290" y2="60" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.5"/>
+              <polygon points="290,56 297,60 290,64" fill="var(--color-accent)" opacity="0.5"/>
+              <!-- Paso 3 -->
+              <rect x="300" y="15" width="90" height="90" rx="8" fill="var(--color-surface)" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.7"/>
+              <circle cx="345" cy="40" r="14" fill="var(--color-accent)" opacity="0.2"/>
+              <text x="345" y="45" font-size="14" fill="var(--color-accent)" text-anchor="middle" font-weight="bold">3</text>
+              <text x="345" y="68" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">Aplicar</text>
+              <text x="345" y="80" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">formato</text>
+            </svg>
+            <figcaption>Proceso de elaboración del presupuesto</figcaption>
+          </figure>
+
+          <ol class="steps-list">
+            <li>
+              <h3 id="paso-1-configurar-el-encabezado">Paso 1: Configurar el encabezado</h3>
+              <p>
+                Abrí una nueva planilla de cálculo (Google Sheets, Excel u otra) y en la parte superior
+                del documento ingresá los datos del encabezado. Deberás incluir el nombre del comercio,
+                la dirección o medio de contacto, la fecha del presupuesto y los datos del cliente. Estos
+                datos deben ubicarse en las primeras filas de la hoja, bien separados de la tabla de
+                productos para que sean fácilmente identificables.
+              </p>
+            </li>
+            <li>
+              <h3 id="paso-2-crear-la-tabla-de-productos">Paso 2: Crear la tabla de productos</h3>
+              <p>
+                A continuación, creá la tabla principal del presupuesto. Cada fila representará un
+                producto o servicio. La tabla debe incluir al menos las siguientes columnas: Código
+                (identificador numérico o alfanumérico del producto), Producto (nombre descriptivo),
+                Cantidad (número de unidades), Precio unitario (valor individual del producto) y Subtotal
+                (resultado de multiplicar Cantidad por Precio unitario). Podés agregar columnas adicionales
+                como Descripción o Unidad de medida si lo considerás necesario para completar el presupuesto.
+              </p>
+            </li>
+            <li>
+              <h3 id="paso-3-ingresar-las-formulas">Paso 3: Ingresar las fórmulas</h3>
+              <p>
+                Es fundamental que los valores se calculen automáticamente, por ejemplo, en la columna Subtotal,
+                ingresá la fórmula que corresponda para que esto suceda. Al final de la tabla, agregá una fila de Total que
+                sume todos los subtotales.
+                Verificá que las fórmulas funcionen correctamente cambiando algún valor y observando que
+                los resultados se actualicen.
+              </p>
+            </li>
+            <li>
+              <h3 id="paso-4-aplicar-formato-profesional">Paso 4: Aplicar formato profesional</h3>
+              <p>
+                Aplicá bordes a todas las celdas de la tabla para que la información se visualice
+                correctamente. Utilizá colores con buen contraste para los encabezados de columna y
+                las filas alternas. Asegurate de que los títulos del encabezado estén destacados
+                visualmente (negrita, tamaño de fuente mayor, color de fondo). Las celdas con valores
+                monetarios deben tener formato moneda con 2 posiciones decimales y separador de miles.
+                La distribución general debe ser ordenada y fácil de leer.
+              </p>
+            </li>
+            <li>
+              <h3 id="paso-5-verificar-y-guardar">Paso 5: Verificar y guardar</h3>
+              <p>
+                Revisá que todas las fórmulas funcionen correctamente, que los datos tengan sentido y
+                que la presentación sea profesional. Verificá que al modificar cualquier cantidad o
+                precio, los subtotales y el total se actualicen automáticamente. Una vez confirmado,
+                guardá el archivo con el nombre <code>Actividad_12-ApellidoNombre</code>.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ===== SECCIÓN: REQUISITOS ===== -->
+        <section id="requisitos" aria-labelledby="titulo-requisitos">
+          <h2 id="titulo-requisitos">Requisitos de la actividad</h2>
+
+          <h3 id="requisitos-encabezado">Encabezado</h3>
+          <p>
+            El presupuesto debe incluir un encabezado con la siguiente información:
+          </p>
+          <ul>
+            <li>Nombre del comercio.</li>
+            <li>Dirección o medio de contacto.</li>
+            <li>Fecha.</li>
+            <li>Datos del cliente.</li>
+          </ul>
+
+          <h3 id="requisitos-tabla">Tabla principal</h3>
+          <p>
+            La tabla deberá contener información relacionada con los productos o materiales
+            presupuestados. Como mínimo deberá incluir:
+          </p>
+          <ul>
+            <li>Código.</li>
+            <li>Producto.</li>
+            <li>Cantidad.</li>
+            <li>Precio unitario.</li>
+            <li>Otros campos que consideres necesarios para completar correctamente el presupuesto.</li>
+          </ul>
+
+          <h3 id="requisitos-presentacion">Requisitos de presentación</h3>
+          <ul>
+            <li>Tener bordes en las tablas.</li>
+            <li>Utilizar colores accesibles y con buen contraste.</li>
+            <li>Presentar títulos destacados.</li>
+            <li>Mantener una distribución ordenada y fácil de leer.</li>
+            <li>Aplicar formato moneda en las celdas necesarias.</li>
+            <li>Mostrar números con 2 posiciones decimales y separador de miles.</li>
+          </ul>
+
+          <h3 id="requisitos-importantes">Aspectos importantes</h3>
+          <ul>
+            <li>El presupuesto debe actualizarse automáticamente al modificar datos.</li>
+            <li>Revisar que las fórmulas utilizadas funcionen correctamente.</li>
+            <li>La información debe tener apariencia profesional y comprensible para un cliente.</li>
+            <li>Pensar qué operaciones y cálculos son necesarios para resolver la situación planteada.</li>
+          </ul>
+        </section>
+
+        <!-- ===== SECCIÓN: OPCIONAL ===== -->
+        <section id="opcional" aria-labelledby="titulo-opcional">
+          <h2 id="titulo-opcional">Funcionalidades opcionales</h2>
+          <p>
+            Para ampliar la actividad y obtener un presupuesto más completo, podés agregar las
+            siguientes funcionalidades extra:
+          </p>
+          <ul>
+            <li>Logo del comercio.</li>
+            <li>Validación de datos.</li>
+            <li>Formato condicional.</li>
+            <li>Fecha automática.</li>
+            <li>Observaciones.</li>
+            <li>Impuestos o descuentos.</li>
+            <li>Totales generales.</li>
+            <li>Diseño personalizado.</li>
+          </ul>
+        </section>
+
+        <!-- ===== SECCIÓN: RECURSOS ===== -->
+        <section id="recursos" aria-labelledby="titulo-recursos">
+          <h2 id="titulo-recursos">Recursos y referencias</h2>
+          <p>
+            A continuación se presentan recursos útiles para realizar esta actividad. Consultá
+            la documentación oficial de la herramienta que elijas para conocer las funciones
+            específicas de formato y fórmulas.
+          </p>
+          <ul class="recursos-list">
+            <li>
+              <a href="https://support.google.com/docs/topic/9054603?hl=es&ref_topic=1382883" target="_blank" rel="noopener noreferrer">
+                Ayuda de Google Sheets
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://support.microsoft.com/es-es/excel" target="_blank" rel="noopener noreferrer">
+                Soporte de Microsoft Excel
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://documentation.libreoffice.org/es/documentacion-en-espanol/calc/" target="_blank" rel="noopener noreferrer">
+                Ayuda de LibreOffice Calc
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ===== SECCIÓN: ENTREGA ===== -->
+        <section id="entrega" aria-labelledby="titulo-entrega" class="section-entrega">
+          <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
+          <p>
+            Guardá el archivo con el siguiente nombre:
+          </p>
+          <p>
+            <code class="entrega-filename">Actividad_12-ApellidoNombre</code>
+          </p>
+          <p>
+            Asegurate de que el archivo se pueda abrir correctamente y que todas las fórmulas
+            funcionen antes de entregarlo. Subí el archivo al aula virtual en el espacio
+            correspondiente a esta actividad.
+          </p>
+        </section>
+
+      </article>
+    </main>
+
+    <!-- ==================== ASIDE CONTEXTO ==================== -->
+    <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
+      <h2>Contexto</h2>
+
+      <div class="nota-card">
+        <h3>Objetivo</h3>
+        <p>
+          Crear una planilla de cálculo que funcione como un presupuesto digital, aplicando
+          fórmulas de cálculo automático, formato profesional y presentación ordenada para
+          resolver la situación problemática planteada.
+        </p>
+      </div>
+
+      <div class="nota-card">
+        <h3>Herramientas necesarias</h3>
+        <ul>
+          <li>Google Sheets, Microsoft Excel o LibreOffice Calc</li>
+          <li>Computadora con acceso a internet</li>
+          <li>Conocimientos básicos de fórmulas y formato de celdas</li>
+        </ul>
+      </div>
+
+      <div class="nota-card">
+        <h3>Modalidad</h3>
+        <p>
+          Trabajo individual. Se estima una duración de 60 minutos para la realización completa
+          de la actividad, incluyendo la verificación de fórmulas y la presentación final.
+        </p>
+      </div>
+
+      <div class="nota-card">
+        <h3>Competencias involucradas</h3>
+        <ul>
+          <li>Uso de herramientas de ofimática (planillas de cálculo)</li>
+          <li>Aplicación de fórmulas y funciones matemáticas</li>
+          <li>Formato y presentación de información numérica</li>
+          <li>Resolución de problemas prácticos con tecnología</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div><!-- /.layout -->
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer role="contentinfo" class="footer">
+    <p>
+      <strong>Actividad:</strong> Actividad 12 — Elaboración de un presupuesto en una planilla de cálculo<br>
+      <strong>Docente:</strong> Juan Ignacio Noguera<br>
+      <strong>Materia:</strong> Taller de Computación<br>
+      <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná
+    </p>
+    <p class="footer-year">© <span id="current-year">2024</span> EET N.° 1. Todos los derechos reservados.</p>
+    <p class="footer-a11y">Accesibilidad verificada según WCAG 2.2 AA</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
