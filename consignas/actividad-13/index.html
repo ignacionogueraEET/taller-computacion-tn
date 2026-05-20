@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Actividad 13 del Taller de Computación: Diseñar y automatizar un presupuesto comercial dinámico en hojas de cálculo usando referencias absolutas y relativas.">
+  <meta name="author" content="Juan Ignacio Noguera">
+  <meta name="keywords" content="EET N1, Taller de Computación, Hojas de Cálculo, Excel, Google Sheets, Referencias Absolutas, Presupuesto, Automatización">
+
+  <meta property="og:title" content="Actividad 13: Automatización de un Presupuesto | Taller de Computación">
+  <meta property="og:description" content="Desafío de lógica y hojas de cálculo para tercer año de secundaria técnica. Diseña una planilla dinámica y eficiente.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Actividad 13: Automatización de un Presupuesto",
+    "description": "Actividad práctica orientada a la deducción lógica de fórmulas y el uso correcto de celdas de control y referencias en hojas de cálculo.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "EET N.° 1 General Francisco Ramírez",
+      "address": { 
+        "@type": "PostalAddress", 
+        "addressLocality": "Paraná", 
+        "addressCountry": "AR" 
+      }
+    },
+    "instructor": { 
+      "@type": "Person", 
+      "name": "Juan Ignacio Noguera" 
+    },
+    "educationalLevel": "Secundaria Técnica",
+    "inLanguage": "es-AR",
+    "courseCode": "P09"
+  }
+  </script>
+
+  <title>Actividad 13: Automatización de un Presupuesto | Taller de Computación</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <header role="banner" class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Taller de Computación</h1>
+        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+      </div>
+
+      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+        <svg id="icon-theme" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+    <details>
+      <summary>Tabla de contenidos</summary>
+    </details>
+  </nav>
+
+  <div class="layout-wrapper">
+    <main id="main-content" class="main-wrapper">
+      <article class="article-container">
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">Actividad 13: El Desafío del Presupuesto Automatizado</h2>
+          
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+            <svg role="img" aria-labelledby="svg-titulo svg-desc" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" focusable="false" width="100%" height="auto">
+              <title id="svg-titulo">Ilustración de Hoja de Cálculo</title>
+              <desc id="svg-desc">Representación gráfica de una planilla con celdas, filas, columnas y una gráfica de crecimiento de datos simbólica.</desc>
+              <rect x="10" y="10" width="380" height="180" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="2" />
+              <line x1="10" y1="50" x2="390" y2="50" stroke="currentColor" stroke-width="2" />
+              <line x1="110" y1="10" x2="110" y2="190" stroke="var(--color-border)" stroke-width="1" />
+              <line x1="230" y1="10" x2="230" y2="190" stroke="var(--color-border)" stroke-width="1" />
+              <rect x="25" y="20" width="60" height="15" rx="3" fill="var(--color-accent)" opacity="0.8" />
+              <rect x="125" y="20" width="80" height="15" rx="3" fill="var(--color-accent)" opacity="0.8" />
+              <rect x="245" y="20" width="70" height="15" rx="3" fill="var(--color-accent)" opacity="0.8" />
+              <line x1="10" y1="85" x2="390" y2="85" stroke="var(--color-border)" stroke-width="1" />
+              <line x1="10" y1="120" x2="390" y2="120" stroke="var(--color-border)" stroke-width="1" />
+              <line x1="10" y1="155" x2="390" y2="155" stroke="var(--color-border)" stroke-width="1" />
+              <circle cx="160" cy="135" r="4" fill="var(--color-accent)" />
+              <circle cx="200" cy="100" r="4" fill="var(--color-accent)" />
+              <circle cx="280" cy="110" r="4" fill="var(--color-accent)" />
+              <circle cx="340" cy="70" r="4" fill="var(--color-accent)" />
+              <path d="M 160 135 L 200 100 L 280 110 L 340 70" fill="none" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <figcaption>Estructura lógica y vinculación de datos en un modelo automatizado.</figcaption>
+          </figure>
+
+          <p>El objetivo de esta actividad es diseñar, estructurar y poner en funcionamiento una planilla de presupuesto comercial utilizando herramientas de hojas de cálculo (Excel o Google Sheets). El diseño visual y la distribución de las celdas son completamente libres, pero la planilla resultante debe ser <strong>100% dinámica, automatizada y eficiente</strong>.</p>
+          <p>Tu principal reto no será copiar posiciones de celdas fijas, sino analizar las relaciones comerciales y numéricas de un presupuesto real para deducir qué fórmulas lógicas e impositivas aplicar en cada caso.</p>
+        </section>
+
+        <section id="datos-base" aria-labelledby="titulo-datos">
+          <h2 id="titulo-datos">Datos Crudos a Cargar</h2>
+          <p>Para construir tu presupuesto, deberás basarte en la siguiente lista de materiales y cantidades solicitadas por el cliente. Introduce esta información respetando los tipos de datos correspondientes:</p>
+          
+          <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+            <table>
+              <caption>Lista de productos e insumos para el presupuesto</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Descripción del Producto</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio Unitario Arribado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tornillos</td>
+                  <td>100</td>
+                  <td>$5,00</td>
+                </tr>
+                <tr>
+                  <td>Tuercas</td>
+                  <td>100</td>
+                  <td>$10,00</td>
+                </tr>
+                <tr>
+                  <td>Disco de corte</td>
+                  <td>5</td>
+                  <td>$200,00</td>
+                </tr>
+                <tr>
+                  <td>Arandela</td>
+                  <td>100</td>
+                  <td>$3,00</td>
+                </tr>
+                <tr>
+                  <td>Varilla roscada</td>
+                  <td>50</td>
+                  <td>$50,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="pasos" aria-labelledby="titulo-pasos">
+          <h2 id="titulo-pasos">Pasos y Requisitos de Automatización</h2>
+          <p>Asegúrate de estructurar el modelo cumpliendo estrictamente con las siguientes pautas lógicas de programación en hojas de cálculo:</p>
+          <ol class="steps-list">
+            <li>
+              <h3>Paso 1: Fecha Dinámica</h3>
+              <p>La fecha de emisión del presupuesto bajo ningún concepto debe escribirse de forma estática a mano. Debe generarse mediante una fórmula o función nativa de manera que, cada vez que abras el archivo, muestre automáticamente el día actual del calendario.</p>
+            </li>
+            <li>
+              <h3>Paso 2: Parámetros Variables (Celdas de Control)</h3>
+              <p>Tanto el porcentaje de <strong>Descuento Comercial (5%)</strong> como la alícuota del <strong>IVA (21%)</strong> deben ubicarse de forma aislada en celdas de control independientes y visibles. Las fórmulas del presupuesto que calculen los totales individuales e impositivos deben hacer referencia directa a estas celdas aisladas. Esto permitirá que, si en el futuro estos valores cambian, toda la planilla se actualice instantáneamente sin tocar ninguna fórmula.</p>
+            </li>
+            <li>
+              <h3>Paso 3: Fórmulas Reutilizables y Copiables</h3>
+              <p>Todas las fórmulas de la grilla de productos deben diseñarse con una estructura lógica consistente. Esto implica que debes aplicar correctamente las <strong>referencias relativas y absolutas (uso del signo $)</strong> donde corresponda, permitiendo arrastrar o copiar las fórmulas verticalmente por toda la columna sin que se rompan los cálculos o se desplacen los parámetros fijos.</p>
+            </li>
+            <li>
+              <h3>Paso 4: Formato Profesional Obligatorio</h3>
+              <p>Aplica formatos de celda adecuados según el tipo de información: formato de <strong>Moneda</strong> (con el signo $ regional y dos decimales) para todos los importes monetarios, formato de <strong>Porcentaje (%)</strong> para las celdas de tasa, y formato de <strong>Fecha</strong> estándar. Queda estrictamente prohibido tipear los signos de pesos o porcentajes de manera manual como si fueran texto.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="reflexion" aria-labelledby="titulo-reflexion">
+          <h2 id="titulo-reflexion">🧠 Espacio de Reflexión Conceptual</h2>
+          <p>Una vez terminada tu planilla, analiza tu propio diseño y responde brevemente debejo de la tabla o en una hoja dendro del mismo libro de nombe preguntas:</p>
+          <ul>
+            <li>Si el día de mañana la normativa fiscal cambia y el IVA se reduce del 21% al 10.5%, ¿cuántas celdas tuviste que modificar físicamente en tu modelo para actualizar todo el presupuesto del cliente? ¿Qué habría ocurrido si hubieras escrito el número "21%" o "0.21" dentro de cada una de tus fórmulas?</li>
+            <li>Explica con tus palabras la diferencia práctica entre hacer clic en una celda común (como <code>A1</code>) y usar una referencia fijada (como <code>$A$1</code>) al momento de estirar una fórmula hacia abajo. ¿Cuál fue el error o advertencia más común que te surgió en tu proceso antes de lograr que todo funcionara en cascada?</li>
+          </ul>
+        </section>
+
+        <section id="desafio" aria-labelledby="titulo-desafio" class="section-entrega">
+          <h2 id="titulo-desafio">🚀 Desafío Opcional (Para Avanzados)</h2>
+          <p>Si lograste completar los pasos principales antes de finalizar el tiempo de taller, expande las capacidades comerciales de tu presupuesto con estas dos funciones extras:</p>
+          <h3>Vencimiento Automatizado de Oferta</h3>
+          <p>Agrega un campo visible denominado "Vencimiento del Presupuesto". Programá una fórmula matemática que tome la fecha actual de emisión y le sume automáticamente un plazo fijo de <strong>15 días</strong> corridos, mostrando en pantalla la fecha exacta límite de validez.</p>
+          <h3>Incentivo Comercial (Formato Condicional)</h3>
+          <p>Configura una regla de Formato Condicional sobre la celda del Total Final del Presupuesto. Diseña la regla para que, si el importe final supera un umbral determinado (por ejemplo, $5.000,00), la celda cambie automáticamente a un fondo verde claro con texto oscuro, destacándolo visualmente como una cuenta de "Gran Volumen / Cliente Especial".</p>
+        </section>
+
+        <section id="entrega" aria-labelledby="titulo-entrega">
+          <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
+          <p>Guarda tu archivo con la nomenclatura estándar acordada (<code>Actividad_13-Apellido_Nombre</code>) y súbelo al espacio asignado dentro del Aula Virtual institucional antes del cierre del módulo de taller. Asegúrate de verificar las referencias abriendo tu archivo una última vez.</p>
+        </section>
+      </article>
+    </main>
+
+    <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
+      <h2>Contexto</h2>
+
+      <div class="nota-card">
+        <h3>🎯 Objetivo</h3>
+        <p>Desarrollar el pensamiento analítico y la capacidad de abstracción matemática, migrando del uso estático de la computadora hacia la estructuración lógica y reutilizable de modelos de datos automatizados.</p>
+      </div>
+
+      <div class="nota-card">
+        <h3>🛠️ Herramientas necesarias</h3>
+        <ul>
+          <li>Software de Hojas de Cálculo (Microsoft Excel, Google Sheets o LibreOffice Calc).</li>
+          <li>Acceso al Aula Virtual de la EET N.° 1.</li>
+        </ul>
+      </div>
+
+      <div class="nota-card">
+        <h3>👥 Modalidad y Duración</h3>
+        <p>Trabajo individual en entorno de laboratorio (BYOD / Equipos de taller). Tiempo estimado: 2 módulos didácticos.</p>
+      </div>
+
+      <div class="nota-card">
+        <h3>📌 Competencias</h3>
+        <ul>
+          <li>Abstracción algorítmica.</li>
+          <li>Modelado financiero básico.</li>
+          <li>Uso avanzado de direccionamiento de memoria (Referencias fijas).</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer role="contentinfo" class="footer">
+    <p>
+      <strong>Docente:</strong> Juan Ignacio Noguera<br>
+      <strong>Espacio Curricular:</strong> Taller de Computación<br>
+      <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná, Entre Ríos<br>
+      <strong>Nivel:</strong> Secundaria Técnica
+    </p>
+    <p class="footer-year">© <span id="current-year">2026</span> EET N.° 1. Optimizada bajo estándares de accesibilidad universal Web Content Accessibility Guidelines (WCAG 2.2 AA).</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
