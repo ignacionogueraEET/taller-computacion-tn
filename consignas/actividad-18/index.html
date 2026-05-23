@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Actividad 18 del Taller de Computación: Diseña una pantalla de consulta automatizada para la gestión de stock y precios de un corralón de materiales.">
+  <meta name="author" content="Juan Ignacio Noguera">
+  <meta name="keywords" content="EET N1, Taller de Computación, Excel, Google Sheets, Funciones de Búsqueda, BuscarV, Formato Condicional, Corralón">
+
+  <meta property="og:title" content="Actividad 18: Automatización de Consultas en El Corralón del Norte | Taller de Computación">
+  <meta property="og:description" content="Aprende a automatizar la búsqueda de productos y control de stock aplicando lógica de hojas de cálculo y alertas visuales condicionales.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Actividad 18: Automatización de Consultas en El Corralón del Norte",
+    "description": "Diseño de un sistema digital automatizado de consulta de precios y alertas de stock crítico para un comercio de materiales de construcción utilizando planillas de cálculo.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "EET N.° 1 General Francisco Ramírez",
+      "address": { 
+        "@type": "PostalAddress", 
+        "addressLocality": "Paraná", 
+        "addressCountry": "AR" 
+      }
+    },
+    "instructor": { 
+      "@type": "Person", 
+      "name": "Juan Ignacio Noguera" 
+    },
+    "educationalLevel": "Secundaria Técnica",
+    "inLanguage": "es-AR",
+    "courseCode": "Actividad 18"
+  }
+  </script>
+
+  <title>Actividad 18: Automatización de Consultas en el Corralón | Taller de Computación</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <header role="banner" class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Taller de Computación</h1>
+        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+      </div>
+
+      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+        <svg id="icon-theme" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+    <details>
+      <summary>Tabla de contenidos</summary>
+    </details>
+  </nav>
+
+  <div class="page-layout-grid">
+    
+    <main id="main-content" class="main-wrapper">
+      <article class="article-container">
+        
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">Actividad 18: Automatización de Consultas en "El Corralón del Norte"</h2>
+          
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo-1">
+            <svg role="img" aria-labelledby="svg-titulo-1 svg-desc-1" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" focusable="false" width="100%" height="auto">
+              <title id="svg-titulo-1">Buscador Automatizado de Inventario</title>
+              <desc id="svg-desc-1">Ilustración vectorial simplificada que representa una interfaz digital de búsqueda conectada con bases de datos y productos de construcción en stock.</desc>
+              <rect x="20" y="20" width="360" height="160" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="2"/>
+              <line x1="20" y1="60" x2="380" y2="60" stroke="var(--color-border)" stroke-width="1.5"/>
+              <line x1="140" y1="20" x2="140" y2="180" stroke="var(--color-border)" stroke-width="1.5"/>
+              <rect x="40" y="30" width="80" height="20" rx="4" fill="var(--color-bg)" stroke="var(--color-accent)" stroke-width="2"/>
+              <text x="48" y="44" font-family="sans-serif" font-size="11" fill="var(--color-accent)" font-weight="bold">CÓDIGO</text>
+              <circle cx="200" cy="40" r="12" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
+              <line x1="209" y1="49" x2="225" y2="65" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
+              <rect x="160" y="85" width="200" height="14" rx="3" fill="var(--color-accent)" opacity="0.15" />
+              <rect x="160" y="115" width="140" height="14" rx="3" fill="var(--color-text)" opacity="0.1" />
+              <rect x="160" y="145" width="160" height="14" rx="3" fill="var(--color-text)" opacity="0.1" />
+            </svg>
+            <figcaption>Simulación del flujo de búsqueda automatizada de materiales.</figcaption>
+          </figure>
+
+          <h3>1. El Escenario (El Problema a Resolver)</h3>
+          <p>Imaginen que un corralón de materiales de construcción los contrata para mejorar de manera urgente la atención al cliente en el mostrador de ventas. Actualmente, cuando un cliente pregunta el precio de un artículo o si queda stock disponible, el vendedor tiene que buscar manualmente hojeando una lista gigante en papel. Este método analógico ralentiza el trabajo y provoca largas filas de espera.</p>
+          <p>Su tarea es diseñar una <strong>Pantalla de Consulta Digital</strong> ágil y eficiente. El objetivo principal es que el vendedor solo tenga que tipear el <strong>Código del Producto</strong> y, automáticamente, la pantalla de cálculo devuelva y muestre de forma inmediata:</p>
+          <ul>
+            <li>Qué producto es (Descripción precisa).</li>
+            <li>Cuántas unidades quedan en el depósito (Cantidad disponible).</li>
+            <li>Cuánto cuesta cada unidad (Valor unitario con formato monetario).</li>
+          </ul>
+        </section>
+
+        <section id="datos" aria-labelledby="titulo-datos">
+          <h2 id="titulo-datos">2. Los Datos del Negocio</h2>
+          <p>Deberán registrar en una sección de la hoja de cálculo la siguiente lista de artículos con la que trabaja actualmente el corralón. Pueden optar por ubicarla en la misma pestaña (en las filas inferiores) o crear una pestaña independiente llamada <code>Inventario</code>:</p>
+          
+          <div class="table-container">
+            <table class="datos-table">
+              <caption>Inventario oficial de artículos - El Corralón del Norte</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Código</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Cantidad Disponible</th>
+                  <th scope="col">Valor Unitario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">C1</th><td>Cemento Portland (bolsa 50kg)</td><td>45</td><td>$8.500</td></tr>
+                <tr><th scope="row">H1</th><td>Hierro del 8 (barra)</td><td>120</td><td>$6.200</td></tr>
+                <tr><th scope="row">H2</th><td>Hierro del 10 (barra)</td><td>85</td><td>$8.900</td></tr>
+                <tr><th scope="row">A1</th><td>Arena fina (metro cúbico)</td><td>12</td><td>$15.000</td></tr>
+                <tr><th scope="row">L1</th><td>Ladrillo hueco 12x18x33 (millar)</td><td>8</td><td>$320.000</td></tr>
+                <tr><th scope="row">L2</th><td>Ladrillo común (millar)</td><td>15</td><td>$180.000</td></tr>
+                <tr><th scope="row">P1</th><td>Piedra partida (metro cúbico)</td><td>6</td><td>$22.000</td></tr>
+                <tr><th scope="row">M1</th><td>Malla sima 15x15 (unidad)</td><td>24</td><td>$41.000</td></tr>
+                <tr><th scope="row">K1</th><td>Cal hidratada (bolsa 25kg)</td><td>60</td><td>$4.100</td></tr>
+                <tr><th scope="row">T1</th><td>Tornillos para techo (pack x100)</td><td>100</td><td>$3.500</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="requisitos" aria-labelledby="titulo-requisitos">
+          <h2 id="titulo-requisitos">3. Requisitos del Diseño y Estructura</h2>
+          <p>La hoja <strong>debe cumplir obligatoriamente</strong> con dos zonas visuales bien diferenciadas y ordenadas:</p>
+          <ul>
+            <li><strong>Zona de Base de Datos:</strong> El espacio formal donde se cargará de forma estructurada la tabla con los 10 productos listados anteriormente.</li>
+            <li><strong>Zona de Buscador o Consulta:</strong> Un sector limpio, destacado e intuitivo donde el usuario escribe el código de interés y aparecen los tres datos automatizados. ¡Aprovechen el uso de colores institucionales, bordes definidos y formatos numéricos de moneda ($) para simular un software real de caja de mostrador!</li>
+          </ul>
+        </section>
+
+        <section id="desafio-tecnico" aria-labelledby="titulo-desafio">
+          <h2 id="titulo-desafio">4. El Desafío Técnico: Investigar y Decidir</h2>
+          <p>Para lograr que las celdas completen la información por sí solas de forma automática, existen diferentes herramientas lógicas en las planillas de cálculo de Excel o Google Sheets. <strong>Ustedes deberán encargarse de investigar, realizar pruebas de error y decidir de forma autónoma cuál de ellas utilizar.</strong></p>
+          <div class="pista-card">
+            <p>🔍 <strong>Pista de investigación en el aula:</strong> Busquen documentación, tutoriales o la ayuda integrada de la aplicación sobre las funciones pertenecientes a la "familia de búsqueda y referencia" (como por ejemplo: <code>BUSCAR</code>, <code>BUSCARV</code>, <code>COINCIDIR</code>, o la moderna función <code>BUSCARX</code>).</p>
+          </div>
+          <p><em>Criterio de éxito de la fórmula:</em> La función elegida obligatoriamente debe traer el dato exacto correspondiente al código ingresado. Si el vendedor digita el código <code>H2</code>, el sistema debe plasmar "Hierro del 10", y bajo ningún concepto arrojar un artículo erróneo como "Hierro del 8".</p>
+        </section>
+
+        <section id="alerta-reposicion" aria-labelledby="titulo-alerta">
+          <h2 id="titulo-alerta">5. Alerta de Reposición (Formato Condicional Obligatorio)</h2>
+          <p>Para evitar pérdidas comerciales y asegurar que el corralón nunca se quede sin insumos críticos para la venta, es fundamental proveer alertas visuales inmediatas al personal de depósito y mostrador.</p>
+          <p>Deben aplicar de forma <strong>obligatoria</strong> una regla de <strong>Formato Condicional</strong> en la celda de <strong>Cantidad disponible</strong> del buscador automático (o de forma complementaria en la tabla general). La regla debe configurarse de modo tal que, si el producto consultado cuenta con <strong>menos de 10 unidades</strong> disponibles en stock, la celda altere automáticamente su estilo de fondo pintándose de un color <strong>rojo suave de advertencia</strong>.</p>
+        </section>
+
+        <section id="reflexion" aria-labelledby="titulo-reflexion">
+          <h2 id="titulo-reflexion">❓ Preguntas para Reflexionar</h2>
+          <p>Respondan de forma reflexiva y justificada en las filas inferiores de su archivo de hoja de cálculo o en sus cuadernos de taller:</p>
+          <ol class="preguntas-list">
+            <li>¿Qué función específica de la familia de búsqueda terminaron eligiendo para resolver la automatización del buscador y por qué razones la prefirieron por sobre las demás alternativas investigadas?</li>
+            <li>¿Qué sucede visualmente en la pantalla si en la celda de búsqueda se ingresa un código que NO existe en la base de datos (por ejemplo, el código <code>Z9</code>)? ¿Qué error técnico muestra la interfaz y de qué manera creen que afectaría la experiencia de atención del vendedor si no se corrige?</li>
+            <li>Analicen el volumen de stock disponible en la tabla. Si ingresara un cliente mayorista al mostrador con la intención de adquirir 10 metros cúbicos de piedra partida, ¿el sistema actual nos ayuda a saber instantáneamente si podemos cumplir el pedido? ¿Por qué consideran riesgoso para un negocio de barrio operar sin estas herramientas de automatización?</li>
+          </ol>
+        </section>
+
+        <section id="desafio-opcional" aria-labelledby="titulo-opcional" class="section-entrega">
+          <h2 id="titulo-opcional">🚀 Desafío Opcional (Para alcanzar la nota máxima)</h2>
+          <p>El propietario de "El Corralón del Norte" se encuentra muy entusiasmado con sus avances y les solicita una mejora extra para el sistema de atención, transformándolo en un generador de presupuestos rápidos en tiempo real:</p>
+          <ul>
+            <li>Incorporen una celda libre adicional donde el vendedor pueda registrar la <strong>"Cantidad de productos que desea llevar el cliente"</strong>.</li>
+            <li>Automaticen una celda de cálculo denominada <strong>"Total a Pagar"</strong> que calcule de manera autónoma el costo final de la operación mediante la fórmula matemática pertinente (Cantidad solicitada por el cliente $\times$ Valor unitario del producto localizado por el buscador).</li>
+          </ul>
+        </section>
+
+      </article>
+    </main>
+
+    <aside id="notas" aria-label="Información complementaria y recursos" class="sidebar-context">
+      <h2>Apoyo Instruccional</h2>
+
+      <div class="nota-card">
+        <h3>🎯 Objetivos de Aprendizaje</h3>
+        <p>Al finalizar esta actividad práctica serás capaz de:</p>
+        <ul>
+          <li>Implementar lógica de búsqueda indexada en tablas relacionales comerciales.</li>
+          <li>Validar entradas de datos para prevenir errores operativos en software de facturación.</li>
+          <li>Representar de forma gráfica umbrales críticos de stock mediante formatos condicionales automatizados.</li>
+        </ul>
+      </div>
+
+      <div class="nota-card">
+        <h3>📋 Criterios de Evaluación</h3>
+        <p>Se tendrán en cuenta los siguientes aspectos para la calificación en el taller:</p>
+        <ol>
+          <li><strong>Lógica:</strong> Funcionamiento exacto de las funciones de búsqueda analizadas sin cruce de datos.</li>
+          <li><strong>Diseño:</strong> Separación nítida entre base de datos e interfaz de consulta.</li>
+          <li><strong>Formato:</strong> Aplicación estricta de formato de moneda ($) y alertas en color rojo.</li>
+          <li><strong>Pensamiento crítico:</strong> Calidad de las respuestas analíticas del cuestionario.</li>
+        </ol>
+      </div>
+
+      <div class="nota-card">
+        <h3>🛠️ Materiales y Recursos</h3>
+        <p>Puedes apoyarte en los siguientes enlaces oficiales para avanzar en tu investigación autónoma:</p>
+        <ul>
+          <li><a href="https://support.microsoft.com/es-es/office/buscarv-funci%C3%B3n-buscarv-0bbc8083-26fe-4963-8ab8-93a18ad188a1" target="_blank" rel="noopener noreferrer">Guía oficial de BUSCARV (Microsoft)</a></li>
+          <li><a href="https://support.google.com/docs/answer/3093318?hl=es" target="_blank" rel="noopener noreferrer">Ayuda de BUSCARV en Google Sheets</a></li>
+          <li><a href="https://support.microsoft.com/es-es/office/aplicar-formato-condicional-en-excel-fed60dfa-1d3f-4e13-9c56-92a1d2e84e0b" target="_blank" rel="noopener noreferrer">Uso de Formato Condicional</a></li>
+        </ul>
+      </div>
+
+      <div class="nota-card info-entrega">
+        <h3>📅 Cronograma y Modalidad</h3>
+        <p><strong>Formato:</strong> Archivo digital (.xlsx, .ods o enlace de Sheets público) entregado en la plataforma áulica.</p>
+        <p><strong>Plazo estimado:</strong> 2 clases prácticas de taller con modalidad BYOD o uso de computadoras de laboratorio.</p>
+      </div>
+    </aside>
+
+  </div> <footer role="contentinfo" class="footer">
+    <p>
+      <strong>Docente responsable:</strong> Juan Ignacio Noguera<br>
+      <strong>Espacio Curricular:</strong> Taller de Computación<br>
+      <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná, Entre Ríos, Argentina<br>
+      <strong>Nivel de Aprendizaje:</strong> Secundaria Técnica de 3er Año
+    </p>
+    <p class="footer-year">© <span id="current-year">2026</span> EET N.° 1. Optimizada bajo estándares de accesibilidad universal WCAG 2.2 AA.</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
