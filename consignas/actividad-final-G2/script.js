@@ -1,197 +1,146 @@
-// === ARCHIVO: script.js ===
+// === script.js — EET N.° 1 · Taller de Computación ===
 
-// ============================================================
-// MODO DE COLOR (Claro / Oscuro)
-// ============================================================
+const CONFIG = {
+  storageKey: 'tema',
+  themeAttribute: 'data-theme',
+  defaultTheme: 'light',
+  darkModeQuery: '(prefers-color-scheme: dark)',
+};
 
-(function inicializarModoColor() {
-  const botonToggle = document.getElementById('theme-toggle');
-  const iconoSvg = document.getElementById('icon-theme');
-  const html = document.documentElement;
+// Paths Feather Icons (licencia MIT — sin dependencia externa)
+const ICON_SUN = `
+  <circle cx="12" cy="12" r="5"></circle>
+  <line x1="12" y1="1"    x2="12" y2="3"></line>
+  <line x1="12" y1="21"   x2="12" y2="23"></line>
+  <line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"></line>
+  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+  <line x1="1"  y1="12" x2="3"  y2="12"></line>
+  <line x1="21" y1="12" x2="23"  y2="12"></line>
+  <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"></line>
+  <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"></line>`;
 
-  // --- Paths SVG de referencia (Feather Icons, licencia MIT) ---
-  const PATH_SOL = `
-    <circle cx="12" cy="12" r="5"/>
-    <line x1="12" y1="1" x2="12" y2="3"/>
-    <line x1="12" y1="21" x2="12" y2="23"/>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-    <line x1="1" y1="12" x2="3" y2="12"/>
-    <line x1="21" y1="12" x2="23" y2="12"/>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-  `;
+const ICON_MOON = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
 
-  const PATH_LUNA = `
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-  `;
+// ── Inicialización ────────────────────────────────────────
+inicializarTema();
+inicializarToggleTema();
+generarTablaDeContenidos();
+actualizarAnio();
 
-  // --- Funcion para aplicar el tema ---
-  function aplicarTema(esOscuro) {
-    if (esOscuro) {
-      html.setAttribute('data-theme', 'dark');
-      botonToggle.setAttribute('aria-pressed', 'true');
-      botonToggle.setAttribute('aria-label', 'Activar modo claro');
-      iconoSvg.innerHTML = PATH_LUNA;
-    } else {
-      html.removeAttribute('data-theme');
-      botonToggle.setAttribute('aria-pressed', 'false');
-      botonToggle.setAttribute('aria-label', 'Activar modo oscuro');
-      iconoSvg.innerHTML = PATH_SOL;
-    }
-  }
+// ── Módulo: Tema de color ─────────────────────────────────
+function inicializarTema() {
+  const temaGuardado = localStorage.getItem(CONFIG.storageKey);
+  const preferenciaSO = window.matchMedia(CONFIG.darkModeQuery).matches
+    ? 'dark'
+    : 'light';
+  aplicarTema(temaGuardado || preferenciaSO);
+}
 
-  // --- Determinar tema inicial ---
-  let temaGuardado = localStorage.getItem('tema');
-  let esOscuro;
+function aplicarTema(tema) {
+  document.documentElement.setAttribute(CONFIG.themeAttribute, tema);
+  localStorage.setItem(CONFIG.storageKey, tema);
+  actualizarBotonTema(tema);
+  actualizarIconoTema(tema);
+}
 
-  if (temaGuardado === 'oscuro') {
-    esOscuro = true;
-  } else if (temaGuardado === 'claro') {
-    esOscuro = false;
-  } else {
-    // Sin preferencia guardada: respetar prefers-color-scheme
-    esOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+function actualizarBotonTema(tema) {
+  const boton = document.getElementById('theme-toggle');
+  if (!boton) return;
+  const esOscuro = tema === 'dark';
+  boton.setAttribute('aria-pressed', String(esOscuro));
+  boton.setAttribute(
+    'aria-label',
+    esOscuro ? 'Activar modo claro' : 'Activar modo oscuro',
+  );
+  const etiqueta = boton.querySelector('.toggle-label');
+  if (etiqueta) etiqueta.textContent = esOscuro ? 'Modo claro' : 'Modo oscuro';
+}
 
-  aplicarTema(esOscuro);
+function actualizarIconoTema(tema) {
+  const icono = document.getElementById('icon-theme');
+  if (icono) icono.innerHTML = tema === 'dark' ? ICON_MOON : ICON_SUN;
+}
 
-  // --- Evento de toggle ---
-  botonToggle.addEventListener('click', function () {
-    const estaOscuro = html.getAttribute('data-theme') === 'dark';
-    const nuevoEstado = !estaOscuro;
-    aplicarTema(nuevoEstado);
-    localStorage.setItem('tema', nuevoEstado ? 'oscuro' : 'claro');
+function inicializarToggleTema() {
+  const boton = document.getElementById('theme-toggle');
+  if (!boton) return;
+  boton.addEventListener('click', () => {
+    const temaActual = document.documentElement.getAttribute(
+      CONFIG.themeAttribute,
+    );
+    const temaProximo = temaActual === 'light' ? 'dark' : 'light';
+    aplicarTema(temaProximo);
   });
-})();
+}
 
-// ============================================================
-// TABLA DE CONTENIDOS (ToC) DINAMICA
-// ============================================================
-
-(function generarToC() {
-  const navToC = document.getElementById('toc');
+// ── Módulo: Tabla de Contenidos ───────────────────────────
+function generarTablaDeContenidos() {
   const main = document.getElementById('main-content');
-  if (!navToC || !main) return;
+  const toc = document.getElementById('toc');
+  if (!main || !toc) return;
 
-  const titulos = main.querySelectorAll('h2, h3');
-  if (titulos.length === 0) return;
+  const encabezados = Array.from(main.querySelectorAll('h2, h3')).map((el) => {
+    if (!el.id) el.id = generarSlug(el.textContent);
+    return {
+      nivel: parseInt(el.tagName[1]),
+      texto: el.textContent.trim(),
+      id: el.id,
+    };
+  });
 
-  // Crear contenedor de ToC
-  const contenedor = document.createElement('div');
-
-  // En movil, envolver en <details> para comportamiento de acordeon
-  const esMovil = window.matchMedia('(max-width: 767px)').matches;
-
-  if (esMovil) {
-    const details = document.createElement('details');
-    const summary = document.createElement('summary');
-    summary.textContent = 'Tabla de contenidos';
-    details.appendChild(summary);
-    details.appendChild(contenedor);
-    navToC.appendChild(details);
-  } else {
-    const tituloNav = document.createElement('h2');
-    tituloNav.textContent = 'Tabla de contenidos';
-    navToC.appendChild(tituloNav);
-    navToC.appendChild(contenedor);
-  }
+  if (encabezados.length === 0) return;
 
   const lista = document.createElement('ul');
+  let listaActual = lista;
+  let nivelAnterior = 2;
 
-  titulos.forEach(function (titulo) {
-    // Asignar ID si no lo tiene
-    if (!titulo.id) {
-      const slug = titulo.textContent
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .substring(0, 50);
-      titulo.id = slug || 'titulo-' + Math.random().toString(36).substr(2, 6);
-    }
-
+  encabezados.forEach(({ nivel, texto, id }) => {
     const item = document.createElement('li');
     const enlace = document.createElement('a');
-    enlace.href = '#' + titulo.id;
-    enlace.textContent = titulo.textContent;
-
-    // Indentacion visual para h3
-    if (titulo.tagName.toLowerCase() === 'h3') {
-      item.style.paddingLeft = '1rem';
-      enlace.style.fontSize = '0.9rem';
-    }
-
+    enlace.href = `#${id}`;
+    enlace.textContent = texto;
     item.appendChild(enlace);
-    lista.appendChild(item);
+
+    if (nivel > nivelAnterior) {
+      const subLista = document.createElement('ul');
+      listaActual.lastElementChild?.appendChild(subLista);
+      listaActual = subLista;
+    } else if (nivel < nivelAnterior) {
+      listaActual = lista;
+    }
+
+    listaActual.appendChild(item);
+    nivelAnterior = nivel;
   });
 
-  contenedor.appendChild(lista);
-})();
-
-// ============================================================
-// PROGRESO DE CHECKBOXES
-// ============================================================
-
-(function inicializarProgreso() {
-  const seccionConsigna = document.getElementById('consigna');
-  const outputProgreso = document.getElementById('progreso-texto');
-  if (!seccionConsigna || !outputProgreso) return;
-
-  const checkboxes = seccionConsigna.querySelectorAll('input[type="checkbox"]');
-  const total = checkboxes.length;
-  if (total === 0) return;
-
-  const CLAVE_STORAGE = 'progreso-consigna-presupuesto';
-
-  // --- Funcion para actualizar el texto de progreso ---
-  function actualizarProgreso() {
-    let completados = 0;
-    checkboxes.forEach(function (chk) {
-      if (chk.checked) completados++;
-    });
-    const porcentaje = Math.round((completados / total) * 100);
-    outputProgreso.textContent =
-      completados + ' de ' + total + ' items completados (' + porcentaje + '%)';
+  const detalles = toc.querySelector('details');
+  if (detalles) {
+    const resumen = detalles.querySelector('summary');
+    detalles.innerHTML = '';
+    if (resumen) detalles.appendChild(resumen);
+    detalles.appendChild(lista);
+  } else {
+    toc.innerHTML = '';
+    toc.appendChild(lista);
   }
+}
 
-  // --- Restaurar estados desde localStorage ---
-  function restaurarEstados() {
-    try {
-      const guardado = localStorage.getItem(CLAVE_STORAGE);
-      if (guardado) {
-        const estados = JSON.parse(guardado);
-        checkboxes.forEach(function (chk) {
-          if (estados.hasOwnProperty(chk.id)) {
-            chk.checked = estados[chk.id];
-          }
-        });
-      }
-    } catch (e) {
-      // Si localStorage falla (modo privado, etc.), ignorar silenciosamente
-    }
-    actualizarProgreso();
-  }
+// ── Módulo: Slugify con soporte UTF-8 para español ────────
+function generarSlug(texto) {
+  return texto
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ñ/g, 'n')
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
-  // --- Guardar estados en localStorage ---
-  function guardarEstados() {
-    const estados = {};
-    checkboxes.forEach(function (chk) {
-      estados[chk.id] = chk.checked;
-    });
-    try {
-      localStorage.setItem(CLAVE_STORAGE, JSON.stringify(estados));
-    } catch (e) {
-      // Ignorar errores de localStorage
-    }
-    actualizarProgreso();
-  }
-
-  // --- Asignar event listeners ---
-  checkboxes.forEach(function (chk) {
-    chk.addEventListener('change', guardarEstados);
-  });
-
-  // --- Inicializar ---
-  restaurarEstados();
-})();
+// ── Módulo: Año dinámico en footer ────────────────────────
+function actualizarAnio() {
+  const spanAnio = document.getElementById('current-year');
+  if (spanAnio) spanAnio.textContent = new Date().getFullYear();
+}
