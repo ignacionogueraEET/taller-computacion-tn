@@ -81,7 +81,7 @@ function generarTablaDeContenidos() {
 
   if (encabezados.length === 0) return;
 
-  // Construir la lista anidada como nodos DOM (más robusto que concatenar strings)
+  // Construir la lista anidada como nodos DOM
   const lista = document.createElement('ul');
   let listaActual = lista;
   let nivelAnterior = 2;
@@ -94,12 +94,10 @@ function generarTablaDeContenidos() {
     item.appendChild(enlace);
 
     if (nivel > nivelAnterior) {
-      // Abrir subnivel dentro del último <li>
       const subLista = document.createElement('ul');
       listaActual.lastElementChild?.appendChild(subLista);
       listaActual = subLista;
     } else if (nivel < nivelAnterior) {
-      // Volver al nivel padre
       listaActual = lista;
     }
 
@@ -110,7 +108,6 @@ function generarTablaDeContenidos() {
   // Inyectar dentro de <details> si existe, o directamente en el nav
   const detalles = toc.querySelector('details');
   if (detalles) {
-    // Preservar el <summary> existente
     const resumen = detalles.querySelector('summary');
     detalles.innerHTML = '';
     if (resumen) detalles.appendChild(resumen);
@@ -133,7 +130,8 @@ function generarSlug(texto) {
     .replace(/\s+/g, '-')             // espacios → guiones
     .replace(/-+/g, '-')              // colapsa guiones múltiples
     .replace(/^-+|-+$/g, '');         // elimina guiones en extremos
-  // Ejemplos: "Correo electrónico" → "correo-electronico" | "CC y CCO" → "cc-y-cco"
+  // Ejemplos: "Carátula institucional" → "caratula-institucional"
+  // "Parte 1" → "parte-1"
 }
 
 // ── Módulo: Año dinámico en footer ────────────────────────

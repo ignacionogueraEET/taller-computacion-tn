@@ -71,7 +71,6 @@ html[data-theme="dark"] {
 
 html { font-size: 16px; }
 
-/* Scroll suave solo si no hay preferencia de movimiento reducido */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
@@ -213,7 +212,6 @@ body {
 
 @media (min-width: 768px) {
   .toc-nav summary { display: none; }
-  /* Expande el details sin mostrar el summary */
   .toc-nav details { display: block; }
   .toc-nav details > ul { margin-top: 0; }
 }
@@ -360,19 +358,104 @@ html[data-theme="dark"] code {
   border-color: var(--color-slate-border);
 }
 
-/* Árbol de carpetas */
-.folder-tree {
-  font-family: var(--font-family-mono);
-  font-size: 0.875rem;
-  line-height: 1.8;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+/* Ejemplo visual del título del documento */
+.titulo-ejemplo {
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1a3c6e;
+  background-color: var(--color-slate-light);
+  padding: var(--space-sm) var(--space-md);
   border-radius: var(--border-radius-md);
-  padding: var(--space-md);
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-md);
+  border: 1px dashed var(--color-slate-border);
+  margin: var(--space-sm) 0;
+}
+
+html[data-theme="dark"] .titulo-ejemplo {
+  color: #7aaac8;
+  background-color: var(--color-slate-light);
+  border-color: var(--color-slate-border);
+}
+
+/* Ejemplo visual de epígrafe */
+.epigrafe-ejemplo {
+  font-family: Arial, sans-serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-md);
+  border: 1px dashed var(--color-border);
+  margin: var(--space-sm) 0;
+}
+
+/* Tabla de materiales (ejemplo visual) */
+.table-wrapper {
   overflow-x: auto;
-  white-space: pre;
+  margin: var(--space-sm) 0 var(--space-md);
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-materiales {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  min-width: 480px;
+}
+
+.tabla-materiales caption {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.tabla-materiales th {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.6rem 0.75rem;
+  background-color: var(--color-slate-light);
+  color: var(--color-slate-text);
+  border: 1px solid var(--color-slate-border);
+}
+
+html[data-theme="dark"] .tabla-materiales th {
+  background-color: var(--color-slate-light);
+  color: var(--color-slate-text);
+  border-color: var(--color-slate-border);
+}
+
+.tabla-materiales td {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+}
+
+.tabla-materiales td:first-child {
+  text-align: left;
+}
+
+.tabla-materiales td:nth-child(n+3) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.celda-vacia {
+  color: var(--color-text-muted);
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.tabla-materiales tbody tr:hover {
+  background-color: var(--color-surface-hover);
 }
 
 /* Bloque de fecha de entrega */
@@ -399,7 +482,7 @@ html[data-theme="dark"] .fecha-entrega p {
   color: var(--color-teal-text);
 }
 
-/* Tabla de criterios */
+/* Tabla de criterios de evaluación */
 .criterios-table {
   width: 100%;
   border-collapse: collapse;
@@ -451,7 +534,7 @@ html[data-theme="dark"] .fecha-entrega p {
   border-left: 3px solid var(--color-accent);
   height: fit-content;
   position: sticky;
-  top: calc(var(--space-lg) + 60px); /* compensa el header sticky */
+  top: calc(var(--space-lg) + 60px);
 }
 
 .sidebar-context > h2 {
@@ -485,12 +568,10 @@ html[data-theme="dark"] .fecha-entrega p {
   gap: 0.5rem;
 }
 
-/* Ícono SVG inline en headings de tarjetas (Feather Icons) */
 .heading-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  /* Hereda currentColor → se adapta automáticamente al tema claro/oscuro */
 }
 
 .nota-card p,
@@ -501,7 +582,6 @@ html[data-theme="dark"] .fecha-entrega p {
 
 .nota-card ul { margin-left: var(--space-md); }
 
-/* En móvil el aside se desapega (no sticky) */
 @media (max-width: 767px) {
   .sidebar-context { position: static; }
 }

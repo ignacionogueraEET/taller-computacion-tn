@@ -2,10 +2,10 @@
 // defer garantiza que el DOM está listo al ejecutarse; no se necesita DOMContentLoaded
 
 const CONFIG = {
-  storageKey:      'tema',
-  themeAttribute:  'data-theme',
-  defaultTheme:    'light',
-  darkModeQuery:   '(prefers-color-scheme: dark)',
+  storageKey: 'tema',
+  themeAttribute: 'data-theme',
+  defaultTheme: 'light',
+  darkModeQuery: '(prefers-color-scheme: dark)',
 };
 
 // Paths Feather Icons (licencia MIT — sin dependencia externa)
@@ -30,8 +30,10 @@ actualizarAnio();
 
 // ── Módulo: Tema de color ─────────────────────────────────
 function inicializarTema() {
-  const temaGuardado  = localStorage.getItem(CONFIG.storageKey);
-  const preferenciaSO = window.matchMedia(CONFIG.darkModeQuery).matches ? 'dark' : 'light';
+  const temaGuardado = localStorage.getItem(CONFIG.storageKey);
+  const preferenciaSO = window.matchMedia(CONFIG.darkModeQuery).matches
+    ? 'dark'
+    : 'light';
   aplicarTema(temaGuardado || preferenciaSO);
 }
 
@@ -47,7 +49,10 @@ function actualizarBotonTema(tema) {
   if (!boton) return;
   const esOscuro = tema === 'dark';
   boton.setAttribute('aria-pressed', String(esOscuro));
-  boton.setAttribute('aria-label', esOscuro ? 'Activar modo claro' : 'Activar modo oscuro');
+  boton.setAttribute(
+    'aria-label',
+    esOscuro ? 'Activar modo claro' : 'Activar modo oscuro',
+  );
   const etiqueta = boton.querySelector('.toggle-label');
   if (etiqueta) etiqueta.textContent = esOscuro ? 'Modo claro' : 'Modo oscuro';
 }
@@ -61,7 +66,9 @@ function inicializarToggleTema() {
   const boton = document.getElementById('theme-toggle');
   if (!boton) return;
   boton.addEventListener('click', () => {
-    const temaActual  = document.documentElement.getAttribute(CONFIG.themeAttribute);
+    const temaActual = document.documentElement.getAttribute(
+      CONFIG.themeAttribute,
+    );
     const temaProximo = temaActual === 'light' ? 'dark' : 'light';
     aplicarTema(temaProximo);
   });
@@ -70,36 +77,38 @@ function inicializarToggleTema() {
 // ── Módulo: Tabla de Contenidos ───────────────────────────
 function generarTablaDeContenidos() {
   const main = document.getElementById('main-content');
-  const toc  = document.getElementById('toc');
+  const toc = document.getElementById('toc');
   if (!main || !toc) return;
 
   // Recopilar encabezados h2 y h3 del main
-  const encabezados = Array.from(main.querySelectorAll('h2, h3')).map(el => {
+  const encabezados = Array.from(main.querySelectorAll('h2, h3')).map((el) => {
     if (!el.id) el.id = generarSlug(el.textContent);
-    return { nivel: parseInt(el.tagName[1]), texto: el.textContent.trim(), id: el.id };
+    return {
+      nivel: parseInt(el.tagName[1]),
+      texto: el.textContent.trim(),
+      id: el.id,
+    };
   });
 
   if (encabezados.length === 0) return;
 
-  // Construir la lista anidada como nodos DOM (más robusto que concatenar strings)
+  // Construir la lista anidada como nodos DOM
   const lista = document.createElement('ul');
   let listaActual = lista;
   let nivelAnterior = 2;
 
   encabezados.forEach(({ nivel, texto, id }) => {
-    const item   = document.createElement('li');
+    const item = document.createElement('li');
     const enlace = document.createElement('a');
-    enlace.href        = `#${id}`;
+    enlace.href = `#${id}`;
     enlace.textContent = texto;
     item.appendChild(enlace);
 
     if (nivel > nivelAnterior) {
-      // Abrir subnivel dentro del último <li>
       const subLista = document.createElement('ul');
       listaActual.lastElementChild?.appendChild(subLista);
       listaActual = subLista;
     } else if (nivel < nivelAnterior) {
-      // Volver al nivel padre
       listaActual = lista;
     }
 
@@ -110,7 +119,6 @@ function generarTablaDeContenidos() {
   // Inyectar dentro de <details> si existe, o directamente en el nav
   const detalles = toc.querySelector('details');
   if (detalles) {
-    // Preservar el <summary> existente
     const resumen = detalles.querySelector('summary');
     detalles.innerHTML = '';
     if (resumen) detalles.appendChild(resumen);
@@ -126,14 +134,13 @@ function generarSlug(texto) {
   return texto
     .toLowerCase()
     .trim()
-    .normalize('NFD')                   // descompone á → a + diacrítico
-    .replace(/[\u0300-\u036f]/g, '')    // elimina diacríticos combinados
-    .replace(/ñ/g, 'n')                // reemplaza ñ remanente
-    .replace(/[^\w\s-]/g, '')          // elimina caracteres especiales
-    .replace(/\s+/g, '-')             // espacios → guiones
-    .replace(/-+/g, '-')              // colapsa guiones múltiples
-    .replace(/^-+|-+$/g, '');         // elimina guiones en extremos
-  // Ejemplos: "Correo electrónico" → "correo-electronico" | "CC y CCO" → "cc-y-cco"
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ñ/g, 'n')
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 // ── Módulo: Año dinámico en footer ────────────────────────

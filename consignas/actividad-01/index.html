@@ -1,103 +1,335 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Juan Ignacio Noguera">
-    <meta name="description" content="Guía de Actividades Accesible - EET N.° 1 Paraná">
-    <title>Actividad 01 - Taller de Computación | EET N.° 1</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Actividad 1: Configurar correo institucional y Google Drive como herramientas básicas de trabajo. Taller de Computación, EET N.° 1.">
+  <meta name="author"      content="Juan Ignacio Noguera">
+  <meta name="keywords"    content="EET N1, Taller de Computación, Gmail, Google Drive, correo electrónico, nube">
+
+  <meta property="og:title"       content="Actividad 1 — Correo electrónico y Google Drive | Taller de Computación">
+  <meta property="og:description" content="Configurar y usar el correo institucional y Google Drive como herramientas básicas de trabajo.">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="es_AR">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Actividad 1 — Correo electrónico y Google Drive",
+    "description": "Configurar y usar el correo institucional y Google Drive como herramientas básicas de trabajo",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "EET N.° 1 General Francisco Ramírez",
+      "address": { "@type": "PostalAddress", "addressLocality": "Paraná", "addressCountry": "AR" }
+    },
+    "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+    "educationalLevel": "Secundaria Técnica",
+    "inLanguage": "es-AR",
+    "courseCode": "Act1"
+  }
+  </script>
+
+  <title>Actividad 1 — Correo electrónico y Google Drive | Taller de Computación</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <header class="main-header" role="banner">
-        <div class="container">
-            <p class="institution">EET N.° 1 "Gral. Fco. Ramírez" - Paraná</p>
-            <h1 class="course-title">Taller de Computación 3° Turno Noche</h1>
-            <p class="instructor">Docente: Juan Ignacio Noguera</p>
-            <button id="theme-toggle" class="no-print" aria-live="polite">
-                <span class="icon" aria-hidden="true">🌙</span>
-                <span class="text">Modo Oscuro</span>
-            </button>
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <header role="banner" class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Taller de Computación</h1>
+        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+      </div>
+      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+        <svg id="icon-theme" aria-hidden="true" focusable="false"
+             width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- JS inyecta paths de sol al cargar -->
+        </svg>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+    <details>
+      <summary>Tabla de contenidos</summary>
+      <!-- JS inyecta <ul> aquí -->
+    </details>
+  </nav>
+
+  <main id="main-content">
+    <div class="layout-grid">
+
+      <article class="article-container">
+
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">Actividad 1 — Correo electrónico y Google Drive</h2>
+
+          <!-- Ilustración SVG: sobre de correo + carpeta en la nube -->
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+            <svg role="img" aria-labelledby="svg-titulo svg-desc"
+                 viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
+                 focusable="false" width="100%" height="auto">
+              <title id="svg-titulo">Correo electrónico y Google Drive</title>
+              <desc  id="svg-desc">Ilustración que muestra un sobre de correo electrónico a la izquierda y una carpeta con el logo de una nube a la derecha, representando las dos herramientas principales de la actividad.</desc>
+
+              <!-- Sobre de correo -->
+              <rect x="30" y="60" width="140" height="95" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <polyline points="30,60 100,115 170,60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <line x1="30" y1="155" x2="75" y2="110" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+              <line x1="170" y1="155" x2="125" y2="110" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+
+              <!-- Líneas de texto en el sobre -->
+              <line x1="55" y1="85" x2="125" y2="85" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
+              <line x1="55" y1="95" x2="110" y2="95" stroke="currentColor" stroke-width="1.2" opacity="0.25"/>
+
+              <!-- Carpeta de Drive -->
+              <path d="M220,90 L220,155 L370,155 L370,90 L295,90 L285,75 L220,75 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <!-- Nube sobre la carpeta -->
+              <path d="M260,55 C260,42 272,32 286,32 C296,32 304,38 307,46 C310,44 314,42 318,42 C328,42 336,50 336,60 C336,68 330,74 322,75 L265,75 C258,75 252,69 252,62 C252,58 255,55 260,55 Z" fill="var(--color-accent)" opacity="0.2" stroke="var(--color-accent)" stroke-width="1.5"/>
+              <!-- Triángulo Drive dentro de la carpeta -->
+              <polygon points="280,120 295,100 310,120" fill="var(--color-accent)" opacity="0.35"/>
+              <polygon points="295,100 310,120 325,100" fill="var(--color-accent)" opacity="0.25"/>
+
+              <!-- Línea decorativa punteada entre ambos -->
+              <line x1="180" y1="110" x2="210" y2="110" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+            </svg>
+            <figcaption>Correo electrónico y Google Drive: tus herramientas básicas de trabajo</figcaption>
+          </figure>
+
+          <p>En esta actividad vas a configurar y comenzar a usar dos herramientas fundamentales para tu vida estudiantil: el <strong>correo electrónico institucional</strong> (Gmail) y <strong>Google Drive</strong>. Ambas forman parte del ecosistema de Google Workspace y te permitirán comunicarte con docentes, compartir archivos y organizar tu trabajo de forma segura y accesible desde cualquier dispositivo.</p>
+
+          <p>Dominar el correo electrónico y el almacenamiento en la nube es una competencia digital esencial. Aprender a redactar un correo con el asunto adecuado, usar copia (CC) y copia oculta (CCO), y organizar archivos en carpetas estructuradas te servirá no solo en la escuela sino también en tu futura vida profesional. Esta actividad es el primer paso para construir tu identidad digital institucional.</p>
+        </section>
+
+        <section id="pasos" aria-labelledby="titulo-pasos">
+          <h2 id="titulo-pasos">Pasos a seguir</h2>
+          <ol class="steps-list">
+            <li>
+              <h3>Parte 1 — Ingresar a tu correo institucional</h3>
+              <p>Accede a <a href="https://mail.google.com" target="_blank" rel="noopener noreferrer">mail.google.com<span class="sr-only">(abre en nueva pestaña)</span></a> con tu cuenta institucional (la que te proporcionó la escuela). Si es la primera vez que la usas, es posible que debas cambiar la contraseña temporal. Asegúrate de recordar tu usuario y contraseña, ya que los necesitarás durante toda la cursada.</p>
+            </li>
+            <li>
+              <h3>Enviar un correo de presentación al profesor</h3>
+              <p>Redacta un nuevo correo dirigido al profesor con los siguientes datos:</p>
+              <ul>
+                <li><strong>Asunto:</strong> <code>Act1 - Apellido, Nombre</code> (reemplazá con tus datos reales).</li>
+                <li><strong>Cuerpo del mensaje:</strong> Una presentación breve que incluya tu nombre completo, el curso en el que estás y tu especialidad (Construcciones, Electromecánica o Electrónica).</li>
+                <li><strong>Adjunto:</strong> Incluí una imagen cualquiera (puede ser una foto, un dibujo o una captura de pantalla). Practicá cómo adjuntar archivos desde tu computadora o desde Drive.</li>
+              </ul>
+            </li>
+            <li>
+              <h3>Enviar un segundo correo usando CC y CCO</h3>
+              <p>Este correo te servirá para practicar los campos de copia y copia oculta. Completá lo siguiente:</p>
+              <ul>
+                <li><strong>Para:</strong> la dirección de correo del profesor.</li>
+                <li><strong>CC:</strong> la dirección de un compañero de clase.</li>
+                <li><strong>CCO:</strong> la dirección de otro compañero de clase.</li>
+                <li><strong>Asunto:</strong> <code>Act1 - CC y CCO - Apellido, Nombre</code></li>
+                <li><strong>Cuerpo:</strong> Explicá en dos líneas la diferencia entre CC y CCO. Pista: pensá en quién puede ver las direcciones de los demás destinatarios.</li>
+              </ul>
+              <p><strong>Dato clave:</strong> <em>CC</em> (con copia) permite que todos los destinatarios vean quiénes más recibieron el correo. <em>CCO</em> (con copia oculta) oculta la dirección de quienes están en ese campo, de modo que los demás destinatarios no pueden verla. Esto es útil para proteger la privacidad de las direcciones de correo.</p>
+            </li>
+            <li>
+              <h3>Parte 2 — Ingresar a Google Drive</h3>
+              <p>Accede a <a href="https://drive.google.com" target="_blank" rel="noopener noreferrer">drive.google.com<span class="sr-only">(abre en nueva pestaña)</span></a> con la misma cuenta institucional que usaste para el correo. Explorá la interfaz: fijate dónde se crean carpetas nuevas, cómo se suben archivos y cómo se comparte un documento con otras personas. Google Drive te da 15 GB de almacenamiento gratuito en la nube, que se comparte con Gmail y Google Fotos.</p>
+            </li>
+            <li>
+              <h3>Crear la carpeta principal del taller</h3>
+              <p>Dentro de tu Google Drive, hacé clic en el botón <strong>"+ Nuevo"</strong> y seleccioná <strong>"Carpeta"</strong>. Nombrala exactamente así: <code>Taller_Computacion_Apellido</code> (reemplazá "Apellido" por tu apellido real). Esta será la carpeta raíz donde organices todos los trabajos de la materia a lo largo del ciclo lectivo. Una buena organización de archivos te ahorra tiempo y evita confusiones.</p>
+            </li>
+            <li>
+              <h3>Crear el documento "Sobre esta carpeta"</h3>
+              <p>Dentro de la carpeta que acabás de crear, hacé clic en <strong>"+ Nuevo"</strong> y seleccioná <strong>"Documentos de Google"</strong>. Nombralo <code>Sobre esta carpeta</code>. En el contenido del documento, escribí un texto que describa qué tipo de archivos vas a guardar en esta carpeta: por ejemplo, planillas de cálculo, documentos de investigación, imágenes, capturas de pantalla, entre otros. Este documento servirá como índice o guía para que cualquier persona que acceda entienda la estructura de la carpeta.</p>
+            </li>
+            <li>
+              <h3>Crear las subcarpetas</h3>
+              <p>Dentro de la carpeta <code>Taller_Computacion_Apellido</code>, creá las siguientes subcarpetas para organizar tus archivos por tipo:</p>
+              <ul>
+                <li><code>Planillas de cálculo</code> — para archivos de Google Sheets y datos numéricos.</li>
+                <li><code>Investigaciones (Documentos)</code> — para informes, trabajos escritos y documentos de Google Docs.</li>
+                <li><code>Capturas</code> — para las capturas de pantalla que debas entregar en cada actividad.</li>
+              </ul>
+              <p>La estructura debería verse así:</p>
+              <pre class="folder-tree">Taller_Computacion_Apellido/
+├── Sobre esta carpeta (documento)
+├── Planillas de cálculo/
+├── Investigaciones (Documentos)/
+└── Capturas/</pre>
+            </li>
+            <li>
+              <h3>Realizar una captura de pantalla del directorio</h3>
+              <p>Una vez que tengas la carpeta con todas las subcarpetas creadas y el documento "Sobre esta carpeta" dentro, tomá una captura de pantalla que muestre claramente la estructura completa. Asegurate de que se vean los nombres de la carpeta principal y de las subcarpetas. En Windows podés usar <code>Win + Imp Pant</code>; en Chromebook, <code>Ctrl + Mostrar ventanas</code>. Guardá la captura en la subcarpeta <code>Capturas</code> que creaste.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="recursos" aria-labelledby="titulo-recursos">
+          <h2 id="titulo-recursos">Recursos y referencias</h2>
+          <ul class="recursos-list">
+            <li>
+              <a href="https://www.youtube.com/results?search_query=Gmail+y+Google+Drive+para+estudiantes" target="_blank" rel="noopener noreferrer">
+                Video tutorial: "Gmail y Google Drive para estudiantes" — Canal Google Workspace
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://support.google.com/mail/answer/2834514" target="_blank" rel="noopener noreferrer">
+                Ayuda de Gmail: Redactar y enviar correos
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://support.google.com/drive/answer/2424384" target="_blank" rel="noopener noreferrer">
+                Ayuda de Google Drive: Organizar archivos y carpetas
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://support.google.com/mail/answer/2834514?hl=es#zippy=%2Ccambia-qui%C3%A9n-recibe-el-mensaje" target="_blank" rel="noopener noreferrer">
+                Diferencia entre Para, CC y CCO en Gmail
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="entrega" aria-labelledby="titulo-entrega">
+          <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
+
+          <p>La entrega de esta actividad consta de dos partes que el profesor verificará:</p>
+
+          <h3>Correos electrónicos</h3>
+          <p>El profesor verificará que haya recibido los dos correos correctamente enviados: el primero con el asunto <code>Act1 - Apellido, Nombre</code>, la presentación y la imagen adjunta; y el segundo con el asunto <code>Act1 - CC y CCO - Apellido, Nombre</code>, donde se evidencie el uso correcto de los campos CC y CCO. No es necesario que subas nada adicional para esta parte: el hecho de que los correos lleguen a destino ya cuenta como entrega.</p>
+
+          <h3>Captura de pantalla de Google Drive</h3>
+          <p>Subí la captura de pantalla de tu carpeta de Google Drive con las subcarpetas creadas. La imagen debe mostrar claramente: la carpeta principal <code>Taller_Computacion_Apellido</code>, el documento "Sobre esta carpeta" y las tres subcarpetas (<code>Planillas de cálculo</code>, <code>Investigaciones (Documentos)</code> y <code>Capturas</code>). Asegurate de que la captura sea legible y los nombres se lean sin dificultad.</p>
+
+          <div class="fecha-entrega">
+            <p><strong>Fecha de entrega:</strong> 3 días corridos desde la publicación de esta actividad.</p>
+          </div>
+        </section>
+
+        <section id="criterios" aria-labelledby="titulo-criterios">
+          <h2 id="titulo-criterios">Criterios de evaluación</h2>
+          <table class="criterios-table">
+            <caption>Criterios de evaluación de la Actividad 1</caption>
+            <thead>
+              <tr>
+                <th scope="col">Criterio</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Correo de presentación</td>
+                <td>Asunto correcto (<code>Act1 - Apellido, Nombre</code>), cuerpo con nombre, curso y especialidad, imagen adjunta incluida.</td>
+              </tr>
+              <tr>
+                <td>Correo con CC y CCO</td>
+                <td>Asunto correcto, campos CC y CCO usados con direcciones de compañeros, explicación clara de la diferencia entre ambos.</td>
+              </tr>
+              <tr>
+                <td>Captura de pantalla legible</td>
+                <td>La imagen muestra claramente la estructura de carpetas y subcarpetas en Google Drive.</td>
+              </tr>
+              <tr>
+                <td>Carpeta de Drive creada</td>
+                <td>Nombre correcto de la carpeta principal, documento "Sobre esta carpeta" presente, tres subcarpetas creadas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </article>
+
+      <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
+        <h2>Contexto</h2>
+
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+            Objetivo
+          </h3>
+          <p>Configurar y usar el correo institucional (Gmail) y Google Drive como herramientas básicas de trabajo para la cursada de Taller de Computación.</p>
         </div>
-    </header>
 
-    <main id="main-content" class="container" role="main">
-        
-        <section aria-labelledby="sec-consigna">
-            <h2 id="sec-consigna">Actividad N.° 1: Fundamentos y Formato</h2>
-            <p>Esta actividad integra el dominio de herramientas de procesamiento de texto con la investigación técnica profesional.</p>
-            
-            <div class="grid-specs">
-                <article class="spec-card">
-                    <h3>Parámetros de Estilo</h3>
-                    <ul>
-                        <li><strong>Fuente:</strong> Roboto / Inter (12 pts)</li>
-                        <li><strong>Alineación:</strong> Justificada</li>
-                        <li><strong>Interlineado:</strong> 1.5 líneas</li>
-                    </ul>
-                </article>
-                <article class="spec-card">
-                    <h3>Configuración de Página</h3>
-                    <ul>
-                        <li><strong>Márgenes:</strong> Sup/Izq 2.5cm - Inf/Der 1.5cm</li>
-                        <li><strong>Papel:</strong> A4 - Orientación Vertical</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            Herramientas
+          </h3>
+          <ul>
+            <li>Gmail (correo institucional)</li>
+            <li>Google Drive</li>
+            <li>Google Docs</li>
+            <li>Herramienta de captura de pantalla del sistema operativo</li>
+          </ul>
+        </div>
 
-        <section aria-labelledby="sec-investigacion">
-            <h2 id="sec-investigacion">Conceptos a Investigar</h2>
-            <p>Se fomenta la consulta de diversas fuentes bibliográficas y digitales. Si reproduces fragmentos de texto de otro autor, <strong>debes realizar la cita correspondiente</strong>. Cada concepto debe incluir obligatoriamente una <strong>ilustración representativa</strong>.</p>
-            
-            <ul class="concept-list">
-                <li class="concept-item">
-                    <span class="badge">Requerido</span>
-                    <div class="concept-text">
-                        <strong>Computadora:</strong> Definición funcional y arquitectura básica. <em>(Requiere ilustración)</em>
-                    </div>
-                </li>
-                <li class="concept-item">
-                    <span class="badge">Requerido</span>
-                    <div class="concept-text">
-                        <strong>Informática:</strong> Ciencia del tratamiento automático de la información. <em>(Requiere ilustración)</em>
-                    </div>
-                </li>
-                <li class="concept-item">
-                    <span class="badge">Requerido</span>
-                    <div class="concept-text">
-                        <strong>Sistema Informático:</strong> Interacción entre hardware, software y personas. <em>(Requiere ilustración)</em>
-                    </div>
-                </li>
-            </ul>
-        </section>
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Modalidad
+          </h3>
+          <p>Individual. Duración estimada: 1 hora (30 min correo electrónico + 30 min Google Drive).</p>
+        </div>
 
-        <section class="eval-box" aria-labelledby="sec-eval">
-            <h2 id="sec-eval" class="small-title">Criterios de Evaluación y Accesibilidad</h2>
-            <ul>
-                <li><strong>Fuentes y Citas:</strong> Atribución correcta de autores y procedencia de imágenes.</li>
-                <li><strong>Contenido Visual:</strong> Presencia de una ilustración por cada término investigado.</li>
-                <li><strong>Accesibilidad WCAG 2.1:</strong> El documento debe ser legible por tecnologías de asistencia (textos alternativos en imágenes, jerarquía de títulos).</li>
-                <li><strong>Originalidad:</strong> Capacidad de síntesis a partir de múltiples consultas.</li>
-            </ul>
-        </section>
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 11 12 14 22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+            Competencias
+          </h3>
+          <ul>
+            <li>Comunicación digital por correo electrónico</li>
+            <li>Organización de archivos en la nube</li>
+            <li>Uso responsable de herramientas institucionales</li>
+          </ul>
+        </div>
+      </aside>
 
-        <footer class="submission-panel">
-            <h3>Envío de la Actividad</h3>
-            <div class="classroom-notice">
-                <span class="icon" aria-hidden="true">💻</span>
-                <p>La entrega se realizará exclusivamente a través del <strong>Aula Virtual</strong> institucional en la tarea correspondiente.</p>
-            </div>
-        </footer>
-    </main>
+    </div><!-- /.layout-grid -->
+  </main>
 
-    <script src="script.js"></script>
+  <footer role="contentinfo" class="footer">
+    <div class="footer-inner">
+      <p>
+        <strong>Docente:</strong> Juan Ignacio Noguera<br>
+        <strong>Materia:</strong> Taller de Computación<br>
+        <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná
+      </p>
+      <p class="footer-meta">
+        &copy; <span id="current-year">2025</span> EET N.° 1 &middot; Diseñado siguiendo
+        <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer">WCAG 2.2 AA</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
 </body>
 </html>

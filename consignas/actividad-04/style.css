@@ -8,7 +8,6 @@
   --space-xl:  3rem;
 
   --font-family-sans:   -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-  --font-family-mono:   "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --font-size-base:     1rem;
   --font-size-lg:       1.25rem;
   --font-size-xl:       1.5rem;
@@ -23,7 +22,7 @@
   --color-surface-hover: #ede9e0;
   --color-text:          #1c1a17;   /* 15.5:1 AAA */
   --color-text-muted:    #4a4740;   /*  8.3:1 AAA */
-  --color-border:        #ddd9d0;
+  --color-border:        #ddd9d0; 
   --color-accent:        #9c430c;   /*  5.8:1 AA  */
   --color-accent-hover:  #7a3208;   /*  8.0:1 AA  */
   --color-focus-ring:    #9c430c;   /*  5.8:1 ≥ 3:1 requerido */
@@ -49,7 +48,7 @@ html[data-theme="dark"] {
   --color-text:          #f0ece4;   /* 15.6:1 AAA */
   --color-text-muted:    #b0aa9f;   /*  8.0:1 AAA */
   --color-border:        #3a3630;
-  --color-accent:        #f07030;   /*  6.2:1 AA  */
+  --color-accent:        #f07030;   /*  6.2:1 AA   */
   --color-accent-hover:  #f59444;   /*  7.8:1 AA  */
   --color-focus-ring:    #fbbf24;   /* 11.0:1 AAA */
   --color-teal:          #34c4b0;   /*  8.5:1 AAA */
@@ -80,7 +79,7 @@ body {
   font-family: var(--font-family-sans);
   font-size:   var(--font-size-base);
   line-height: var(--line-height-normal);
-  color:            var(--color-text);
+  color:       var(--color-text);
   background-color: var(--color-bg);
   text-align: left;
   transition: background-color var(--transition-normal), color var(--transition-normal);
@@ -139,7 +138,7 @@ body {
 
 .header-subtitle {
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted); 
   margin-top: 0.25rem;
 }
 
@@ -196,7 +195,7 @@ body {
   list-style: none;
   padding: 0.25rem 0;
 }
-
+ 
 .toc-nav summary::-webkit-details-marker { display: none; }
 
 .toc-nav ul {
@@ -213,7 +212,6 @@ body {
 
 @media (min-width: 768px) {
   .toc-nav summary { display: none; }
-  /* Expande el details sin mostrar el summary */
   .toc-nav details { display: block; }
   .toc-nav details > ul { margin-top: 0; }
 }
@@ -272,15 +270,14 @@ h3 {
 
 p { margin-bottom: var(--space-md); }
 
-a:link    { color: var(--color-link);        text-decoration: underline; }
+a:link    { color: var(--color-link); text-decoration: underline; }
 a:visited { color: var(--color-link-visited); }
-a:hover   { color: var(--color-link-hover);   }
-a:active  { color: var(--color-link-active);  }
+a:hover   { color: var(--color-link-hover); }
+a:active  { color: var(--color-link-active); }
 
 ol, ul { margin-bottom: var(--space-md); margin-left: var(--space-lg); }
 li     { margin-bottom: var(--space-sm); }
 
-/* Lista numerada de pasos */
 .steps-list { list-style: none; margin-left: 0; counter-reset: paso; }
 
 .steps-list > li {
@@ -308,7 +305,6 @@ li     { margin-bottom: var(--space-sm); }
 
 .steps-list h3 { margin-top: 0; }
 
-/* Lista de recursos */
 .recursos-list { list-style: none; margin-left: 0; }
 
 .recursos-list li {
@@ -318,7 +314,7 @@ li     { margin-bottom: var(--space-sm); }
 }
 
 .recursos-list li::before {
-  content: "\2192";
+  content: "→ ";
   position: absolute;
   left: 0;
   color: var(--color-accent);
@@ -341,117 +337,15 @@ li     { margin-bottom: var(--space-sm); }
   margin-top: 0.5rem;
 }
 
-/* ── 9. Elementos específicos de la actividad ────────── */
-
-/* Código inline */
-code {
-  font-family: var(--font-family-mono);
-  background-color: var(--color-slate-light);
-  color: var(--color-slate-text);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-  font-size: 0.9em;
-  border: 1px solid var(--color-slate-border);
-}
-
-html[data-theme="dark"] code {
-  background-color: var(--color-slate-light);
-  color: var(--color-slate-text);
-  border-color: var(--color-slate-border);
-}
-
-/* Árbol de carpetas */
-.folder-tree {
-  font-family: var(--font-family-mono);
-  font-size: 0.875rem;
-  line-height: 1.8;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--space-md);
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-md);
-  overflow-x: auto;
-  white-space: pre;
-}
-
-/* Bloque de fecha de entrega */
-.fecha-entrega {
-  background-color: var(--color-teal-light);
-  border: 1px solid var(--color-teal-border);
-  border-radius: var(--border-radius-md);
-  padding: var(--space-md);
-  margin-top: var(--space-md);
-}
-
-.fecha-entrega p {
-  margin-bottom: 0;
-  color: var(--color-teal-text);
-  font-weight: 500;
-}
-
-html[data-theme="dark"] .fecha-entrega {
-  background-color: var(--color-teal-light);
-  border-color: var(--color-teal-border);
-}
-
-html[data-theme="dark"] .fecha-entrega p {
-  color: var(--color-teal-text);
-}
-
-/* Tabla de criterios */
-.criterios-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-md);
-}
-
-.criterios-table caption {
-  font-weight: 700;
-  font-size: var(--font-size-lg);
-  text-align: left;
-  margin-bottom: var(--space-sm);
-  color: var(--color-text);
-}
-
-.criterios-table th,
-.criterios-table td {
-  padding: var(--space-sm) var(--space-md);
-  text-align: left;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.criterios-table th {
-  background-color: var(--color-bg);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.criterios-table td {
-  font-size: 0.9375rem;
-}
-
-.criterios-table tbody tr:hover {
-  background-color: var(--color-surface-hover);
-}
-
-.criterios-table code {
-  font-size: 0.85em;
-}
-
-/* ── 10. Aside (panel de contexto) ────────────────────── */
+/* ── 9. Aside (panel de contexto) ────────────────────── */
 .sidebar-context {
   background-color: var(--color-surface);
   padding: var(--space-lg);
   border-radius: var(--border-radius-md);
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-accent); 
   height: fit-content;
   position: sticky;
-  top: calc(var(--space-lg) + 60px); /* compensa el header sticky */
+  top: calc(var(--space-lg) + 60px);
 }
 
 .sidebar-context > h2 {
@@ -472,7 +366,7 @@ html[data-theme="dark"] .fecha-entrega p {
 
 .nota-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); 
 }
 
 .nota-card h3 {
@@ -485,12 +379,10 @@ html[data-theme="dark"] .fecha-entrega p {
   gap: 0.5rem;
 }
 
-/* Ícono SVG inline en headings de tarjetas (Feather Icons) */
 .heading-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  /* Hereda currentColor → se adapta automáticamente al tema claro/oscuro */
 }
 
 .nota-card p,
@@ -501,12 +393,11 @@ html[data-theme="dark"] .fecha-entrega p {
 
 .nota-card ul { margin-left: var(--space-md); }
 
-/* En móvil el aside se desapega (no sticky) */
 @media (max-width: 767px) {
   .sidebar-context { position: static; }
 }
 
-/* ── 11. Footer ──────────────────────────────────────── */
+/* ── 10. Footer ──────────────────────────────────────── */
 .footer {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
@@ -528,7 +419,7 @@ html[data-theme="dark"] .fecha-entrega p {
 
 .footer-meta { font-size: 0.8rem; }
 
-/* ── 12. Motion reducido ─────────────────────────────── */
+/* ── 11. Motion reducido ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -536,10 +427,10 @@ html[data-theme="dark"] .fecha-entrega p {
   }
 }
 
-/* ── 13. Impresión ───────────────────────────────────── */
+/* ── 12. Impresión ───────────────────────────────────── */
 @media print {
   .skip-link, .theme-toggle, .header, .toc-nav, .sidebar-context { display: none; }
   body { color: #000; background: #fff; }
   section { page-break-inside: avoid; border: 1px solid #999; }
-  a::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  a::after { content: " (" attr(href) ") "; font-size: 0.8em; }
 }

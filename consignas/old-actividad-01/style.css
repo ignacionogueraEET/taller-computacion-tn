@@ -1,0 +1,88 @@
+/* DISEÑO INSTITUCIONAL ACCESIBLE (WCAG 2.1 AA) */
+:root {
+    --bg-color: #fafafa;
+    --text-color: #1d1d1f;
+    --accent-color: #004494;
+    --border-color: #d1d1d6;
+    --card-bg: #ffffff;
+    --badge-bg: #e9ecef;
+    --container-width: 800px;
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1c22;
+    --text-color: #f1f5f9;
+    --accent-color: #7abaff;
+    --border-color: #334155;
+    --card-bg: #242933;
+    --badge-bg: #334155;
+}
+
+:focus-visible { outline: 3px solid var(--accent-color); outline-offset: 4px; }
+
+.skip-link {
+    position: absolute; top: -100px; left: 10px;
+    background: var(--accent-color); color: white;
+    padding: 10px; z-index: 999; transition: top 0.3s;
+}
+.skip-link:focus { top: 10px; }
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6; margin: 0;
+    transition: background-color 0.4s ease;
+}
+
+.container { max-width: var(--container-width); margin: 0 auto; padding: 2rem 1.5rem; }
+
+.main-header { border-bottom: 2px solid var(--border-color); padding-bottom: 2rem; margin-bottom: 3rem; position: relative; }
+.institution { font-weight: 700; color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; }
+
+/* ANIMACIONES DE COMPONENTES */
+.spec-card {
+    background: var(--card-bg); padding: 1.5rem;
+    border: 1px solid var(--border-color); border-radius: 12px;
+    transition: transform var(--transition-speed) cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow var(--transition-speed) ease;
+}
+.spec-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); border-color: var(--accent-color); }
+
+.concept-item {
+    background: var(--card-bg); margin-bottom: 1rem; padding: 1.25rem;
+    border-radius: 8px; border-left: 5px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all var(--transition-speed) ease;
+}
+.concept-item:hover { border-left-color: var(--accent-color); transform: translateX(8px); background-color: rgba(122, 186, 255, 0.05); }
+
+.badge {
+    background: var(--badge-bg); color: var(--accent-color);
+    font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem;
+    border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 0.5rem;
+}
+
+.grid-specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+
+.eval-box {
+    border: 2px dashed var(--accent-color); background: rgba(0, 68, 148, 0.04);
+    padding: 1.5rem; border-radius: 12px; margin: 3rem 0;
+}
+
+.classroom-notice {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--accent-color); color: white;
+    padding: 1.25rem; border-radius: 8px;
+}
+[data-theme="dark"] .classroom-notice { color: #1a1c22; font-weight: 700; }
+
+#theme-toggle {
+    position: absolute; top: 0; right: 0; padding: 0.5rem 1rem;
+    background: var(--card-bg); border: 1px solid var(--border-color);
+    border-radius: 6px; color: var(--text-color); cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; transform: none !important; } }
+@media print { .no-print { display: none; } body { background: white; color: black; } }

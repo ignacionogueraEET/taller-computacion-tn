@@ -1,0 +1,324 @@
+<!-- === index.html === -->
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Consigna para identificar especificaciones de hardware y software de la PC y generar un informe formal accesible en LibreOffice Writer. EET N.° 1 Paraná.">
+  <meta name="author"      content="Juan Ignacio Noguera">
+  <meta name="keywords"    content="EET N1, Taller de Computación, Inventario Técnico, Hardware, Software, LibreOffice Writer, WCAG, Accesibilidad">
+
+  <meta property="og:title"       content="Inventario Técnico del Equipo de Trabajo | Taller de Computación">
+  <meta property="og:description" content="Consigna para identificar especificaciones de hardware y software de la PC y generar un informe formal accesible en LibreOffice Writer.">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="es_AR">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Inventario Técnico del Equipo de Trabajo",
+    "description": "Consigna para identificar especificaciones de hardware y software de la PC y generar un informe formal accesible en LibreOffice Writer.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "EET N.° 1 General Francisco Ramírez",
+      "address": { "@type": "PostalAddress", "addressLocality": "Paraná", "addressCountry": "AR" }
+    },
+    "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+    "educationalLevel": "Secundaria Técnica",
+    "inLanguage": "es-AR",
+    "courseCode": "TC-2026-INVENTARIO"
+  }
+  </script>
+
+  <title>Inventario Técnico del Equipo de Trabajo | Taller de Computación</title>
+  <link rel="stylesheet" href="./style.css">
+<base target="_blank">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <header role="banner" class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Taller de Computación</h1>
+        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+      </div>
+      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+        <svg id="icon-theme" aria-hidden="true" focusable="false"
+             width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        </svg>
+        <span class="toggle-label">Modo oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+    <details>
+      <summary>Tabla de contenidos</summary>
+    </details>
+  </nav>
+
+  <main id="main-content">
+    <div class="layout-grid">
+
+      <article class="article-container">
+
+        <section id="consigna" aria-labelledby="titulo-consigna">
+          <h2 id="titulo-consigna">Inventario Técnico del Equipo de Trabajo</h2>
+
+          <!-- Ilustración SVG: computadora con ventana de sistema y tabla -->
+          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+            <svg role="img" aria-labelledby="svg-titulo svg-desc"
+                 viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
+                 focusable="false" width="100%" height="auto">
+              <title id="svg-titulo">Monitor de computadora mostrando una tabla de especificaciones técnicas</title>
+              <desc  id="svg-desc">Ilustración de un monitor de escritorio con una ventana de sistema abierta que contiene una tabla con filas de datos técnicos. Al costado, un pequeño ícono de documento de texto representa el informe final en LibreOffice Writer.</desc>
+
+              <!-- Monitor -->
+              <rect x="60" y="30" width="200" height="130" rx="6" fill="var(--color-surface)" stroke="currentColor" stroke-width="2"/>
+              <rect x="70" y="40" width="180" height="100" rx="2" fill="var(--color-bg)" stroke="currentColor" stroke-width="1"/>
+
+              <!-- Barra de título de ventana -->
+              <rect x="70" y="40" width="180" height="14" rx="2" fill="var(--color-accent)" stroke="none"/>
+              <circle cx="78" cy="47" r="2.5" fill="#ffffff" opacity="0.7"/>
+              <circle cx="86" cy="47" r="2.5" fill="#ffffff" opacity="0.7"/>
+              <circle cx="94" cy="47" r="2.5" fill="#ffffff" opacity="0.7"/>
+
+              <!-- Tabla dentro de la ventana -->
+              <line x1="80" y1="65" x2="240" y2="65" stroke="currentColor" stroke-width="1"/>
+              <line x1="160" y1="60" x2="160" y2="130" stroke="currentColor" stroke-width="1"/>
+              <line x1="80" y1="80" x2="240" y2="80" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="80" y1="95" x2="240" y2="95" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="80" y1="110" x2="240" y2="110" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="80" y1="125" x2="240" y2="125" stroke="currentColor" stroke-width="0.5"/>
+
+              <!-- Encabezados de tabla (fondo oscuro simulado con rect) -->
+              <rect x="80" y="60" width="80" height="15" fill="var(--color-accent)" opacity="0.3"/>
+              <rect x="160" y="60" width="80" height="15" fill="var(--color-accent)" opacity="0.3"/>
+
+              <!-- Texto de tabla simulado -->
+              <line x1="85" y1="72" x2="140" y2="72" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+              <line x1="165" y1="72" x2="220" y2="72" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+              <line x1="85" y1="87" x2="130" y2="87" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="165" y1="87" x2="225" y2="87" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="85" y1="102" x2="125" y2="102" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="165" y1="102" x2="230" y2="102" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="85" y1="117" x2="135" y2="117" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="165" y1="117" x2="220" y2="117" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+
+              <!-- Base del monitor -->
+              <rect x="140" y="160" width="40" height="8" rx="2" fill="currentColor" opacity="0.5"/>
+              <rect x="125" y="168" width="70" height="4" rx="2" fill="currentColor" opacity="0.3"/>
+
+              <!-- Documento de texto (LibreOffice) al costado -->
+              <rect x="280" y="60" width="60" height="80" rx="3" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="290" y1="75" x2="330" y2="75" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+              <line x1="290" y1="85" x2="330" y2="85" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="290" y1="95" x2="330" y2="95" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="290" y1="105" x2="330" y2="105" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="290" y1="115" x2="330" y2="115" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <line x1="290" y1="125" x2="310" y2="125" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+
+              <!-- Líneas de conexión simbólicas -->
+              <path d="M260 90 Q270 90 280 90" stroke="var(--color-accent)" stroke-width="1.5" fill="none" stroke-dasharray="3,2"/>
+
+              <!-- CPU torre simplificada -->
+              <rect x="20" y="80" width="30" height="70" rx="2" fill="var(--color-surface)" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="35" cy="95" r="4" fill="var(--color-accent)" opacity="0.5"/>
+              <rect x="25" y="110" width="20" height="3" rx="1" fill="currentColor" opacity="0.3"/>
+              <rect x="25" y="118" width="20" height="3" rx="1" fill="currentColor" opacity="0.3"/>
+              <rect x="25" y="126" width="20" height="3" rx="1" fill="currentColor" opacity="0.3"/>
+
+              <!-- Conexión CPU-Monitor -->
+              <path d="M50 110 Q55 110 60 110" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+            </svg>
+            <figcaption>El informe técnico conecta los datos del sistema con un documento profesional accesible.</figcaption>
+          </figure>
+
+          <p>El coordinador del taller necesita actualizar el inventario técnico de las máquinas del laboratorio. Tu misión es identificar las especificaciones de <strong>hardware</strong> y <strong>software</strong> de la computadora que estás utilizando en este momento y generar un <strong>informe formal de una página</strong>, utilizando el procesador de textos del sistema.</p>
+
+          <p>El documento final debe ser <strong>limpio, profesional y accesible</strong>, cumpliendo con los estándares de legibilidad y contraste para cualquier usuario, incluyendo personas con baja visión o daltonismo.</p>
+        </section>
+
+        <section id="pasos" aria-labelledby="titulo-pasos">
+          <h2 id="titulo-pasos">Pasos a seguir</h2>
+          <ol class="steps-list">
+            <li>
+              <h3>Obtención de datos del sistema</h3>
+              <p>En tu computadora con <strong>Debian Cinnamon</strong>, hacé clic en el <strong>Menú</strong> (esquina inferior izquierda) &gt; <strong>Administración</strong> &gt; <strong>Información del sistema</strong>. Anotá los siguientes datos:</p>
+              <ul>
+                <li><strong>Sistema Operativo</strong> (ej: Debian GNU/Linux)</li>
+                <li><strong>Entorno de escritorio</strong> (ej: Cinnamon)</li>
+                <li><strong>Procesador</strong> (Modelo y velocidad)</li>
+                <li><strong>Memoria</strong> (RAM)</li>
+                <li><strong>Almacenamiento</strong> (Disco y capacidad)</li>
+                <li><strong>Gráficos</strong> (Tarjeta de video)</li>
+              </ul>
+              <p><em>Opcional para perfiles avanzados:</em> Podés usar la terminal y escribir <code>inxi -F</code> o <code>neofetch</code> para obtener los mismos datos de forma más detallada.</p>
+            </li>
+            <li>
+              <h3>Crear el documento en LibreOffice Writer</h3>
+              <p>Abrí <strong>LibreOffice Writer</strong> (nativo en Debian) o el procesador de textos que prefieras. Configurá la página con los siguientes parámetros de accesibilidad:</p>
+              <ul>
+                <li><strong>Título:</strong> "Informe Técnico del Equipo de Trabajo" (Fuente Arial 14, Negrita, Centrado).</li>
+                <li><strong>Cuerpo del texto:</strong> Fuente Arial o similar, tamaño 11, interlineado 1.5.</li>
+                <li><strong>Encabezado de página:</strong> Tu Nombre y Curso.</li>
+                <li><strong>Pie de página:</strong> Número de página.</li>
+              </ul>
+            </li>
+            <li>
+              <h3>Diseñar la tabla de especificaciones</h3>
+              <p>Insertá una tabla de <strong>2 columnas</strong> ("Componente" y "Especificación") con tantas filas como datos hayas recopilado. Aplicá el siguiente formato obligatorio:</p>
+              <ul>
+                <li><strong>Encabezados de tabla:</strong> Color de fondo oscuro (ej: Azul oscuro <code>#003366</code> o Gris oscuro <code>#333333</code>) con texto en Blanco (<code>#FFFFFF</code>) para garantizar un contraste superior a 4.5:1.</li>
+                <li><strong>Bordes:</strong> La tabla debe tener bordes visibles en <strong>todas las celdas</strong>. No uses solo el color para diferenciar los encabezados; el borde es obligatorio para usuarios con daltonismo o impresión en blanco y negro.</li>
+              </ul>
+              <p>Validá el contraste de los colores elegidos con la herramienta <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">WebAIM Contrast Checker<span class="sr-only">(abre en nueva pestaña)</span></a> antes de aplicarlos.</p>
+            </li>
+            <li>
+              <h3>Guardar y exportar</h3>
+              <p>Guardá el archivo como: <code>InventarioPC_Apellido_Nombre.odt</code> (formato nativo de Software Libre) o <code>.docx</code> si necesitás compatibilidad con otros sistemas. Verificá que la tabla se vea correctamente al abrir el documento en modo de solo lectura.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="pensamiento" aria-labelledby="titulo-pensamiento">
+          <h2 id="titulo-pensamiento">Pensamiento Computacional</h2>
+          <p>Antes de empezar, reflexioná sobre estos tres pilares:</p>
+          <ul>
+            <li><strong>Descomposición:</strong> Obtener datos del sistema → Organizarlos en una tabla → Aplicar formato profesional y accesible.</li>
+            <li><strong>Abstracción:</strong> Solo nos interesan los datos técnicos relevantes (CPU, RAM, SO), no detalles anecdóticos.</li>
+            <li><strong>Algoritmo:</strong> 1) Abrir "Información del sistema" → 2) Anotar datos clave → 3) Abrir LibreOffice Writer → 4) Crear tabla y aplicar formato WCAG → 5) Guardar y exportar.</li>
+          </ul>
+        </section>
+
+        <section id="recursos" aria-labelledby="titulo-recursos">
+          <h2 id="titulo-recursos">Recursos y referencias</h2>
+          <ul class="recursos-list">
+            <li>
+              <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">
+                WebAIM Contrast Checker — Validador de contraste de colores
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.libreoffice.org/es/" target="_blank" rel="noopener noreferrer">
+                Documentación oficial de LibreOffice (español)
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noopener noreferrer">
+                WCAG 2.2 Quick Reference — Guía rápida de accesibilidad web
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wiki.debian.org/es/Cinnamon" target="_blank" rel="noopener noreferrer">
+                Debian Wiki — Entorno de escritorio Cinnamon
+                <span class="sr-only">(abre en nueva pestaña)</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="entrega" aria-labelledby="titulo-entrega">
+          <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
+          <p>Subí el archivo del documento con el nombre <code>InventarioPC_Apellido_Nombre.odt</code> (o <code>.docx</code>) a la plataforma indicada por el docente. Asegurate de que:</p>
+          <ul>
+            <li>La tabla tenga bordes visibles en todas las celdas.</li>
+            <li>El contraste entre el fondo de los encabezados y el texto sea ≥ 4.5:1.</li>
+            <li>El documento no supere una página.</li>
+            <li>El encabezado contenga tu nombre y curso, y el pie de página el número de página.</li>
+          </ul>
+          <p><strong>Fecha de entrega:</strong> 7 días a partir de la publicación de la consigna.</p>
+        </section>
+
+      </article>
+
+      <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
+        <h2>Contexto</h2>
+
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+            Objetivo
+          </h3>
+          <p>Identificar las especificaciones técnicas de hardware y software de la computadora en uso y generar un informe formal accesible en procesador de textos, aplicando criterios WCAG 2.1 Nivel AA.</p>
+        </div>
+
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            Herramientas
+          </h3>
+          <ul>
+            <li>Debian GNU/Linux + Cinnamon</li>
+            <li>LibreOffice Writer</li>
+            <li>WebAIM Contrast Checker</li>
+            <li>Terminal (opcional: <code>inxi -F</code> / <code>neofetch</code>)</li>
+          </ul>
+        </div>
+
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Modalidad
+          </h3>
+          <p>Individual. Duración estimada: 2 horas de clase (obtención de datos + diseño del documento + validación de accesibilidad).</p>
+        </div>
+
+        <div class="nota-card">
+          <h3>
+            <svg class="heading-icon" aria-hidden="true" focusable="false"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Duración
+          </h3>
+          <p>2 horas de clase. Fecha de entrega: 7 días desde la publicación.</p>
+        </div>
+      </aside>
+
+    </div><!-- /.layout-grid -->
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <div class="footer-inner">
+      <p>
+        <strong>Consigna:</strong> Inventario Técnico del Equipo de Trabajo<br>
+        <strong>Docente:</strong> Juan Ignacio Noguera<br>
+        <strong>Materia:</strong> Taller de Computación<br>
+        <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná
+      </p>
+      <p class="footer-meta">
+        © <span id="current-year">2025</span> EET N.° 1 · Diseñado siguiendo
+        <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer">WCAG 2.2 AA</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
