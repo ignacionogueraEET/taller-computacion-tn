@@ -429,6 +429,26 @@ main {
   transform: translateX(3px);
 }
 
+.section--resources {
+  background: var(--bg-card-alt);
+  border-left: 4px solid var(--accent);
+}
+
+.section--resources li {
+  margin-bottom: 0.5rem;
+}
+.section--resources li a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--t);
+  padding-bottom: 0.625rem;
+}
+.section--resources li a:hover {  color: var(--accent-hover);
+}
+
+
+
+
 /* ── Entrega ── */
 .section--delivery {
   background: var(--bg-delivery);
@@ -705,7 +725,8 @@ a:hover {
     background: #eee !important;
   }
   .section--challenge,
-  .section--delivery {
+  .section--delivery,
+  .section--resources {
     border-left-color: #aaa !important;
   }
 }
