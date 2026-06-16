@@ -1,238 +1,468 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-AR" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Actividad 6: Digitalización y automatización de un presupuesto de construcción utilizando fórmulas en planillas de cálculo.">
-  <meta name="author" content="Juan Ignacio Noguera">
-  <meta name="keywords" content="EET N1, Taller de Computación, Planillas de Cálculo, Fórmulas, Presupuesto, Construcción">
+    <meta
+      name="description"
+      content="Actividad 6: Digitalización y automatización de un presupuesto de construcción utilizando fórmulas en planillas de cálculo."
+    />
+    <meta name="author" content="Juan Ignacio Noguera" />
+    <meta
+      name="keywords"
+      content="EET N1, Taller de Computación, Planillas de Cálculo, Fórmulas, Presupuesto, Construcción"
+    />
 
-  <meta property="og:title" content="Actividad 6: Presupuesto Automatizado | Taller de Computación">
-  <meta property="og:description" content="Digitaliza y automatiza el cálculo de materiales, herramientas y mano de obra para una obra.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_AR">
+    <meta
+      property="og:title"
+      content="Actividad 6: Presupuesto Automatizado | Taller de Computación"
+    />
+    <meta
+      property="og:description"
+      content="Digitaliza y automatiza el cálculo de materiales, herramientas y mano de obra para una obra."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Actividad 6: Presupuesto de Construcción Automatizado",
-    "description": "Creación de un libro de cálculo con 5 hojas y fórmulas automáticas para presupuestos de obra.",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "EET N.° 1 General Francisco Ramírez",
-      "address": { "@type": "PostalAddress", "addressLocality": "Paraná", "addressCountry": "AR" }
-    },
-    "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
-    "educationalLevel": "Secundaria Técnica",
-    "inLanguage": "es-AR",
-    "courseCode": "ACT-06"
-  }
-  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Actividad 6: Presupuesto de Construcción Automatizado",
+        "description": "Creación de un libro de cálculo con 5 hojas y fórmulas automáticas para presupuestos de obra.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "EET N.° 1 General Francisco Ramírez",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paraná",
+            "addressCountry": "AR"
+          }
+        },
+        "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+        "educationalLevel": "Secundaria Técnica",
+        "inLanguage": "es-AR",
+        "courseCode": "ACT-06"
+      }
+    </script>
 
-  <title>Actividad 6: Presupuesto Automatizado | Taller de Computación</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <title>Actividad 6: Presupuesto Automatizado | Taller de Computación</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
-
-  <header role="banner" class="header">
-    <div class="header-content">
-      <div class="header-title">
-        <h1>Taller de Computación</h1>
-        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+    <header role="banner" class="header">
+      <div class="header-content">
+        <div class="header-title">
+          <h1>Taller de Computación</h1>
+          <p class="header-subtitle">
+            EET N.° 1 "General Francisco Ramírez" — Paraná
+          </p>
+        </div>
+        <button
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Activar modo oscuro"
+          class="theme-toggle"
+        >
+          <svg
+            id="icon-theme"
+            aria-hidden="true"
+            focusable="false"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <!-- JS inyecta paths de sol al cargar -->
+          </svg>
+          <span class="toggle-label">Modo oscuro</span>
+        </button>
       </div>
-      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
-        <svg id="icon-theme" aria-hidden="true" focusable="false"
-            width="22" height="22" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <!-- JS inyecta paths de sol al cargar -->
-        </svg>
-        <span class="toggle-label">Modo oscuro</span>
-      </button>
-    </div>
-  </header>
+    </header>
 
-  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
-    <details>
-      <summary>Tabla de contenidos</summary>
-      <!-- JS inyecta <ul> aquí -->
-    </details>
-  </nav>
+    <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+      <details>
+        <summary>Tabla de contenidos</summary>
+        <!-- JS inyecta <ul> aquí -->
+      </details>
+    </nav>
 
-  <main id="main-content">
-    <div class="layout-grid">
+    <main id="main-content">
+      <div class="layout-grid">
+        <article class="article-container">
+          <section id="consigna" aria-labelledby="titulo-consigna">
+            <h2 id="titulo-consigna">
+              El Desafío: Presupuesto de Obra Automatizado
+            </h2>
 
-      <article class="article-container">
+            <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+              <svg
+                role="img"
+                aria-labelledby="svg-titulo svg-desc"
+                viewBox="0 0 400 200"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+                width="100%"
+                height="auto"
+              >
+                <title id="svg-titulo">
+                  Ilustración de una planilla de cálculo con fórmulas
+                </title>
+                <desc id="svg-desc">
+                  Dibujo esquemático de una interfaz de planilla de cálculo.
+                  Muestra una cuadrícula con encabezados y una celda resaltada
+                  en naranja que contiene la fórmula '=C2*D2', representando el
+                  cálculo automático de un subtotal.
+                </desc>
+                <rect
+                  x="40"
+                  y="40"
+                  width="320"
+                  height="120"
+                  rx="8"
+                  fill="var(--color-surface)"
+                  stroke="var(--color-border)"
+                  stroke-width="2"
+                />
+                <line
+                  x1="40"
+                  y1="70"
+                  x2="360"
+                  y2="70"
+                  stroke="var(--color-border)"
+                  stroke-width="2"
+                />
+                <line
+                  x1="100"
+                  y1="40"
+                  x2="100"
+                  y2="160"
+                  stroke="var(--color-border)"
+                  stroke-width="2"
+                />
+                <line
+                  x1="200"
+                  y1="40"
+                  x2="200"
+                  y2="160"
+                  stroke="var(--color-border)"
+                  stroke-width="2"
+                />
+                <line
+                  x1="280"
+                  y1="40"
+                  x2="280"
+                  y2="160"
+                  stroke="var(--color-border)"
+                  stroke-width="2"
+                />
+                <rect
+                  x="200"
+                  y="70"
+                  width="80"
+                  height="30"
+                  fill="var(--color-teal-light)"
+                  stroke="var(--color-teal)"
+                  stroke-width="2"
+                />
+                <text
+                  x="240"
+                  y="90"
+                  font-family="monospace"
+                  font-size="14"
+                  fill="var(--color-teal-text)"
+                  text-anchor="middle"
+                >
+                  =C2*D2
+                </text>
+                <circle cx="330" cy="60" r="15" fill="var(--color-accent)" />
+                <path
+                  d="M325 60 L330 65 L338 55"
+                  stroke="#ffffff"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <figcaption>
+                Las fórmulas permiten que el presupuesto se actualice
+                automáticamente al cambiar los valores.
+              </figcaption>
+            </figure>
 
-        <section id="consigna" aria-labelledby="titulo-consigna">
-          <h2 id="titulo-consigna">El Desafío: Presupuesto de Obra Automatizado</h2>
+            <p>
+              Un Maestro Mayor de Obra te contrata para digitalizar el
+              presupuesto de materiales de una construcción. Necesita un archivo
+              que no solo liste los materiales, sino que
+              <strong>calcule automáticamente</strong> cuánto cuesta cada ítem
+              (cantidad por precio unitario) y cuánto es el total general de la
+              obra.
+            </p>
+            <p>
+              Tu misión es entregarle este archivo con los cálculos ya hechos,
+              para que él solo tenga que modificar cantidades o precios y el
+              presupuesto se actualice solo.
+            </p>
+          </section>
 
-          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
-            <svg role="img" aria-labelledby="svg-titulo svg-desc"
-                viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
-                focusable="false" width="100%" height="auto">
-              <title id="svg-titulo">Ilustración de una planilla de cálculo con fórmulas</title>
-              <desc id="svg-desc">Dibujo esquemático de una interfaz de planilla de cálculo. Muestra una cuadrícula con encabezados y una celda resaltada en naranja que contiene la fórmula '=C2*D2', representando el cálculo automático de un subtotal.</desc>
-              <rect x="40" y="40" width="320" height="120" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="2"/>
-              <line x1="40" y1="70" x2="360" y2="70" stroke="var(--color-border)" stroke-width="2"/>
-              <line x1="100" y1="40" x2="100" y2="160" stroke="var(--color-border)" stroke-width="2"/>
-              <line x1="200" y1="40" x2="200" y2="160" stroke="var(--color-border)" stroke-width="2"/>
-              <line x1="280" y1="40" x2="280" y2="160" stroke="var(--color-border)" stroke-width="2"/>
-              <rect x="200" y="70" width="80" height="30" fill="var(--color-teal-light)" stroke="var(--color-teal)" stroke-width="2"/>
-              <text x="240" y="90" font-family="monospace" font-size="14" fill="var(--color-teal-text)" text-anchor="middle">=C2*D2</text>
-              <circle cx="330" cy="60" r="15" fill="var(--color-accent)" />
-              <path d="M325 60 L330 65 L338 55" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <figcaption>Las fórmulas permiten que el presupuesto se actualice automáticamente al cambiar los valores.</figcaption>
-          </figure>
+          <section id="pasos" aria-labelledby="titulo-pasos">
+            <h2 id="titulo-pasos">Requisitos Técnicos y Pasos a Seguir</h2>
+            <ol class="steps-list">
+              <li>
+                <h3>1. Nombre y Estructura del Archivo</h3>
+                <p>
+                  Guarda tu archivo con el formato exacto:
+                  <code>Act6_Apellido_Nombre.xlsx</code> (o <code>.ods</code>).
+                  El libro debe contener
+                  <strong>exactamente 5 hojas</strong> con los siguientes
+                  nombres: "Materiales", "Herramientas", "Mano de obra",
+                  "Presupuesto" y "Notas".
+                </p>
+              </li>
+              <li>
+                <h3>2. Hoja "Materiales"</h3>
+                <p>
+                  Crea una tabla con las columnas:
+                  <em
+                    >Material | Unidad | Cantidad | Precio unitario |
+                    Subtotal</em
+                  >. Ingresa al menos 5 materiales de construcción reales (ej:
+                  Cemento, Ladrillos, Hierro, Arena, Cal). La columna "Subtotal"
+                  debe contener <strong>fórmulas</strong> (no valores escritos a
+                  mano) que multipliquen
+                  <code>Cantidad * Precio unitario</code> para cada fila.
+                </p>
+              </li>
+              <li>
+                <h3>3. Total General</h3>
+                <p>
+                  Al final de la tabla de "Materiales", agrega una fila "TOTAL
+                  GENERAL" que sume todos los subtotales utilizando una fórmula
+                  (puede ser suma manual <code>=B2+B3+...</code> o la función
+                  <code>=SUMA()</code>).
+                </p>
+              </li>
+              <li>
+                <h3>4. Hoja "Herramientas"</h3>
+                <p>
+                  Crea una tabla con las columnas:
+                  <em>Herramienta | Estado | Cantidad</em>. Completa con al
+                  menos 3 ítems.
+                </p>
+              </li>
+              <li>
+                <h3>5. Hoja "Mano de obra"</h3>
+                <p>
+                  Crea una tabla con las columnas:
+                  <em>Oficio | Cantidad | Jornal diario | Costo total</em>. La
+                  columna "Costo total" debe usar una fórmula que multiplique
+                  <code>Cantidad * Jornal diario</code>.
+                </p>
+              </li>
+              <li>
+                <h3>6. Hoja "Presupuesto"</h3>
+                <p>
+                  Esta hoja debe contener solo los encabezados en la primera
+                  fila:
+                  <em>Ítem, Descripción, Cantidad, Precio unitario, Subtotal</em
+                  >. Déjala estructurada y lista para usar.
+                </p>
+              </li>
+              <li>
+                <h3>7. Accesibilidad Visual en la Planilla</h3>
+                <p>
+                  Los encabezados de tus tablas deben tener un contraste mínimo
+                  de 4.5:1 (se recomienda fondo oscuro con texto blanco) y
+                  bordes visibles para facilitar la lectura.
+                </p>
+              </li>
+            </ol>
+          </section>
 
-          <p>Un Maestro Mayor de Obra te contrata para digitalizar el presupuesto de materiales de una construcción. Necesita un archivo que no solo liste los materiales, sino que <strong>calcule automáticamente</strong> cuánto cuesta cada ítem (cantidad por precio unitario) y cuánto es el total general de la obra.</p>
-          <p>Tu misión es entregarle este archivo con los cálculos ya hechos, para que él solo tenga que modificar cantidades o precios y el presupuesto se actualice solo.</p>
-        </section>
+          <!-- Recursos y Referencias -->
+          <section id="recursos" aria-labelledby="titulo-recursos">
+            <h2 id="titulo-recursos">Recursos y Referencias</h2>
+            <ul class="recursos-list">
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=OgCIPNOCHLs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Video: Microaprendizaje: ¿Cómo usar una planilla de cálculo?
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=fcgfP3mbTrU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Video: Operaciones aritméticas básicas en planillas (suma,
+                  resta, multiplicación y división)
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=A-BC1DifgSc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Video: IngresarInformación (Fila y columnas, Ingresar texto,
+                  Ingresar números, Ordenar, Ingresar fórmula)
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=hEtPXQVH3MQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Video: Selección de celdas (Libro y hojas, Selección de
+                  celdas, Serie numérica, Rango)
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <span>Apunte del Taller: Capítulo 2</span>
+              </li>
+            </ul>
+          </section>
 
-        <section id="pasos" aria-labelledby="titulo-pasos">
-          <h2 id="titulo-pasos">Requisitos Técnicos y Pasos a Seguir</h2>
-          <ol class="steps-list">
-            <li>
-              <h3>1. Nombre y Estructura del Archivo</h3>
-              <p>Guarda tu archivo con el formato exacto: <code>Act6_Apellido_Nombre.xlsx</code> (o <code>.ods</code>). El libro debe contener <strong>exactamente 5 hojas</strong> con los siguientes nombres: "Materiales", "Herramientas", "Mano de obra", "Presupuesto" y "Notas".</p>
-            </li>
-            <li>
-              <h3>2. Hoja "Materiales"</h3>
-              <p>Crea una tabla con las columnas: <em>Material | Unidad | Cantidad | Precio unitario | Subtotal</em>. Ingresa al menos 5 materiales de construcción reales (ej: Cemento, Ladrillos, Hierro, Arena, Cal). La columna "Subtotal" debe contener <strong>fórmulas</strong> (no valores escritos a mano) que multipliquen <code>Cantidad * Precio unitario</code> para cada fila.</p>
-            </li>
-            <li>
-              <h3>3. Total General</h3>
-              <p>Al final de la tabla de "Materiales", agrega una fila "TOTAL GENERAL" que sume todos los subtotales utilizando una fórmula (puede ser suma manual <code>=B2+B3+...</code> o la función <code>=SUMA()</code>).</p>
-            </li>
-            <li>
-              <h3>4. Hoja "Herramientas"</h3>
-              <p>Crea una tabla con las columnas: <em>Herramienta | Estado | Cantidad</em>. Completa con al menos 3 ítems.</p>
-            </li>
-            <li>
-              <h3>5. Hoja "Mano de obra"</h3>
-              <p>Crea una tabla con las columnas: <em>Oficio | Cantidad | Jornal diario | Costo total</em>. La columna "Costo total" debe usar una fórmula que multiplique <code>Cantidad * Jornal diario</code>.</p>
-            </li>
-            <li>
-              <h3>6. Hoja "Presupuesto"</h3>
-              <p>Esta hoja debe contener solo los encabezados en la primera fila: <em>Ítem, Descripción, Cantidad, Precio unitario, Subtotal</em>. Déjala estructurada y lista para usar.</p>
-            </li>
-            <li>
-              <h3>7. Accesibilidad Visual en la Planilla</h3>
-              <p>Los encabezados de tus tablas deben tener un contraste mínimo de 4.5:1 (se recomienda fondo oscuro con texto blanco) y bordes visibles para facilitar la lectura.</p>
-            </li>
-          </ol>
-        </section>
+          <section id="entrega" aria-labelledby="titulo-entrega">
+            <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
+            <p>
+              Debes subir el archivo de la planilla (<code>.xlsx</code> o
+              <code>.ods</code>) a la plataforma indicada por el docente antes
+              de la fecha límite.
+            </p>
+            <p>
+              <strong>Fecha de entrega:</strong> 7 días a partir de la
+              asignación de la actividad.
+            </p>
+          </section>
+        </article>
 
-        <!-- Recursos y Referencias -->
-        <section id="recursos" aria-labelledby="titulo-recursos">
-          <h2 id="titulo-recursos">Recursos y Referencias</h2>
-          <ul class="recursos-list">
-            <li>
-              <a href="https://www.youtube.com/watch?v=OgCIPNOCHLs" target="_blank" rel="noopener noreferrer">
-                Video: Microaprendizaje: ¿Cómo usar una planilla de cálculo?
-                <span class="sr-only">(abre en nueva pestaña)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/results?search_query=operaciones+aritmeticas+basicas+en+excel" target="_blank" rel="noopener noreferrer">
-                Video: Operaciones aritméticas básicas en planillas (suma, resta, multiplicación y división)
-                <span class="sr-only">(abre en nueva pestaña)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/watch?v=A-BC1DifgSc" target="_blank" rel="noopener noreferrer">
-                Video: IngresarInformación (Fila y columnas, Ingresar texto,  Ingresar números, Ordenar, Ingresar fórmula)
-                <span class="sr-only">(abre en nueva pestaña)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/watch?v=hEtPXQVH3MQ" target="_blank" rel="noopener noreferrer">
-                Video: Selección de celdas (Libro y hojas, Selección de celdas, Serie numérica, Rango)
-                <span class="sr-only">(abre en nueva pestaña)</span>
-              </a>
-            </li>
-            <li>
-              <span>Apunte del Taller: Capítulo 2</span>
-            </li>
-          </ul>
-        </section>
+        <aside
+          id="notas"
+          aria-label="Contexto de la actividad"
+          class="sidebar-context"
+        >
+          <h2>Contexto</h2>
 
-        <section id="entrega" aria-labelledby="titulo-entrega">
-          <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
-          <p>Debes subir el archivo de la planilla (<code>.xlsx</code> o <code>.ods</code>) a la plataforma indicada por el docente antes de la fecha límite.</p>
-          <p><strong>Fecha de entrega:</strong> 7 días a partir de la asignación de la actividad.</p>
-        </section>
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+              Objetivo
+            </h3>
+            <p>
+              Automatizar el cálculo de presupuestos de construcción aplicando
+              fórmulas aritméticas y funciones de suma en un libro de planillas
+              de cálculo con múltiples hojas.
+            </p>
+          </div>
 
-      </article>
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                />
+              </svg>
+              Herramientas
+            </h3>
+            <ul>
+              <li>
+                Software de planillas de cálculo (Microsoft Excel o LibreOffice
+                Calc).
+              </li>
+              <li>Video tutorial de operaciones aritméticas.</li>
+              <li>Apunte teórico: Unidad 3 (Recursos Permanentes).</li>
+            </ul>
+          </div>
 
-      <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
-        <h2>Contexto</h2>
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Modalidad
+            </h3>
+            <p>Trabajo individual. Plazo de entrega: 7 días.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
 
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/> <circle cx="12" cy="12" r="6"/> <circle cx="12" cy="12" r="2"/>
-            </svg>
-            Objetivo
-          </h3>
-          <p>Automatizar el cálculo de presupuestos de construcción aplicando fórmulas aritméticas y funciones de suma en un libro de planillas de cálculo con múltiples hojas.</p>
-        </div>
+    <footer role="contentinfo" class="footer">
+      <div class="footer-inner">
+        <p>
+          <strong>Docente:</strong> Juan Ignacio Noguera <br />
+          <strong>Materia:</strong> Taller de Computación <br />
+          <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" —
+          Paraná
+        </p>
+        <p class="footer-meta">
+          © <span id="current-year">2024</span> EET N.° 1 · Diseñado siguiendo
+          los lineamientos de
+          <a
+            href="https://www.w3.org/TR/WCAG22/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WCAG 2.2 AA<span class="sr-only">(abre en nueva pestaña)</span></a
+          >
+        </p>
+      </div>
+    </footer>
 
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-            Herramientas
-          </h3>
-          <ul>
-            <li>Software de planillas de cálculo (Microsoft Excel o LibreOffice Calc).</li>
-            <li>Video tutorial de operaciones aritméticas.</li>
-            <li>Apunte teórico: Unidad 3 (Recursos Permanentes).</li>
-          </ul>
-        </div>
-
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            Modalidad
-          </h3>
-          <p>Trabajo individual. Plazo de entrega: 7 días.</p>
-        </div>
-      </aside>
-
-    </div>
-  </main>
-
-  <footer role="contentinfo" class="footer">
-    <div class="footer-inner">
-      <p>
-        <strong>Docente:</strong> Juan Ignacio Noguera <br>
-        <strong>Materia:</strong> Taller de Computación <br>
-        <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná
-      </p>
-      <p class="footer-meta">
-        © <span id="current-year">2024</span> EET N.° 1 · Diseñado siguiendo los lineamientos de
-        <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG 2.2 AA<span class="sr-only">(abre en nueva pestaña)</span></a>
-      </p>
-    </div>
-  </footer>
-
-  <script src="./script.js" defer></script>
-</body>
+    <script src="./script.js" defer></script>
+  </body>
 </html>
