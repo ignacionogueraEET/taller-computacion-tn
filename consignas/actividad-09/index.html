@@ -1,235 +1,532 @@
-<!doctype html>
-<html lang="es-AR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Juan Ignacio Noguera" />
-    <meta
-      name="description"
-      content="Actividad 9 - Funciones de fecha en planilla de cálculo - EET N.° 1 Paraná"
-    />
-    <title>Actividad 9 - Fechas | EET N.° 1 Paraná</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Enlace para saltar al contenido principal -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 09: Dominando el Tiempo en la Planilla de Cálculo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Toggle de modo oscuro - Posición superior derecha -->
-    <div class="theme-toggle-container">
-      <button
-        id="theme-toggle"
-        class="theme-toggle"
-        aria-label="Cambiar entre modo claro y oscuro"
-        aria-pressed="false"
-      >
-        <span class="toggle-icon" aria-hidden="true">🌓</span>
-        <span class="toggle-text">Cambiar tema</span>
-      </button>
-    </div>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
 
-    <!-- Encabezado institucional -->
-    <header class="site-header" role="banner">
-      <div class="container">
-        <div class="institution-info">
-          <span class="institution-name">EET N.° 1 Paraná</span>
-          <span class="course-info">Taller de Computación 3° Turno Noche</span>
-        </div>
-        <h1 class="page-title">Actividad 9 - Fechas</h1>
-        <p class="page-subtitle">
-          Investigación sobre funciones de fecha en planilla de cálculo
-        </p>
-      </div>
-    </header>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
 
-    <!-- Contenido principal -->
-    <main id="main-content" class="main-content" role="main">
-      <div class="container">
-        <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
-        <section class="activity-section" aria-labelledby="consigna-heading">
-          <h2 id="consigna-heading" class="section-title">📘 Consigna</h2>
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
 
-          <div class="content-block">
-            <p>
-              En un documento de planilla de cálculo explicar el significado y
-              cómo utilizar las funciones sobre fechas mencionadas debajo.
-            </p>
-          </div>
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
 
-          <article class="instruction-block">
-            <h3 class="instruction-title">Instrucciones guía</h3>
-            <ol class="instruction-list">
-              <li>
-                En una hoja, colocar como título
-                <strong>"Investigación sobre funciones de fecha"</strong>.
-              </li>
-              <li>
-                Por cada función colocar:
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .section h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .context-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .objectives {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .objectives ul {
+            margin-left: 1.5rem;
+        }
+
+        .key-concepts {
+            background-color: #f0f8ff;
+            border: 2px solid #5dade2;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .key-concepts h3 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+
+        .key-concepts ol {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .key-concepts li {
+            margin-bottom: 0.8rem;
+        }
+
+        .key-concepts strong {
+            color: #2c3e50;
+        }
+
+        .step-by-step {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .step-by-step ol {
+            margin-left: 1.5rem;
+        }
+
+        .step-by-step li {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-by-step code {
+            background-color: #e8e8e8;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c0392b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        table th {
+            background-color: #3498db;
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            vertical-align: top;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box strong {
+            color: #856404;
+        }
+
+        .tip-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .tip-box strong {
+            color: #155724;
+        }
+
+        .delivery-box {
+            background-color: #e7f3ff;
+            border: 2px solid #2196F3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .delivery-box h3 {
+            color: #1976D2;
+            margin-top: 0;
+        }
+
+        .delivery-box ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .notes-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #6c757d;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .notes-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .notes-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            table th, table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Actividad 09: Dominando el Tiempo en la Planilla de Cálculo</h1>
+            <p>Taller de Computación - Turno Noche</p>
+        </header>
+
+        <nav>
+            <a href="../../index.html">Inicio</a>
+            <a href="../index.html">Consignas</a>
+            <a href="../../recursos/index.html">Recursos</a>
+        </nav>
+
+        <div class="content">
+            <div class="context-box">
+                <h2>📋 Contexto</h2>
+                <p>Imaginá que fuiste designado como el asistente administrativo del taller de la escuela. Tu principal tarea será gestionar los vencimientos de garantías, calcular la antigüedad de las máquinas y programar los mantenimientos. Para esto, tu jefe te pide que armes una planilla de control automatizada usando funciones de fecha.</p>
+            </div>
+
+            <div class="objectives">
+                <h2>🎯 Objetivos</h2>
                 <ul>
-                  <li><strong>Subtítulo:</strong> Ej. "Función HOY()"</li>
-                  <li>
-                    <strong>Párrafo explicativo:</strong> Para qué sirve y cómo
-                    utilizarla
-                  </li>
-                  <li>
-                    <strong>Ejemplo funcional:</strong> Puedes crear una tabla con
-                    datos de prueba propios y aplicarlos para la prueba de todas las funciones.
-                  </li>
-                  <li><strong>Fuente de la información</strong></li>
+                    <li>Comprender cómo la planilla de cálculo almacena y procesa las fechas.</li>
+                    <li>Aplicar funciones de extracción, creación y cálculo de diferencias de fechas.</li>
+                    <li>Documentar el trabajo utilizando las herramientas nativas de la planilla.</li>
                 </ul>
-              </li>
-            </ol>
-          </article>
-
-          
-
-        <!-- 📋 TEMAS/RECURSOS: Inyectar lista de conceptos o materiales aquí -->
-        <section class="activity-section" aria-labelledby="funciones-heading">
-          <h2 id="funciones-heading" class="section-title">
-            📋 Funciones a investigar
-          </h2>
-
-          <div class="functions-grid">
-            <article class="function-card">
-              <h3 class="function-name">HOY()</h3>
-              <p class="function-description">
-                Devuelve la fecha actual del sistema. Se actualiza
-                automáticamente cada vez que se abre o recalcula la hoja.
-              </p>
-            </article>
-
-            <article class="function-card">
-              <h3 class="function-name">DIA()</h3>
-              <p class="function-description">
-                Extrae el día de una fecha determinada, representado como número
-                entero entre 1 y 31.
-              </p>
-            </article>
-
-            <article class="function-card">
-              <h3 class="function-name">MES()</h3>
-              <p class="function-description">
-                Extrae el mes de una fecha determinada, representado como número
-                entero entre 1 (enero) y 12 (diciembre).
-              </p>
-            </article>
-
-            <article class="function-card">
-              <h3 class="function-name">FECHA()</h3>
-              <p class="function-description">
-                Crea una fecha válida a partir de valores numéricos de año, mes
-                y día. Útil para construir fechas dinámicamente.
-              </p>
-            </article>
-
-            <article class="function-card">
-              <h3 class="function-name">SIFECHA()</h3>
-              <p class="function-description">
-                Calcula la diferencia entre dos fechas en unidades específicas
-                (años, meses, días). Ideal para calcular edades o períodos.
-                Investigar los parámetros: "Y", "M", "D", "YM", "YD".
-              </p>
-            </article>
-
-            <article class="function-card">
-              <h3 class="function-name">AHORA()</h3>
-              <p class="function-description">
-                Devuelve la fecha y hora actual del sistema. Incluye la parte
-                decimal que representa la hora del día.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <!-- 📎 ENTREGA: Incluir regla de nombrado y modalidad -->
-        <section
-          class="activity-section delivery-section"
-          aria-labelledby="entrega-heading"
-        >
-          <h2 id="entrega-heading" class="section-title">📎 Entrega</h2>
-
-          <div class="delivery-info">
-            <div class="naming-rule">
-              <h3>Regla de nombrado del archivo:</h3>
-              <code class="file-name">Actividad 09 - Apellido.xlsx</code>
-              <p class="file-hint">
-                (o extensión correspondiente a la planilla de cálculo utilizada:
-                .xlsx, .ods, etc.)
-              </p>
             </div>
 
-            <div class="delivery-method">
-              <p>
-                <strong>Modalidad de entrega:</strong> La entrega se realiza
-                exclusivamente en el <strong>Aula Virtual</strong>, en la
-                actividad correspondiente.
-              </p>
+            <div class="section">
+                <h2>📚 Antes de empezar: Conceptos clave</h2>
+                <div class="key-concepts">
+                    <p>Para que esta actividad tenga sentido, tenés que saber tres cosas:</p>
+                    <ol>
+                        <li><strong>¿Qué es una función?</strong> Es una fórmula ya creada que hace cálculos específicos. Por ejemplo, en lugar de sumar manualmente 30+30+30, usás la función <code>=SUMA()</code>.</li>
+                        <li><strong>¿Qué es la sintaxis?</strong> Es la "forma correcta de escribir" la función. Cada función tiene sus reglas. Por ejemplo, algunas necesitan que les pases datos entre paréntesis (como <code>=DIA(A1)</code>), y otras no necesitan nada (como <code>=HOY()</code>).</li>
+                        <li><strong>¿Qué son los parámetros?</strong> Son los datos que le pasás a la función entre paréntesis. Por ejemplo, en <code>=MES(B2)</code>, el parámetro es <code>B2</code> (la celda que contiene la fecha).</li>
+                    </ol>
+                </div>
             </div>
 
-            <div class="accessibility-requirements">
-              <h3>Requisitos de accesibilidad:</h3>
-              <p>
-                El documento entregado debe cumplir principios WCAG 2.1
-                aplicables a procesadores de texto y planillas de cálculo:
-              </p>
-              <ul>
-                <li>Uso correcto de estilos de título y formato en celdas</li>
-                <li>Texto alternativo en imágenes (si las incluye)</li>
-                <li>
-                  Contraste adecuado entre texto y fondo en todas las hojas
-                </li>
+            <div class="section">
+                <h2>🛠️ Parte 1: El secreto detrás de las fechas (Práctica inicial)</h2>
+                <p><strong>¿Por qué hacemos esto?</strong> Porque las fechas no son texto para la planilla, ¡son números! Vamos a comprobarlo.</p>
                 
-              </ul>
+                <div class="step-by-step">
+                    <h3>Paso a paso:</h3>
+                    <ol>
+                        <li>Abrí tu planilla de Google Sheets y creá una hoja nueva llamada <strong>"Secreto"</strong>.</li>
+                        <li>En la celda <strong>A1</strong>, escribí tu cumpleaños con este formato: <code>15/05/2000</code>.</li>
+                        <li>Hacé clic en la celda <strong>A1</strong> para seleccionarla.</li>
+                        <li>En el menú de arriba, andá a <strong>Formato > Número > Número</strong> (no elijas "Fecha", elegí "Número" a secas).</li>
+                        <li>¿Qué pasó? La fecha se transformó en un número grande (algo como 36645).</li>
+                        <li>Ahora en la celda <strong>C1</strong>, escribí esta fórmula: <code>=HOY()</code> y presioná Enter.</li>
+                        <li>Seleccioná la celda <strong>C1</strong> y repetí el paso 4 (Formato > Número > Número).</li>
+                    </ol>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Consigna:</strong> Hacé clic derecho sobre la celda <strong>E1</strong> y elegí <strong>"Insertar nota"</strong> (es un cuadradito amarillo que aparece al pasar el mouse). Escribí con tus palabras:
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>¿Qué significan esos números grandes que aparecieron?</li>
+                        <li>¿Por qué al cambiar el formato la fecha se transforma en un número?</li>
+                        <li><em>Pista: Si le sumás 1 al número de la celda A1, ¿qué fecha creés que aparecería si le volvés a poner formato de fecha?</em></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </section>
 
-      
+            <div class="section">
+                <h2>🛠️ Parte 2: Las herramientas de control (Funciones)</h2>
+                <p>En una nueva hoja llamada <strong>"Funciones"</strong>, vas a armar un cuadro para documentar y probar las funciones.</p>
+                
+                <div class="step-by-step">
+                    <h3>Paso a paso para armar la tabla:</h3>
+                    <ol>
+                        <li>En la fila 1, escribí estos encabezados (podés ponerlos en negrita para que se vean mejor):
+                            <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                <li>Columna A: <strong>Función</strong></li>
+                                <li>Columna B: <strong>¿Cómo se escribe? (Sintaxis)</strong></li>
+                                <li>Columna C: <strong>Ejemplo Práctico</strong></li>
+                                <li>Columna D: <strong>¿Para qué sirve?</strong></li>
+                            </ul>
+                        </li>
+                        <li>A partir de la fila 2, completá esta tabla con las siguientes funciones:</li>
+                    </ol>
+                </div>
 
-        <!-- ℹ️ NOTA: Espacio para fechas límite, rúbrica o recordatorios -->
-        <section
-          class="activity-section note-section"
-          aria-labelledby="notas-heading"
-        >
-          <h2 id="notas-heading" class="section-title">ℹ️ Notas importantes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Función</th>
+                            <th>¿Cómo se escribe? (Sintaxis)</th>
+                            <th>Ejemplo Práctico</th>
+                            <th>¿Para qué sirve?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HOY()</td>
+                            <td><em>(Ejemplo: No necesita nada entre paréntesis)</em></td>
+                            <td><code>=HOY()</code></td>
+                            <td><em>(Ejemplo: Muestra la fecha actual, útil para saber cuándo se hizo un registro)</em></td>
+                        </tr>
+                        <tr>
+                            <td>AHORA()</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DIA()</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MES()</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>FECHA()</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DIAS()</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SIFECHA()</td>
+                            <td><em>(Esta es especial: tiene parámetros como "Y", "M", "D" que tenés que investigar)</em></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-          <div class="note-content">
-            <ul class="note-list">
-              <li>Verificar la fecha límite de entrega en el Aula Virtual.</li>
-              <li>
-                Consultar la rúbrica de evaluación disponible en la plataforma.
-              </li>
-              <li>
-                Ante dudas, contactar al docente a través de los canales
-                institucionales.
-              </li>             
-              <li>
-                Los ejemplos funcionales deben incluir
-                <strong>tablas creadas por ustedes</strong>, no copiadas de esta
-                consigna.
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
-    </main>
+                <div class="warning-box">
+                    <strong>⚠️ Reglas importantes:</strong>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>En la columna <strong>B</strong>, explicá con tus palabras qué necesita la función. Por ejemplo: <em>"DIA() necesita que le pases una celda con una fecha, así: =DIA(A1)"</em>.</li>
+                        <li>En la columna <strong>C</strong>, <strong>inventá tus propios datos</strong>. Por ejemplo, en la fila de <code>FECHA()</code>, podés escribir en celdas separadas el año, mes y día, y luego usar la función para armar la fecha completa.</li>
+                        <li>En la columna <strong>D</strong>, explicá para qué serviría en el contexto del taller. Por ejemplo: <em>"MES() me sirve para saber en qué mes se compró una máquina"</em>.</li>
+                        <li>Al final de la tabla (en una fila vacía), seleccioná las 4 columnas (A, B, C y D) y hacé clic en el botón <strong>"Combinar celdas"</strong> (está en la barra de herramientas, es un ícono con dos flechitas que se juntan). Ahí escribí la fuente de donde sacaste la información. Ejemplo: <em>"Fuente: Soporte oficial de Google Sheets - https://support.google.com/docs"</em>.</li>
+                    </ul>
+                </div>
 
-    <!-- Pie de página -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <p class="teacher-info">Docente: Juan Ignacio Noguera</p>
-        <p class="institution-footer">
-          EET N.° 1 Paraná - Taller de Computación 3° Turno Noche
-        </p>
-      </div>
-    </footer>
+                <div class="tip-box">
+                    <strong>💡 Tip:</strong> Si no sabés cómo combinar celdas, seleccioná las 4 celdas de la fila, hacé clic derecho y elegí <strong>"Combinar celdas"</strong>.
+                </div>
+            </div>
 
-    <script src="script.js"></script>
-  </body>
+            <div class="section">
+                <h2>🏆 Parte 3: Desafío Integrador "Mantenimiento del Taller"</h2>
+                <p>En una nueva hoja llamada <strong>"Desafío"</strong>, resolvé el siguiente caso. <strong>Importante:</strong> Todos los datos los inventás vos, pero tienen que ser coherentes.</p>
+                
+                <div class="step-by-step">
+                    <h3>Paso a paso:</h3>
+                    <ol>
+                        <li><strong>Columna A - Nombre de la máquina:</strong> Escribí el nombre de 3 máquinas del taller. Ejemplos: "Torno CNC", "Soldadora MIG", "Fresadora Universal".</li>
+                        
+                        <li><strong>Columna B - Fecha de compra:</strong> Acá tenés que usar la función <code>FECHA()</code>.
+                            <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                <li><strong>Ejemplo:</strong> Si la máquina se compró el 15 de marzo de 2020, en la celda B2 escribís: <code>=FECHA(2020;3;15)</code></li>
+                                <li><em>Nota: En Google Sheets, los parámetros se separan con punto y coma (;)</em>.</li>
+                                <li>Hacelo para las 3 máquinas.</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Columna C - Días transcurridos:</strong> Calculá cuántos días pasaron desde la compra hasta hoy.
+                            <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                <li><strong>Opción 1 (más fácil):</strong> Restá las fechas. En C2 escribí: <code>=HOY()-B2</code></li>
+                                <li><strong>Opción 2 (usando función):</strong> <code>=DIAS(HOY();B2)</code></li>
+                                <li>Ambas dan lo mismo. Elegí la que prefieras.</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Columna D - Antigüedad en años:</strong> Calculá cuántos años completos tiene la máquina.
+                            <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                <li>Usá la función <code>SIFECHA()</code>. La sintaxis es: <code>=SIFECHA(fecha_inicio; fecha_fin; "tipo")</code></li>
+                                <li>El "tipo" puede ser:
+                                    <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                        <li><code>"Y"</code> para años (Years)</li>
+                                        <li><code>"M"</code> para meses (Months)</li>
+                                        <li><code>"D"</code> para días (Days)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Ejemplo para C2:</strong> <code>=SIFECHA(B2;HOY();"Y")</code></li>
+                                <li>Esto te va a decir cuántos años completos tiene la máquina.</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Columna E - Fecha de primer mantenimiento:</strong> El representante técnico dice que el mantenimiento se debe hacer <strong>90 días después de la compra</strong>.
+                            <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                <li><strong>Pista clave:</strong> Como las fechas son números, podés sumarles días directamente.</li>
+                                <li><strong>Ejemplo para E2:</strong> <code>=B2+90</code></li>
+                                <li>Esto te va a dar la fecha exacta del mantenimiento. ¡Probalo y vas a ver que funciona!</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📎 Entrega y Requisitos</h2>
+                <div class="delivery-box">
+                    <h3>Regla de nombrado del archivo:</h3>
+                    <p><code>Actividad 09 - Apellido.xlsx</code> (o la extensión que use Google Sheets al exportar: .xlsx, .ods).</p>
+                    
+                    <h3 style="margin-top: 1rem;">¿Cómo exportar desde Google Sheets?</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Andá a <strong>Archivo > Descargar > Microsoft Excel (.xlsx)</strong>.</li>
+                        <li>Subilo al Aula Virtual antes de la fecha límite.</li>
+                    </ol>
+                    
+                    <h3 style="margin-top: 1rem;">Modalidad de entrega:</h3>
+                    <p>Exclusivamente en el <strong>Aula Virtual</strong>.</p>
+                    
+                    <h3 style="margin-top: 1rem;">Requisitos de Accesibilidad (WCAG 2.1):</h3>
+                    <p>El documento debe cumplir principios de accesibilidad:</p>
+                    <ul>
+                        <li><strong>Encabezados claros:</strong> Los títulos de las columnas deben estar en <strong>negrita</strong> y tener un tamaño de fuente mayor (por ejemplo, 12pt o 14pt).</li>
+                        <li><strong>Contraste adecuado:</strong> Si usás colores de fondo para las celdas, asegurate de que el texto se lea bien. No uses fondo negro con texto negro, o fondo amarillo claro con texto blanco.</li>
+                        <li><strong>Imágenes con texto alternativo:</strong> Si pegás capturas de pantalla para mostrar algo, hacé clic derecho sobre la imagen y elegí <strong>"Texto alternativo"</strong>. Escribí una descripción breve de lo que muestra la imagen (por ejemplo: <em>"Captura de la función HOY() mostrando la fecha actual"</em>).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>ℹ️ Notas importantes</h2>
+                <div class="notes-box">
+                    <ul>
+                        <li><strong>Fecha límite:</strong> Verificá en el Aula Virtual cuándo vence la actividad.</li>
+                        <li><strong>Rúbrica:</strong> Leé la rúbrica de evaluación antes de entregar para saber exactamente qué se va a calificar.</li>
+                        <li><strong>Función SIFECHA():</strong> Esta función es de compatibilidad con Excel. En Google Sheets funciona, pero no aparece en el menú de ayuda. Si tenés dudas, buscá en Google "SIFECHA Google Sheets" o consultá la documentación oficial.</li>
+                        <li><strong>Fuentes:</strong> Es importante que cites de dónde sacaste la información. Podés usar:
+                            <ul style="margin-left: 1.5rem; margin-top: 0.3rem;">
+                                <li>Soporte oficial de Google Sheets: <a href="https://support.google.com/docs" target="_blank">https://support.google.com/docs</a></li>
+                                <li>Videos tutoriales de YouTube (indicá el canal y el título del video)</li>
+                                <li>Apuntes de clase</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 EET N.° 1 "General Francisco Ramírez" | Profesor: Juan Ignacio Noguera</p>
+            <p><a href="../../index.html">Volver al inicio</a></p>
+        </footer>
+    </div>
+</body>
 </html>
