@@ -1,0 +1,62 @@
+.barra-progreso-container {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+}
+
+.barra-progreso-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.barra-progreso-header strong {
+  color: #0066cc;
+}
+
+.barra-progreso-track {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.barra-progreso-fill {
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s ease;
+  border-radius: 10px;
+}
+
+.barra-progreso-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.barra-progreso-btn:hover {
+  background-color: #004d99;
+}
+
+.barra-progreso-btn.completada {
+  background-color: #28a745;
+}
+
+.barra-progreso-btn.completada:hover {
+  background-color: #1e7e34;
+}

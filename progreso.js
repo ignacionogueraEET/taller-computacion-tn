@@ -1,5 +1,3 @@
-// progreso.js
-
 (function () {
   'use strict';
 
