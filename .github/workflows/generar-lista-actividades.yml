@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'consignas/**'
+  workflow_dispatch:
 
 jobs:
   generar-json:
@@ -15,25 +16,30 @@ jobs:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
       
-      - name: Generar actividades.json
+      - name: Instalar jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      
+      - name: Generar actividades.json con jq
         run: |
-          echo "[" > actividades.json
-          first=true
+          # Crear un array JSON vacío
+          echo "[]" > actividades.json
+          
+          # Para cada carpeta de actividad, agregarla al JSON usando jq
           for dir in consignas/actividad-*/; do
             if [ -d "$dir" ]; then
-              num=$(basename "$dir" | sed 's/actividad-0*//')
               nombre=$(basename "$dir")
+              # Extraer el número (quitar "actividad-" y los ceros a la izquierda)
+              num=$(echo "$nombre" | sed 's/actividad-0*//' | sed 's/^$/0/')
               
-              if [ "$first" = true ]; then
-                first=false
-              else
-                echo "," >> actividades.json
-              fi
-              
-              echo "  {\"id\": $num, \"nombre\": \"$nombre\", \"ruta\": \"consignas/$nombre/\"}" >> actividades.json
+              # Agregar al JSON usando jq (escapa correctamente caracteres especiales)
+              jq --arg id "$num" --arg nombre "$nombre" --arg ruta "consignas/$nombre/" \
+                '. += [{"id": ($id | tonumber), "nombre": $nombre, "ruta": $ruta}]' \
+                actividades.json > temp.json && mv temp.json actividades.json
             fi
           done
-          echo "]" >> actividades.json
+          
+          echo "Contenido generado:"
+          cat actividades.json
       
       - name: Commitear y pushear actividades.json
         run: |
