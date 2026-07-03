@@ -24,17 +24,21 @@ jobs:
           # Crear un array JSON vacío
           echo "[]" > actividades.json
           
+          # Contador para generar IDs numéricos secuenciales
+          contador=1
+          
           # Para cada carpeta de actividad, agregarla al JSON usando jq
           for dir in consignas/actividad-*/; do
             if [ -d "$dir" ]; then
               nombre=$(basename "$dir")
-              # Extraer el número (quitar "actividad-" y los ceros a la izquierda)
-              num=$(echo "$nombre" | sed 's/actividad-0*//' | sed 's/^$/0/')
               
-              # Agregar al JSON usando jq (escapa correctamente caracteres especiales)
-              jq --arg id "$num" --arg nombre "$nombre" --arg ruta "consignas/$nombre/" \
+              # Agregar al JSON usando jq con ID numérico secuencial
+              jq --arg id "$contador" --arg nombre "$nombre" --arg ruta "consignas/$nombre/" \
                 '. += [{"id": ($id | tonumber), "nombre": $nombre, "ruta": $ruta}]' \
                 actividades.json > temp.json && mv temp.json actividades.json
+              
+              # Incrementar el contador
+              contador=$((contador + 1))
             fi
           done
           
