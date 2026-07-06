@@ -1,56 +1,66 @@
+/* progreso.css */
+
 .barra-progreso-container {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px 16px;
-  margin: 16px 0;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave */
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 14px;
 }
 
 .barra-progreso-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
-  color: #333;
+  margin-bottom: 12px;
+  color: #24292e;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .barra-progreso-header strong {
-  color: #0066cc;
+  color: #0366d6; /* Azul GitHub/EET */
 }
 
 .barra-progreso-track {
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  height: 12px;
+  background-color: #f0f2f5;
+  border-radius: 20px;
+  height: 16px; /* Un poco más gruesa para que se vea mejor */
   overflow: hidden;
   position: relative;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .barra-progreso-fill {
-  background: linear-gradient(90deg, #0066cc, #00aaff);
+  /* Degradado atractivo */
+  background: linear-gradient(90deg, #007bff, #00c6ff); 
   height: 100%;
   width: 0%;
-  transition: width 0.4s ease;
-  border-radius: 10px;
+  /* La magia de la animación lenta */
+  transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1); 
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Brillo sutil */
 }
 
 .barra-progreso-btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-  background-color: #0066cc;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #0366d6;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  transition: background-color 0.2s;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .barra-progreso-btn:hover {
-  background-color: #004d99;
+  background-color: #0255b3;
+  transform: translateY(-1px);
 }
 
 .barra-progreso-btn.completada {
@@ -58,5 +68,5 @@
 }
 
 .barra-progreso-btn.completada:hover {
-  background-color: #1e7e34;
+  background-color: #218838;
 }

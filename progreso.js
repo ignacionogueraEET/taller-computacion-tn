@@ -1,8 +1,11 @@
+// progreso.js
+
 (function () {
-  ('use strict');
+  'use strict';
 
   const STORAGE_KEY = 'eet1_progreso_actividades';
-  const JSON_URL = '/taller-computacion-tn/actividades.json'; // Ruta absoluta desde la raíz del repo
+  // Ruta absoluta para GitHub Pages (ajustá el nombre del repo si es distinto)
+  const JSON_URL = '/taller-computacion-tn/actividades.json';
 
   function cargarProgreso() {
     try {
@@ -48,7 +51,8 @@
           <span>${Math.round(porcentaje)}%</span>
         </div>
         <div class="barra-progreso-track">
-          <div class="barra-progreso-fill" style="width: ${porcentaje}%"></div>
+          <!-- Iniciamos en 0% para que la animación se dispare -->
+          <div class="barra-progreso-fill" style="width: 0%" data-target="${porcentaje}%"></div>
         </div>
         ${
           actual
@@ -56,15 +60,19 @@
           <button id="btn-marcar" class="barra-progreso-btn ${esActualCompletada ? 'completada' : ''}">
             ${esActualCompletada ? '✓ Completada — clic para desmarcar' : 'Marcar esta actividad como completada'}
           </button>
-          // Dentro de la función renderizar, después del botón de marcar:
-          <button id="btn-reset" class="barra-progreso-btn" style="background-color: #dc3545; margin-left: 10px;">
-            Reiniciar todo mi progreso
-          </button>
         `
             : ''
         }
       </div>
     `;
+
+    // Disparar la animación después de un pequeño delay para que el navegador procese el 0% inicial
+    setTimeout(() => {
+      const fill = contenedor.querySelector('.barra-progreso-fill');
+      if (fill) {
+        fill.style.width = fill.getAttribute('data-target');
+      }
+    }, 100);
 
     const btn = document.getElementById('btn-marcar');
     if (btn && actual) {
@@ -77,16 +85,6 @@
         }
         guardarProgreso(nuevoProgreso);
         renderizar(actividades);
-      });
-    }
-
-    const btnReset = document.getElementById('btn-reset');
-    if (btnReset) {
-      btnReset.addEventListener('click', () => {
-        if (confirm('¿Estás seguro de que querés borrar todo tu progreso?')) {
-          localStorage.removeItem(STORAGE_KEY);
-          renderizar(actividades);
-        }
       });
     }
   }
