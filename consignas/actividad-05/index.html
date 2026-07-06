@@ -10,6 +10,8 @@
     <title>Actividad 05 | Cálculos Matemáticos</title>
     <!-- Enlace al CSS compartido del repositorio -->
     <link rel="stylesheet" href="estilos.css" />
+    <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
   </head>
   <body>
     <header class="page-header">     
@@ -19,6 +21,9 @@
       </p>
     </header>
 
+    <!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
+    
     <main class="content-container">
       <section class="intro">
         <h2>🎯 Objetivo</h2>
@@ -190,11 +195,9 @@
     </footer>
     
     
-    <!-- Contenedor de la barra de progreso -->
-    <div id="barra-progreso"></div>
 
-    <!-- Estilos y script de la barra (Rutas absolutas) -->
-    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
+
+    <!-- Script para la barra de progreso -->
     <script src="/taller-computacion-tn/progreso.js"></script>
 
   </body>
