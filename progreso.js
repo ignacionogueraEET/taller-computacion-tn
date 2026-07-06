@@ -56,6 +56,10 @@
           <button id="btn-marcar" class="barra-progreso-btn ${esActualCompletada ? 'completada' : ''}">
             ${esActualCompletada ? '✓ Completada — clic para desmarcar' : 'Marcar esta actividad como completada'}
           </button>
+          // Dentro de la función renderizar, después del botón de marcar:
+          <button id="btn-reset" class="barra-progreso-btn" style="background-color: #dc3545; margin-left: 10px;">
+            Reiniciar todo mi progreso
+          </button>
         `
             : ''
         }
@@ -73,6 +77,16 @@
         }
         guardarProgreso(nuevoProgreso);
         renderizar(actividades);
+      });
+    }
+
+    const btnReset = document.getElementById('btn-reset');
+    if (btnReset) {
+      btnReset.addEventListener('click', () => {
+        if (confirm('¿Estás seguro de que querés borrar todo tu progreso?')) {
+          localStorage.removeItem(STORAGE_KEY);
+          renderizar(actividades);
+        }
       });
     }
   }
