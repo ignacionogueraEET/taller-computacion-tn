@@ -1,10 +1,7 @@
-// progreso.js
-
 (function () {
   'use strict';
 
   const STORAGE_KEY = 'eet1_progreso_actividades';
-  // Ruta absoluta para GitHub Pages (ajustá el nombre del repo si es distinto)
   const JSON_URL = '/taller-computacion-tn/actividades.json';
 
   function cargarProgreso() {
@@ -12,17 +9,12 @@
       const datos = localStorage.getItem(STORAGE_KEY);
       return datos ? JSON.parse(datos) : [];
     } catch (e) {
-      console.warn('No se pudo leer el progreso:', e);
       return [];
     }
   }
 
   function guardarProgreso(idsCompletados) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(idsCompletados));
-    } catch (e) {
-      console.warn('No se pudo guardar el progreso:', e);
-    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(idsCompletados));
   }
 
   function detectarActividadActual(actividades) {
@@ -32,7 +24,10 @@
 
   function renderizar(actividades) {
     const contenedor = document.getElementById('barra-progreso');
-    if (!contenedor) return;
+    if (!contenedor) {
+      console.error("No se encontró el div con id 'barra-progreso'");
+      return;
+    }
 
     const total = actividades.length;
     const progreso = cargarProgreso();
@@ -40,39 +35,52 @@
       progreso.includes(a.id),
     ).length;
     const porcentaje = total > 0 ? (completadas / total) * 100 : 0;
-
     const actual = detectarActividadActual(actividades);
     const esActualCompletada = actual ? progreso.includes(actual.id) : false;
 
-    contenedor.innerHTML = `
-      <div class="barra-progreso-container">
-        <div class="barra-progreso-header">
-          <span>Tu progreso: <strong>${completadas}</strong> de <strong>${total}</strong> actividades</span>
-          <span>${Math.round(porcentaje)}%</span>
-        </div>
-        <div class="barra-progreso-track">
-          <div class="barra-progreso-fill" style="width: 0%" data-target="${porcentaje}%"></div>
-        </div>
-        ${
-          actual
-            ? `
-          <button id="btn-marcar" class="barra-progreso-btn ${esActualCompletada ? 'completada' : ''}">
-            ${esActualCompletada ? '✓ Completada — clic para desmarcar' : 'Marcar esta actividad como completada'}
-          </button>
-        `
-            : ''
-        }
-      </div>
-    `;
+    // Construimos el HTML paso a paso para evitar errores de sintaxis
+    let html = '<div class="barra-progreso-container">';
+    html += '<div class="barra-progreso-header">';
+    html +=
+      '<span>Tu progreso: <strong>' +
+      completadas +
+      '</strong> de <strong>' +
+      total +
+      '</strong> actividades</span>';
+    html += '<span>' + Math.round(porcentaje) + '%</span>';
+    html += '</div>';
+    html += '<div class="barra-progreso-track">';
+    html +=
+      '<div class="barra-progreso-fill" style="width: 0%" data-target="' +
+      porcentaje +
+      '%"></div>';
+    html += '</div>';
 
-    // Disparar la animación después de un pequeño delay para que el navegador procese el 0% inicial
+    if (actual) {
+      const textoBtn = esActualCompletada
+        ? '✓ Completada — clic para desmarcar'
+        : 'Marcar esta actividad como completada';
+      const claseBtn = esActualCompletada
+        ? 'barra-progreso-btn completada'
+        : 'barra-progreso-btn';
+      html +=
+        '<button id="btn-marcar" class="' +
+        claseBtn +
+        '">' +
+        textoBtn +
+        '</button>';
+    }
+
+    html += '</div>';
+    contenedor.innerHTML = html;
+
+    // Animación
     setTimeout(() => {
       const fill = contenedor.querySelector('.barra-progreso-fill');
-      if (fill) {
-        fill.style.width = fill.getAttribute('data-target');
-      }
+      if (fill) fill.style.width = fill.getAttribute('data-target');
     }, 100);
 
+    // Evento del botón
     const btn = document.getElementById('btn-marcar');
     if (btn && actual) {
       btn.addEventListener('click', () => {
@@ -89,10 +97,7 @@
   }
 
   fetch(JSON_URL)
-    .then((response) => {
-      if (!response.ok) throw new Error('No se pudo cargar actividades.json');
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((actividades) => {
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () =>
@@ -103,11 +108,8 @@
       }
     })
     .catch((error) => {
-      console.error('Error al cargar actividades:', error);
-      const contenedor = document.getElementById('barra-progreso');
-      if (contenedor) {
-        contenedor.innerHTML =
-          '<p style="color: red;">Error al cargar la lista de actividades.</p>';
-      }
+      console.error('Error cargando JSON:', error);
+      document.getElementById('barra-progreso').innerHTML =
+        '<p>Error al cargar actividades.</p>';
     });
 })();
