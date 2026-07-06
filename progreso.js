@@ -44,7 +44,7 @@
     const actual = detectarActividadActual(actividades);
     const esActualCompletada = actual ? progreso.includes(actual.id) : false;
 
-        contenedor.innerHTML = `
+    contenedor.innerHTML = `
       <div class="barra-progreso-container">
         <div class="barra-progreso-header">
           <span>Tu progreso: <strong>${completadas}</strong> de <strong>${total}</strong> actividades</span>
