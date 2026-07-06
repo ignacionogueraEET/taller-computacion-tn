@@ -1,8 +1,8 @@
 (function () {
-  'use strict';
+  ('use strict');
 
   const STORAGE_KEY = 'eet1_progreso_actividades';
-  const JSON_URL = '../../actividades.json';
+  const JSON_URL = '/taller-computacion-tn/actividades.json'; // Ruta absoluta desde la raíz del repo
 
   function cargarProgreso() {
     try {
