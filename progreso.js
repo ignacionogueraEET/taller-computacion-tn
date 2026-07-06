@@ -44,14 +44,13 @@
     const actual = detectarActividadActual(actividades);
     const esActualCompletada = actual ? progreso.includes(actual.id) : false;
 
-    contenedor.innerHTML = `
+        contenedor.innerHTML = `
       <div class="barra-progreso-container">
         <div class="barra-progreso-header">
           <span>Tu progreso: <strong>${completadas}</strong> de <strong>${total}</strong> actividades</span>
           <span>${Math.round(porcentaje)}%</span>
         </div>
         <div class="barra-progreso-track">
-          <!-- Iniciamos en 0% para que la animación se dispare -->
           <div class="barra-progreso-fill" style="width: 0%" data-target="${porcentaje}%"></div>
         </div>
         ${
