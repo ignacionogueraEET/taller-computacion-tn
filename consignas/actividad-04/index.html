@@ -50,11 +50,9 @@
     <title>Actividad 4: Presupuesto Automatizado | Taller de Computación</title>
     <link rel="stylesheet" href="./style.css" />
     <!-- Estilos y script de la barra (Rutas absolutas) -->
-    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
-
     <header role="banner" class="header">
       <div class="header-content">
         <div class="header-title">
@@ -87,10 +85,9 @@
           <span class="toggle-label">Modo oscuro</span>
         </button>
       </div>
+      <!-- El contenedor vacío donde el JS dibujará la barra -->
+      <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
     </header>
-
-<!-- El contenedor vacío donde el JS dibujará la barra -->
-    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
       <details>
@@ -225,8 +222,7 @@
                 <h3>1. Nombre y Estructura del Archivo</h3>
                 <p>
                   Guarda tu archivo con el formato exacto:
-                  <code>Act4_Apellido_Nombre</code>.
-                  El libro debe contener
+                  <code>Act4_Apellido_Nombre</code>. El libro debe contener
                   <strong>exactamente 5 hojas</strong> con los siguientes
                   nombres: "Materiales", "Herramientas", "Mano de obra",
                   "Presupuesto" y "Notas".
@@ -348,9 +344,9 @@
           <section id="entrega" aria-labelledby="titulo-entrega">
             <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
             <p>
-              Debes subir el archivo de la planilla a la plataforma indicada por el docente antes de la fecha límite.
+              Debes subir el archivo de la planilla a la plataforma indicada por
+              el docente antes de la fecha límite.
             </p>
-           
           </section>
         </article>
 
@@ -408,7 +404,8 @@
             </h3>
             <ul>
               <li>
-                Software de planillas de cálculo (Hojas de Google, Microsoft Excel o LibreOffice Calc).
+                Software de planillas de cálculo (Hojas de Google, Microsoft
+                Excel o LibreOffice Calc).
               </li>
               <li>Video tutorial de operaciones aritméticas.</li>
               <li>Apunte teórico en (Recursos Permanentes).</li>
@@ -462,9 +459,7 @@
       </div>
     </footer>
 
-
-
-     <!-- Script para la barra de progreso -->
+    <!-- Script para la barra de progreso -->
     <script src="/taller-computacion-tn/progreso.js"></script>
     <script src="./script.js" defer></script>
   </body>
