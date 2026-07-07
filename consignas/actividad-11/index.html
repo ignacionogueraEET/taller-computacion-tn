@@ -16,10 +16,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 min-h-screen flex flex-col justify-between transition-colors duration-300">
 
-    <a href="#main-content" class="sr-only focus:absolute focus:top-4 focus:left-4 bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 p-3 rounded-lg shadow-md z-50 font-medium border border-blue-200 dark:border-slate-700">
-        Saltar al contenido principal
-    </a>
-
     <header class="bg-blue-600 dark:bg-blue-800 text-white shadow-md transition-colors duration-300">
         <div class="max-w-5xl mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
             <div>
@@ -34,11 +30,12 @@
                     <svg id="icon-moon" class="w-5 h-5 block dark:hidden text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </button>
             </div>
+            <!-- El contenedor vacío donde el JS dibujará la barra -->
+            <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
         </div>
     </header>
 
-<!-- El contenedor vacío donde el JS dibujará la barra -->
-    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
+
 
     <main id="main-content" class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full grid grid-cols-1 md:grid-cols-3 gap-8">
         

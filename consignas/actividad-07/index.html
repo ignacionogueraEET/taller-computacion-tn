@@ -12,11 +12,7 @@
     <!-- Fuente accesible Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
 </head>
-<body>
-
-    <!-- Skip link para accesibilidad por teclado -->
-    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
+<body>    
     <!-- Toggle de modo claro/oscuro (accesible) -->
     <div class="theme-toggle-wrapper">
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro/oscuro">
@@ -35,10 +31,11 @@
                 <p class="espacio">Taller de Computación 3° Turno Noche</p>
                 <p class="actividad-badge">Actividad 7: Referencia absoluta y relativa – Copia de fórmula</p>
             </div>
+            <!-- El contenedor vacío donde el JS dibujará la barra -->
+            <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
         </header>
 
-        <!-- El contenedor vacío donde el JS dibujará la barra -->
-    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
+        
 
         <!-- 📘 CONSIGNA: Inyectar instrucciones, herramientas y pasos aquí -->
         <section class="consigna" aria-labelledby="consigna-title">

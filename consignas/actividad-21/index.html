@@ -12,12 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <!-- Estilos y script de la barra (Rutas absolutas) -->
-    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
+  <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
 </head>
 <body>
-
-  <!-- ♿ Skip link: visible solo al recibir foco (WCAG 2.4.1) -->
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <div class="page-wrapper">
 
@@ -45,11 +42,10 @@
         >
           <span class="toggle-icon" aria-hidden="true">☀</span>
         </button>
+        <!-- El contenedor vacío donde el JS dibujará la barra -->
+        <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
       </div>
     </header>
-
-<!-- El contenedor vacío donde el JS dibujará la barra -->
-    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <!-- ═══════════════════════════════════════ CONTENIDO PRINCIPAL -->
     <main id="main-content" tabindex="-1">
@@ -311,7 +307,7 @@
 
 
    <!-- Script para la barra de progreso -->
-    <script src="/taller-computacion-tn/progreso.js"></script>
+   <script src="/taller-computacion-tn/progreso.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

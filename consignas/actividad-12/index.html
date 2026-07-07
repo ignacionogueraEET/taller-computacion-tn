@@ -40,8 +40,6 @@
     <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
 </head>
 <body>
-  <!-- Skip link — WCAG 2.4.1 -->
-  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
   <!-- ==================== HEADER ==================== -->
   <header role="banner" class="header">
@@ -68,11 +66,11 @@
         </svg>
         <span class="toggle-label">Modo oscuro</span>
       </button>
+      <!-- El contenedor vacío donde el JS dibujará la barra -->
+      <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
     </div>
   </header>
 
-<!-- El contenedor vacío donde el JS dibujará la barra -->
-    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
   <!-- ==================== TABLA DE CONTENIDOS ==================== -->
   <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
