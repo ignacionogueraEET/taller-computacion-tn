@@ -17,6 +17,9 @@
     --shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
     --font-main: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --transition: all 0.2s ease-in-out;
+    /* Layout */
+    --max-content: 800px;
+    --max-line:    80ch;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,6 +32,16 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+#barra-progreso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--color-primary);
+    z-index: 9999;
+    max-width: var(--max-line);
+}
 .page-header {
     background: linear-gradient(135deg, var(--color-secondary), var(--color-primary-dark));
     color: white;
