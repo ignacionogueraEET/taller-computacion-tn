@@ -267,6 +267,7 @@ body {
   height: 4px;
   background-color: var(--accent);
   z-index: 9999; */
+  text-align: center;
   max-width: var(--max-line);
 }
 
