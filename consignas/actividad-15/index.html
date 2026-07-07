@@ -9,6 +9,8 @@
       content="Actividad de aprendizaje sobre Función SI, Formato Condicional y Validación de Datos en hoja de cálculo. EET N° 1 Paraná."
     />
     <link rel="stylesheet" href="estilos.css" />
+    <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
@@ -34,6 +36,9 @@
         <div class="header-label">Taller de Computación</div>
       </div>
     </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <!-- ===== CONTENIDO PRINCIPAL ===== -->
     <main id="contenido-principal" class="main-wrapper">
@@ -594,5 +599,9 @@
         Actividad diseñada siguiendo pautas de accesibilidad WCAG 2.1 AA
       </p>
     </footer>
+  
+  
+   <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
   </body>
 </html>

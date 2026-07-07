@@ -6,6 +6,8 @@
   <title>Actividad 16 – Gestor de Periféricos y Componentes | EET N° 1 Paraná</title>
   <meta name="description" content="Consigna para desarrollar una herramienta de gestión de precios de periféricos y componentes de PC con cálculo de recargos y conversión de divisas. Taller de Computación – EET N° 1 Paraná." />
   <link rel="stylesheet" href="estilos.css" />
+  <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
@@ -48,6 +50,9 @@
       </div>
     </div>
   </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <!-- ===== CONTENIDO PRINCIPAL ===== -->
   <main id="contenido-principal" class="main-wrapper">
@@ -341,5 +346,8 @@
       });
     })();
   </script>
-</body>
+
+
+ <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
 </html>

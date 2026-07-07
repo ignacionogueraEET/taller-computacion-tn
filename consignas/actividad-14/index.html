@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factura Automatizado - EET N° 1</title>
     <link rel="stylesheet" href="estilos.css" />
+    <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
   </head>
   <body>
     <header>
@@ -14,6 +16,9 @@
         <p class="prof-name">Profesor: Juan Ignacio Noguera</p>
       </div>
     </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <main class="container">
       <section class="card" aria-labelledby="obj-titulo">
@@ -68,5 +73,9 @@
         </blockquote>
       </section>
     </main>
+  
+  
+   <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
   </body>
 </html>

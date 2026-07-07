@@ -36,6 +36,8 @@
 
   <title>Actividad 12 — Presupuesto en planilla de cálculo | Taller de Computación</title>
   <link rel="stylesheet" href="./style.css">
+  <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
 </head>
 <body>
   <!-- Skip link — WCAG 2.4.1 -->
@@ -68,6 +70,9 @@
       </button>
     </div>
   </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
   <!-- ==================== TABLA DE CONTENIDOS ==================== -->
   <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
@@ -432,6 +437,10 @@
     <p class="footer-a11y">Accesibilidad verificada según WCAG 2.2 AA</p>
   </footer>
 
+
+
+   <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
   <script src="./script.js" defer></script>
 </body>
 </html>

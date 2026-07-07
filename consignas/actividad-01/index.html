@@ -51,6 +51,8 @@
       Actividad 1 — Correo electrónico y Google Drive | Taller de Computación
     </title>
     <link rel="stylesheet" href="./style.css" />
+    <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
   </head>
   <body>
     <a href="#main-content" class="skip-link">Ir al contenido principal</a>
@@ -88,6 +90,9 @@
         </button>
       </div>
     </header>
+
+    <!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
       <details>
@@ -692,9 +697,10 @@ Taller_Computacion_Apellido/
         </p>
       </div>
     </footer>
+ 
 
-    <div id="barra-progreso"></div>
-    <link rel="stylesheet" href="../../progreso.css">
-    <script src="../../progreso.js"></script>
+
+     <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
   </body>
 </html>

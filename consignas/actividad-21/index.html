@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
 </head>
 <body>
 
@@ -45,6 +47,9 @@
         </button>
       </div>
     </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <!-- ═══════════════════════════════════════ CONTENIDO PRINCIPAL -->
     <main id="main-content" tabindex="-1">
@@ -303,6 +308,10 @@
 
   </div><!-- /page-wrapper -->
 
+
+
+   <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

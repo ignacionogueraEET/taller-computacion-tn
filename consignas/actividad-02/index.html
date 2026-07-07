@@ -33,6 +33,8 @@
 
   <title>Actividad 2 — Documento profesional en Google Docs | Taller de Computación</title>
   <link rel="stylesheet" href="./style.css">
+  <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
 </head>
 <body>
 
@@ -54,6 +56,9 @@
       </button>
     </div>
   </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
   <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
     <details>
@@ -411,6 +416,10 @@
     </div>
   </footer>
 
+
+
+   <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
   <script src="./script.js" defer></script>
 </body>
 </html>

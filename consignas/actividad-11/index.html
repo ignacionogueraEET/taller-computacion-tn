@@ -11,6 +11,8 @@
         }
     </script>
     <link rel="stylesheet" href="styles.css">
+    <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 min-h-screen flex flex-col justify-between transition-colors duration-300">
 
@@ -34,6 +36,9 @@
             </div>
         </div>
     </header>
+
+<!-- El contenedor vacío donde el JS dibujará la barra -->
+    <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
     <main id="main-content" class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full grid grid-cols-1 md:grid-cols-3 gap-8">
         
@@ -145,6 +150,10 @@
         </div>
     </footer>
 
+
+
+     <!-- Script para la barra de progreso -->
+    <script src="/taller-computacion-tn/progreso.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
