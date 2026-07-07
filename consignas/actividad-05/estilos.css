@@ -33,13 +33,13 @@ body {
 }
 
 #barra-progreso {
-    position: fixed;
+    /* position: fixed;
     top: 0;
     left: 0;
     width: 0%;
     height: 4px;
     background-color: var(--color-primary);
-    z-index: 9999;
+    z-index: 9999; */
     max-width: var(--max-line);
 }
 .page-header {
