@@ -19,7 +19,7 @@
     --transition: all 0.2s ease-in-out;
     /* Layout */
     --max-content: 800px;
-    --max-line:    80ch;
+    --max-line:    75ch;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
