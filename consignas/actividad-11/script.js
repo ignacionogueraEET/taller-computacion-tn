@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     htmlElement.classList.remove('dark');
   }
 
+  const syncThemeToggleA11 = () => {
+    const isDark = htmlElement.classList.contains('dark');
+    themeToggleBtn.setAttribute('aria-pressed', String(isDark));
+    themeToggleBtn.setAttribute('aria-label', isDark ? 'Activar modo claro' : 'Activar modo oscuro');
+  };
+
+  syncThemeToggleA11();
+
   // Intercambiador de estados al presionar el botón
   themeToggleBtn.addEventListener('click', () => {
     htmlElement.classList.toggle('dark');
@@ -33,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       localStorage.theme = 'light';
     }
+
+    syncThemeToggleA11();
   });
 
   // --------------------------------------------------------

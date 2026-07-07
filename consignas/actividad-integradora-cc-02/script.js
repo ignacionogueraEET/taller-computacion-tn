@@ -1,4 +1,4 @@
-/* 📄 script.js */
+﻿/* 📄 script.js */
 
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('theme-toggle');
@@ -33,14 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (theme === 'dark') {
       themeToggle.setAttribute('aria-pressed', 'true');
-      themeToggle.setAttribute('aria-label', 'Cambiar a modo claro');
+      themeToggle.setAttribute('aria-label', 'Activar modo claro');
       themeToggle.innerHTML =
         '<span aria-hidden="true" class="toggle-icon">☀️</span> Modo Claro';
     } else {
       themeToggle.setAttribute('aria-pressed', 'false');
-      themeToggle.setAttribute('aria-label', 'Cambiar a modo oscuro');
+      themeToggle.setAttribute('aria-label', 'Activar modo oscuro');
       themeToggle.innerHTML =
         '<span aria-hidden="true" class="toggle-icon">🌓</span> Modo Oscuro';
     }
   }
 });
+

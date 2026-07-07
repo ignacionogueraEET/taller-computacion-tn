@@ -1,4 +1,4 @@
-/* 📄 script.js */
+﻿/* 📄 script.js */
 
 /* ══════════════════════════════════════════════════════
    TOGGLE DE TEMA (claro / oscuro)
@@ -21,7 +21,7 @@
       toggleBtn.setAttribute('aria-pressed', String(isDark));
       toggleBtn.setAttribute(
         'aria-label',
-        isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'
+        isDark ? 'Activar modo claro' : 'Activar modo oscuro'
       );
     }
     if (toggleIcon) toggleIcon.textContent = isDark ? '☾' : '☀';
@@ -79,3 +79,4 @@
     observer.observe(el);
   });
 })();
+

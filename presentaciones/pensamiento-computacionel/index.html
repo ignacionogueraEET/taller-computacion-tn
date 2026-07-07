@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es-AR" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Aprende a resolver problemas complejos aplicando los 4 pilares del Pensamiento Computacional: descomposición, patrones, abstracción y algoritmos.">
+  <meta name="description" content="Aprende a resolver problemas complejos aplicando los 4 pilares del Pensamiento Computacional: descomposiciÃ³n, patrones, abstracciÃ³n y algoritmos.">
   <meta name="author" content="Juan Ignacio Noguera">
-  <meta name="keywords" content="EET N1, Taller de Computación, Pensamiento Computacional, Jeannette Wing, Algoritmos, Resolución de problemas">
+  <meta name="keywords" content="EET N1, Taller de ComputaciÃ³n, Pensamiento Computacional, Jeannette Wing, Algoritmos, ResoluciÃ³n de problemas">
 
-  <meta property="og:title" content="Pensamiento Computacional | Taller de Computación">
-  <meta property="og:description" content="Guía práctica sobre los 4 pilares del pensamiento computacional aplicados a la resolución de problemas reales.">
+  <meta property="og:title" content="Pensamiento Computacional | Taller de ComputaciÃ³n">
+  <meta property="og:description" content="GuÃ­a prÃ¡ctica sobre los 4 pilares del pensamiento computacional aplicados a la resoluciÃ³n de problemas reales.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
 
@@ -18,20 +18,20 @@
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Pensamiento Computacional: Los 4 Pilares",
-    "description": "Introducción a la descomposición, reconocimiento de patrones, abstracción y diseño de algoritmos para resolver desafíos técnicos.",
+    "description": "IntroducciÃ³n a la descomposiciÃ³n, reconocimiento de patrones, abstracciÃ³n y diseÃ±o de algoritmos para resolver desafÃ­os tÃ©cnicos.",
     "provider": {
       "@type": "EducationalOrganization",
-      "name": "EET N.° 1 General Francisco Ramírez",
-      "address": { "@type": "PostalAddress", "addressLocality": "Paraná", "addressCountry": "AR" }
+      "name": "EET N.Â° 1 General Francisco RamÃ­rez",
+      "address": { "@type": "PostalAddress", "addressLocality": "ParanÃ¡", "addressCountry": "AR" }
     },
     "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
-    "educationalLevel": "Secundaria Técnica",
+    "educationalLevel": "Secundaria TÃ©cnica",
     "inLanguage": "es-AR",
     "courseCode": "TEMA-03"
   }
   </script>
 
-  <title>Pensamiento Computacional | Taller de Computación</title>
+  <title>Pensamiento Computacional | Taller de ComputaciÃ³n</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -41,10 +41,10 @@
   <header role="banner" class="header">
     <div class="header-content">
       <div class="header-title">
-        <h1>Taller de Computación</h1>
-        <p class="header-subtitle">EET N.° 1 "General Francisco Ramírez" — Paraná</p>
+        <h1>Taller de ComputaciÃ³n</h1>
+        <p class="header-subtitle">EET N.Â° 1 "General Francisco RamÃ­rez" â€” ParanÃ¡</p>
       </div>
-      <button id="theme-toggle" aria-pressed="false" aria-label="Activar modo oscuro" class="theme-toggle">
+      <button id="theme-toggle" aria-pressed="false" aria-label="Cambiar a modo oscuro" class="theme-toggle">
         <svg id="icon-theme" aria-hidden="true" focusable="false"
             width="22" height="22" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -58,7 +58,7 @@
   <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
     <details>
       <summary>Tabla de contenidos</summary>
-      <!-- JS inyecta <ul> aquí -->
+      <!-- JS inyecta <ul> aquÃ­ -->
     </details>
   </nav>
 
@@ -68,16 +68,16 @@
       <article class="article-container">
 
         <section id="consigna" aria-labelledby="titulo-consigna">
-          <h2 id="titulo-consigna">Cómo resolver problemas con Pensamiento Computacional</h2>
+          <h2 id="titulo-consigna">CÃ³mo resolver problemas con Pensamiento Computacional</h2>
 
           <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
             <svg role="img" aria-labelledby="svg-titulo svg-desc"
                 viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
                 focusable="false" width="100%" height="auto">
               <title id="svg-titulo">Diagrama de los 4 pilares del pensamiento computacional</title>
-              <desc id="svg-desc">Diagrama esquemático que muestra un problema central dividiéndose en cuatro pasos lógicos interconectados: descomposición, reconocimiento de patrones, abstracción y diseño de algoritmos, representados por nodos y flechas de flujo.</desc>
+              <desc id="svg-desc">Diagrama esquemÃ¡tico que muestra un problema central dividiÃ©ndose en cuatro pasos lÃ³gicos interconectados: descomposiciÃ³n, reconocimiento de patrones, abstracciÃ³n y diseÃ±o de algoritmos, representados por nodos y flechas de flujo.</desc>
               
-              <!-- Líneas de conexión -->
+              <!-- LÃ­neas de conexiÃ³n -->
               <line x1="200" y1="100" x2="100" y2="60" stroke="var(--color-border)" stroke-width="2" stroke-dasharray="4"/>
               <line x1="200" y1="100" x2="300" y2="60" stroke="var(--color-border)" stroke-width="2" stroke-dasharray="4"/>
               <line x1="200" y1="100" x2="100" y2="140" stroke="var(--color-border)" stroke-width="2" stroke-dasharray="4"/>
@@ -87,7 +87,7 @@
               <circle cx="200" cy="100" r="25" fill="var(--color-surface)" stroke="var(--color-accent)" stroke-width="3"/>
               <text x="200" y="105" font-family="sans-serif" font-size="10" font-weight="bold" fill="var(--color-accent)" text-anchor="middle">PROBLEMA</text>
 
-              <!-- Nodo 1: Descomposición -->
+              <!-- Nodo 1: DescomposiciÃ³n -->
               <circle cx="100" cy="60" r="20" fill="var(--color-teal-light)" stroke="var(--color-teal)" stroke-width="2"/>
               <text x="100" y="64" font-family="sans-serif" font-size="9" font-weight="bold" fill="var(--color-teal-text)" text-anchor="middle">1</text>
 
@@ -95,7 +95,7 @@
               <circle cx="300" cy="60" r="20" fill="var(--color-slate-light)" stroke="var(--color-slate)" stroke-width="2"/>
               <text x="300" y="64" font-family="sans-serif" font-size="9" font-weight="bold" fill="var(--color-slate-text)" text-anchor="middle">2</text>
 
-              <!-- Nodo 3: Abstracción -->
+              <!-- Nodo 3: AbstracciÃ³n -->
               <circle cx="100" cy="140" r="20" fill="var(--color-slate-light)" stroke="var(--color-slate)" stroke-width="2"/>
               <text x="100" y="144" font-family="sans-serif" font-size="9" font-weight="bold" fill="var(--color-slate-text)" text-anchor="middle">3</text>
 
@@ -103,63 +103,63 @@
               <circle cx="300" cy="140" r="20" fill="var(--color-teal-light)" stroke="var(--color-teal)" stroke-width="2"/>
               <text x="300" y="144" font-family="sans-serif" font-size="9" font-weight="bold" fill="var(--color-teal-text)" text-anchor="middle">4</text>
             </svg>
-            <figcaption>Los 4 pilares trabajan en conjunto para transformar un problema complejo en una solución estructurada.</figcaption>
+            <figcaption>Los 4 pilares trabajan en conjunto para transformar un problema complejo en una soluciÃ³n estructurada.</figcaption>
           </figure>
 
-          <p>El <strong>Pensamiento Computacional</strong> es una forma de resolver problemas complejos de manera lógica y estructurada. Fue popularizado por la Dra. <strong>Jeannette Wing</strong> (profesora de Ciencias de la Computación en la Universidad de Columbia y ex vicepresidenta de Microsoft Research) en su artículo seminal de 2006.</p>
-          <p>No se trata de "pensar como una computadora", sino de usar las mismas estrategias que utilizan los programadores e ingenieros para resolver desafíos: descomponer, reconocer patrones, abstraer y crear algoritmos.</p>
+          <p>El <strong>Pensamiento Computacional</strong> es una forma de resolver problemas complejos de manera lÃ³gica y estructurada. Fue popularizado por la Dra. <strong>Jeannette Wing</strong> (profesora de Ciencias de la ComputaciÃ³n en la Universidad de Columbia y ex vicepresidenta de Microsoft Research) en su artÃ­culo seminal de 2006.</p>
+          <p>No se trata de "pensar como una computadora", sino de usar las mismas estrategias que utilizan los programadores e ingenieros para resolver desafÃ­os: descomponer, reconocer patrones, abstraer y crear algoritmos.</p>
         </section>
 
         <section id="pilares" aria-labelledby="titulo-pilares">
           <h2 id="titulo-pilares">Los 4 Pilares del Pensamiento Computacional</h2>
           <ol class="steps-list">
             <li>
-              <h3>1. Descomposición</h3>
-              <p>Dividir un problema grande y abrumador en partes más pequeñas y manejables.</p>
-              <p><em>Ejemplo:</em> En lugar de pensar "tengo que hacer todo el presupuesto de una obra", lo dividimos en: lista de materiales, costos de mano de obra, cálculo de impuestos y total final.</p>
+              <h3>1. DescomposiciÃ³n</h3>
+              <p>Dividir un problema grande y abrumador en partes mÃ¡s pequeÃ±as y manejables.</p>
+              <p><em>Ejemplo:</em> En lugar de pensar "tengo que hacer todo el presupuesto de una obra", lo dividimos en: lista de materiales, costos de mano de obra, cÃ¡lculo de impuestos y total final.</p>
             </li>
             <li>
               <h3>2. Reconocimiento de Patrones</h3>
-              <p>Identificar similitudes o tendencias en los datos que nos permitan resolver el problema de forma más eficiente, sin repetir trabajo.</p>
-              <p><em>Ejemplo:</em> Darte cuenta de que el "Subtotal" de <em>cada</em> fila de una planilla se calcula siempre de la misma manera: <code>Cantidad × Precio Unitario</code>.</p>
+              <p>Identificar similitudes o tendencias en los datos que nos permitan resolver el problema de forma mÃ¡s eficiente, sin repetir trabajo.</p>
+              <p><em>Ejemplo:</em> Darte cuenta de que el "Subtotal" de <em>cada</em> fila de una planilla se calcula siempre de la misma manera: <code>Cantidad Ã— Precio Unitario</code>.</p>
             </li>
             <li>
-              <h3>3. Abstracción</h3>
-              <p>Enfocarte únicamente en la información importante para resolver el problema, ignorando los detalles irrelevantes que solo generan ruido.</p>
-              <p><em>Ejemplo:</em> Para calcular un presupuesto, el color del cable o la marca del interruptor no importan para la matemática. Solo nos abstraemos a: <strong>Ítem, Cantidad y Precio</strong>.</p>
+              <h3>3. AbstracciÃ³n</h3>
+              <p>Enfocarte Ãºnicamente en la informaciÃ³n importante para resolver el problema, ignorando los detalles irrelevantes que solo generan ruido.</p>
+              <p><em>Ejemplo:</em> Para calcular un presupuesto, el color del cable o la marca del interruptor no importan para la matemÃ¡tica. Solo nos abstraemos a: <strong>Ãtem, Cantidad y Precio</strong>.</p>
             </li>
             <li>
-              <h3>4. Diseño de Algoritmos</h3>
+              <h3>4. DiseÃ±o de Algoritmos</h3>
               <p>Crear una secuencia ordenada, paso a paso, de instrucciones para resolver el problema o lograr el objetivo.</p>
-              <p><em>Ejemplo:</em> 1) Crear columnas → 2) Cargar datos → 3) Escribir la fórmula en la primera fila → 4) Copiar la fórmula hacia abajo → 5) Sumar el total.</p>
+              <p><em>Ejemplo:</em> 1) Crear columnas â†’ 2) Cargar datos â†’ 3) Escribir la fÃ³rmula en la primera fila â†’ 4) Copiar la fÃ³rmula hacia abajo â†’ 5) Sumar el total.</p>
             </li>
           </ol>
         </section>
 
         <section id="ejemplo" aria-labelledby="titulo-ejemplo">
           <h2 id="titulo-ejemplo">Ejemplo Integral: "El Presupuesto del Cliente"</h2>
-          <p>Imaginá que un cliente de Electromecánica o Construcciones te hace el siguiente pedido:</p>
+          <p>ImaginÃ¡ que un cliente de ElectromecÃ¡nica o Construcciones te hace el siguiente pedido:</p>
           <blockquote style="border-left: 4px solid var(--color-accent); padding-left: 1rem; font-style: italic; color: var(--color-text-muted); margin: 1.5rem 0;">
-            "Necesito una planilla para presupuestar la instalación eléctrica de una habitación. Tengo que cargar los materiales, que se calcule el subtotal de cada uno, y al final quiero ver el total general más el 21% de IVA."
+            "Necesito una planilla para presupuestar la instalaciÃ³n elÃ©ctrica de una habitaciÃ³n. Tengo que cargar los materiales, que se calcule el subtotal de cada uno, y al final quiero ver el total general mÃ¡s el 21% de IVA."
           </blockquote>
-          <p>¿Cómo lo resolvemos aplicando los 4 pilares?</p>
+          <p>Â¿CÃ³mo lo resolvemos aplicando los 4 pilares?</p>
           <ul class="recursos-list">
-            <li><strong>Paso 1: Descomposición.</strong> Separamos el pedido: lista de materiales, cantidades, precios, columna de multiplicación y fila final con suma e IVA.</li>
-            <li><strong>Paso 2: Reconocimiento de Patrones.</strong> La operación es siempre la misma: <code>Subtotal = Cantidad * Precio Unitario</code>. El IVA siempre será <code>Total General * 0.21</code>.</li>
-            <li><strong>Paso 3: Abstracción.</strong> Ignoramos el "color rojo" o la "marca X". Nos quedamos con lo esencial: Columna A (Material), Columna B (Cantidad), Columna C (Precio).</li>
-            <li><strong>Paso 4: Algoritmo.</strong> 1) Crear encabezados. 2) Cargar datos. 3) Fórmula <code>=B2*C2</code>. 4) Copiar hacia abajo. 5) Función <code>=SUMA()</code>. 6) Calcular IVA. 7) Aplicar formato accesible (WCAG).</li>
+            <li><strong>Paso 1: DescomposiciÃ³n.</strong> Separamos el pedido: lista de materiales, cantidades, precios, columna de multiplicaciÃ³n y fila final con suma e IVA.</li>
+            <li><strong>Paso 2: Reconocimiento de Patrones.</strong> La operaciÃ³n es siempre la misma: <code>Subtotal = Cantidad * Precio Unitario</code>. El IVA siempre serÃ¡ <code>Total General * 0.21</code>.</li>
+            <li><strong>Paso 3: AbstracciÃ³n.</strong> Ignoramos el "color rojo" o la "marca X". Nos quedamos con lo esencial: Columna A (Material), Columna B (Cantidad), Columna C (Precio).</li>
+            <li><strong>Paso 4: Algoritmo.</strong> 1) Crear encabezados. 2) Cargar datos. 3) FÃ³rmula <code>=B2*C2</code>. 4) Copiar hacia abajo. 5) FunciÃ³n <code>=SUMA()</code>. 6) Calcular IVA. 7) Aplicar formato accesible (WCAG).</li>
           </ul>
         </section>
 
         <section id="aplicacion" aria-labelledby="titulo-aplicacion">
-          <h2 id="titulo-aplicacion">¿Cómo se aplica esto en este Taller?</h2>
-          <p>A partir del <strong>Tema 3</strong>, cada actividad de planillas se presentará como un <strong>pedido real de un cliente</strong>.</p>
-          <p>No te daremos una lista de 15 pasos de "hacé clic aquí, luego allá". En su lugar, te daremos el <strong>Desafío</strong> y los <strong>Requisitos</strong>. Tu trabajo será:</p>
+          <h2 id="titulo-aplicacion">Â¿CÃ³mo se aplica esto en este Taller?</h2>
+          <p>A partir del <strong>Tema 3</strong>, cada actividad de planillas se presentarÃ¡ como un <strong>pedido real de un cliente</strong>.</p>
+          <p>No te daremos una lista de 15 pasos de "hacÃ© clic aquÃ­, luego allÃ¡". En su lugar, te daremos el <strong>DesafÃ­o</strong> y los <strong>Requisitos</strong>. Tu trabajo serÃ¡:</p>
           <ol>
             <li>Leer el problema.</li>
-            <li>Aplicar mentalmente estos 4 pilares para planificar tu solución.</li>
-            <li>Consultar los videos o el apunte solo para resolver las dudas técnicas específicas (ej: "¿cómo se hace un hipervínculo?").</li>
-            <li>Entregar una solución profesional, funcional y accesible.</li>
+            <li>Aplicar mentalmente estos 4 pilares para planificar tu soluciÃ³n.</li>
+            <li>Consultar los videos o el apunte solo para resolver las dudas tÃ©cnicas especÃ­ficas (ej: "Â¿cÃ³mo se hace un hipervÃ­nculo?").</li>
+            <li>Entregar una soluciÃ³n profesional, funcional y accesible.</li>
           </ol>
         </section>
 
@@ -169,12 +169,12 @@
             <li>
               <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">
                 WebAIM Contrast Checker
-                <span class="sr-only">(abre en nueva pestaña)</span>
+                <span class="sr-only">(abre en nueva pestaÃ±a)</span>
               </a>
-              <br><small>Herramienta para verificar que tus colores cumplan con el estándar de accesibilidad WCAG 2.1/2.2 Nivel AA.</small>
+              <br><small>Herramienta para verificar que tus colores cumplan con el estÃ¡ndar de accesibilidad WCAG 2.1/2.2 Nivel AA.</small>
             </li>
             <li>
-              <span>Apunte del Taller (Tema: Recursos Permanentes): Guía técnica de cada herramienta de la planilla de cálculo.</span>
+              <span>Apunte del Taller (Tema: Recursos Permanentes): GuÃ­a tÃ©cnica de cada herramienta de la planilla de cÃ¡lculo.</span>
             </li>
           </ul>
         </section>
@@ -193,7 +193,7 @@
             </svg>
             Objetivo
           </h3>
-          <p>Aprender a resolver problemas complejos aplicando de forma consciente los 4 pilares del pensamiento computacional antes de iniciar cualquier tarea técnica.</p>
+          <p>Aprender a resolver problemas complejos aplicando de forma consciente los 4 pilares del pensamiento computacional antes de iniciar cualquier tarea tÃ©cnica.</p>
         </div>
 
         <div class="nota-card">
@@ -206,9 +206,9 @@
             Herramientas
           </h3>
           <ul>
-            <li>Apunte teórico del Taller (Recursos Permanentes).</li>
-            <li>Software de planillas de cálculo (Excel / LibreOffice Calc).</li>
-            <li>WebAIM Contrast Checker (para validación de colores).</li>
+            <li>Apunte teÃ³rico del Taller (Recursos Permanentes).</li>
+            <li>Software de planillas de cÃ¡lculo (Excel / LibreOffice Calc).</li>
+            <li>WebAIM Contrast Checker (para validaciÃ³n de colores).</li>
           </ul>
         </div>
 
@@ -224,7 +224,7 @@
             </svg>
             Modalidad
           </h3>
-          <p>Teórico-práctica individual. Lectura, análisis de casos y aplicación en actividades futuras.</p>
+          <p>TeÃ³rico-prÃ¡ctica individual. Lectura, anÃ¡lisis de casos y aplicaciÃ³n en actividades futuras.</p>
         </div>
       </aside>
 
@@ -235,12 +235,12 @@
     <div class="footer-inner">
       <p>
         <strong>Docente:</strong> Juan Ignacio Noguera <br>
-        <strong>Materia:</strong> Taller de Computación <br>
-        <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" — Paraná
+        <strong>Materia:</strong> Taller de ComputaciÃ³n <br>
+        <strong>InstituciÃ³n:</strong> EET N.Â° 1 "General Francisco RamÃ­rez" â€” ParanÃ¡
       </p>
       <p class="footer-meta">
-        © <span id="current-year">2024</span> EET N.° 1 · Diseñado siguiendo los lineamientos de
-        <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG 2.2 AA<span class="sr-only">(abre en nueva pestaña)</span></a>
+        Â© <span id="current-year">2024</span> EET N.Â° 1 Â· DiseÃ±ado siguiendo los lineamientos de
+        <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">WCAG 2.2 AA<span class="sr-only">(abre en nueva pestaÃ±a)</span></a>
       </p>
     </div>
   </footer>

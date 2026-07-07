@@ -78,6 +78,38 @@
   --transition: 200ms ease;
 }
 
+[data-theme="light"] {
+  --c-bg:           #f6f5f0;
+  --c-surface:      #ffffff;
+  --c-surface-alt:  #f0eeea;
+  --c-border:       #e2dfd8;
+  --c-border-strong:#c8c4ba;
+
+  --c-text-primary:  #1a1917;
+  --c-text-secondary:#5a5750;
+  --c-text-muted:    #8a8680;
+
+  --c-blue-bg:     #e6f1fb;
+  --c-blue-border: #85b7eb;
+  --c-blue-text:   #0c447c;
+
+  --c-green-bg:    #eaf3de;
+  --c-green-border:#97c459;
+  --c-green-text:  #27500a;
+
+  --c-amber-bg:    #faeeda;
+  --c-amber-border:#ef9f27;
+  --c-amber-text:  #633806;
+
+  --c-red-bg:      #fcebeb;
+  --c-red-border:  #f09595;
+  --c-red-text:    #791f1f;
+
+  --c-accent:      #185fa5;
+  --c-accent-dark: #0c447c;
+  --c-accent-light:#b5d4f4;
+}
+
 /* Modo oscuro automático */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -113,6 +145,38 @@
   }
 }
 
+[data-theme="dark"] {
+  --c-bg:           #17161a;
+  --c-surface:      #22202a;
+  --c-surface-alt:  #2a2830;
+  --c-border:       #3a3845;
+  --c-border-strong:#504e5e;
+
+  --c-text-primary:  #f0eef8;
+  --c-text-secondary:#b0adc0;
+  --c-text-muted:    #7a7890;
+
+  --c-blue-bg:     #042c53;
+  --c-blue-border: #185fa5;
+  --c-blue-text:   #b5d4f4;
+
+  --c-green-bg:    #173404;
+  --c-green-border:#3b6d11;
+  --c-green-text:  #c0dd97;
+
+  --c-amber-bg:    #412402;
+  --c-amber-border:#854f0b;
+  --c-amber-text:  #fac775;
+
+  --c-red-bg:      #501313;
+  --c-red-border:  #a32d2d;
+  --c-red-text:    #f7c1c1;
+
+  --c-accent:      #378add;
+  --c-accent-dark: #85b7eb;
+  --c-accent-light:#0c447c;
+}
+
 /* ── 2. RESET & BASE ──────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -141,6 +205,33 @@ body {
   color: var(--c-text-primary);
   background-color: var(--c-bg);
   min-height: 100vh;
+}
+
+.theme-toggle-wrapper {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 100;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-border-strong);
+  background: var(--c-surface);
+  color: var(--c-text-primary);
+  font-family: var(--font-head);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+}
+
+.theme-toggle:hover {
+  border-color: var(--c-accent);
 }
 
 /* ── 3. ACCESIBILIDAD ─────────────────────────────────────── */

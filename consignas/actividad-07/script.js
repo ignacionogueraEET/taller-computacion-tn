@@ -1,4 +1,4 @@
-// Actividad 7: Referencia absoluta y relativa - Copia de fórmula
+﻿// Actividad 7: Referencia absoluta y relativa - Copia de fórmula
 // EET N.° 1 Paraná - Taller de Computación 3° Turno Noche
 // Simulación de planilla de cálculo con referencias absolutas y relativas
 
@@ -25,10 +25,14 @@
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
+            if (themeToggle) themeToggle.setAttribute('aria-label', 'Activar modo claro');
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
             if (themeText) themeText.textContent = 'Modo oscuro';
         } else {
-            document.documentElement.removeAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
+            if (themeToggle) themeToggle.setAttribute('aria-label', 'Activar modo oscuro');
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
             if (themeText) themeText.textContent = 'Modo claro';
         }
     }

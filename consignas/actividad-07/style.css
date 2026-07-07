@@ -25,6 +25,8 @@
     --placeholder-bg: #e9ecef;
     --placeholder-border: #cbd5e1;
     --shadow: rgba(0, 0, 0, 0.05);
+    --max-line: 80ch;
+    --progreso-max-width: 800px;
 }
 
 /* Modo oscuro - CORREGIDO con SOLO los colores permitidos por skill.md */

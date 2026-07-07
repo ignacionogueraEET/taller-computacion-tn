@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -6,328 +6,24 @@
     <title>Actividad 09: Dominando el Tiempo en la Planilla de Cálculo</title>
     <!-- Estilos y script de la barra (Rutas absolutas) -->
     <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f5f5f5;
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        background-color: white;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      }
-
-      header {
-        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-        color: white;
-        padding: 2rem;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-      }
-
-      header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-      }
-
-      nav {
-        background-color: #34495e;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 1rem;
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-
-      nav a:hover {
-        color: #3498db;
-      }
-
-      .content {
-        padding: 2rem;
-      }
-
-      .section {
-        margin-bottom: 2.5rem;
-      }
-
-      .section h2 {
-        color: #2c3e50;
-        border-bottom: 3px solid #3498db;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .section h3 {
-        color: #34495e;
-        margin-top: 1.5rem;
-        margin-bottom: 0.8rem;
-        font-size: 1.2rem;
-      }
-
-      .context-box {
-        background-color: #e8f4f8;
-        border-left: 4px solid #3498db;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 4px;
-      }
-
-      .objectives {
-        background-color: #fff9e6;
-        border-left: 4px solid #f39c12;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 4px;
-      }
-
-      .objectives ul {
-        margin-left: 1.5rem;
-      }
-
-      .key-concepts {
-        background-color: #f0f8ff;
-        border: 2px solid #5dade2;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        border-radius: 8px;
-      }
-
-      .key-concepts h3 {
-        color: #2980b9;
-        margin-top: 0;
-      }
-
-      .key-concepts ol {
-        margin-left: 1.5rem;
-        margin-top: 0.5rem;
-      }
-
-      .key-concepts li {
-        margin-bottom: 0.8rem;
-      }
-
-      .key-concepts strong {
-        color: #2c3e50;
-      }
-
-      details {
-        background-color: #fff3cd;
-        border: 2px solid #ffc107;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 1.5rem 0;
-      }
-
-      details summary {
-        cursor: pointer;
-        font-weight: 600;
-        color: #856404;
-        font-size: 1.1rem;
-        padding: 0.5rem;
-        user-select: none;
-      }
-
-      details summary:hover {
-        color: #533f03;
-      }
-
-      details[open] summary {
-        border-bottom: 2px solid #ffc107;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-      }
-
-      details .syntax-content {
-        padding: 0.5rem;
-      }
-
-      details .syntax-content p {
-        margin-bottom: 0.8rem;
-      }
-
-      details .syntax-content ul {
-        margin-left: 1.5rem;
-        margin-top: 0.5rem;
-      }
-
-      details .syntax-content li {
-        margin-bottom: 0.5rem;
-      }
-
-      details code {
-        background-color: #e8e8e8;
-        padding: 0.2rem 0.5rem;
-        border-radius: 3px;
-        font-family: 'Courier New', monospace;
-        color: #c0392b;
-      }
-
-      .step-by-step {
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-      }
-
-      .step-by-step ol {
-        margin-left: 1.5rem;
-      }
-
-      .step-by-step li {
-        margin-bottom: 0.5rem;
-      }
-
-      .step-by-step code {
-        background-color: #e8e8e8;
-        padding: 0.2rem 0.5rem;
-        border-radius: 3px;
-        font-family: 'Courier New', monospace;
-        color: #c0392b;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.5rem 0;
-        font-size: 0.95rem;
-      }
-
-      table th {
-        background-color: #3498db;
-        color: white;
-        padding: 0.8rem;
-        text-align: left;
-        font-weight: 600;
-      }
-
-      table td {
-        border: 1px solid #ddd;
-        padding: 0.8rem;
-        vertical-align: top;
-      }
-
-      table tr:nth-child(even) {
-        background-color: #f9f9f9;
-      }
-
-      .warning-box {
-        background-color: #fff3cd;
-        border-left: 4px solid #ffc107;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-      }
-
-      .warning-box strong {
-        color: #856404;
-      }
-
-      .tip-box {
-        background-color: #d4edda;
-        border-left: 4px solid #28a745;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-      }
-
-      .tip-box strong {
-        color: #155724;
-      }
-
-      .delivery-box {
-        background-color: #e7f3ff;
-        border: 2px solid #2196f3;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        border-radius: 8px;
-      }
-
-      .delivery-box h3 {
-        color: #1976d2;
-        margin-top: 0;
-      }
-
-      .delivery-box ul {
-        margin-left: 1.5rem;
-        margin-top: 0.5rem;
-      }
-
-      .notes-box {
-        background-color: #f8f9fa;
-        border-left: 4px solid #6c757d;
-        padding: 1rem;
-        margin: 1.5rem 0;
-        border-radius: 4px;
-      }
-
-      .notes-box ul {
-        margin-left: 1.5rem;
-      }
-
-      .notes-box li {
-        margin-bottom: 0.5rem;
-      }
-
-      footer {
-        background-color: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      footer a {
-        color: #3498db;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 1.5rem;
-        }
-
-        .content {
-          padding: 1rem;
-        }
-
-        table {
-          font-size: 0.85rem;
-        }
-
-        table th,
-        table td {
-          padding: 0.5rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="actividad-09.css" />
   </head>
   <body>
+    <div class="theme-toggle-wrapper">
+      <button
+        id="theme-toggle"
+        class="theme-toggle-btn"
+        type="button"
+        aria-pressed="false"
+        aria-label="Activar modo oscuro"
+        title="Modo claro/oscuro"
+      >
+        <span class="theme-icon-light" aria-hidden="true">☀️</span>
+        <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+        <span class="theme-text">Modo claro</span>
+      </button>
+    </div>
+
     <div class="container">
       <header>
         <h1>Actividad 09: Dominando el Tiempo en la Planilla de Cálculo</h1>
@@ -854,8 +550,7 @@
         <p>
           &copy; EET N.° 1 "General Francisco Ramírez" | Profesor: Juan
           Ignacio Noguera
-        </p>
-        <p><a href="../../index.html">Volver al inicio</a></p>
+        </p>        
       </footer>
     </div>
   
@@ -863,6 +558,8 @@
   
   
    <!-- Script para la barra de progreso -->
+      <script src="script.js"></script>
     <script src="/taller-computacion-tn/progreso.js"></script>
   </body>
 </html>
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Actividad 9 - Fechas
  * EET N.° 1 Paraná - Taller de Computación 3° Turno Noche
  * Docente: Juan Ignacio Noguera
@@ -51,16 +51,18 @@
       root.setAttribute('data-theme', THEME_DARK);
       if (toggleButton) {
         toggleButton.setAttribute('aria-pressed', 'true');
-        const textSpan = toggleButton.querySelector('.toggle-text');
+        toggleButton.setAttribute('aria-label', 'Activar modo claro');
+        const textSpan = toggleButton.querySelector('.theme-text');
         if (textSpan) {
           textSpan.textContent = 'Modo claro';
         }
       }
     } else {
-      root.removeAttribute('data-theme');
+      root.setAttribute('data-theme', THEME_LIGHT);
       if (toggleButton) {
         toggleButton.setAttribute('aria-pressed', 'false');
-        const textSpan = toggleButton.querySelector('.toggle-text');
+        toggleButton.setAttribute('aria-label', 'Activar modo oscuro');
+        const textSpan = toggleButton.querySelector('.theme-text');
         if (textSpan) {
           textSpan.textContent = 'Modo oscuro';
         }
@@ -171,3 +173,4 @@
     init();
   }
 })();
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -27,7 +27,7 @@
       </div>
       <div class="header-docente">
         <span class="docente-label" aria-label="Docente">Prof. Juan Ignacio Noguera</span>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo claro" title="Alternar modo oscuro/claro">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Activar modo oscuro" aria-pressed="false" title="Alternar modo oscuro/claro">
           <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -312,10 +312,12 @@
       function applyTheme(dark) {
         if (dark) {
           html.setAttribute('data-theme', 'dark');
-          btn.setAttribute('aria-label', 'Cambiar a modo claro');
+          btn.setAttribute('aria-pressed', 'true');
+          btn.setAttribute('aria-label', 'Activar modo claro');
         } else {
           html.setAttribute('data-theme', 'light');
-          btn.setAttribute('aria-label', 'Cambiar a modo oscuro');
+          btn.setAttribute('aria-pressed', 'false');
+          btn.setAttribute('aria-label', 'Activar modo oscuro');
         }
       }
 
@@ -333,3 +335,4 @@
     <script src="/taller-computacion-tn/progreso.js"></script>
 </body>
 </html>
+

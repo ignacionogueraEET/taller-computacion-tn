@@ -8,6 +8,14 @@
     --border-radius: 12px;
 }
 
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --text-color: #e2e8f0;
+    --bg-color: #0b1220;
+    --card-bg: #121a2a;
+    --accent-color: #34d399;
+}
+
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -15,6 +23,36 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
+}
+
+.theme-toggle-wrapper {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(15, 23, 42, 0.82);
+    color: #f8fafc;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.theme-toggle:hover {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .container {

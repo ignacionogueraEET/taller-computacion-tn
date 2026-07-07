@@ -1,4 +1,4 @@
-// === script.js — EET N.° 1 · Taller de Computación ===
+﻿// === script.js — EET N.° 1 · Taller de Computación ===
 
 const CONFIG = {
   storageKey: 'tema-evaluacion',
@@ -49,7 +49,7 @@ function actualizarBotonTema(tema) {
   boton.setAttribute('aria-pressed', String(esOscuro));
   boton.setAttribute(
     'aria-label',
-    esOscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro',
+    esOscuro ? 'Activar modo claro' : 'Activar modo oscuro',
   );
   const etiqueta = boton.querySelector('.toggle-label');
   if (etiqueta) etiqueta.textContent = esOscuro ? 'Modo claro' : 'Modo oscuro';
@@ -143,3 +143,4 @@ function actualizarAnio() {
   const span = document.getElementById('current-year');
   if (span) span.textContent = new Date().getFullYear();
 }
+

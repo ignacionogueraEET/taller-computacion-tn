@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const updateUI = (theme) => {
     html.setAttribute('data-theme', theme);
+    btn.setAttribute('aria-pressed', String(theme === 'dark'));
+    btn.setAttribute('aria-label', theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro');
     btnText.textContent = theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro';
     btn.querySelector('.icon').textContent = theme === 'dark' ? '☀️' : '🌙';
   };
