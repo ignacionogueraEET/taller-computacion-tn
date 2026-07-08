@@ -1,425 +1,887 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="es-AR" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Actividad 2: Crear un documento profesional en Google Docs con carÃ¡tula institucional, formato de tabla e inserciÃ³n de imÃ¡genes. Taller de ComputaciÃ³n, EET N.Â° 1.">
-  <meta name="author"      content="Juan Ignacio Noguera">
-  <meta name="keywords"    content="EET N1, Taller de ComputaciÃ³n, Google Docs, tablas, formato profesional, imÃ¡genes">
+    <meta
+      name="description"
+      content="Actividad 2: Crear un documento profesional en Google Docs con carátula institucional, formato de tabla e inserción de imágenes. Taller de Computación, EET N.° 1."
+    />
+    <meta name="author" content="Juan Ignacio Noguera" />
+    <meta
+      name="keywords"
+      content="EET N1, Taller de Computación, Google Docs, tablas, formato profesional, imágenes"
+    />
 
-  <meta property="og:title"       content="Actividad 2 â€” Documento profesional en Google Docs | Taller de ComputaciÃ³n">
-  <meta property="og:description" content="Crear un documento profesional en Google Docs aplicando carÃ¡tula institucional, formato de tabla e inserciÃ³n de imÃ¡genes.">
-  <meta property="og:type"        content="website">
-  <meta property="og:locale"      content="es_AR">
+    <meta
+      property="og:title"
+      content="Actividad 2 — Documento profesional en Google Docs | Taller de Computación"
+    />
+    <meta
+      property="og:description"
+      content="Crear un documento profesional en Google Docs aplicando carátula institucional, formato de tabla e inserción de imágenes."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Actividad 2 â€” Documento profesional en Google Docs",
-    "description": "Crear un documento profesional en Google Docs aplicando carÃ¡tula institucional, formato de tabla e inserciÃ³n de imÃ¡genes",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "EET N.Â° 1 General Francisco RamÃ­rez",
-      "address": { "@type": "PostalAddress", "addressLocality": "ParanÃ¡", "addressCountry": "AR" }
-    },
-    "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
-    "educationalLevel": "Secundaria TÃ©cnica",
-    "inLanguage": "es-AR",
-    "courseCode": "Act2"
-  }
-  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Actividad 2 — Documento profesional en Google Docs",
+        "description": "Crear un documento profesional en Google Docs aplicando carátula institucional, formato de tabla e inserción de imágenes",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "EET N.° 1 General Francisco Ramírez",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paraná",
+            "addressCountry": "AR"
+          }
+        },
+        "instructor": { "@type": "Person", "name": "Juan Ignacio Noguera" },
+        "educationalLevel": "Secundaria Técnica",
+        "inLanguage": "es-AR",
+        "courseCode": "Act2"
+      }
+    </script>
 
-  <title>Actividad 2 â€” Documento profesional en Google Docs | Taller de ComputaciÃ³n</title>
-  <link rel="stylesheet" href="./style.css">
-  <!-- Estilos y script de la barra (Rutas absolutas) -->
-    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css">
-</head>
-<body>
+    <title>
+      Actividad 2 — Documento profesional en Google Docs | Taller de Computación
+    </title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Estilos y script de la barra (Rutas absolutas) -->
+    <link rel="stylesheet" href="/taller-computacion-tn/progreso.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
-
-  <header role="banner" class="header">
-    <div class="header-content">
-      <div class="header-title">
-        <h1>Taller de ComputaciÃ³n</h1>
-        <p class="header-subtitle">EET N.Â° 1 "General Francisco RamÃ­rez" â€” ParanÃ¡</p>
+    <header role="banner" class="header">
+      <div class="header-content">
+        <div class="header-title">
+          <h1>Taller de Computación</h1>
+          <p class="header-subtitle">
+            EET N.° 1 "General Francisco Ramírez" — Paraná
+          </p>
+        </div>
+        <button
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Cambiar a modo oscuro"
+          class="theme-toggle"
+        >
+          <svg
+            id="icon-theme"
+            aria-hidden="true"
+            focusable="false"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <!-- JS inyecta paths de sol al cargar -->
+          </svg>
+          <span class="toggle-label">Modo oscuro</span>
+        </button>
       </div>
-      <button id="theme-toggle" aria-pressed="false" aria-label="Cambiar a modo oscuro" class="theme-toggle">
-        <svg id="icon-theme" aria-hidden="true" focusable="false"
-             width="22" height="22" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <!-- JS inyecta paths de sol al cargar -->
-        </svg>
-        <span class="toggle-label">Modo oscuro</span>
-      </button>
-    </div>
-  </header>
+    </header>
 
-<!-- El contenedor vacÃ­o donde el JS dibujarÃ¡ la barra -->
+    <!-- El contenedor vacío donde el JS dibujará la barra -->
     <aside id="barra-progreso" aria-label="Progreso del estudiante"></aside>
 
-  <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
-    <details>
-      <summary>Tabla de contenidos</summary>
-      <!-- JS inyecta <ul> aquÃ­ -->
-    </details>
-  </nav>
+    <nav id="toc" aria-label="Tabla de contenidos" class="toc-nav">
+      <details>
+        <summary>Tabla de contenidos</summary>
+        <!-- JS inyecta <ul> aquí -->
+      </details>
+    </nav>
 
-  <main id="main-content">
-    <div class="layout-grid">
+    <main id="main-content">
+      <div class="layout-grid">
+        <article class="article-container">
+          <section id="consigna" aria-labelledby="titulo-consigna">
+            <h2 id="titulo-consigna">
+              Actividad 2 — Documento profesional en Google Docs
+            </h2>
 
-      <article class="article-container">
+            <!-- Ilustración SVG: documento con tabla y logotipos -->
+            <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
+              <svg
+                role="img"
+                aria-labelledby="svg-titulo svg-desc"
+                viewBox="0 0 400 200"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+                width="100%"
+                height="auto"
+              >
+                <title id="svg-titulo">
+                  Documento profesional con tabla e imágenes
+                </title>
+                <desc id="svg-desc">
+                  Ilustración que muestra una página de documento con una tabla
+                  de datos en la parte superior y una imagen con epígrafe en la
+                  parte inferior, representando la estructura del trabajo a
+                  realizar.
+                </desc>
 
-        <section id="consigna" aria-labelledby="titulo-consigna">
-          <h2 id="titulo-consigna">Actividad 2 â€” Documento profesional en Google Docs</h2>
+                <!-- Página de documento -->
+                <rect
+                  x="60"
+                  y="15"
+                  width="200"
+                  height="170"
+                  rx="4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <!-- Línea de título -->
+                <rect
+                  x="90"
+                  y="30"
+                  width="140"
+                  height="10"
+                  rx="2"
+                  fill="var(--color-accent)"
+                  opacity="0.3"
+                />
+                <!-- Líneas de texto -->
+                <line
+                  x1="80"
+                  y1="50"
+                  x2="240"
+                  y2="50"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.25"
+                />
+                <line
+                  x1="80"
+                  y1="58"
+                  x2="220"
+                  y2="58"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.2"
+                />
 
-          <!-- IlustraciÃ³n SVG: documento con tabla y logotipos -->
-          <figure class="ilustracion-actividad" aria-labelledby="svg-titulo">
-            <svg role="img" aria-labelledby="svg-titulo svg-desc"
-                 viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"
-                 focusable="false" width="100%" height="auto">
-              <title id="svg-titulo">Documento profesional con tabla e imÃ¡genes</title>
-              <desc  id="svg-desc">IlustraciÃ³n que muestra una pÃ¡gina de documento con una tabla de datos en la parte superior y una imagen con epÃ­grafe en la parte inferior, representando la estructura del trabajo a realizar.</desc>
+                <!-- Tabla dentro del documento -->
+                <rect
+                  x="80"
+                  y="70"
+                  width="160"
+                  height="8"
+                  rx="1"
+                  fill="var(--color-slate)"
+                  opacity="0.2"
+                />
+                <rect
+                  x="80"
+                  y="78"
+                  width="160"
+                  height="6"
+                  rx="0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.3"
+                />
+                <line
+                  x1="112"
+                  y1="70"
+                  x2="112"
+                  y2="96"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                  opacity="0.25"
+                />
+                <line
+                  x1="144"
+                  y1="70"
+                  x2="144"
+                  y2="96"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                  opacity="0.25"
+                />
+                <line
+                  x1="176"
+                  y1="70"
+                  x2="176"
+                  y2="96"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                  opacity="0.25"
+                />
+                <line
+                  x1="208"
+                  y1="70"
+                  x2="208"
+                  y2="96"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                  opacity="0.25"
+                />
+                <rect
+                  x="80"
+                  y="84"
+                  width="160"
+                  height="6"
+                  rx="0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.2"
+                />
+                <rect
+                  x="80"
+                  y="90"
+                  width="160"
+                  height="6"
+                  rx="0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.15"
+                />
 
-              <!-- PÃ¡gina de documento -->
-              <rect x="60" y="15" width="200" height="170" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
-              <!-- LÃ­nea de tÃ­tulo -->
-              <rect x="90" y="30" width="140" height="10" rx="2" fill="var(--color-accent)" opacity="0.3"/>
-              <!-- LÃ­neas de texto -->
-              <line x1="80" y1="50" x2="240" y2="50" stroke="currentColor" stroke-width="0.8" opacity="0.25"/>
-              <line x1="80" y1="58" x2="220" y2="58" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
+                <!-- Imagen dentro del documento -->
+                <rect
+                  x="100"
+                  y="110"
+                  width="100"
+                  height="50"
+                  rx="3"
+                  fill="none"
+                  stroke="var(--color-accent)"
+                  stroke-width="1.5"
+                  opacity="0.4"
+                />
+                <!-- Ícono de montaña/imagen -->
+                <polyline
+                  points="110,150 125,130 135,142 150,125 170,150"
+                  fill="none"
+                  stroke="var(--color-accent)"
+                  stroke-width="1"
+                  opacity="0.5"
+                />
+                <circle
+                  cx="160"
+                  cy="125"
+                  r="5"
+                  fill="none"
+                  stroke="var(--color-accent)"
+                  stroke-width="1"
+                  opacity="0.5"
+                />
+                <!-- Epígrafe -->
+                <line
+                  x1="115"
+                  y1="162"
+                  x2="185"
+                  y2="162"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.3"
+                />
 
-              <!-- Tabla dentro del documento -->
-              <rect x="80" y="70" width="160" height="8" rx="1" fill="var(--color-slate)" opacity="0.2"/>
-              <rect x="80" y="78" width="160" height="6" rx="0" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
-              <line x1="112" y1="70" x2="112" y2="96" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>
-              <line x1="144" y1="70" x2="144" y2="96" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>
-              <line x1="176" y1="70" x2="176" y2="96" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>
-              <line x1="208" y1="70" x2="208" y2="96" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>
-              <rect x="80" y="84" width="160" height="6" rx="0" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
-              <rect x="80" y="90" width="160" height="6" rx="0" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.15"/>
+                <!-- Lápiz decorativo -->
+                <line
+                  x1="290"
+                  y1="30"
+                  x2="320"
+                  y2="60"
+                  stroke="var(--color-accent)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <polygon
+                  points="286,34 290,30 294,34 290,38"
+                  fill="var(--color-accent)"
+                  opacity="0.6"
+                />
+                <line
+                  x1="320"
+                  y1="60"
+                  x2="324"
+                  y2="64"
+                  stroke="var(--color-accent)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  opacity="0.4"
+                />
 
-              <!-- Imagen dentro del documento -->
-              <rect x="100" y="110" width="100" height="50" rx="3" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.4"/>
-              <!-- Ãcono de montaÃ±a/imagen -->
-              <polyline points="110,150 125,130 135,142 150,125 170,150" fill="none" stroke="var(--color-accent)" stroke-width="1" opacity="0.5"/>
-              <circle cx="160" cy="125" r="5" fill="none" stroke="var(--color-accent)" stroke-width="1" opacity="0.5"/>
-              <!-- EpÃ­grafe -->
-              <line x1="115" y1="162" x2="185" y2="162" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+                <!-- Logo institucional sugerido (escudo simplificado) -->
+                <circle
+                  cx="340"
+                  cy="140"
+                  r="25"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  opacity="0.3"
+                />
+                <text
+                  x="340"
+                  y="145"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="currentColor"
+                  opacity="0.3"
+                  font-family="sans-serif"
+                >
+                  EET 1
+                </text>
+              </svg>
+              <figcaption>
+                Documento profesional: carátula, tabla formateada e imagen con
+                epígrafe
+              </figcaption>
+            </figure>
 
-              <!-- LÃ¡piz decorativo -->
-              <line x1="290" y1="30" x2="320" y2="60" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
-              <polygon points="286,34 290,30 294,34 290,38" fill="var(--color-accent)" opacity="0.6"/>
-              <line x1="320" y1="60" x2="324" y2="64" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <p>
+              En esta actividad vas a crear un documento profesional en Google
+              Docs aplicando tres competencias fundamentales: el uso de una
+              <strong>carátula institucional</strong> con los datos y logotipos
+              de la escuela, la <strong>formateación de tablas</strong> con
+              estilos coherentes, y la
+              <strong>inserción de imágenes</strong> con epígrafes descriptivos.
+              Estas habilidades son esenciales para presentar trabajos
+              académicos y técnicos con una calidad visual adecuada.
+            </p>
 
-              <!-- Logo institucional sugerido (escudo simplificado) -->
-              <circle cx="340" cy="140" r="25" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-              <text x="340" y="145" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.3" font-family="sans-serif">EET 1</text>
-            </svg>
-            <figcaption>Documento profesional: carÃ¡tula, tabla formateada e imagen con epÃ­grafe</figcaption>
-          </figure>
+            <p>
+              El documento que vas a producir simula una planilla real de
+              materiales de construcción, un tipo de documento muy utilizado en
+              la especialidad de Construcciones y en la práctica profesional de
+              la ingeniería y la arquitectura. Aprender a darle formato
+              profesional —con encabezados sombreados, alineación correcta de
+              números, bordes definidos y una imagen ilustrativa— te prepara
+              para elaborar informes técnicos en cualquier ámbito laboral o
+              académico.
+            </p>
+          </section>
 
-          <p>En esta actividad vas a crear un documento profesional en Google Docs aplicando tres competencias fundamentales: el uso de una <strong>carÃ¡tula institucional</strong> con los datos y logotipos de la escuela, la <strong>formateaciÃ³n de tablas</strong> con estilos coherentes, y la <strong>inserciÃ³n de imÃ¡genes</strong> con epÃ­grafes descriptivos. Estas habilidades son esenciales para presentar trabajos acadÃ©micos y tÃ©cnicos con una calidad visual adecuada.</p>
+          <section id="pasos" aria-labelledby="titulo-pasos">
+            <h2 id="titulo-pasos">Pasos a seguir</h2>
+            <ol class="steps-list">
+              <li>
+                <h3>Crear el documento en Google Docs</h3>
+                <p>
+                  Ingresá a Google Drive con tu cuenta institucional y navegá
+                  hasta tu carpeta <code>Taller_Computacion_Apellido</code>.
+                  Dentro de ella, hacé clic en <strong>"+ Nuevo"</strong> y
+                  seleccioná <strong>"Documentos de Google"</strong>. Nombrá el
+                  documento como <code>Materiales_Construccion_Apellido</code>,
+                  reemplazando "Apellido" por tu apellido real. Guardar el
+                  documento dentro de la carpeta correcta te ayuda a mantener
+                  todo organizado y accesible desde cualquier dispositivo.
+                </p>
+              </li>
+              <li>
+                <h3>Parte 1 — Insertar la carátula institucional</h3>
+                <p>
+                  Accedé al tema <strong>"Recursos Permanentes"</strong> en
+                  Classroom y descargá la <strong>carátula modelo</strong>.
+                  Luego, en tu documento de Google Docs, insertá esa carátula al
+                  inicio del documento. La carátula debe ocupar la primera
+                  página completa. Completá todos los campos con tus datos
+                  personales: nombre completo, curso, especialidad, nombre del
+                  trabajo, nombre del docente y año lectivo. Revisá que no quede
+                  ningún campo vacío o con datos genéricos.
+                </p>
+              </li>
+              <li>
+                <h3>Insertar los logos institucionales</h3>
+                <p>
+                  Desde el mismo tema "Recursos Permanentes", descargá los
+                  <strong>logos institucionales</strong> de la EET N.° 1.
+                  Insertalos en la carátula del documento usando la opción
+                  <strong>"Insertar &gt; Imagen"</strong> en Google Docs. Ajustá
+                  el tamaño de los logos para que encajen de forma proporcional
+                  dentro de la carátula sin deformarla: hacé clic sobre la
+                  imagen y arrastrá las esquinas manteniendo la proporción. Los
+                  logos deben ubicarse en los espacios previstos por el modelo
+                  de carátula.
+                </p>
+              </li>
+              <li>
+                <h3>Parte 2 — Crear el título de la planilla</h3>
+                <p>
+                  En una <strong>página nueva</strong> después de la carátula
+                  (insertá un salto de página con <code>Ctrl + Enter</code>),
+                  escribí el siguiente título:
+                </p>
+                <p class="titulo-ejemplo">
+                  Planilla de Materiales de Construcción
+                </p>
+                <p>Aplicá el siguiente formato al título:</p>
+                <ul>
+                  <li><strong>Fuente:</strong> Arial, tamaño 14</li>
+                  <li><strong>Estilo:</strong> negrita</li>
+                  <li><strong>Alineación:</strong> centrado</li>
+                  <li>
+                    <strong>Color:</strong> azul oscuro (código hexadecimal
+                    sugerido: <code>#1a3c6e</code>)
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3>Crear la tabla de materiales</h3>
+                <p>
+                  Debajo del título, insertá una tabla con 6 columnas y 6 filas
+                  (1 fila de encabezados + 5 filas de datos). Completá la tabla
+                  con la siguiente información:
+                </p>
 
-          <p>El documento que vas a producir simula una planilla real de materiales de construcciÃ³n, un tipo de documento muy utilizado en la especialidad de Construcciones y en la prÃ¡ctica profesional de la ingenierÃ­a y la arquitectura. Aprender a darle formato profesional â€”con encabezados sombreados, alineaciÃ³n correcta de nÃºmeros, bordes definidos y una imagen ilustrativaâ€” te prepara para elaborar informes tÃ©cnicos en cualquier Ã¡mbito laboral o acadÃ©mico.</p>
-        </section>
+                <div class="table-wrapper">
+                  <table class="tabla-materiales">
+                    <caption>
+                      Ejemplo de la tabla que debés crear en Google Docs
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Material</th>
+                        <th scope="col">Unidad</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio unitario</th>
+                        <th scope="col">Subtotal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cemento</td>
+                        <td>Bolsa 50 kg</td>
+                        <td>20</td>
+                        <td>$8.500</td>
+                        <td class="celda-vacia">(vacío)</td>
+                      </tr>
+                      <tr>
+                        <td>Ladrillos</td>
+                        <td>Unidad</td>
+                        <td>500</td>
+                        <td>$120</td>
+                        <td class="celda-vacia">(vacío)</td>
+                      </tr>
+                      <tr>
+                        <td>Hierro 8 mm</td>
+                        <td>Metro</td>
+                        <td>30</td>
+                        <td>$1.800</td>
+                        <td class="celda-vacia">(vacío)</td>
+                      </tr>
+                      <tr>
+                        <td>Arena</td>
+                        <td>Metro cúbico</td>
+                        <td>3</td>
+                        <td>$45.000</td>
+                        <td class="celda-vacia">(vacío)</td>
+                      </tr>
+                      <tr>
+                        <td>Cal</td>
+                        <td>Bolsa 25 kg</td>
+                        <td>10</td>
+                        <td>$4.200</td>
+                        <td class="celda-vacia">(vacío)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
-        <section id="pasos" aria-labelledby="titulo-pasos">
-          <h2 id="titulo-pasos">Pasos a seguir</h2>
-          <ol class="steps-list">
-            <li>
-              <h3>Crear el documento en Google Docs</h3>
-              <p>IngresÃ¡ a Google Drive con tu cuenta institucional y navegÃ¡ hasta tu carpeta <code>Taller_Computacion_Apellido</code>. Dentro de ella, hacÃ© clic en <strong>"+ Nuevo"</strong> y seleccionÃ¡ <strong>"Documentos de Google"</strong>. NombrÃ¡ el documento como <code>Materiales_Construccion_Apellido</code>, reemplazando "Apellido" por tu apellido real. Guardar el documento dentro de la carpeta correcta te ayuda a mantener todo organizado y accesible desde cualquier dispositivo.</p>
-            </li>
-            <li>
-              <h3>Parte 1 â€” Insertar la carÃ¡tula institucional</h3>
-              <p>AccedÃ© al tema <strong>"Recursos Permanentes"</strong> en Classroom y descargÃ¡ la <strong>carÃ¡tula modelo</strong>. Luego, en tu documento de Google Docs, insertÃ¡ esa carÃ¡tula al inicio del documento. La carÃ¡tula debe ocupar la primera pÃ¡gina completa. CompletÃ¡ todos los campos con tus datos personales: nombre completo, curso, especialidad, nombre del trabajo, nombre del docente y aÃ±o lectivo. RevisÃ¡ que no quede ningÃºn campo vacÃ­o o con datos genÃ©ricos.</p>
-            </li>
-            <li>
-              <h3>Insertar los logos institucionales</h3>
-              <p>Desde el mismo tema "Recursos Permanentes", descargÃ¡ los <strong>logos institucionales</strong> de la EET N.Â° 1. Insertalos en la carÃ¡tula del documento usando la opciÃ³n <strong>"Insertar &gt; Imagen"</strong> en Google Docs. AjustÃ¡ el tamaÃ±o de los logos para que encajen de forma proporcional dentro de la carÃ¡tula sin deformarla: hacÃ© clic sobre la imagen y arrastrÃ¡ las esquinas manteniendo la proporciÃ³n. Los logos deben ubicarse en los espacios previstos por el modelo de carÃ¡tula.</p>
-            </li>
-            <li>
-              <h3>Parte 2 â€” Crear el tÃ­tulo de la planilla</h3>
-              <p>En una <strong>pÃ¡gina nueva</strong> despuÃ©s de la carÃ¡tula (insertÃ¡ un salto de pÃ¡gina con <code>Ctrl + Enter</code>), escribÃ­ el siguiente tÃ­tulo:</p>
-              <p class="titulo-ejemplo">Planilla de Materiales de ConstrucciÃ³n</p>
-              <p>AplicÃ¡ el siguiente formato al tÃ­tulo:</p>
-              <ul>
-                <li><strong>Fuente:</strong> Arial, tamaÃ±o 14</li>
-                <li><strong>Estilo:</strong> negrita</li>
-                <li><strong>AlineaciÃ³n:</strong> centrado</li>
-                <li><strong>Color:</strong> azul oscuro (cÃ³digo hexadecimal sugerido: <code>#1a3c6e</code>)</li>
-              </ul>
-            </li>
-            <li>
-              <h3>Crear la tabla de materiales</h3>
-              <p>Debajo del tÃ­tulo, insertÃ¡ una tabla con 6 columnas y 6 filas (1 fila de encabezados + 5 filas de datos). CompletÃ¡ la tabla con la siguiente informaciÃ³n:</p>
+                <p>
+                  La columna "Subtotal" se deja vacía porque en una próxima
+                  actividad aprenderás a calcularla con fórmulas. Por ahora,
+                  concentráte en ingresar los datos correctamente y darles el
+                  formato adecuado.
+                </p>
+              </li>
+              <li>
+                <h3>Formatear la tabla</h3>
+                <p>
+                  Aplicá el siguiente formato a la tabla para que tenga un
+                  aspecto profesional y consistente:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Encabezados (fila 1):</strong> fuente Arial 11,
+                    negrita, texto centrado, sombreado de color azul claro
+                    (sugerencia: <code>#d0e0f0</code>).
+                  </li>
+                  <li>
+                    <strong>Datos (filas 2 a 6):</strong> fuente Arial 11, texto
+                    centrado.
+                  </li>
+                  <li>
+                    <strong>Columna "Material":</strong> alineada a la izquierda
+                    (los nombres de materiales no se centran).
+                  </li>
+                  <li>
+                    <strong
+                      >Columnas numéricas (Cantidad, Precio unitario,
+                      Subtotal):</strong
+                    >
+                    alineadas a la derecha para facilitar la lectura de los
+                    números.
+                  </li>
+                  <li>
+                    <strong>Bordes:</strong> todos los bordes visibles con línea
+                    continua de 1 pt.
+                  </li>
+                  <li>
+                    <strong>Ancho de columnas:</strong> ajustá el ancho de cada
+                    columna para que todo el contenido sea visible sin que el
+                    texto se corte ni sobre espacio en blanco excesivo.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3>Parte 3 — Insertar una imagen de materiales</h3>
+                <p>
+                  Debajo de la tabla, insertá una imagen relacionada con
+                  materiales de construcción. Podés buscar una imagen en
+                  internet (asegurate de que tenga buena resolución) o usar una
+                  foto propia. Para insertarla, usá
+                  <strong>"Insertar &gt; Imagen"</strong> y elegí la opción que
+                  corresponda (subir desde tu computadora, buscar en la web o
+                  insertar desde Drive). Ajustá el tamaño de la imagen para que
+                  sea proporcional al ancho del documento sin distorsionarla.
+                </p>
+              </li>
+              <li>
+                <h3>Agregar el epígrafe de la imagen</h3>
+                <p>
+                  Inmediatamente debajo de la imagen, escribí el siguiente
+                  epígrafe con formato centrado, fuente Arial 10, cursiva:
+                </p>
+                <p class="epigrafe-ejemplo">
+                  Figura 1: Materiales de construcción básicos
+                </p>
+                <p>
+                  El epígrafe es un texto breve que describe o identifica una
+                  imagen dentro de un documento. En trabajos académicos y
+                  técnicos, todas las imágenes deben llevar un epígrafe numerado
+                  que permita referenciarlas en el texto. Acostumbrate a
+                  incluirlo siempre.
+                </p>
+              </li>
+              <li>
+                <h3>Agregar los datos de cierre</h3>
+                <p>
+                  Al final del documento, después de la imagen y el epígrafe,
+                  agregá una línea con tus datos personales. Escribí tu nombre
+                  completo, curso y la fecha actual. Este dato sirve para
+                  identificar el autor y el momento en que se elaboró el
+                  documento. Utilizá fuente Arial 11, alineación izquierda.
+                </p>
+              </li>
+              <li>
+                <h3>Compartir el documento con el profesor</h3>
+                <p>
+                  Una vez que terminaste el documento, compartilo con el
+                  profesor usando el botón <strong>"Compartir"</strong> en la
+                  esquina superior derecha de Google Docs. Asigná permisos de
+                  <strong>"Lector"</strong> o <strong>"Comentar"</strong> según
+                  lo que indique el profesor. También podés entregarlo como PDF:
+                  andá a <strong>"Archivo &gt; Descargar &gt; PDF"</strong> y
+                  subí el archivo a la entrega de Classroom.
+                </p>
+              </li>
+            </ol>
+          </section>
 
-              <div class="table-wrapper">
-                <table class="tabla-materiales">
-                  <caption>Ejemplo de la tabla que debÃ©s crear en Google Docs</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">Material</th>
-                      <th scope="col">Unidad</th>
-                      <th scope="col">Cantidad</th>
-                      <th scope="col">Precio unitario</th>
-                      <th scope="col">Subtotal</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Cemento</td>
-                      <td>Bolsa 50 kg</td>
-                      <td>20</td>
-                      <td>$8.500</td>
-                      <td class="celda-vacia">(vacÃ­o)</td>
-                    </tr>
-                    <tr>
-                      <td>Ladrillos</td>
-                      <td>Unidad</td>
-                      <td>500</td>
-                      <td>$120</td>
-                      <td class="celda-vacia">(vacÃ­o)</td>
-                    </tr>
-                    <tr>
-                      <td>Hierro 8 mm</td>
-                      <td>Metro</td>
-                      <td>30</td>
-                      <td>$1.800</td>
-                      <td class="celda-vacia">(vacÃ­o)</td>
-                    </tr>
-                    <tr>
-                      <td>Arena</td>
-                      <td>Metro cÃºbico</td>
-                      <td>3</td>
-                      <td>$45.000</td>
-                      <td class="celda-vacia">(vacÃ­o)</td>
-                    </tr>
-                    <tr>
-                      <td>Cal</td>
-                      <td>Bolsa 25 kg</td>
-                      <td>10</td>
-                      <td>$4.200</td>
-                      <td class="celda-vacia">(vacÃ­o)</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+          <section id="recursos" aria-labelledby="titulo-recursos">
+            <h2 id="titulo-recursos">Recursos y referencias</h2>
+            <ul class="recursos-list">
+              <li>
+                <a
+                  href="https://www.youtube.com/results?search_query=Google+Docs+tablas+imagenes+formato+profesional"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Video tutorial: "Google Docs: tablas, imágenes y formato
+                  profesional" — Canal Aprende Tecnología
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://support.google.com/docs/answer/190843"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ayuda de Google Docs: Agregar y editar tablas
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://support.google.com/docs/answer/112114"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ayuda de Google Docs: Insertar imágenes en un documento
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://support.google.com/docs/answer/9270922"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ayuda de Google Docs: Dar formato al texto y a los párrafos
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </li>
+              <li>
+                Carátula modelo y logos institucionales — disponibles en el tema
+                <strong>"Recursos Permanentes"</strong> de Google Classroom.
+              </li>
+            </ul>
+          </section>
 
-              <p>La columna "Subtotal" se deja vacÃ­a porque en una prÃ³xima actividad aprenderÃ¡s a calcularla con fÃ³rmulas. Por ahora, concentrÃ¡te en ingresar los datos correctamente y darles el formato adecuado.</p>
-            </li>
-            <li>
-              <h3>Formatear la tabla</h3>
-              <p>AplicÃ¡ el siguiente formato a la tabla para que tenga un aspecto profesional y consistente:</p>
-              <ul>
-                <li><strong>Encabezados (fila 1):</strong> fuente Arial 11, negrita, texto centrado, sombreado de color azul claro (sugerencia: <code>#d0e0f0</code>).</li>
-                <li><strong>Datos (filas 2 a 6):</strong> fuente Arial 11, texto centrado.</li>
-                <li><strong>Columna "Material":</strong> alineada a la izquierda (los nombres de materiales no se centran).</li>
-                <li><strong>Columnas numÃ©ricas (Cantidad, Precio unitario, Subtotal):</strong> alineadas a la derecha para facilitar la lectura de los nÃºmeros.</li>
-                <li><strong>Bordes:</strong> todos los bordes visibles con lÃ­nea continua de 1 pt.</li>
-                <li><strong>Ancho de columnas:</strong> ajustÃ¡ el ancho de cada columna para que todo el contenido sea visible sin que el texto se corte ni sobre espacio en blanco excesivo.</li>
-              </ul>
-            </li>
-            <li>
-              <h3>Parte 3 â€” Insertar una imagen de materiales</h3>
-              <p>Debajo de la tabla, insertÃ¡ una imagen relacionada con materiales de construcciÃ³n. PodÃ©s buscar una imagen en internet (asegurate de que tenga buena resoluciÃ³n) o usar una foto propia. Para insertarla, usÃ¡ <strong>"Insertar &gt; Imagen"</strong> y elegÃ­ la opciÃ³n que corresponda (subir desde tu computadora, buscar en la web o insertar desde Drive). AjustÃ¡ el tamaÃ±o de la imagen para que sea proporcional al ancho del documento sin distorsionarla.</p>
-            </li>
-            <li>
-              <h3>Agregar el epÃ­grafe de la imagen</h3>
-              <p>Inmediatamente debajo de la imagen, escribÃ­ el siguiente epÃ­grafe con formato centrado, fuente Arial 10, cursiva:</p>
-              <p class="epigrafe-ejemplo">Figura 1: Materiales de construcciÃ³n bÃ¡sicos</p>
-              <p>El epÃ­grafe es un texto breve que describe o identifica una imagen dentro de un documento. En trabajos acadÃ©micos y tÃ©cnicos, todas las imÃ¡genes deben llevar un epÃ­grafe numerado que permita referenciarlas en el texto. Acostumbrate a incluirlo siempre.</p>
-            </li>
-            <li>
-              <h3>Agregar los datos de cierre</h3>
-              <p>Al final del documento, despuÃ©s de la imagen y el epÃ­grafe, agregÃ¡ una lÃ­nea con tus datos personales. EscribÃ­ tu nombre completo, curso y la fecha actual. Este dato sirve para identificar el autor y el momento en que se elaborÃ³ el documento. UtilizÃ¡ fuente Arial 11, alineaciÃ³n izquierda.</p>
-            </li>
-            <li>
-              <h3>Compartir el documento con el profesor</h3>
-              <p>Una vez que terminaste el documento, compartilo con el profesor usando el botÃ³n <strong>"Compartir"</strong> en la esquina superior derecha de Google Docs. AsignÃ¡ permisos de <strong>"Lector"</strong> o <strong>"Comentar"</strong> segÃºn lo que indique el profesor. TambiÃ©n podÃ©s entregarlo como PDF: andÃ¡ a <strong>"Archivo &gt; Descargar &gt; PDF"</strong> y subÃ­ el archivo a la entrega de Classroom.</p>
-            </li>
-          </ol>
-        </section>
+          <section id="entrega" aria-labelledby="titulo-entrega">
+            <h2 id="titulo-entrega">Cómo entregar tu trabajo</h2>
 
-        <section id="recursos" aria-labelledby="titulo-recursos">
-          <h2 id="titulo-recursos">Recursos y referencias</h2>
-          <ul class="recursos-list">
-            <li>
-              <a href="https://www.youtube.com/results?search_query=Google+Docs+tablas+imagenes+formato+profesional" target="_blank" rel="noopener noreferrer">
-                Video tutorial: "Google Docs: tablas, imÃ¡genes y formato profesional" â€” Canal Aprende TecnologÃ­a
-                <span class="sr-only">(abre en nueva pestaÃ±a)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://support.google.com/docs/answer/190843" target="_blank" rel="noopener noreferrer">
-                Ayuda de Google Docs: Agregar y editar tablas
-                <span class="sr-only">(abre en nueva pestaÃ±a)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://support.google.com/docs/answer/112114" target="_blank" rel="noopener noreferrer">
-                Ayuda de Google Docs: Insertar imÃ¡genes en un documento
-                <span class="sr-only">(abre en nueva pestaÃ±a)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://support.google.com/docs/answer/9270922" target="_blank" rel="noopener noreferrer">
-                Ayuda de Google Docs: Dar formato al texto y a los pÃ¡rrafos
-                <span class="sr-only">(abre en nueva pestaÃ±a)</span>
-              </a>
-            </li>
-            <li>
-              CarÃ¡tula modelo y logos institucionales â€” disponibles en el tema <strong>"Recursos Permanentes"</strong> de Google Classroom.
-            </li>
-          </ul>
-        </section>
+            <p>
+              La entrega se realiza a través de Google Classroom. Tenés dos
+              opciones complementarias:
+            </p>
 
-        <section id="entrega" aria-labelledby="titulo-entrega">
-          <h2 id="titulo-entrega">CÃ³mo entregar tu trabajo</h2>
+            <h3>Opción 1: Compartir el documento</h3>
+            <p>
+              Hacé clic en el botón <strong>"Compartir"</strong> de tu documento
+              de Google Docs y agregá el correo del profesor como colaborador.
+              Asegurate de que los permisos permitan ver y comentar el
+              documento. Esta opción permite que el profesor revise el formato
+              en tiempo real y deje comentarios directamente en el documento.
+            </p>
 
-          <p>La entrega se realiza a travÃ©s de Google Classroom. TenÃ©s dos opciones complementarias:</p>
+            <h3>Opción 2: Exportar a PDF y subir a Classroom</h3>
+            <p>
+              Andá a <strong>"Archivo &gt; Descargar &gt; PDF"</strong> para
+              generar una versión en formato portable del documento. Luego, subí
+              ese archivo PDF como entrega en la tarea correspondiente de
+              Classroom. El PDF preserva el formato original y es ideal para
+              archivar o imprimir. Es recomendable entregar ambas versiones.
+            </p>
 
-          <h3>OpciÃ³n 1: Compartir el documento</h3>
-          <p>HacÃ© clic en el botÃ³n <strong>"Compartir"</strong> de tu documento de Google Docs y agregÃ¡ el correo del profesor como colaborador. Asegurate de que los permisos permitan ver y comentar el documento. Esta opciÃ³n permite que el profesor revise el formato en tiempo real y deje comentarios directamente en el documento.</p>
+            <div class="fecha-entrega">
+              <p>
+                <strong>Fecha de entrega:</strong> 4 días corridos desde la
+                publicación de esta actividad.
+              </p>
+            </div>
+          </section>
 
-          <h3>OpciÃ³n 2: Exportar a PDF y subir a Classroom</h3>
-          <p>AndÃ¡ a <strong>"Archivo &gt; Descargar &gt; PDF"</strong> para generar una versiÃ³n en formato portable del documento. Luego, subÃ­ ese archivo PDF como entrega en la tarea correspondiente de Classroom. El PDF preserva el formato original y es ideal para archivar o imprimir. Es recomendable entregar ambas versiones.</p>
+          <section id="criterios" aria-labelledby="titulo-criterios">
+            <h2 id="titulo-criterios">Criterios de evaluación</h2>
+            <table class="criterios-table">
+              <caption>
+                Criterios de evaluación de la Actividad 2
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Criterio</th>
+                  <th scope="col">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Carátula completa con logos</td>
+                  <td>
+                    Carátula institucional insertada al inicio, con todos los
+                    datos personales completados y los logos de la EET N.° 1
+                    incorporados y dimensionados correctamente.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tabla con datos correctos</td>
+                  <td>
+                    Los 5 materiales están ingresados con sus unidades,
+                    cantidades y precios unitarios tal como se indica en la
+                    consigna.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Formato de tabla aplicado</td>
+                  <td>
+                    Encabezados con sombreado azul claro, negrita y centrado;
+                    datos con fuente Arial 11; columna "Material" alineada a la
+                    izquierda; columnas numéricas a la derecha; bordes visibles
+                    con línea continua.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Imagen con epígrafe</td>
+                  <td>
+                    Imagen de materiales de construcción insertada debajo de la
+                    tabla, con epígrafe centrado en cursiva: "Figura 1:
+                    Materiales de construcción básicos".
+                  </td>
+                </tr>
+                <tr>
+                  <td>Documento compartido</td>
+                  <td>
+                    Documento compartido con el profesor a través de Google Docs
+                    o entregado como PDF en Classroom.
+                  </td>
+                </tr>
+                <tr>
+                  <td>PDF entregado</td>
+                  <td>
+                    Archivo PDF exportado desde Google Docs y subido como
+                    entrega en Classroom, preservando el formato original.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </article>
 
-          <div class="fecha-entrega">
-            <p><strong>Fecha de entrega:</strong> 4 dÃ­as corridos desde la publicaciÃ³n de esta actividad.</p>
+        <aside
+          id="notas"
+          aria-label="Contexto de la actividad"
+          class="sidebar-context"
+        >
+          <h2>Contexto</h2>
+
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+              Objetivo
+            </h3>
+            <p>
+              Crear un documento profesional en Google Docs aplicando carátula
+              institucional, formato de tabla e inserción de imágenes con
+              epígrafe.
+            </p>
           </div>
-        </section>
 
-        <section id="criterios" aria-labelledby="titulo-criterios">
-          <h2 id="titulo-criterios">Criterios de evaluaciÃ³n</h2>
-          <table class="criterios-table">
-            <caption>Criterios de evaluaciÃ³n de la Actividad 2</caption>
-            <thead>
-              <tr>
-                <th scope="col">Criterio</th>
-                <th scope="col">DescripciÃ³n</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CarÃ¡tula completa con logos</td>
-                <td>CarÃ¡tula institucional insertada al inicio, con todos los datos personales completados y los logos de la EET N.Â° 1 incorporados y dimensionados correctamente.</td>
-              </tr>
-              <tr>
-                <td>Tabla con datos correctos</td>
-                <td>Los 5 materiales estÃ¡n ingresados con sus unidades, cantidades y precios unitarios tal como se indica en la consigna.</td>
-              </tr>
-              <tr>
-                <td>Formato de tabla aplicado</td>
-                <td>Encabezados con sombreado azul claro, negrita y centrado; datos con fuente Arial 11; columna "Material" alineada a la izquierda; columnas numÃ©ricas a la derecha; bordes visibles con lÃ­nea continua.</td>
-              </tr>
-              <tr>
-                <td>Imagen con epÃ­grafe</td>
-                <td>Imagen de materiales de construcciÃ³n insertada debajo de la tabla, con epÃ­grafe centrado en cursiva: "Figura 1: Materiales de construcciÃ³n bÃ¡sicos".</td>
-              </tr>
-              <tr>
-                <td>Documento compartido</td>
-                <td>Documento compartido con el profesor a travÃ©s de Google Docs o entregado como PDF en Classroom.</td>
-              </tr>
-              <tr>
-                <td>PDF entregado</td>
-                <td>Archivo PDF exportado desde Google Docs y subido como entrega en Classroom, preservando el formato original.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                />
+              </svg>
+              Herramientas
+            </h3>
+            <ul>
+              <li>Google Docs</li>
+              <li>Google Drive</li>
+              <li>Carátula modelo (Recursos Permanentes)</li>
+              <li>Logos institucionales (Recursos Permanentes)</li>
+            </ul>
+          </div>
 
-      </article>
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Modalidad
+            </h3>
+            <p>
+              Individual. Duración estimada: 2 horas (30 min carátula + 1 hora
+              tabla + 30 min imagen y cierre).
+            </p>
+          </div>
 
-      <aside id="notas" aria-label="Contexto de la actividad" class="sidebar-context">
-        <h2>Contexto</h2>
+          <div class="nota-card">
+            <h3>
+              <svg
+                class="heading-icon"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 11 12 14 22 4" />
+                <path
+                  d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                />
+              </svg>
+              Competencias
+            </h3>
+            <ul>
+              <li>Formato profesional de documentos</li>
+              <li>Tablas y organización de datos</li>
+              <li>Inserción y edición de imágenes</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <!-- /.layout-grid -->
+    </main>
 
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
-            </svg>
-            Objetivo
-          </h3>
-          <p>Crear un documento profesional en Google Docs aplicando carÃ¡tula institucional, formato de tabla e inserciÃ³n de imÃ¡genes con epÃ­grafe.</p>
-        </div>
+    <footer role="contentinfo" class="footer">
+      <div class="footer-inner">
+        <p>
+          <strong>Docente:</strong> Juan Ignacio Noguera<br />
+          <strong>Materia:</strong> Taller de Computación<br />
+          <strong>Institución:</strong> EET N.° 1 "General Francisco Ramírez" —
+          Paraná
+        </p>
+        <p class="footer-meta">
+          &copy; <span id="current-year">2025</span> EET N.° 1 &middot; Diseñado
+          siguiendo
+          <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer"
+            >WCAG 2.2 AA</a
+          >
+        </p>
+      </div>
+    </footer>
 
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-            Herramientas
-          </h3>
-          <ul>
-            <li>Google Docs</li>
-            <li>Google Drive</li>
-            <li>CarÃ¡tula modelo (Recursos Permanentes)</li>
-            <li>Logos institucionales (Recursos Permanentes)</li>
-          </ul>
-        </div>
-
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            Modalidad
-          </h3>
-          <p>Individual. DuraciÃ³n estimada: 2 horas (30 min carÃ¡tula + 1 hora tabla + 30 min imagen y cierre).</p>
-        </div>
-
-        <div class="nota-card">
-          <h3>
-            <svg class="heading-icon" aria-hidden="true" focusable="false"
-                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 11 12 14 22 4"/>
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-            </svg>
-            Competencias
-          </h3>
-          <ul>
-            <li>Formato profesional de documentos</li>
-            <li>Tablas y organizaciÃ³n de datos</li>
-            <li>InserciÃ³n y ediciÃ³n de imÃ¡genes</li>
-          </ul>
-        </div>
-      </aside>
-
-    </div><!-- /.layout-grid -->
-  </main>
-
-  <footer role="contentinfo" class="footer">
-    <div class="footer-inner">
-      <p>
-        <strong>Docente:</strong> Juan Ignacio Noguera<br>
-        <strong>Materia:</strong> Taller de ComputaciÃ³n<br>
-        <strong>InstituciÃ³n:</strong> EET N.Â° 1 "General Francisco RamÃ­rez" â€” ParanÃ¡
-      </p>
-      <p class="footer-meta">
-        &copy; <span id="current-year">2025</span> EET N.Â° 1 &middot; DiseÃ±ado siguiendo
-        <a href="https://www.w3.org/TR/WCAG22/" rel="noopener noreferrer">WCAG 2.2 AA</a>
-      </p>
-    </div>
-  </footer>
-
-
-
-   <!-- Script para la barra de progreso -->
+    <!-- Script para la barra de progreso -->
     <script src="/taller-computacion-tn/progreso.js"></script>
-  <script src="./script.js" defer></script>
-</body>
+    <script src="./script.js" defer></script>
+  </body>
 </html>

@@ -24,6 +24,9 @@
   --text-tag-teal: #0f5949;
   --text-tag-purple: #4c1d95;
   --text-tip-label: #92400e;
+  --link-color: #185fa5;
+  --link-visited: #5b2b83;
+  --link-hover: #0d3b6e;
 
   /* Headers y acentos */
   --color-header: #0d3b6e;
@@ -61,6 +64,9 @@
   --text-tag-teal: #7fffce;
   --text-tag-purple: #e8d5ff;
   --text-tip-label: #ffd699;
+  --link-color: #8cc8ff;
+  --link-visited: #d8b4fe;
+  --link-hover: #b7ddff;
 
   /* Headers y acentos oscuros */
   --color-header: #1a4a8e;
@@ -91,7 +97,9 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   padding: 2.5rem 1rem 4rem;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .page-wrap {
@@ -174,7 +182,9 @@ body {
   border-radius: 0 10px 10px 0;
   padding: 1.2rem 1.4rem;
   margin-bottom: 2.25rem;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .intro-card p {
@@ -193,7 +203,9 @@ body {
   margin-bottom: 1rem;
   padding-bottom: 7px;
   border-bottom: 1px solid var(--border-secondary);
-  transition: color 0.3s, border-color 0.3s;
+  transition:
+    color 0.3s,
+    border-color 0.3s;
 }
 
 /* ── Theory cards ── */
@@ -209,7 +221,9 @@ body {
   border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 1.1rem 1.2rem;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .theory-card .tag {
@@ -226,17 +240,23 @@ body {
 .tag-blue {
   background: var(--bg-method-dot-blue);
   color: var(--text-tag-blue);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .tag-teal {
   background: var(--bg-method-dot-teal);
   color: var(--text-tag-teal);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .tag-purple {
   background: var(--bg-method-dot-purple);
   color: var(--text-tag-purple);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .theory-card .thinker {
@@ -269,7 +289,9 @@ body {
   border: 1px solid var(--border-light);
   border-radius: 10px;
   padding: 0.9rem 1rem;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .method-dot {
@@ -339,7 +361,9 @@ body {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .tip-icon {
@@ -396,7 +420,9 @@ body {
   font-size: 14px;
   color: var(--color-avatar-light);
   flex-shrink: 0;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .firma-row .name {
@@ -412,6 +438,26 @@ body {
   color: var(--text-tertiary);
 }
 
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* ── Toggle Switch para Tema ── */
 .theme-toggle {
   display: flex;
@@ -423,7 +469,9 @@ body {
   padding: 6px 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .theme-toggle:hover {

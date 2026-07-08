@@ -13,7 +13,11 @@
   --contact-gradient-2: #e4e8ec;
 
   /* Fondos */
-  --bg-body: linear-gradient(135deg, var(--bg-body-gradient-1), var(--bg-body-gradient-2));
+  --bg-body: linear-gradient(
+    135deg,
+    var(--bg-body-gradient-1),
+    var(--bg-body-gradient-2)
+  );
   --bg-container: white;
   --bg-intro: #f8f9fa;
   --bg-info-box: #e3f2fd;
@@ -22,7 +26,11 @@
   --bg-info-box-highlight-border: #ffcc80;
   --bg-info-box-important: #fce4ec;
   --bg-info-box-important-border: #f48fb1;
-  --bg-contact: linear-gradient(135deg, var(--contact-gradient-1), var(--contact-gradient-2));
+  --bg-contact: linear-gradient(
+    135deg,
+    var(--contact-gradient-1),
+    var(--contact-gradient-2)
+  );
   --bg-email: white;
   --bg-step: #2a5298;
 
@@ -40,6 +48,9 @@
   --text-signature-name: #1e3c72;
   --text-signature-role: #757575;
   --text-header-light: #7fb3e8;
+  --link-color: #1d4ed8;
+  --link-visited: #5b2b83;
+  --link-hover: #1e3c72;
 
   /* Bordes */
   --border-intro: #2a5298;
@@ -60,7 +71,11 @@
   --contact-gradient-2: #0a0a1a;
 
   /* Fondos oscuros - MEJORADO para mejor legibilidad */
-  --bg-body: linear-gradient(135deg, var(--bg-body-gradient-1), var(--bg-body-gradient-2));
+  --bg-body: linear-gradient(
+    135deg,
+    var(--bg-body-gradient-1),
+    var(--bg-body-gradient-2)
+  );
   --bg-container: #2a2a2a;
   --bg-intro: #3a3a3a;
   --bg-info-box: #2a3a5a;
@@ -87,6 +102,9 @@
   --text-signature-name: #7fc0ff;
   --text-signature-role: #b0b0b0;
   --text-header-light: #a8c5e8;
+  --link-color: #93c5fd;
+  --link-visited: #d8b4fe;
+  --link-hover: #bfdbfe;
 
   /* Bordes oscuros */
   --border-intro: #3a6aaa;
@@ -119,11 +137,17 @@ body {
   border-radius: 16px;
   box-shadow: 0 20px 60px var(--shadow-container);
   overflow: hidden;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .header {
-  background: linear-gradient(135deg, var(--header-gradient-1), var(--header-gradient-2));
+  background: linear-gradient(
+    135deg,
+    var(--header-gradient-1),
+    var(--header-gradient-2)
+  );
   color: white;
   padding: 40px;
   text-align: center;
@@ -164,7 +188,9 @@ body {
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 0 8px 8px 0;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .intro p {
@@ -202,7 +228,9 @@ body {
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 20px;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .info-box.highlight {
@@ -372,6 +400,26 @@ body {
   transition: color 0.3s;
 }
 
+a:not(.email) {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:not(.email):visited {
+  color: var(--link-visited);
+}
+
+a:not(.email):hover {
+  color: var(--link-hover);
+}
+
+a:not(.email):focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 @media (max-width: 600px) {
   .header h1 {
     font-size: 1.5rem;
@@ -409,7 +457,9 @@ body {
   padding: 6px 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
 .theme-toggle:hover {
